@@ -1,0 +1,7 @@
+.vercel/
+.firebase/
+firebase-debug.log*
+.DS_Store
+.env
+.env.*
+!.env.example
