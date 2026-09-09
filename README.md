@@ -49,7 +49,7 @@ Validation completed: JavaScript syntax, local assets and anchor targets,
 unique IDs, EN/ZH founder translations, unchanged header markup, retained footer
 navigation, and matching fallback geometry generation.
 
-Release limitation: GitHub connector currently cannot access the repository,
-so V11 is not published. Browser visual QA and real WebGL playback still need
-verification in an allowed preview before the production commit. Check desktop,
-mobile, reduced-motion, language switching, navigation and image crops.
+V11 is published from the private GitHub repository to Vercel. Source and
+asset-path validation passed, and Vercel reported a successful production
+deployment. Full visual QA of real WebGL playback should still cover desktop,
+mobile, reduced-motion, language switching, navigation and portrait crops.
