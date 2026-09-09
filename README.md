@@ -2,6 +2,8 @@
 
 Static Malttrix homepage prepared for GitHub and Vercel, with Firebase configuration for future application services.
 
+Live site: https://malttrix-website.vercel.app/
+
 ## Connect GitHub
 
 ```bash
@@ -31,4 +33,23 @@ npx firebase-tools use YOUR_FIREBASE_PROJECT_ID
 npx firebase-tools deploy --only firestore
 ```
 
-Firebase is reserved for future Authentication and Firestore features. Hosting remains on Vercel.
+Firebase project `malttrix-website` is initialized in `firebase-config.js` for future Authentication and Firestore features. Hosting remains on Vercel.
+
+## V11 homepage revision
+
+Includes a warm glass header (original header logo retained), authored 3D
+hummingbird geometry with a matching SVG fallback, selective scroll parallax,
+Maxon's desktop/mobile portraits, restored founder heading, and the supplied
+footer logo with its gold signature. The redundant footer CTA is removed.
+
+Static deployment: publish the repository root, or run `node scripts/build.mjs`
+and publish `dist`. No npm install is required. Keep `assets/` with `index.html`.
+
+Validation completed: JavaScript syntax, local assets and anchor targets,
+unique IDs, EN/ZH founder translations, unchanged header markup, retained footer
+navigation, and matching fallback geometry generation.
+
+Release limitation: GitHub connector currently cannot access the repository,
+so V11 is not published. Browser visual QA and real WebGL playback still need
+verification in an allowed preview before the production commit. Check desktop,
+mobile, reduced-motion, language switching, navigation and image crops.
