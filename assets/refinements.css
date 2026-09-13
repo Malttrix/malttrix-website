@@ -1,0 +1,26 @@
+/* V12: warm glass, restrained navigation and a single visual hierarchy. */
+.header{width:min(1200px,calc(100% - 32px));gap:14px;padding:4px 18px;border-radius:20px;background:linear-gradient(115deg,rgba(255,255,255,.65),rgba(245,242,236,.54));transition:background .3s,box-shadow .3s,padding .3s}
+.header.scrolled{padding-top:2px;padding-bottom:2px;background:rgba(249,247,242,.84)}
+.header .menu{gap:2px;padding:4px}
+.header .menu a{padding:12px 16px;font-size:.85rem;transform:none}
+.nav-glider{top:4px;bottom:4px;border-radius:12px;border-color:rgba(118,86,200,.12);background:linear-gradient(120deg,rgba(255,255,255,.7),rgba(53,183,196,.09))}
+.header .menu a:hover,.header .menu a:focus-visible{transform:translateY(-1px)}
+.lang-switch{border:none;background:transparent}
+.lang-btn.active{background:rgba(118,86,200,.1);color:#514787;box-shadow:none}
+.philosophy-phases{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:16px;font:500 .67rem var(--font-mono);color:#74717c}
+.philosophy-phases span{transition:color .3s;position:relative;padding-bottom:9px}
+.philosophy-phases span.active{color:#3559c7}
+.philosophy-phases span.active:after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:2px}
+.philosophy-ray{position:absolute;top:48%;left:50%;width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold));opacity:0;transform:scaleX(.1);pointer-events:none}
+.founder-particles{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+@media(max-width:1100px){.header{grid-template-columns:240px 1fr}.header .menu a{justify-content:flex-start}.header .menu{padding:12px}}
+/* Keep the complete approved lockup, never manufacture a symbol by clipping it. */
+@media(max-width:640px){
+ .header{width:calc(100% - 20px);grid-template-columns:240px 44px;justify-content:space-between;padding:3px 8px;gap:0;border-radius:18px}
+ .header .brand-mark,.header .brand img.logo-light{display:block;width:240px;height:auto}
+ .header .brand-symbol{display:none}
+ .header-actions{flex-direction:column-reverse;gap:3px}.lang-switch{flex-direction:column;padding:0;gap:0}.lang-btn{padding:4px 5px;min-height:44px;min-width:44px;font-size:.7rem}
+ .header.scrolled{padding:3px 8px}.hero>.hero-grid{padding-top:174px}html{scroll-padding-top:166px}
+ .philosophy-phases{gap:11px;font-size:.61rem}
+}
+@media(prefers-reduced-motion:reduce){.philosophy-ray{display:none}.philosophy-phases span{transition:none}}
