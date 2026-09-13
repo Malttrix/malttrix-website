@@ -1,4 +1,4 @@
-/* V12. Loads only the simple, single-mesh GLBs produced by prepare-hummingbird.py.
+/* V13. Loads only the simple, single-mesh GLBs produced by prepare-pbr-hummingbird.py.
    Static sculpture: object/camera motion, not a fabricated skeletal wingbeat. */
 (()=>{
  'use strict';
@@ -7,7 +7,7 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width:930px)'),button=document.getElementById('motionToggle');
  const scene=new T.Scene(),bird=new T.Group();scene.add(bird);
  const camera=new T.PerspectiveCamera(32,1,.1,30);camera.position.set(0,.08,4.6);camera.lookAt(0,0,0);
- let renderer,material=null,loaded=false,lost=false,visible=true,paused=false,raf=0,last=0,time=0,progress=0,px=0,py=0,tx=0,ty=0;
+ let renderer,material=null,loaded=false,lost=false,visible=true,paused=false,raf=0,last=0,time=0,progress=0,px=0,py=0,tx=0,ty=0,hover=0,hoverTarget=0;
  const clamp=v=>Math.max(0,Math.min(1,v));
  const ease=v=>v*v*(3-2*v);
  try{renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,mobile.matches?1.25:1.6));renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;}catch{host.dataset.render='fallback';}
@@ -28,10 +28,11 @@
   if(!renderer||!loaded||lost)return;
   const still=paused||reduced.matches,p=still?0:progress;
   const gather=ease(clamp((p-.18)/.22)),distill=ease(clamp((p-.38)/.20)),form=ease(clamp((p-.58)/.20)),fly=ease(clamp((p-.80)/.20));
-  // Positive Z (beak) maps to the right. Never mirror the branded silhouette.
-  bird.rotation.set((still?0:py*.11),Math.PI/2-.16-gather*.04+form*.09+(still?0:px*.18),-fly*.075+(still?0:Math.sin(time*.8)*.011));
+  // Positive Z (beak) maps to the right. Keep a strong side profile and never mirror the branded silhouette.
+  const idleYaw=still?0:Math.sin(time*.38)*.012;
+  bird.rotation.set((still?0:py*.24*hover),Math.PI/2-.035-gather*.025+form*.055+idleYaw+(still?0:px*.46*hover),-fly*.075+(still?0:Math.sin(time*.8)*.011));
   bird.position.set(fly*.34,gather*.025+fly*.27+(still?0:Math.sin(time*.95)*.014),0);
-  bird.scale.setScalar(.93+gather*.07+fly*.035);
+  bird.scale.setScalar(1.055+gather*.08+fly*.04);
   camera.position.x=still?0:px*.025;camera.position.y=.08+(still?0:py*.025);camera.lookAt(0,0,0);
   key.position.x=-2+(still?0:Math.sin(time*.17)*.6+distill*.8);
   if(material){material.roughness=.34-distill*.14;material.clearcoat=.68+distill*.3;material.emissiveIntensity=.22+distill*.2+form*.08;}
@@ -39,12 +40,14 @@
   document.querySelectorAll('[data-phase]').forEach((el,i)=>el.classList.toggle('active',i===Math.min(4,Math.floor(p*5))));
  }
  function stop(){cancelAnimationFrame(raf);raf=0;last=0;}
- function frame(now){raf=0;if(!visible||document.hidden||paused||reduced.matches||!loaded||lost)return;time+=last?Math.min((now-last)/1000,.05):0;last=now;px+=(tx-px)*.04;py+=(ty-py)*.04;const rect=document.getElementById('top').getBoundingClientRect();progress+=(clamp(-rect.top/rect.height)-progress)*.06;draw();raf=requestAnimationFrame(frame);}
+ function frame(now){raf=0;if(!visible||document.hidden||paused||reduced.matches||!loaded||lost)return;time+=last?Math.min((now-last)/1000,.05):0;last=now;px+=(tx-px)*.065;py+=(ty-py)*.065;hover+=(hoverTarget-hover)*.08;const rect=document.getElementById('top').getBoundingClientRect();progress+=(clamp(-rect.top/rect.height)-progress)*.06;draw();raf=requestAnimationFrame(frame);}
  function start(){if(!raf&&renderer&&loaded&&!lost&&visible&&!document.hidden&&!paused&&!reduced.matches)raf=requestAnimationFrame(frame);}
  function resize(){const r=host.getBoundingClientRect();if(!r.width||!r.height||!renderer)return;camera.aspect=r.width/r.height;camera.position.z=Math.max(4.3,4.1/camera.aspect);camera.updateProjectionMatrix();renderer.setSize(r.width,r.height,false);draw();}
  function state(){stop();document.documentElement.classList.toggle('motion-paused',paused||reduced.matches);if(button){button.hidden=false;button.disabled=reduced.matches;button.setAttribute('aria-pressed',String(paused||reduced.matches));button.textContent=document.documentElement.lang==='zh-CN'?(paused||reduced.matches?'动态已暂停':'暂停动态'):(paused||reduced.matches?'Motion paused':'Pause motion');}document.dispatchEvent(new CustomEvent('malttrix:motion'));draw();start();}
  if(button)button.addEventListener('click',()=>{paused=!paused;state();});reduced.addEventListener('change',state);document.addEventListener('malttrix:language',state);
- host.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=host.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;});host.addEventListener('pointerleave',()=>{tx=ty=0;});
+ host.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hoverTarget=1;});
+ host.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=host.getBoundingClientRect();hoverTarget=1;tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;});
+ host.addEventListener('pointerleave',()=>{hoverTarget=0;tx=ty=0;});
  new ResizeObserver(resize).observe(host);new IntersectionObserver(([e])=>{visible=e.isIntersecting;visible?start():stop();}).observe(host);
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());window.addEventListener('pagehide',stop);window.addEventListener('pageshow',start);
  canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();lost=true;stop();host.classList.remove('webgl-ready');host.dataset.render='fallback';});canvas.addEventListener('webglcontextrestored',()=>{lost=false;resize();start();});
