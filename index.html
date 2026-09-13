@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-v11">
+<html lang="en" data-release="malttrix-v12">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -593,6 +593,7 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 @media(prefers-reduced-motion:reduce){.hero-depth,.founder-plane,.portfolio-subject{transform:none!important}.sculpture-poster,.sculpture canvas{transition:none}}
 
 </style>
+<link rel="stylesheet" href="./assets/refinements.css">
 </head>
 
 
@@ -613,7 +614,6 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 <span class="nav-glider" aria-hidden="true"></span><a href="#ecosystem" data-i18n="nav.ecosystem" data-section="ecosystem">Ecosystem</a>
 <a href="#capabilities" data-i18n="nav.capabilities" data-section="capabilities">Capabilities</a>
 <a href="#philosophy" data-i18n="nav.philosophy" data-section="philosophy">Philosophy</a>
-<a href="#archetypes" data-i18n="nav.archetypes" data-section="archetypes">Principles</a>
 <a href="#founder" data-i18n="nav.founder" data-section="founder">Founder</a>
 </nav>
 
@@ -743,6 +743,8 @@ Capital.</div>
 <div class="prism-slice slice-3"></div>
 <div class="prism-slice slice-4"></div>
 <div class="stack-core"><small data-i18n="phi.process">Fragment → Connection → Form</small><strong data-i18n-html="phi.prism">Ideas into<br>form.</strong></div>
+<div class="philosophy-ray" aria-hidden="true"></div>
+<div class="philosophy-phases" aria-hidden="true"><span data-i18n="motion.hover">Hover</span><span data-i18n="motion.gather">Gather</span><span data-i18n="motion.distill">Distill</span><span data-i18n="motion.form">Form</span><span data-i18n="motion.fly">Fly</span></div>
 </div>
 </div>
 </section>
@@ -762,6 +764,7 @@ Capital.</div>
 <div class="container founder-inner">
 <div class="founder-portrait reveal">
 <div class="founder-plane" aria-hidden="true"></div>
+<canvas class="founder-particles" aria-hidden="true"></canvas>
 <picture class="founder-picture"><source media="(max-width:600px)" srcset="https://cms.malttrix.com/wp-content/uploads/2026/09/Maxon_HALF-BODY.png"><img src="https://cms.malttrix.com/wp-content/uploads/2026/09/Maxon_FULL-BODY.png" width="941" height="1672" loading="lazy" decoding="async" alt="Maxon 麦森, founder of Malttrix"></source></picture>
 <div class="facet-tag">MAXON 麦森 — <span data-i18n="founder.shortlabel">FOUNDER</span></div>
 </div>
@@ -873,10 +876,11 @@ Capital.</div>
 
 })();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-<script src="./assets/sculpture.js"></script>
+<script src="./assets/vendor-three.js"></script>
+<script src="./assets/vendor-gsap.js"></script>
+<script src="./assets/vendor-scrolltrigger.js"></script>
+<script src="./assets/hero-model.js"></script>
+<script src="./assets/founder-particles.js"></script>
 
 <script>
 /* V10: light, fluid, precise motion; content is always readable without this enhancement. */
@@ -922,16 +926,20 @@ Capital.</div>
    if(philosophy){
     const slices=[...philosophy.querySelectorAll('.prism-slice')];
     // Relative transforms preserve each approved layer's resting position.
-    const gather=g.timeline({scrollTrigger:{trigger:philosophy,start:'top 86%',end:'center 51%',scrub:.8,invalidateOnRefresh:true}});
+    const phases=[...philosophy.querySelectorAll('.philosophy-phases span')];
+    const gather=g.timeline({scrollTrigger:{trigger:philosophy,start:'top 82%',end:'bottom 38%',scrub:.8,invalidateOnRefresh:true,onUpdate:self=>phases.forEach((el,i)=>el.classList.toggle('active',i===Math.min(4,Math.floor(self.progress*5))))}});
     slices.forEach((slice,i)=>gather.from(slice,{x:i<2?-50-i*18:45+(i-2)*18,y:i%2?-34:40,rotation:i<2?-12:11,scale:.94,opacity:.44,duration:1,ease:'none'},i*.045));
     gather.from(philosophy.querySelector('.stack-core'),{y:12,opacity:.65,duration:.65,ease:'none'},.4);
+    gather.to(slices,{filter:'saturate(.65)',duration:.4,ease:'none'},1.1);
+    gather.to(philosophy.querySelector('.philosophy-ray'),{x:100,opacity:.65,scaleX:1,duration:.45,ease:'power1.inOut'},1.5);
+    gather.to(philosophy.querySelector('.philosophy-ray'),{x:150,opacity:0,duration:.35},1.95);
     g.from(philosophy.querySelector('.philosophy-copy'),{y:20,opacity:.35,duration:1,ease:'power2.out',scrollTrigger:{trigger:philosophy,start:'top 84%',once:true}});
    }
    if(founder){
     g.from(founder.querySelector('.founder-picture'),{y:24,opacity:.6,duration:1,ease:'power2.out',scrollTrigger:{trigger:founder,start:'top 85%',once:true}});
-    g.fromTo(founder.querySelector('.founder-plane'),{y:30},{y:-30,ease:'none',scrollTrigger:{trigger:founder,start:'top bottom',end:'bottom top',scrub:1}});
+    g.fromTo(founder.querySelector('.founder-plane'),{y:7},{y:-7,ease:'none',scrollTrigger:{trigger:founder,start:'top bottom',end:'bottom top',scrub:1}});
    }
-   g.to('.hero-depth',{y:90,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:1}});
+   g.to('.hero-depth',{y:16,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:1}});
    g.utils.toArray('.portfolio-subject').forEach(el=>g.fromTo(el,{y:12},{y:-12,ease:'none',scrollTrigger:{trigger:el.closest('.dimension'),start:'top bottom',end:'bottom top',scrub:1}}));
 
   });
