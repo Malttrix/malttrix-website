@@ -28,11 +28,11 @@
   if(!renderer||!loaded||lost)return;
   const still=paused||reduced.matches,p=still?0:progress;
   const gather=ease(clamp((p-.18)/.22)),distill=ease(clamp((p-.38)/.20)),form=ease(clamp((p-.58)/.20)),fly=ease(clamp((p-.80)/.20));
-  // Positive Z (beak) maps to the right. Keep a strong side profile and never mirror the branded silhouette.
+  // The supplied PBR model is authored in side profile at Y = 0. Keep that profile as the resting view.
   const idleYaw=still?0:Math.sin(time*.38)*.012;
-  bird.rotation.set((still?0:py*.24*hover),Math.PI/2-.035-gather*.025+form*.055+idleYaw+(still?0:px*.46*hover),-fly*.075+(still?0:Math.sin(time*.8)*.011));
+  bird.rotation.set((still?0:py*.24*hover),-.035-gather*.025+form*.055+idleYaw+(still?0:px*.46*hover),-fly*.075+(still?0:Math.sin(time*.8)*.011));
   bird.position.set(fly*.34,gather*.025+fly*.27+(still?0:Math.sin(time*.95)*.014),0);
-  bird.scale.setScalar(1.055+gather*.08+fly*.04);
+  bird.scale.setScalar(1.14+gather*.085+fly*.04);
   camera.position.x=still?0:px*.025;camera.position.y=.08+(still?0:py*.025);camera.lookAt(0,0,0);
   key.position.x=-2+(still?0:Math.sin(time*.17)*.6+distill*.8);
   if(material){material.roughness=.34-distill*.14;material.clearcoat=.68+distill*.3;material.emissiveIntensity=.22+distill*.2+form*.08;}
