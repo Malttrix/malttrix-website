@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-v13-1">
+<html lang="en" data-release="malttrix-v13-2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -592,6 +592,59 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 @media(max-width:600px){.founder-portrait{height:auto;aspect-ratio:4/5;max-width:360px}.founder-picture{overflow:hidden;border-radius:140px 140px 20px 20px}.founder-picture img{object-fit:cover;object-position:center 20%}.founder-plane{display:none}.founder .facet-tag{bottom:18px;left:12px}.founder-heading{font-size:3rem}.founder-copy .founder-statement{font-size:1.13rem}.scene-bottom{flex-wrap:wrap;justify-content:center;gap:18px}.hero .scroll-cue{display:none}}
 @media(prefers-reduced-motion:reduce){.hero-depth,.founder-plane,.portfolio-subject{transform:none!important}.sculpture-poster,.sculpture canvas{transition:none}}
 
+
+/* V13.2 — navigation clarity, layered hero interaction and restrained parallax. */
+.enter{display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+.enter b{display:none;font:600 1rem/1 var(--font-mono)}
+.header .menu a[data-section="ecosystem"]{--section-color:#7656C8}
+.header .menu a[data-section="capabilities"]{--section-color:#35B7C4}
+.header .menu a[data-section="philosophy"]{--section-color:#D5A447}
+.header .menu a[data-section="founder"]{--section-color:#D75E9A}
+.header .menu a.active{color:var(--section-color)}
+.nav-glider{
+  --section-color:#7656C8;
+  border-color:color-mix(in srgb,var(--section-color) 28%,transparent);
+  background:linear-gradient(135deg,rgba(255,255,255,.96),color-mix(in srgb,var(--section-color) 10%,transparent));
+  box-shadow:0 3px 14px color-mix(in srgb,var(--section-color) 13%,transparent),inset 0 1px 0 white;
+}
+.dimension-link{position:relative}
+.dimension-link::after{
+  content:"↗";position:absolute;right:22px;top:22px;width:28px;height:28px;display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:50%;
+  color:var(--accent);font:600 .72rem/1 var(--font-mono);background:rgba(255,255,255,.68);
+  transition:transform .25s ease,background .25s ease;
+}
+.dimension-link:hover::after,.dimension-link:focus-visible::after{transform:translate(2px,-2px);background:white}
+.hero-cursor-glow{
+  --cursor-x:65%;--cursor-y:42%;--glow-a:53,89,199;--glow-b:118,86,200;
+  position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;
+  background:
+    radial-gradient(circle 300px at var(--cursor-x) var(--cursor-y),rgba(var(--glow-a),.17),transparent 66%),
+    radial-gradient(circle 470px at var(--cursor-x) var(--cursor-y),rgba(var(--glow-b),.075),transparent 72%);
+  transition:opacity .35s ease,background .6s ease;
+}
+.hero-cursor-glow.active{opacity:1}
+.hero>.hero-grid{position:relative;z-index:2}
+.hero .btn.dark,.hero .text-link{--mag-x:0px;--mag-y:0px;will-change:transform}
+.hero .btn.dark:hover,.hero .btn.dark:focus-visible{transform:translate3d(var(--mag-x),calc(var(--mag-y) - 2px),0)}
+.hero .text-link:hover,.hero .text-link:focus-visible{transform:translate3d(var(--mag-x),var(--mag-y),0)}
+#sculpture{--sculpture-x:0px;--sculpture-y:0px;transform:translate3d(var(--sculpture-x),var(--sculpture-y),0);transition:transform .5s cubic-bezier(.2,.8,.2,1);will-change:transform}
+@media(min-width:1101px) and (max-width:1250px){
+  .header{gap:18px}
+  .header .brand img.logo-light{width:clamp(180px,16vw,200px);height:auto}
+  .header .menu a{padding-left:13px;padding-right:13px;font-size:.82rem}
+}
+@media(max-width:930px){
+  .enter{display:flex!important;width:44px;height:44px;padding:10px;flex:0 0 44px;border-radius:14px}
+  .enter span{display:none}.enter b{display:inline}
+}
+@media(prefers-reduced-motion:reduce),(hover:none),(pointer:coarse){
+  .hero-cursor-glow{display:none}
+  .hero .btn.dark,.hero .text-link,#sculpture{transform:none!important;transition:none!important}
+}
+html.motion-paused .hero-cursor-glow{display:none}
+html.motion-paused .hero .btn.dark,html.motion-paused .hero .text-link,html.motion-paused #sculpture{transform:none!important;transition:none!important}
+
 </style>
 <link rel="stylesheet" href="./assets/refinements.css?v=12.1">
 </head>
@@ -623,7 +676,7 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 <button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button>
 <button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">中文</button>
 </div>
-<a class="enter" href="#ecosystem" data-i18n="nav.enter">Explore</a>
+<a class="enter" href="#ecosystem" data-i18n-aria="nav.enter" aria-label="Explore"><span data-i18n="nav.enter">Explore</span><b aria-hidden="true">↘</b></a>
 </div>
 </header>
 
@@ -631,6 +684,7 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 <main id="top-content">
 
 <section class="hero" id="top">
+<div class="hero-cursor-glow" aria-hidden="true"></div>
 <div class="hero-depth" aria-hidden="true"><i></i><i></i><i></i></div><div class="container hero-grid">
 <div class="hero-editorial">
 <div class="kicker" data-i18n="hero.kicker">Independent Creative Intelligence Ecosystem</div>
@@ -664,7 +718,7 @@ html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,ht
 <p class="lead" data-i18n="eco.copy">Three independent brands, connected by a shared foundation for creating, publishing and growing original work.</p>
 </div>
 <div class="dimension-grid">
-<a class="dimension dimension-link reveal" href="https://www.vanmoira.com" target="_blank" rel="noopener" style="--accent:#7656C8" aria-label="Explore VANMOIRA">
+<a class="dimension dimension-link reveal" href="https://www.vanmoira.com" target="_blank" rel="noopener" style="--accent:#7656C8" aria-label="Explore VANMOIRA (opens in a new tab)">
 <div class="dimension-number" data-i18n="eco.sound_label">01 / AUDITORY ART</div>
 <div class="portfolio-subject" data-i18n="eco.sound_note">Original music.
 Emotional worlds.</div>
@@ -682,7 +736,7 @@ Feeling.</div>
 <p data-i18n="eco.lum">Minimalism, healing visuals and controlled visual contrast — shaped through light, space, material and motion.</p>
 <span class="card-action muted" data-i18n="eco.soon">Coming soon</span>
 </article>
-<a class="dimension dimension-link reveal" href="https://www.immersation.com" target="_blank" rel="noopener" style="--accent:#D5A447" aria-label="Explore Immersation">
+<a class="dimension dimension-link reveal" href="https://www.immersation.com" target="_blank" rel="noopener" style="--accent:#D5A447" aria-label="Explore Immersation (opens in a new tab)">
 <div class="dimension-number" data-i18n="eco.think_label">03 / COGNITIVE INTELLIGENCE</div>
 <div class="portfolio-subject" data-i18n="eco.think_note">Body. Tool.
 Capital.</div>
@@ -872,7 +926,7 @@ Capital.</div>
  const header=document.getElementById('siteHeader');
  const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>40);window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
  const nav=[...menu.querySelectorAll('[data-section]')];
- if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting);if(!visible.length)return;const id=visible[0].target.id;nav.forEach(a=>{const on=a.dataset.section===id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});},{rootMargin:'-20% 0px -55% 0px',threshold:0});nav.forEach(a=>{const section=document.getElementById(a.dataset.section);if(section)io.observe(section);});}
+ if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting);if(!visible.length)return;const id=visible[0].target.id;nav.forEach(a=>{const on=a.dataset.section===id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});document.dispatchEvent(new CustomEvent('malttrix:navactive',{detail:{id}}));},{rootMargin:'-20% 0px -55% 0px',threshold:0});nav.forEach(a=>{const section=document.getElementById(a.dataset.section);if(section)io.observe(section);});}
 
 })();
 </script>
@@ -914,6 +968,32 @@ Capital.</div>
   document.addEventListener('malttrix:language',()=>requestAnimationFrame(restore));
   if(document.fonts)document.fonts.ready.then(restore);restore();
  }
+
+ document.addEventListener('malttrix:navactive',event=>{
+  const link=nav&&nav.querySelector('[data-section="'+event.detail.id+'"]');
+  if(link&&indicator){indicator.style.setProperty('--section-color',getComputedStyle(link).getPropertyValue('--section-color').trim()||'#7656C8');moveIndicator(link);}
+ });
+ const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
+ const hero=document.getElementById('top'),glow=hero&&hero.querySelector('.hero-cursor-glow'),sculpture=document.getElementById('sculpture');
+ const phaseColors=[['53,89,199','118,86,200'],['53,89,199','118,86,200'],['53,183,196','105,169,130'],['215,94,154','232,109,96'],['215,94,154','213,164,71']];
+ function interactionReady(){return finePointer.matches&&!reduced.matches&&!document.documentElement.classList.contains('motion-paused');}
+ function syncGlow(){
+  if(!glow)return;const phases=[...document.querySelectorAll('[data-phase]')],active=Math.max(0,phases.findIndex(el=>el.classList.contains('active'))),colors=phaseColors[active]||phaseColors[0];
+  glow.style.setProperty('--glow-a',colors[0]);glow.style.setProperty('--glow-b',colors[1]);
+ }
+ if(hero&&glow){
+  hero.addEventListener('pointermove',event=>{if(!interactionReady()||event.pointerType!=='mouse')return;const r=hero.getBoundingClientRect();glow.style.setProperty('--cursor-x',((event.clientX-r.left)/r.width*100).toFixed(2)+'%');glow.style.setProperty('--cursor-y',((event.clientY-r.top)/r.height*100).toFixed(2)+'%');glow.classList.add('active');});
+  hero.addEventListener('pointerleave',()=>glow.classList.remove('active'));
+  const phases=document.querySelectorAll('[data-phase]');if(phases.length&&'MutationObserver' in window)new MutationObserver(syncGlow).observe(phases[0].parentElement,{subtree:true,attributes:true,attributeFilter:['class']});syncGlow();
+  hero.querySelectorAll('.btn.dark,.text-link').forEach(el=>{
+   el.addEventListener('pointermove',event=>{if(!interactionReady()||event.pointerType!=='mouse')return;const r=el.getBoundingClientRect();el.style.setProperty('--mag-x',((event.clientX-r.left-r.width/2)*.13).toFixed(2)+'px');el.style.setProperty('--mag-y',((event.clientY-r.top-r.height/2)*.16).toFixed(2)+'px');});
+   el.addEventListener('pointerleave',()=>{el.style.setProperty('--mag-x','0px');el.style.setProperty('--mag-y','0px');});
+  });
+ }
+ if(sculpture){
+  sculpture.addEventListener('pointermove',event=>{if(!interactionReady()||event.pointerType!=='mouse')return;const r=sculpture.getBoundingClientRect();sculpture.style.setProperty('--sculpture-x',(((event.clientX-r.left)/r.width-.5)*16).toFixed(2)+'px');sculpture.style.setProperty('--sculpture-y',(((event.clientY-r.top)/r.height-.5)*12).toFixed(2)+'px');});
+  sculpture.addEventListener('pointerleave',()=>{sculpture.style.setProperty('--sculpture-x','0px');sculpture.style.setProperty('--sculpture-y','0px');});
+ }
  if(!window.gsap||!window.ScrollTrigger)return;
  const g=window.gsap,ST=window.ScrollTrigger;g.registerPlugin(ST);
  let context=null;
@@ -938,8 +1018,12 @@ Capital.</div>
    if(founder){
     g.from(founder.querySelector('.founder-picture'),{y:24,opacity:.6,duration:1,ease:'power2.out',scrollTrigger:{trigger:founder,start:'top 85%',once:true}});
     g.fromTo(founder.querySelector('.founder-plane'),{y:7},{y:-7,ease:'none',scrollTrigger:{trigger:founder,start:'top bottom',end:'bottom top',scrub:1}});
+    g.fromTo(founder.querySelector('.founder-meta'),{y:-4},{y:5,ease:'none',scrollTrigger:{trigger:founder,start:'top bottom',end:'bottom top',scrub:1}});
    }
    g.to('.hero-depth',{y:16,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:1}});
+   g.to('.hero-editorial',{y:-40,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:1}});
+   g.to('.sculpture-column',{y:-15,ease:'none',scrollTrigger:{trigger:'#top',start:'top top',end:'bottom top',scrub:1}});
+   g.from('.capability',{y:24,opacity:0,stagger:.08,duration:.6,ease:'power2.out',scrollTrigger:{trigger:'.capability-list',start:'top 80%',once:true}});
    g.utils.toArray('.portfolio-subject').forEach(el=>g.fromTo(el,{y:12},{y:-12,ease:'none',scrollTrigger:{trigger:el.closest('.dimension'),start:'top bottom',end:'bottom top',scrub:1}}));
 
   });
