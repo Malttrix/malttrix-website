@@ -7,7 +7,7 @@
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),mobile=matchMedia('(max-width:930px)'),button=document.getElementById('motionToggle');
  const scene=new T.Scene(),bird=new T.Group();scene.add(bird);
  const camera=new T.PerspectiveCamera(32,1,.1,30);camera.position.set(0,.08,4.6);camera.lookAt(0,0,0);
- let renderer,material=null,loaded=false,lost=false,visible=true,paused=false,raf=0,last=0,time=0,progress=0,px=0,py=0,tx=0,ty=0,hover=0,hoverTarget=0;
+ let renderer,material=null,loaded=false,lost=false,visible=true,paused=false,raf=0,last=0,time=0,progress=0,px=0,py=0,tx=0,ty=0,hover=0,hoverTarget=0,baseCameraZ=4.6;
  const clamp=v=>Math.max(0,Math.min(1,v));
  const ease=v=>v*v*(3-2*v);
  try{renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});renderer.setPixelRatio(Math.min(devicePixelRatio,mobile.matches?1.25:1.6));renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;}catch{host.dataset.render='fallback';}
@@ -27,14 +27,14 @@
  function draw(){
   if(!renderer||!loaded||lost)return;
   const still=paused||reduced.matches,p=still?0:progress;
-  const gather=ease(clamp((p-.18)/.22)),distill=ease(clamp((p-.38)/.20)),form=ease(clamp((p-.58)/.20)),fly=ease(clamp((p-.80)/.20));
+  const depth=ease(clamp(p/.82)),gather=ease(clamp((p-.18)/.22)),distill=ease(clamp((p-.38)/.20)),form=ease(clamp((p-.58)/.20)),fly=ease(clamp((p-.80)/.20));
   // The supplied PBR model is authored in side profile at Y = 0. Keep that profile as the resting view.
-  const idleYaw=still?0:Math.sin(time*.38)*.012;
-  bird.rotation.set((still?0:py*.24*hover),-.035-gather*.025+form*.055+idleYaw+(still?0:px*.46*hover),-fly*.075+(still?0:Math.sin(time*.8)*.011));
-  bird.position.set(fly*.34,gather*.025+fly*.27+(still?0:Math.sin(time*.95)*.014),0);
-  bird.scale.setScalar(1.14+gather*.085+fly*.04);
-  camera.position.x=still?0:px*.025;camera.position.y=.08+(still?0:py*.025);camera.lookAt(0,0,0);
-  key.position.x=-2+(still?0:Math.sin(time*.17)*.6+distill*.8);
+  const idleYaw=still?0:Math.sin(time*.38)*.018;
+  bird.rotation.set((still?0:py*.24*hover),-.035-gather*.025+form*.055+idleYaw+(still?0:px*.46*hover),-fly*.075+(still?0:Math.sin(time*.8)*.017));
+  bird.position.set(depth*.08+fly*.30,gather*.025+fly*.25-depth*.045+(still?0:Math.sin(time*.95)*.022),depth*.16);
+  bird.scale.setScalar(1.19+gather*.085+fly*.04+(still?0:Math.sin(time*1.12)*.006));
+  camera.position.x=still?0:px*.025;camera.position.y=.08+(still?0:py*.025);camera.position.z=baseCameraZ-(still?0:depth*.14);camera.lookAt(0,0,0);
+  key.position.x=-2+(still?0:Math.sin(time*.17)*.6+distill*.8);rim.position.y=1+(still?0:Math.sin(time*.32)*.28);rim.intensity=2.2+(still?0:Math.sin(time*.55)*.14+form*.18);
   if(material){material.roughness=.34-distill*.14;material.clearcoat=.68+distill*.3;material.emissiveIntensity=.22+distill*.2+form*.08;}
   renderer.render(scene,camera);host.classList.add('webgl-ready');host.dataset.render='webgl';
   document.querySelectorAll('[data-phase]').forEach((el,i)=>el.classList.toggle('active',i===Math.min(4,Math.floor(p*5))));
@@ -42,7 +42,7 @@
  function stop(){cancelAnimationFrame(raf);raf=0;last=0;}
  function frame(now){raf=0;if(!visible||document.hidden||paused||reduced.matches||!loaded||lost)return;time+=last?Math.min((now-last)/1000,.05):0;last=now;px+=(tx-px)*.065;py+=(ty-py)*.065;hover+=(hoverTarget-hover)*.08;const rect=document.getElementById('top').getBoundingClientRect();progress+=(clamp(-rect.top/rect.height)-progress)*.06;draw();raf=requestAnimationFrame(frame);}
  function start(){if(!raf&&renderer&&loaded&&!lost&&visible&&!document.hidden&&!paused&&!reduced.matches)raf=requestAnimationFrame(frame);}
- function resize(){const r=host.getBoundingClientRect();if(!r.width||!r.height||!renderer)return;camera.aspect=r.width/r.height;camera.position.z=Math.max(4.3,4.1/camera.aspect);camera.updateProjectionMatrix();renderer.setSize(r.width,r.height,false);draw();}
+ function resize(){const r=host.getBoundingClientRect();if(!r.width||!r.height||!renderer)return;camera.aspect=r.width/r.height;baseCameraZ=Math.max(4.3,4.1/camera.aspect);camera.position.z=baseCameraZ;camera.updateProjectionMatrix();renderer.setSize(r.width,r.height,false);draw();}
  function state(){stop();document.documentElement.classList.toggle('motion-paused',paused||reduced.matches);if(button){button.hidden=false;button.disabled=reduced.matches;button.setAttribute('aria-pressed',String(paused||reduced.matches));button.textContent=document.documentElement.lang==='zh-CN'?(paused||reduced.matches?'动态已暂停':'暂停动态'):(paused||reduced.matches?'Motion paused':'Pause motion');}document.dispatchEvent(new CustomEvent('malttrix:motion'));draw();start();}
  if(button)button.addEventListener('click',()=>{paused=!paused;state();});reduced.addEventListener('change',state);document.addEventListener('malttrix:language',state);
  host.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hoverTarget=1;});
