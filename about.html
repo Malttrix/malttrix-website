@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-about-v2">
+<html lang="en" data-release="malttrix-about-v3">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -103,14 +103,419 @@ html[lang="zh-CN"] .about-hero h1{font-size:clamp(3.8rem,7.2vw,7.2rem)}
 @media(max-width:1100px){.header{grid-template-columns:82px 1fr;padding:8px 12px}.header .brand-mark{width:82px}.header .brand img.logo-light{display:none}.brand-symbol{position:relative;display:block;width:82px;height:68px;overflow:hidden}.brand-symbol img{position:absolute;left:0;top:0;width:132px!important;max-width:none;height:68px!important;object-fit:contain;clip-path:polygon(0 0,64% 0,64% 29%,50% 37%,44% 53%,39% 75%,34% 100%,0 100%)}.header-actions{justify-self:end}.menu-toggle{display:block}.enter{display:flex;width:44px;height:44px;padding:10px}.enter span{display:none}.header .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:none;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;border-radius:16px;background:rgba(252,251,247,.98)}.header .menu.open{display:flex}.header .menu>a,.header .nav-dropdown>.nav-trigger{justify-content:flex-start;padding:12px 14px;border-radius:10px}.header .nav-dropdown{display:block}.header .nav-panel{position:static;width:auto;padding:3px 8px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;background:transparent;box-shadow:none;pointer-events:auto}.manifesto-layout{grid-template-columns:80px minmax(0,1fr)}.capability-chapter{grid-template-columns:90px 1fr}.chapter-scope{grid-column:2}}
 @media(max-width:700px){.about-manifesto{padding:125px 0 45px}.manifesto-layout{display:block;min-height:auto}.manifesto-meta{font-size:.56rem}.manifesto-meta span:last-child{display:none}.manifesto-copy{padding:70px 0 50px}.manifesto-copy h1{font-size:clamp(4rem,18vw,6.5rem);line-height:.88}.manifesto-axis{grid-template-columns:1fr}.manifesto-axis>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.manifesto-axis>div:last-child{border-bottom:0}.manifesto-signature{padding-top:16px}.capability-chapter{grid-template-columns:1fr;gap:25px;padding:48px 0}.chapter-index{display:flex;align-items:end;gap:18px}.chapter-index span{font-size:3.8rem}.chapter-index small{margin:0 0 5px}.chapter-scope{grid-column:auto}.chapter-main h3{font-size:2.55rem}.footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-motion-inline{margin-top:14px;flex-wrap:wrap}}
 
+
+/* Homepage shell: exact header and footer styling */
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] .manifesto,
+html[lang="zh-CN"] .stack-core strong,
+html[lang="zh-CN"] .founder-card h3,
+html[lang="zh-CN"] .founder-copy h3,
+html[lang="zh-CN"] .footer-signature{
+  font-family:var(--font-cn-editorial);
+  letter-spacing:0;
+}
+/* =========================================================
+   HEADER — logo enlarged further (58px -> 68px)
+========================================================= */
+.header{
+  position:fixed; top:15px; left:50%; transform:translateX(-50%);
+  width:min(1200px, calc(100% - 28px)); z-index:100;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:28px;
+  padding:6px 12px 6px 16px;
+  border:1px solid var(--line); border-radius:18px;
+  background:rgba(245,242,236,.73);
+  backdrop-filter:blur(22px) saturate(1.15);
+  -webkit-backdrop-filter:blur(22px) saturate(1.15);
+  box-shadow:0 14px 50px rgba(23,25,29,.07);
+  transition:box-shadow .3s ease, background .3s ease;
+}
+.header.scrolled{ background:rgba(245,242,236,.92); box-shadow:0 18px 60px rgba(23,25,29,.13); }
+.brand{ display:flex; align-items:center; }
+.brand-mark{ position:relative; display:flex; align-items:center; }
+.brand img.logo-light{ display:block; width:auto; height:68px; }
+.brand-pulse{
+  position:absolute; right:-8px; top:-2px; width:8px; height:8px; border-radius:50%;
+  background:conic-gradient(var(--blue),var(--violet),var(--rose),var(--gold),var(--cyan),var(--blue));
+  animation:pulseSpin 4s linear infinite, pulseScale 2.4s ease-in-out infinite;
+  transition:background .4s ease;
+}
+.menu{ display:flex; justify-content:center; align-items:center; gap:27px; font-size:.76rem; font-weight:600; }
+.menu a{ position:relative; padding:8px 0; color:#4D4F55; transition:color .25s ease; }
+.menu a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:3px; height:1px;
+  background:linear-gradient(90deg, var(--blue), var(--rose), var(--gold));
+  transition:right .3s ease;
+}
+.menu a:hover::after, .menu a:focus-visible::after, .menu a.active::after{ right:0; }
+.menu a.active{ color:var(--ink); font-weight:700; }
+.header-actions{ display:flex; align-items:center; gap:9px; }
+.lang-switch{ display:flex; padding:3px; border:1px solid var(--line); border-radius:11px; background:rgba(255,255,255,.56); }
+.lang-btn{ border:0; cursor:pointer; padding:7px 9px; border-radius:8px; background:transparent; color:#696B70; font-size:.7rem; font-weight:700; font-family:var(--font-mono); }
+.lang-btn.active{ color:white; background:var(--ink); }
+.enter{ padding:10px 13px; border-radius:11px; background:var(--ink); color:white; font-size:.72rem; font-weight:700; }
+.brand-name{ font-size:.78rem; font-weight:700; letter-spacing:.07em; }
+/* =========================================================
+   FOOTER — logo enlarged further (64px -> 76px), portfolio links live
+========================================================= */
+footer.site-footer{ position:relative; overflow:hidden; background:var(--ink); color:rgba(255,255,255,.72); padding:80px 0 0; }
+footer.site-footer::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(53,89,199,.30), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(215,94,154,.22), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(53,183,196,.14), transparent 40%);
+}
+.footer-newsletter-strip{
+  position:relative; display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+  padding:34px 38px; margin-bottom:52px; border-radius:26px;
+  border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05);
+}
+.footer-newsletter-strip h4{ margin:0 0 6px; font-family:var(--font-editorial); font-size:1.7rem; color:white; }
+.footer-newsletter-strip p{ margin:0; font-size:.83rem; color:rgba(255,255,255,.55); }
+.footer-newsletter-strip form{ display:flex; gap:10px; }
+.footer-newsletter-strip input{
+  flex:1; padding:13px 15px; border-radius:11px; border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.07); color:white; font-size:.83rem;
+}
+.footer-newsletter-strip input::placeholder{ color:rgba(255,255,255,.4); }
+.footer-newsletter-strip button{
+  padding:13px 18px; border-radius:11px; border:0; background:linear-gradient(90deg,var(--blue),var(--violet));
+  color:white; font-weight:700; font-size:.8rem; cursor:pointer; white-space:nowrap;
+}
+.footer-top{ position:relative; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; padding-bottom:46px; border-bottom:1px solid rgba(255,255,255,.1); margin-bottom:34px; }
+.footer-brand{ display:flex; flex-direction:column; align-items:flex-start; text-align:left; gap:16px; max-width:360px; }
+.footer-brand img{ height:76px; width:auto; display:block; object-fit:contain; margin:0; align-self:flex-start; }
+.footer-signature{ font-family:var(--font-editorial); font-size:1.3rem; color:white; line-height:1.3; }
+.footer-brand p{ color:rgba(255,255,255,.55); font-size:.82rem; line-height:1.7; margin:0; max-width:320px; }
+.footer-col h4{ margin:0 0 16px; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); font-family:var(--font-mono); }
+.footer-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.footer-col li{ display:flex; align-items:center; gap:8px; }
+.footer-col a{ color:rgba(255,255,255,.72); font-size:.85rem; transition:color .2s ease; }
+.footer-col a.portfolio-link:hover, .footer-col a.portfolio-link:focus-visible{ color:var(--gold); }
+.footer-col .soon-item{ color:rgba(255,255,255,.55); font-size:.85rem; }
+.footer-col .soon{ font-size:.62rem; font-family:var(--font-mono); color:rgba(255,255,255,.32); letter-spacing:.05em; padding:2px 7px; border:1px solid rgba(255,255,255,.15); border-radius:999px; }
+.footer-bottom{
+  position:relative; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  padding:26px 0; border-top:1px solid rgba(255,255,255,.1);
+  font-family:var(--font-mono); font-size:.72rem; color:rgba(255,255,255,.4);
+}
+.footer-bottom-right{ display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+.footer-social{ display:flex; gap:16px; }
+.footer-social a{ color:rgba(255,255,255,.55); }
+.footer-social a:hover, .footer-social a:focus-visible{ color:var(--cyan); }
+.footer-motion-inline{ display:flex; gap:16px; flex-wrap:wrap; }
+.footer-motion-inline span{ position:relative; padding-left:12px; }
+.footer-motion-inline span::before{ content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:5px; height:5px; border-radius:50%; background:var(--violet); }
+.footer-motion-inline span:nth-child(1)::before{ background:var(--blue); }
+.footer-motion-inline span:nth-child(2)::before{ background:var(--cyan); }
+.footer-motion-inline span:nth-child(3)::before{ background:var(--violet); }
+.footer-motion-inline span:nth-child(4)::before{ background:var(--rose); }
+.footer-motion-inline span:nth-child(5)::before{ background:var(--gold); }
+@media(max-width:930px){.footer-top{ grid-template-columns:1fr 1fr; }
+.footer-newsletter-strip{ grid-template-columns:1fr; }
+}
+@media(max-width:640px){.footer-top{ grid-template-columns:1fr; }
+.footer-bottom{ flex-direction:column; align-items:flex-start; gap:14px; }
+.footer-motion-inline{ order:2; }
+}
+@media(max-width:930px){.menu{ display:none; }
+}
+@media(max-width:640px){.header{ grid-template-columns:auto 1fr; }
+.header-actions{ justify-self:end; }
+.enter{ display:none; }
+.brand img.logo-light{ height:50px; }
+.footer-brand img{ height:56px; }
+}
+.header{grid-template-columns:auto 1fr auto;gap:16px;top:12px;padding:5px 12px 5px 15px}
+.brand img.logo-light{width:180px;height:84px;object-fit:contain;mix-blend-mode:multiply}
+.brand-pulse{display:none}
+.header .menu{font-size:.78rem;gap:19px}
+.enter{display:none}
+.menu-toggle{display:none;width:44px;height:42px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.56);cursor:pointer;padding:10px}
+.menu-toggle span{display:block;height:2px;margin:5px 0;background:var(--ink);transition:transform .2s}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.footer-cta-strip{grid-template-columns:1fr auto}
+.footer-cta{display:inline-flex;align-items:center;justify-content:center;background:#3559c7;color:white;padding:15px 20px;border-radius:12px;font-size:.85rem;font-weight:600}
+footer.site-footer .footer-brand img{width:240px;height:auto;max-height:125px;object-fit:contain;object-position:left center}
+.footer-col a{font-size:.95rem}
+.footer-col h4{font-size:.75rem;color:#a6a8af}
+.footer-brand p{font-size:.93rem;color:#aeb0b7}
+.footer-bottom{font-size:.76rem;color:#a8abb3}
+@media(max-width:1100px) and (min-width:931px){.header .menu{gap:11px;font-size:.72rem}
+.brand img.logo-light{width:154px}
+}
+@media(max-width:930px){.header{grid-template-columns:auto 1fr;gap:8px}
+.header-actions{justify-self:end}
+.brand img.logo-light{width:160px;height:70px}
+.menu-toggle{display:block}
+.header .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:flex;flex-direction:column;align-items:stretch;gap:0;padding:12px 20px;border:1px solid var(--line);border-radius:16px;background:#f5f2ec;box-shadow:0 18px 60px #17191d20;visibility:hidden;opacity:0;transform:translateY(-5px);transition:opacity .2s,transform .2s,visibility .2s}
+.header .menu.open{visibility:visible;opacity:1;transform:none}
+.header .menu a{padding:14px 4px;font-size:1rem}
+.footer-cta-strip{grid-template-columns:1fr;gap:20px}
+.footer-cta{justify-self:start}
+}
+@media(max-width:480px){.header{width:calc(100% - 20px);padding-left:8px;padding-right:8px}
+.brand img.logo-light{width:124px;height:64px}
+.header-actions{gap:6px}
+.lang-btn{font-size:.73rem;padding:9px 7px}
+.menu-toggle{width:40px}
+}
+h1,h2,.manifesto,.dimension h3,.portfolio-subject,.founder-copy h3,.stack-core strong,.footer-signature,.footer-newsletter-strip h4{font-family:var(--font-display);font-weight:600}
+.capability h3,.value-chip h3,.brand-name,.menu,.btn,.text-link,.card-action,.footer-cta,.footer-col a,.founder-meta strong,.founder-monogram small,.motion-toggle{font-family:var(--font-ui)}
+.kicker,.micro,.dimension-number,.cap-number,.principle-index,.facet-tag,.stack-core small,.footer-col h4,.footer-bottom,.motion-sequence,.scroll-cue,.lang-btn,.founder-monogram>span{font-family:var(--font-mono);font-weight:500}
+html[lang="zh-CN"] .footer-newsletter-strip h4{line-height:1.45}
+.footer-newsletter-strip p,.footer-col a{font-family:var(--font-ui)}
+.brand-name{font-size:.87rem}
+.footer-col h4{font-size:.79rem}
+/* The complete lockup retains its original ratio and 240px desktop minimum. */
+.header{width:min(1280px,calc(100% - 32px));top:12px;grid-template-columns:240px minmax(0,1fr) auto;gap:20px;padding:10px 20px 10px 16px;border-radius:26px;border:1px solid rgba(118,86,200,.16);background:linear-gradient(118deg,rgba(255,255,255,.94),rgba(245,242,236,.90));box-shadow:0 16px 55px rgba(47,39,91,.07),inset 0 1px 0 rgba(255,255,255,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.header::before{content:"";position:absolute;top:-1px;left:25%;right:12%;height:2px;border-radius:4px;background:linear-gradient(90deg,transparent,rgba(53,89,199,.58),rgba(118,86,200,.6),transparent);pointer-events:none}
+.header.scrolled{padding-top:6px;padding-bottom:6px;background:rgba(250,249,246,.96);box-shadow:0 15px 40px rgba(47,39,91,.1)}
+.header .brand{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;line-height:0;isolation:auto}
+.header .brand-mark{display:block;width:240px;line-height:0}
+.header .brand img.logo-light{display:block;width:240px;height:auto;max-width:none;aspect-ratio:1563/805;object-fit:contain;mix-blend-mode:normal;filter:none;transform:none}
+.brand-symbol{display:none}
+.header .menu{justify-self:center;position:relative;display:flex;align-items:center;justify-content:center;gap:4px;padding:6px;border:1px solid rgba(118,86,200,.10);border-radius:999px;background:rgba(240,239,245,.58);font-family:var(--font-ui);font-size:.86rem;line-height:1.2;isolation:isolate}
+.header .menu a{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:13px 14px;border-radius:999px;min-height:44px;white-space:nowrap;color:#50545F;font-weight:500;transition:color .24s,transform .24s,background .24s}
+.header .menu a::after{display:none}
+.header .menu a.active{color:#3559C7;font-weight:600;background:rgba(255,255,255,.76)}
+.header .menu a:hover,.header .menu a:focus-visible{color:#5740A0;transform:translateY(-1px);background:rgba(255,255,255,.76)}
+.header .menu.has-glider a.active,.header .menu.has-glider a:hover,.header .menu.has-glider a:focus-visible{background:transparent}
+.nav-glider{position:absolute;left:0;top:6px;bottom:6px;width:0;z-index:0;pointer-events:none;border:1px solid rgba(118,86,200,.2);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(53,89,199,.045),rgba(118,86,200,.09));box-shadow:0 3px 12px rgba(66,50,139,.09),inset 0 1px 0 white;opacity:0;transition:transform .34s cubic-bezier(.2,.8,.2,1),width .34s cubic-bezier(.2,.8,.2,1),opacity .18s}
+.header-actions{gap:10px}
+.lang-switch{padding:4px;border-color:rgba(118,86,200,.18);background:rgba(255,255,255,.7);border-radius:999px}
+.lang-btn{padding:10px 11px;font-size:.75rem;min-height:38px;border-radius:999px;font-weight:500;color:#65606F;transition:color .2s,background .2s,box-shadow .2s}
+.lang-btn.active{background:var(--prism-action);color:white;box-shadow:0 3px 10px rgba(75,61,161,.18)}
+.menu-toggle{border-color:rgba(118,86,200,.2);border-radius:14px;background:linear-gradient(135deg,white,rgba(118,86,200,.06))}
+.menu-toggle span{background:#5544A1}
+/* Gather light on hover/focus, then move forward. No unattended looping shine. */
+.btn.dark,.footer-cta{position:relative;isolation:isolate;overflow:hidden;background:var(--prism-action);border:1px solid rgba(118,86,200,.28);border-radius:16px;color:white;min-height:50px;padding:15px 22px;font-family:var(--font-ui);font-size:.88rem;font-weight:600;line-height:1.35;box-shadow:0 9px 24px rgba(64,65,159,.17),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .28s,box-shadow .28s,border-color .28s}
+.btn.dark::before,.footer-cta::before{content:"";position:absolute;inset:-70% -30%;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 47%,transparent 62%);transform:translateX(-100%);transition:none}
+.btn.dark:hover,.btn.dark:focus-visible,.footer-cta:hover,.footer-cta:focus-visible{transform:translateY(-3px);border-color:rgba(118,86,200,.5);box-shadow:0 15px 30px rgba(64,65,159,.23),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn.dark:hover::before,.btn.dark:focus-visible::before,.footer-cta:hover::before,.footer-cta:focus-visible::before{transform:translateX(100%);transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.btn.dark:active,.footer-cta:active{transform:translateY(0);box-shadow:0 4px 12px rgba(64,65,159,.16)}
+.footer-brand{padding:0}
+.footer-brand .footer-logo-plate{padding:14px;border-radius:18px;background:#f5f2ec;line-height:0}
+footer.site-footer .footer-brand img{width:240px;height:auto;max-height:none;object-fit:contain;filter:none;mix-blend-mode:normal}
+@media(min-width:1101px) and (max-width:1250px){.header{gap:12px;padding-left:14px;padding-right:14px}
+.header .menu a{padding-left:11px;padding-right:11px;font-size:.80rem}
+}
+@media(max-width:1100px){.header{grid-template-columns:240px 1fr;gap:16px}
+.header-actions{justify-self:end}
+.menu-toggle{display:block}
+.header .menu{position:absolute;left:0;right:0;top:calc(100% + 10px);display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:12px;gap:4px;border:1px solid rgba(118,86,200,.16);border-radius:23px;background:rgba(250,249,246,.98);box-shadow:0 18px 50px rgba(47,39,91,.12);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .24s,transform .24s,visibility .24s}
+.header .menu.open{visibility:visible;opacity:1;transform:none}
+.header .menu a{justify-content:flex-start;padding:15px 18px;font-size:1rem;border-radius:14px;min-height:48px}
+.header .menu a.active,.header .menu.has-glider a.active{background:linear-gradient(110deg,rgba(53,89,199,.07),rgba(118,86,200,.09));color:#5544A1}
+.nav-glider{display:none}
+.header .menu a:hover{background:rgba(118,86,200,.06);transform:none}
+}
+@media(max-width:640px){.header{grid-template-columns:82px 1fr;width:calc(100% - 24px);gap:12px;border-radius:22px;padding:8px 12px;top:10px}
+.header.scrolled{padding:6px 12px}
+.header .brand-mark{width:82px;display:flex;align-items:center;justify-content:center}
+.header .brand img.logo-light{display:none}
+.brand-symbol{position:relative;display:block;width:82px;height:68px;overflow:hidden}
+.brand-symbol img{position:absolute;left:0;top:0;display:block;width:132px!important;max-width:none;height:68px!important;object-fit:contain;clip-path:polygon(0 0,64% 0,64% 29%,50% 37%,44% 53%,39% 75%,34% 100%,0 100%)}
+.header-actions{gap:9px}
+.lang-btn{font-size:.76rem;padding:10px 12px;min-height:40px}
+.menu-toggle{width:44px;height:44px;flex:0 0 auto}
+.btn.dark,.footer-cta{font-size:.87rem;padding:14px 18px;min-height:49px}
+.footer-brand .footer-logo-plate{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){.nav-glider,.header,.header .menu a,.btn.dark,.footer-cta,.lang-btn{transition:none!important}
+.btn.dark::before,.footer-cta::before,.founder-light{display:none!important}
+.btn.dark:hover,.footer-cta:hover,.header .menu a:hover{transform:none!important}
+}
+html.motion-paused .nav-glider,html.motion-paused .header,html.motion-paused .header .menu a,html.motion-paused .btn.dark,html.motion-paused .footer-cta{transition:none!important}
+html.motion-paused .btn.dark::before,html.motion-paused .footer-cta::before,html.motion-paused .founder-light{display:none!important}
+html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,html.motion-paused .footer-cta:hover,html.motion-paused .footer-cta:focus-visible,html.motion-paused .header .menu a:hover{transform:none!important}
+/* V11 — warm glass, depth and an editorial founder portrait. */
+.header{background:linear-gradient(120deg,rgba(255,255,255,.62),rgba(245,242,236,.52));backdrop-filter:blur(26px) saturate(125%);-webkit-backdrop-filter:blur(26px) saturate(125%);border-color:rgba(255,255,255,.75);box-shadow:0 10px 32px rgba(47,39,91,.06),inset 0 1px 0 rgba(255,255,255,.85)}
+.header.scrolled{background:rgba(249,247,242,.77);box-shadow:0 8px 30px rgba(47,39,91,.09)}
+.header .menu{background:transparent;border-color:transparent}
+.nav-glider{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 white,0 3px 12px rgba(53,89,199,.05)}
+.footer-brand .footer-logo-plate{padding:0;background:transparent;border-radius:0}
+footer.site-footer .footer-brand img{width:270px;max-width:100%}
+.footer-col h4{color:#b5b6c0}
+.footer-col a{color:#d0d1d5}
+.footer-brand p{color:#b9bbc3}
+.footer-motion-inline{display:none}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.header,.header.scrolled{background:#f5f2ec}
+}
+@media(max-width:1100px){.header .menu{background:rgba(250,249,246,.97);border-color:rgba(118,86,200,.12)}
+}
+/* V13.2 — navigation clarity, layered hero interaction and restrained parallax. */
+.enter{display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+.enter b{display:none;font:600 1rem/1 var(--font-mono)}
+.header .menu a[data-section="ecosystem"]{--section-color:#7656C8}
+.header .menu a[data-section="capabilities"]{--section-color:#35B7C4}
+.header .menu a[data-section="philosophy"]{--section-color:#D5A447}
+.header .menu a[data-section="founder"]{--section-color:#D75E9A}
+.header .menu a.active{color:var(--section-color)}
+.nav-glider{
+  --section-color:#7656C8;
+  border-color:color-mix(in srgb,var(--section-color) 28%,transparent);
+  background:linear-gradient(135deg,rgba(255,255,255,.96),color-mix(in srgb,var(--section-color) 10%,transparent));
+  box-shadow:0 3px 14px color-mix(in srgb,var(--section-color) 13%,transparent),inset 0 1px 0 white;
+}
+@media(min-width:1101px) and (max-width:1250px){.header{gap:18px}
+.header .brand img.logo-light{width:clamp(180px,16vw,200px);height:auto}
+.header .menu a{padding-left:13px;padding-right:13px;font-size:.82rem}
+}
+@media(max-width:930px){.enter{display:flex!important;width:44px;height:44px;padding:10px;flex:0 0 44px;border-radius:14px}
+.enter span{display:none}
+.enter b{display:inline}
+}
+/* V14.2 — About entry and accessible ecosystem navigation group. */
+.header .nav-dropdown{position:relative;display:flex;align-items:center}
+.header .nav-dropdown>.nav-trigger{position:relative;padding:8px 0;color:#4D4F55;white-space:nowrap;transition:color .25s ease}
+.header .nav-dropdown>.nav-trigger::after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,var(--blue),var(--rose),var(--gold));transition:right .3s ease}
+.header .nav-dropdown>.nav-trigger:hover::after,.header .nav-dropdown>.nav-trigger:focus-visible::after,.header .nav-dropdown>.nav-trigger.active::after{right:0}
+.header .nav-panel{position:absolute;top:calc(100% + 11px);left:50%;width:252px;padding:10px;display:grid;gap:3px;opacity:0;visibility:hidden;transform:translate(-50%,-7px);border:1px solid var(--line);border-radius:15px;background:rgba(252,251,247,.97);box-shadow:0 22px 60px rgba(23,25,29,.13);backdrop-filter:blur(18px);transition:opacity .22s ease,transform .22s ease,visibility .22s;pointer-events:none}
+.header .nav-dropdown:hover .nav-panel,.header .nav-dropdown:focus-within .nav-panel{opacity:1;visibility:visible;transform:translate(-50%,0);pointer-events:auto}
+.header .nav-panel>a,.header .nav-panel>.nav-soon-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;color:#4D4F55;font-size:.72rem;font-weight:600}
+.header .nav-panel>a::after{display:none}
+.header .nav-panel>a:hover,.header .nav-panel>a:focus-visible{background:rgba(118,86,200,.075)}
+.header .nav-panel small{font:500 .61rem var(--font-mono);color:#777981}
+@media(max-width:1100px){.header .nav-dropdown{display:block}
+.header .nav-dropdown>.nav-trigger{display:block;padding:13px 18px}
+.header .nav-panel{position:static;width:auto;padding:2px 11px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;pointer-events:auto}
+.header .nav-panel>a,.header .nav-panel>.nav-soon-item{padding:9px 12px;font-size:.7rem}
+}
+
+
+/* ABOUT V3 — contemporary editorial system */
+.about-progress{position:fixed;top:0;left:0;z-index:180;width:100%;height:2px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--blue),var(--violet),var(--rose),var(--gold));box-shadow:0 0 18px rgba(118,86,200,.48);pointer-events:none}
+main{counter-reset:aboutSection}
+main>section:not(.about-manifesto){counter-increment:aboutSection}
+main>section:not(.about-manifesto)::after{content:"0" counter(aboutSection);position:absolute;right:max(20px,calc((100vw - 1220px)/2));top:42px;font:500 .62rem var(--font-mono);letter-spacing:.14em;color:rgba(23,25,29,.32)}
+section{padding:clamp(92px,10vw,148px) 0}
+.section-head{grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);gap:clamp(42px,8vw,110px);margin-bottom:clamp(55px,7vw,92px)}
+.section-head h2{font-size:clamp(4rem,7vw,7.8rem);line-height:.88}
+.section-copy{max-width:680px;font-size:clamp(.96rem,1.25vw,1.08rem)}
+#why{background:linear-gradient(115deg,#F5F2EC 0 54%,rgba(255,255,255,.52) 54% 100%)}
+#why .section-head{align-items:center}
+#why .quote-line{margin-top:42px;padding:24px 0 0;border-left:0;border-top:1px solid var(--ink);font-size:clamp(1.65rem,2.5vw,2.45rem)}
+#meaning{overflow:hidden;background:#ECE7DE}
+#meaning::before{content:"DISTILL";position:absolute;left:-.03em;bottom:-.18em;font:600 clamp(9rem,25vw,28rem)/1 var(--font-display);letter-spacing:-.08em;color:rgba(255,255,255,.42);pointer-events:none}
+.meaning-grid{position:relative;grid-template-columns:1.12fr .88fr .88fr;gap:10px}
+.meaning-card{min-height:510px;border:0;border-radius:4px;background:rgba(255,255,255,.64);box-shadow:none}
+.meaning-card:first-child{background:var(--ink);color:white;transform:translateY(-22px)}
+.meaning-card:first-child p{color:rgba(255,255,255,.64)}
+.meaning-card h3{margin-top:clamp(72px,10vw,142px);font-size:clamp(2.2rem,3.5vw,3.8rem)}
+.meaning-symbol{font-size:clamp(6rem,10vw,10rem)}
+.meaning-card:hover{transform:translateY(-10px);box-shadow:0 35px 100px rgba(23,25,29,.13)}
+.meaning-card:first-child:hover{transform:translateY(-30px)}
+.ecosystem{padding-block:clamp(120px,12vw,180px)}
+.ecosystem-grid{gap:1px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13)}
+.world{min-height:560px;border:0;border-radius:0;background:#1B1D22;box-shadow:none}
+.world::after{content:"";position:absolute;inset:auto 0 0;height:5px;background:var(--accent);transform:scaleX(.14);transform-origin:left;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.world:hover{transform:none;background:#202229}
+.world:hover::after{transform:scaleX(1)}
+.world-verb{font-size:clamp(4.8rem,7vw,8rem)}
+.capabilities-detail{background:#F7F4EE}
+.capability-chapters{border:0;display:grid;gap:22px}
+.capability-chapter{position:relative;grid-template-columns:145px minmax(0,1.25fr) minmax(280px,.7fr);gap:clamp(28px,5vw,72px);padding:clamp(38px,5vw,68px);border:1px solid var(--line);border-radius:32px;background:rgba(255,255,255,.76);overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}
+.capability-chapter::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--accent)}
+.capability-chapter::after{content:"";position:absolute;width:380px;aspect-ratio:1;right:-220px;top:-240px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 68%);opacity:.12;pointer-events:none}
+.capability-chapter:hover{transform:translateY(-8px);box-shadow:0 38px 100px rgba(23,25,29,.11)}
+.chapter-index span{font-size:clamp(5rem,8vw,9rem);letter-spacing:-.08em;opacity:.9}
+.chapter-main h3{font-size:clamp(2.8rem,4.6vw,5.2rem)}
+.chapter-principle{background:transparent;border-left:0;border-top:1px solid var(--accent);padding:22px 0 0}
+.chapter-scope{border-radius:22px;background:color-mix(in srgb,var(--accent) 6%,white);box-shadow:inset 0 0 0 1px rgba(255,255,255,.58)}
+#model{background:#17191D;color:#F5F2EC}
+#model::after{color:rgba(255,255,255,.28)}
+#model .section-copy{color:#B8BAC1}
+.model-panel{border:1px solid rgba(255,255,255,.13);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));box-shadow:none}
+.model-chip{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.035)}
+.model-chip strong{color:#F5F2EC}
+.model-result{border-color:rgba(255,255,255,.15)}
+#journey{overflow:hidden;background:linear-gradient(180deg,#F5F2EC,#ECE7DE)}
+.journey-track{gap:10px;border:0}
+.journey-step{min-height:420px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.5);transition:.35s}
+.journey-step:last-child{border-right:1px solid var(--line)}
+.journey-step:hover{transform:translateY(-9px);background:white;box-shadow:0 28px 70px rgba(23,25,29,.09)}
+.journey-step h3{margin-top:110px;font-size:2.15rem}
+#purpose{background:#FCFBF7}
+.pmv-grid{gap:1px;background:var(--line);border:1px solid var(--line)}
+.pmv{min-height:470px;border:0;border-radius:0;background:#FCFBF7;transition:background .35s,color .35s}
+.pmv:hover{background:var(--ink);color:white}
+.pmv:hover p{color:rgba(255,255,255,.66)}
+.pmv h3{font-size:clamp(2.4rem,3.4vw,3.8rem);line-height:1}
+#principles{background:#EEE9E0}
+.principles-grid{gap:12px}
+.principle{min-height:330px;padding:34px;border:0;border-top:5px solid var(--accent);background:rgba(255,255,255,.68);display:flex;flex-direction:column;justify-content:flex-end;transition:.35s}
+.principle:hover{transform:translateY(-8px);box-shadow:0 25px 70px rgba(23,25,29,.09)}
+.principle h3{font-size:clamp(2rem,3vw,3.25rem);line-height:1}
+#internal{background:#FCFBF7}
+.internal-panel{min-height:650px;border-radius:36px;box-shadow:0 45px 120px rgba(23,25,29,.16)}
+.internal-copy{display:flex;flex-direction:column;justify-content:center}
+.founder-bridge{position:relative;overflow:hidden;background:radial-gradient(circle at 75% 20%,rgba(215,94,154,.55),transparent 32%),radial-gradient(circle at 18% 80%,rgba(53,183,196,.35),transparent 32%),linear-gradient(145deg,#2C3E8F,#7656C8 55%,#1B1D24)}
+.founder-bridge::before{content:"梦萃";position:absolute;right:-.12em;top:-.05em;writing-mode:vertical-rl;font:600 11rem/1 "Noto Serif SC",serif;color:rgba(255,255,255,.07)}
+.closing{background:#F5F2EC}
+.closing h2{font-size:clamp(4rem,8vw,9rem);line-height:.86}
+.reveal{transform:translateY(32px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{transform:none}
+@media(max-width:1100px){
+ .meaning-grid{grid-template-columns:1fr 1fr}.meaning-card:first-child{grid-column:1/-1;min-height:390px;transform:none}.meaning-card:first-child:hover{transform:translateY(-8px)}
+ .capability-chapter{grid-template-columns:100px 1fr}.chapter-scope{grid-column:2}
+ .journey-track{grid-template-columns:repeat(2,1fr)}.journey-step:last-child{grid-column:1/-1}
+}
+@media(max-width:900px){
+ main>section:not(.about-manifesto)::after{right:20px}
+ .section-head{grid-template-columns:1fr;gap:28px}.section-head h2{font-size:clamp(3.7rem,12vw,6rem)}
+ #why{background:#F5F2EC}.meaning-grid{grid-template-columns:1fr}.meaning-card:first-child{grid-column:auto}
+ .world{min-height:430px}.capability-chapter{grid-template-columns:1fr}.chapter-scope{grid-column:auto}
+ .journey-track{grid-template-columns:1fr}.journey-step,.journey-step:last-child{grid-column:auto;min-height:280px;display:block}.journey-step h3{margin-top:50px}.journey-step p{grid-column:auto}
+ .pmv-grid{grid-template-columns:1fr}.pmv{min-height:330px}
+}
+@media(max-width:600px){
+ .capability-chapter{padding:30px 22px;border-radius:22px}.chapter-index span{font-size:4.7rem}
+ .chapter-main h3{font-size:2.65rem}.chapter-scope{padding:20px}
+ .internal-panel{min-height:0;border-radius:24px}.founder-bridge{min-height:440px}
+}
+@media(prefers-reduced-motion:reduce){.about-progress{display:none}.capability-chapter,.meaning-card,.world,.journey-step,.pmv,.principle{transition:none!important}}
+
 </style>
 </head>
 <body>
+<div class="about-progress" id="aboutProgress" aria-hidden="true"></div>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="header" id="siteHeader">
-<a class="brand" href="./index.html#top" aria-label="Malttrix home"><span class="brand-mark"><img class="logo-light" src="./assets/malttrix-header.webp" alt="Malttrix｜梦萃 logo" width="1563" height="805" decoding="async"><span class="brand-symbol" aria-hidden="true"><img src="./assets/malttrix-header.webp" alt="" width="1563" height="805" decoding="async"></span></span></a>
-<nav class="menu" id="primaryMenu" aria-label="Primary navigation"><span class="nav-glider" aria-hidden="true"></span><a class="active" href="./about.html" aria-current="page" data-i18n="nav.about">About</a><div class="nav-dropdown"><a class="nav-trigger" href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem ▼</a><div class="nav-panel"><a href="./index.html#ecosystem"><span data-i18n="nav.overview">Ecosystem overview</span><small>01—03</small></a><a href="https://www.vanmoira.com" target="_blank" rel="noopener"><span>VANMOIRA｜梵·暮汐</span><small>↗</small></a><span><span>Lumvisio｜粼·视</span><small data-i18n="nav.soon">SOON</small></span><a href="https://www.immersation.com" target="_blank" rel="noopener"><span>Immersation｜智枢阁</span><small>↗</small></a></div></div><a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a><a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a><a href="./index.html#founder" data-i18n="nav.founder">Founder</a></nav>
-<div class="header-actions"><button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryMenu" aria-label="Open navigation"><span></span><span></span></button><div class="lang-switch" role="group" aria-label="Choose language"><button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button><button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">中文</button></div><a class="enter" href="./index.html#ecosystem"><span data-i18n="nav.enter">Explore</span><b aria-hidden="true">↘</b></a></div>
+<a class="brand" href="./index.html#top" aria-label="Malttrix home" data-i18n-aria="scene.brandhome">
+<span class="brand-mark">
+<img class="logo-light" src="./assets/malttrix-header.webp" alt="Malttrix｜梦萃 logo" width="1563" height="805" decoding="async">
+
+<span class="brand-symbol" aria-hidden="true"><img src="./assets/malttrix-header.webp" alt="" width="1563" height="805" decoding="async"></span></span>
+</a>
+
+<nav class="menu" id="primaryMenu" aria-label="Primary navigation" data-i18n-aria="scene.navigation">
+<span class="nav-glider" aria-hidden="true"></span>
+<a class="active" href="./about.html" aria-current="page" data-i18n="nav.about">About</a>
+<div class="nav-dropdown">
+<a class="nav-trigger" href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
+<div class="nav-panel">
+<a href="./index.html#ecosystem"><span data-i18n="nav.overview">Ecosystem overview</span><small>01—03</small></a>
+<a href="https://www.vanmoira.com" target="_blank" rel="noopener"><span>VANMOIRA｜梵·暮汐</span><small>↗</small></a>
+<span class="nav-soon-item"><span>Lumvisio｜粼·视</span><small data-i18n="nav.soon">SOON</small></span>
+<a href="https://www.immersation.com" target="_blank" rel="noopener"><span>Immersation｜智枢阁</span><small>↗</small></a>
+</div>
+</div>
+<a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+<a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a>
+<a href="./index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<div class="header-actions">
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryMenu" aria-label="Open navigation"><span></span><span></span></button>
+<div class="lang-switch" role="group" aria-label="Choose language" data-i18n-aria="scene.languages">
+<button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button>
+<button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">中文</button>
+</div>
+<a class="enter" href="./index.html#ecosystem" data-i18n-aria="nav.enter" aria-label="Explore"><span data-i18n="nav.enter">Explore</span><b aria-hidden="true">↘</b></a>
+</div>
 </header>
 <main id="main">
 <section class="about-hero about-manifesto">
@@ -209,15 +614,55 @@ html[lang="zh-CN"] .about-hero h1{font-size:clamp(3.8rem,7.2vw,7.2rem)}
 <div class="container reveal"><div class="kicker" data-i18n="closing.kicker">An evolving matrix</div><h2 data-i18n-html="closing.title">Hear. See. Think.<br><span class="prism-text">Create what can endure.</span></h2><p data-i18n="closing.copy">A sound can inspire an image. An image can become a world. A question can become a body of knowledge. An idea, given enough care and time, can become something enduring.</p><div class="closing-actions"><a class="button dark" href="./index.html#ecosystem" data-i18n="closing.ecosystem">Explore the ecosystem ↗</a><a class="button" href="./index.html#top" data-i18n="closing.home">Return home ↑</a></div></div>
 </section>
 </main>
-<footer class="site-footer"><div class="container"><div class="footer-top">
-<div class="footer-brand"><div class="footer-logo-plate"><img src="https://cms.malttrix.com/wp-content/uploads/2026/08/Malttrix-_-梦萃_Dark.png" width="1563" height="805" loading="lazy" alt="Malttrix 梦萃 — gold signature"></div><div class="footer-signature" data-i18n-html="footer.signature">Born from imagination.<br>Refined into form.</div><p data-i18n="footer.copy">An independent creative intelligence ecosystem built around sound, vision and cognition.</p></div>
-<div class="footer-col"><h4 data-i18n="footer.portfolio">Portfolio</h4><ul><li><a href="https://www.vanmoira.com" target="_blank" rel="noopener">VANMOIRA｜梵·暮汐</a></li><li><span>Lumvisio｜粼·视</span> <span class="soon" data-i18n="nav.soon">soon</span></li><li><a href="https://www.immersation.com" target="_blank" rel="noopener">Immersation｜智枢阁</a></li></ul></div>
-<div class="footer-col"><h4 data-i18n="footer.explore">Explore</h4><ul><li><a href="./about.html" data-i18n="nav.about">About</a></li><li><a href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem ▼</a></li><li><a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li><li><a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a></li><li><a href="./index.html#founder" data-i18n="nav.founder">Founder</a></li></ul></div></div>
-<div class="footer-bottom"><div>© 2026 Malttrix｜梦萃. <span data-i18n="footer.rights">All rights reserved.</span></div><div class="footer-motion-inline"><span>Hover</span><span>Gather</span><span>Distill</span><span>Form</span><span>Fly</span></div></div></div></footer>
+<footer class="site-footer">
+<div class="container">
+
+<div class="footer-top">
+
+<div class="footer-brand">
+<div class="footer-logo-plate"><img src="https://cms.malttrix.com/wp-content/uploads/2026/08/Malttrix-_-梦萃_Dark.png" width="1563" height="805" loading="lazy" alt="Malttrix 梦萃 — gold signature"></div>
+<div class="footer-signature" data-i18n-html="footer.signature">Born from imagination.<br>Refined into form.</div>
+<p data-i18n="footer.copy">An independent creative intelligence ecosystem built around sound, vision and cognition.</p>
+</div>
+
+<div class="footer-col">
+<h4 data-i18n="footer.portfolio">Portfolio</h4>
+<ul>
+<li><a class="portfolio-link" href="https://www.vanmoira.com" target="_blank" rel="noopener">VANMOIRA｜梵·暮汐</a></li>
+<li><span class="soon-item">Lumvisio｜粼·视</span> <span class="soon" data-i18n="nav.soon">soon</span></li>
+<li><a class="portfolio-link" href="https://www.immersation.com" target="_blank" rel="noopener">Immersation｜智枢阁</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4 data-i18n="footer.explore">Explore</h4>
+<ul>
+<li><a href="./about.html" data-i18n="nav.about">About</a></li>
+<li><a href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a></li>
+<li><a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
+<li><a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a></li>
+<li><a href="./index.html#archetypes" data-i18n="nav.archetypes">Principles</a></li>
+<li><a href="./index.html#founder" data-i18n="nav.founder">Founder</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div>© 2026 Malttrix｜梦萃. <span data-i18n="footer.rights">All rights reserved.</span></div>
+<div class="footer-bottom-right">
+<div class="footer-motion-inline">
+<span data-i18n="motion.hover">Hover</span><span data-i18n="motion.gather">Gather</span><span data-i18n="motion.distill">Distill</span><span data-i18n="motion.form">Form</span><span data-i18n="motion.fly">Fly</span>
+</div>
+</div>
+</div>
+
+</div>
+</footer>
 <script>
 const copy={
  en:{
-  "nav.about":"About","nav.ecosystem":"Ecosystem ▼","nav.overview":"Ecosystem overview","nav.soon":"SOON","nav.capabilities":"Capabilities","nav.philosophy":"Philosophy","nav.founder":"Founder","nav.enter":"Explore",
+  "nav.about":"About","nav.ecosystem":"Ecosystem","nav.overview":"Ecosystem overview","nav.soon":"SOON","nav.capabilities":"Capabilities","nav.philosophy":"Philosophy","nav.founder":"Founder","nav.enter":"Explore",
   "hero.scroll":"Scroll to discover the matrix","hero.kicker":"About Malttrix｜梦萃","hero.title":"Imagination,<br><span class=\"prism-text\">distilled</span> into<br>enduring form.","hero.lede":"Malttrix｜梦萃 is an independent creative intelligence ecosystem built across sound, vision and cognition. We create, incubate and operate original brands and intellectual property — together with the systems that allow them to grow over time.","hero.signature":"DISTILL IMAGINATION · BUILD WHAT ENDURES",
   "why.kicker":"Why we exist","why.title":"Give imagination<br>room to grow.","why.p1":"Some ideas begin as a melody. Others begin as an image, a question, a feeling, a piece of knowledge or a new way of seeing the world. But an idea alone does not become something enduring.","why.p2":"Malttrix connects original thinking with disciplined creation, intelligent systems and long-term stewardship — helping ideas evolve from possibility into creative work, intellectual property, brands and assets that can continue developing over time.","why.quote":"Born from imagination. Refined into form.",
   "meaning.kicker":"The meaning behind Malttrix","meaning.title":"A name built<br>as a process.","meaning.intro":"The identity combines imagination, disciplined distillation and a multidimensional matrix for creation.","meaning.dream.h":"Imagination","meaning.dream.p":"Possibility before it has taken form: the intuition before the concept, the feeling before the language, and the world that first exists only in imagination.","meaning.distill.h":"Distillation","meaning.distill.p":"To gather, refine, concentrate and bring into form — selecting what matters and transforming complexity into something coherent.","meaning.matrix.h":"The Creative Matrix","meaning.matrix.p":"A multidimensional environment where artistic expression, knowledge, technology and systems interact — moving imagination toward enduring value.",
@@ -234,7 +679,7 @@ const copy={
   "footer.copy":"An independent creative intelligence ecosystem built around sound, vision and cognition.","footer.portfolio":"PORTFOLIO","footer.explore":"EXPLORE","footer.rights":"All rights reserved."
  },
  zh:{
-  "nav.about":"关于梦萃","nav.ecosystem":"生态系统 ▼","nav.overview":"生态系统总览","nav.soon":"即将上线","nav.capabilities":"核心能力","nav.philosophy":"品牌哲学","nav.founder":"创始人","nav.enter":"探索",
+  "nav.about":"关于梦萃","nav.ecosystem":"生态系统","nav.overview":"生态系统总览","nav.soon":"即将上线","nav.capabilities":"核心能力","nav.philosophy":"品牌哲学","nav.founder":"创始人","nav.enter":"探索",
   "hero.scroll":"向下探索梦萃矩阵","hero.kicker":"关于 Malttrix｜梦萃","hero.title":"萃取<span class=\"prism-text\">想象</span>，<br>构筑长久。","hero.lede":"Malttrix｜梦萃是一个横跨听觉、视觉与认知的独立创意智能品牌生态。我们创造、孵化并运营原创品牌与知识产权，同时构建让它们持续成长的创意、技术与运营系统。","hero.signature":"为梦而生 · 以萃成形",
   "why.kicker":"我们为何存在","why.title":"让想象拥有<br>持续成长的能力。","why.p1":"有些想法始于旋律，有些始于图像、问题、感受、知识，或一种观看世界的新方式。但想法本身，并不会自然成为恒久之物。","why.p2":"梦萃将原创思考与有纪律的创造、智能系统和长期管理连接起来，让想法从可能性发展为作品、知识产权、品牌与能够持续成长的资产。","why.quote":"为梦而生，以萃成形。",
   "meaning.kicker":"梦萃之名","meaning.title":"一个名字，<br>也是一套过程。","meaning.intro":"梦萃结合了想象、严谨的萃取过程，以及承载多维创造的矩阵。","meaning.dream.h":"想象","meaning.dream.p":"尚未成形的可能性：概念之前的直觉、语言之前的感受，以及最初只存在于想象中的世界。","meaning.distill.h":"萃取","meaning.distill.p":"聚合、提炼、浓缩并使其成形——选择真正重要的部分，将复杂转化为连贯清晰的表达。","meaning.matrix.h":"创意矩阵","meaning.matrix.p":"艺术表达、知识、技术与系统在此交汇，让想象持续转化为创造、知识产权与恒久价值。",
@@ -264,6 +709,9 @@ Object.assign(copy.zh,{"hero.meta":"独立创意智能品牌生态","hero.axis.s
  const header=document.getElementById('siteHeader'),headerState=()=>header.classList.toggle('scrolled',scrollY>30);addEventListener('scroll',headerState,{passive:true});headerState();
  if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -7%'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
 })();
+</script>
+<script>
+(()=>{const bar=document.getElementById('aboutProgress');if(!bar)return;const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')'};addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});update()})();
 </script>
 </body>
 </html>
