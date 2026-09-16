@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-v14-4">
+<html lang="en" data-release="malttrix-v14-5">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -748,6 +748,14 @@ html.motion-paused .hero-atmosphere i{animation-play-state:paused}
   }
   .header .nav-panel{z-index:2}
   .header .nav-trigger{z-index:3}
+}
+
+
+/* V14.5 global glass opacity refinement */
+.header{background:rgba(245,242,236,.62)!important}
+.header.scrolled{background:rgba(245,242,236,.84)!important}
+@supports(backdrop-filter:blur(1px)){
+ .header{backdrop-filter:blur(24px) saturate(1.12);-webkit-backdrop-filter:blur(24px) saturate(1.12)}
 }
 
 </style>
