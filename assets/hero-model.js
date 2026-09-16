@@ -1,4 +1,4 @@
-/* V14. Full-scene hero motion with an independently interactive PBR sculpture.
+/* V14.1. Full-scene hero motion with an independently interactive PBR sculpture.
    Static sculpture: object/camera motion, not a fabricated skeletal wingbeat. */
 (()=>{
  'use strict';
@@ -32,7 +32,7 @@
   const idleYaw=still?0:Math.sin(time*.38)*.03;
   bird.rotation.set((still?0:py*.34*hover),-.035+dragYaw-gather*.05+form*.08+idleYaw+(still?0:px*.65*hover),-fly*.12+(still?0:Math.sin(time*.8)*.026));
   bird.position.set(depth*.10+fly*.42,gather*.035+fly*.32-depth*.05+(still?0:Math.sin(time*.95)*.035),depth*.20);
-  bird.scale.setScalar(1.23+gather*.10+form*.025-fly*.015+(still?0:Math.sin(time*1.12)*.01));
+  bird.scale.setScalar(1.28+gather*.10+form*.025-fly*.015+(still?0:Math.sin(time*1.12)*.01));
   camera.position.x=still?0:px*.025;camera.position.y=.08+(still?0:py*.025);camera.position.z=baseCameraZ-(still?0:depth*.14);camera.lookAt(0,0,0);
   key.position.x=-2+(still?0:Math.sin(time*.32)*.85+distill*1.05);rim.position.y=1+(still?0:Math.sin(time*.46)*.38);rim.intensity=2.2+(still?0:Math.sin(time*.72)*.22+distill*.22+form*.28);
   if(material){material.roughness=.34-distill*.14;material.clearcoat=.68+distill*.3;material.emissiveIntensity=.22+distill*.2+form*.08;}
@@ -68,7 +68,7 @@
    texture('hummingbird-diffuse.webp',true),texture('hummingbird-normal.webp'),texture('hummingbird-metalrough.webp'),texture('hummingbird-emissive.webp',true)
   ]).then(([buffer,map,normal,metalrough,emissive])=>{
    const g=geometry(buffer);material=new T.MeshPhysicalMaterial({map,normalMap:normal,normalScale:new T.Vector2(.72,.72),metalnessMap:metalrough,roughnessMap:metalrough,metalness:.55,roughness:.34,clearcoat:.68,clearcoatRoughness:.16,iridescence:.42,iridescenceIOR:1.32,iridescenceThicknessRange:[110,310],emissive:new T.Color('#ffffff'),emissiveMap:emissive,emissiveIntensity:.22,side:T.DoubleSide});
-   const sculpture=new T.Mesh(g,material);sculpture.position.y=-.5;bird.add(sculpture);loaded=true;host.dataset.triangles=String(g.index.count/3);host.dataset.material='pbr-prismatic-crystal';host.dataset.motion='hover-gather-distill-form-fly-360-drag';host.dataset.dragging='false';resize();start();
+   const sculpture=new T.Mesh(g,material);sculpture.position.y=-.42;bird.add(sculpture);loaded=true;host.dataset.triangles=String(g.index.count/3);host.dataset.material='pbr-prismatic-crystal';host.dataset.motion='hover-gather-distill-form-fly-360-drag';host.dataset.dragging='false';resize();start();
   }).catch(()=>{host.dataset.render='fallback';}).finally(()=>clearTimeout(timeout));
  }
 })();
