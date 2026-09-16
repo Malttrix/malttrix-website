@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-about-v4">
+<html lang="en" data-release="malttrix-about-v4-1">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -462,6 +462,22 @@ html[lang="zh-CN"] .manifesto-copy h1,html[lang="zh-CN"] .purpose-lead h2,html[l
  .founder-figure{min-height:500px}.founder-figure img{max-height:510px}.closing h2{font-size:clamp(4rem,17vw,6.4rem)}.closing-actions{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.flight-orbit,.founder-aura,.wave i{animation:none}.reveal{opacity:1;transform:none;transition:none}.cycle-track{transform:none!important}}
+
+
+/* V14.4 shell fixes — dropdown clearance and language contrast */
+.header .lang-btn.active{
+  color:#fff!important;
+  background:#17191D!important;
+  box-shadow:0 4px 14px rgba(23,25,29,.22)!important;
+}
+@media(min-width:1101px){
+  .header .nav-panel{top:calc(100% + 20px)}
+  .header .nav-dropdown::after{
+    content:"";position:absolute;z-index:0;left:-22px;right:-22px;top:100%;height:22px;
+  }
+  .header .nav-panel{z-index:2}
+  .header .nav-trigger{z-index:3}
+}
 
 </style>
 </head>
