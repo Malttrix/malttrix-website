@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-release="malttrix-about-v1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17191D">
+<title>About Malttrix｜梦萃 — Independent Creative Intelligence Ecosystem</title>
+<meta name="description" content="Discover Malttrix｜梦萃: an independent creative intelligence ecosystem building original brands across sound, vision and cognition.">
+<link rel="canonical" href="https://www.malttrix.com/about">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#17191D;--ivory:#F5F2EC;--paper:#FCFBF7;--graphite:#454850;--line:rgba(23,25,29,.12);
+ --blue:#3559C7;--cyan:#35B7C4;--jade:#69A982;--violet:#7656C8;--rose:#D75E9A;--coral:#E86D60;--gold:#D5A447;
+ --font-ui:Manrope,"Noto Sans SC",sans-serif;--font-display:"Cormorant Garamond","Noto Serif SC",serif;--font-mono:"IBM Plex Mono","Noto Sans SC",monospace;
+ --shadow:0 28px 90px rgba(23,25,29,.11);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;color:var(--ink);background:var(--ivory);font-family:var(--font-ui);overflow-x:clip}
+body:before{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background:radial-gradient(circle at 12% 7%,rgba(53,89,199,.11),transparent 27%),radial-gradient(circle at 88% 14%,rgba(215,94,154,.085),transparent 25%),radial-gradient(circle at 62% 82%,rgba(53,183,196,.06),transparent 30%),linear-gradient(180deg,#FCFBF7,#F5F2EC 48%,#EEE9E0)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(23,25,29,.027) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,29,.027) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(#000,transparent 92%)}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{max-width:100%}
+.container{width:min(1220px,calc(100% - 40px));margin:auto}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:white;padding:10px 16px}.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:6px}
+.header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(1220px,calc(100% - 28px));z-index:100;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;padding:6px 12px 6px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(245,242,236,.74);backdrop-filter:blur(22px) saturate(1.15);box-shadow:0 14px 50px rgba(23,25,29,.08);transition:.3s}
+.header.scrolled{background:rgba(245,242,236,.94);box-shadow:0 18px 60px rgba(23,25,29,.14)}
+.brand{display:flex;align-items:center}.brand img{display:block;width:190px;height:68px;object-fit:contain}
+.menu{position:relative;display:flex;justify-content:center;align-items:center;gap:23px;font-size:.76rem;font-weight:600;color:#4d4f55}
+.menu>a,.nav-dropdown>.nav-trigger{position:relative;padding:9px 0;white-space:nowrap}
+.menu>a:after,.nav-trigger:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,var(--blue),var(--rose),var(--gold));transition:right .3s}
+.menu>a:hover:after,.menu>a:focus-visible:after,.menu>a.active:after,.nav-trigger:hover:after,.nav-trigger:focus-visible:after{right:0}
+.menu .active{color:var(--ink);font-weight:700}
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-panel{position:absolute;top:calc(100% + 10px);left:50%;width:250px;padding:10px;display:grid;gap:3px;opacity:0;visibility:hidden;transform:translate(-50%,-7px);border:1px solid var(--line);border-radius:15px;background:rgba(252,251,247,.97);box-shadow:0 22px 60px rgba(23,25,29,.13);backdrop-filter:blur(18px);transition:.22s;pointer-events:none}
+.nav-dropdown:hover .nav-panel,.nav-dropdown:focus-within .nav-panel{opacity:1;visibility:visible;transform:translate(-50%,0);pointer-events:auto}
+.nav-panel a,.nav-panel span{display:flex;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;font-size:.72rem}
+.nav-panel a:hover,.nav-panel a:focus-visible{background:rgba(118,86,200,.075)}
+.nav-panel small{font:500 .61rem var(--font-mono);color:#777981}
+.header-actions{display:flex;align-items:center;gap:8px}.lang-switch{display:flex;padding:3px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.56)}
+.lang-btn{border:0;cursor:pointer;padding:7px 9px;border-radius:8px;background:transparent;color:#696b70;font:700 .7rem var(--font-mono)}.lang-btn.active{color:white;background:var(--ink)}
+.enter{display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border-radius:11px;background:linear-gradient(112deg,#3559C7,#7656C8);color:white;font-size:.72rem;font-weight:700}
+.menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.65);padding:10px}.menu-toggle span{display:block;height:2px;margin:5px 0;background:var(--ink)}
+.about-hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+.hero-layout{position:relative;z-index:3;display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.kicker{font:600 .69rem var(--font-mono);letter-spacing:.17em;text-transform:uppercase;color:var(--violet)}
+.about-hero h1{max-width:850px;margin:20px 0 25px;font-family:var(--font-display);font-size:clamp(4.5rem,8.5vw,8.5rem);font-weight:600;line-height:.87;letter-spacing:-.052em}
+.prism-text{color:transparent;background:linear-gradient(92deg,var(--blue),var(--violet) 30%,var(--rose) 58%,var(--gold));background-clip:text;-webkit-background-clip:text}
+.hero-lede{max-width:710px;margin:0;color:#55585f;font-size:1.06rem;line-height:1.85}
+.hero-signature{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font:500 .72rem var(--font-mono);letter-spacing:.07em;color:#696b72}
+.hero-visual{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.matrix-orb{position:relative;width:min(37vw,480px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(118,86,200,.18);background:radial-gradient(circle at 38% 31%,rgba(255,255,255,.86),rgba(53,183,196,.10) 23%,rgba(118,86,200,.12) 49%,rgba(215,94,154,.09) 65%,transparent 72%);box-shadow:inset 0 0 80px rgba(255,255,255,.55),0 34px 100px rgba(53,89,199,.10);animation:orbFloat 7s ease-in-out infinite}
+.matrix-orb:before,.matrix-orb:after{content:"";position:absolute;border-radius:50%;inset:11%;border:1px solid rgba(53,183,196,.22);transform:rotate(58deg) scaleY(.55)}
+.matrix-orb:after{inset:22%;border-color:rgba(215,94,154,.20);transform:rotate(-38deg) scaleX(.62)}
+.orb-core{position:absolute;inset:0;display:grid;place-items:center;text-align:center}.orb-core strong{display:block;font:600 5rem/1 var(--font-display)}.orb-core span{font:500 .65rem var(--font-mono);letter-spacing:.16em;color:#656870}
+.orb-word{position:absolute;padding:8px 11px;border:1px solid rgba(23,25,29,.1);border-radius:999px;background:rgba(255,255,255,.67);font:600 .63rem var(--font-mono);letter-spacing:.1em;box-shadow:0 10px 30px rgba(23,25,29,.06)}
+.orb-word.sound{left:-8%;top:21%;color:var(--violet)}.orb-word.vision{right:-7%;top:43%;color:var(--cyan)}.orb-word.cognition{left:15%;bottom:3%;color:#9d7227}
+.hero-prism{position:absolute;pointer-events:none;filter:blur(1px);opacity:.65}.hero-prism.a{width:420px;height:420px;right:-90px;top:4%;border-radius:50%;background:radial-gradient(circle,rgba(118,86,200,.11),transparent 66%)}.hero-prism.b{width:54vw;height:1px;right:-5%;top:64%;background:linear-gradient(90deg,transparent,rgba(53,183,196,.32),rgba(215,94,154,.20),transparent);transform:rotate(-17deg)}
+.scroll-note{position:absolute;left:24px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font:500 .63rem var(--font-mono);letter-spacing:.12em;color:#74767d}
+section{position:relative;padding:118px 0}.section-head{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px;align-items:start;margin-bottom:55px}.section-head h2,.display-title{margin:16px 0 0;font-family:var(--font-display);font-size:clamp(3.2rem,5.8vw,6.1rem);line-height:.94;letter-spacing:-.04em;font-weight:600}.section-copy{color:#575a61;line-height:1.9;font-size:1rem}.section-copy p:first-child{margin-top:0}.quote-line{margin-top:28px;padding-left:18px;border-left:2px solid var(--violet);font-family:var(--font-display);font-size:1.65rem;line-height:1.2}
+.meaning-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.meaning-card{position:relative;min-height:420px;padding:29px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.55);overflow:hidden;transition:.35s}.meaning-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.meaning-card:before{content:"";position:absolute;width:250px;height:250px;right:-120px;top:-110px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 68%);opacity:.16}
+.meaning-symbol{font:600 6rem/1 var(--font-display);color:var(--accent)}.meaning-card h3{margin:55px 0 16px;font-family:var(--font-display);font-size:2.25rem}.meaning-card p{color:#5b5d64;line-height:1.8}
+.ecosystem{background:#17191D;color:#F5F2EC;overflow:hidden}.ecosystem:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 20%,rgba(118,86,200,.26),transparent 26%),radial-gradient(circle at 86% 70%,rgba(53,183,196,.16),transparent 28%);opacity:.7}
+.ecosystem .container{position:relative}.ecosystem .section-copy{color:#b8bac1}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:25px;overflow:hidden}
+.world{position:relative;min-height:510px;padding:31px;display:flex;flex-direction:column;background:rgba(23,25,29,.82);overflow:hidden;transition:.35s}.world:hover{background:rgba(36,38,45,.92)}
+.world:before{content:"";position:absolute;inset:auto -25% -35% -25%;height:70%;background:radial-gradient(circle,var(--accent),transparent 67%);opacity:.18;transition:.35s}.world:hover:before{opacity:.28;transform:scale(1.08)}
+.world-number{font:500 .66rem var(--font-mono);letter-spacing:.14em;color:var(--accent)}.world-verb{margin:auto 0 25px;font:600 clamp(4.5rem,6vw,7rem)/.9 var(--font-display)}.world h3{margin:0 0 10px;font-size:1rem}.world p{min-height:100px;margin:0;color:#b8bac1;font-size:.9rem;line-height:1.75}.world-link{margin-top:24px;font:600 .68rem var(--font-mono);letter-spacing:.08em}.world-link.muted{color:#8d8f96}
+.layer-statement{padding:50px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.3));box-shadow:var(--shadow)}.layer-statement h2{margin:0;font-family:var(--font-display);font-size:clamp(3.3rem,6vw,6.8rem);line-height:.92;letter-spacing:-.045em}.layer-statement p{max-width:760px;margin:30px 0 0;color:#565960;line-height:1.9}
+.capability-list{margin-top:70px;border-top:1px solid var(--line)}.capability{display:grid;grid-template-columns:80px 1.05fr .95fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line);align-items:start}.capability-number{font:600 .7rem var(--font-mono);color:var(--violet)}.capability h3{margin:0;font-family:var(--font-display);font-size:2.1rem;line-height:1.05}.capability p{margin:0;color:#5d6066;line-height:1.8}
+.model-panel{padding:55px;border-radius:30px;background:#ECE8E0;border:1px solid rgba(23,25,29,.08)}.model-equation{display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center}.model-side{display:grid;gap:12px}.model-chip{padding:19px;border:1px solid rgba(23,25,29,.1);border-radius:15px;background:rgba(255,255,255,.63)}.model-chip small{display:block;margin-bottom:6px;font:500 .6rem var(--font-mono);letter-spacing:.12em;color:#7b7d83}.model-chip strong{font-size:.9rem}.multiply{font:600 4rem var(--font-display);color:var(--violet)}
+.model-result{margin-top:30px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;align-items:end}.model-result strong{font-family:var(--font-display);font-size:2.3rem}.model-result span{max-width:520px;color:#5c5e65;line-height:1.7}
+.journey-track{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.journey-step{position:relative;min-height:320px;padding:28px 20px;border-right:1px solid var(--line)}.journey-step:last-child{border-right:0}.journey-glyph{font:600 4.5rem/1 var(--font-display);color:var(--accent)}.journey-step h3{margin:72px 0 12px;font-family:var(--font-display);font-size:1.9rem}.journey-step p{color:#65676d;line-height:1.7;font-size:.88rem}
+.pmv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pmv{min-height:390px;padding:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.52)}.pmv small{font:600 .66rem var(--font-mono);letter-spacing:.13em;color:var(--violet)}.pmv h3{margin:65px 0 20px;font-family:var(--font-display);font-size:2.5rem}.pmv p{color:#5d6066;line-height:1.85}
+.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.principle{padding:28px;border-top:2px solid var(--accent);background:rgba(255,255,255,.38)}.principle h3{font-family:var(--font-display);font-size:2rem;margin:12px 0}.principle p{color:#5d6066;line-height:1.75}
+.internal-panel{display:grid;grid-template-columns:1.1fr .9fr;border-radius:30px;overflow:hidden;background:#17191D;color:white}.internal-copy{padding:clamp(38px,6vw,75px)}.internal-copy h2{margin:0;font-family:var(--font-display);font-size:clamp(3.4rem,6vw,6.8rem);line-height:.9}.internal-copy p{margin:28px 0 0;color:#bbbcc3;line-height:1.85}.founder-bridge{padding:clamp(35px,5vw,62px);background:linear-gradient(145deg,rgba(53,89,199,.35),rgba(118,86,200,.28),rgba(215,94,154,.2));display:flex;flex-direction:column;justify-content:flex-end}.founder-bridge small{font:600 .65rem var(--font-mono);letter-spacing:.13em}.founder-bridge h3{margin:18px 0;font-family:var(--font-display);font-size:2.7rem;line-height:1}.founder-bridge p{color:#e0dde8;line-height:1.75}.founder-link{margin-top:24px;font:600 .7rem var(--font-mono);letter-spacing:.08em}
+.closing{padding:150px 0;text-align:center}.closing h2{margin:0 auto;font-family:var(--font-display);font-size:clamp(4.2rem,8.5vw,9rem);line-height:.86;letter-spacing:-.05em}.closing p{max-width:690px;margin:32px auto 0;color:#5a5c63;line-height:1.85}.closing-actions{display:flex;justify-content:center;gap:12px;margin-top:32px}.button{display:inline-flex;padding:14px 18px;border-radius:13px;border:1px solid var(--line);font-size:.8rem;font-weight:700;background:rgba(255,255,255,.55)}.button.dark{background:var(--ink);color:white}
+.site-footer{padding:70px 0 28px;background:#17191D;color:white}.footer-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr;gap:60px}.footer-brand img{width:240px;padding:13px;border-radius:15px;background:#F5F2EC}.footer-brand p{max-width:380px;color:#adafb6;line-height:1.7}.footer-col h4{font:600 .67rem var(--font-mono);letter-spacing:.13em;color:#92949b}.footer-col ul{list-style:none;padding:0;margin:20px 0}.footer-col li{margin:12px 0;color:#d5d5d8;font-size:.88rem}.soon{color:#797b82}.footer-bottom{margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;color:#8f9198;font:500 .67rem var(--font-mono)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}.reveal.visible{opacity:1;transform:none}
+@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(2deg)}}
+html[lang="zh-CN"] .about-hero h1,html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .display-title,html[lang="zh-CN"] .layer-statement h2,html[lang="zh-CN"] .closing h2,html[lang="zh-CN"] .internal-copy h2{font-family:"Noto Serif SC",serif;letter-spacing:0;line-height:1.2}
+html[lang="zh-CN"] .about-hero h1{font-size:clamp(3.8rem,7.2vw,7.2rem)}
+@media(max-width:1050px){.header{grid-template-columns:auto 1fr auto;gap:12px}.brand img{width:155px}.menu{gap:13px;font-size:.7rem}.hero-layout{gap:30px}.meaning-card{min-height:390px}.capability{grid-template-columns:60px 1fr 1fr}}
+@media(max-width:900px){
+ .header{grid-template-columns:auto 1fr}.header-actions{justify-self:end}.menu-toggle{display:block}.enter{display:none}
+ .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:none;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(252,251,247,.98);box-shadow:var(--shadow)}
+ .menu.open{display:flex}.menu>a,.nav-dropdown>.nav-trigger{padding:12px}.nav-dropdown{display:block}.nav-panel{position:static;width:auto;padding:3px 8px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;border-radius:0;background:transparent;box-shadow:none;pointer-events:auto}.nav-panel a,.nav-panel span{padding:8px 12px}
+ .about-hero{padding-top:135px}.hero-layout,.section-head{grid-template-columns:1fr}.hero-visual{max-width:560px;width:100%;margin:auto}.matrix-orb{width:min(78vw,470px)}
+ .meaning-grid,.ecosystem-grid,.pmv-grid,.principles-grid{grid-template-columns:1fr}.world{min-height:390px}.capability{grid-template-columns:50px 1fr}.capability p{grid-column:2}.journey-track{grid-template-columns:1fr}.journey-step{min-height:0;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:80px 1fr;gap:20px}.journey-step:last-child{border-bottom:0}.journey-step h3{margin:0}.journey-step p{grid-column:2}.internal-panel{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.scroll-note{display:none}
+}
+@media(max-width:600px){.container{width:min(100% - 26px,1220px)}.header{width:calc(100% - 18px);padding-left:9px}.brand img{width:128px;height:60px}.lang-btn{padding:7px}.about-hero{padding:120px 0 70px}.about-hero h1{font-size:clamp(3.6rem,17vw,5.2rem)}section{padding:85px 0}.section-head{gap:25px}.meaning-card{min-height:330px}.model-panel{padding:25px}.model-equation{grid-template-columns:1fr}.multiply{text-align:center}.model-result{display:block}.model-result span{display:block;margin-top:14px}.capability{grid-template-columns:38px 1fr;gap:15px}.capability h3{font-size:1.7rem}.journey-step{grid-template-columns:65px 1fr}.pmv{min-height:310px}.closing{padding:100px 0}.closing-actions{flex-direction:column}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{display:block;line-height:1.8}.orb-word{font-size:.55rem}.orb-word.sound{left:-2%}.orb-word.vision{right:-2%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.matrix-orb{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header" id="siteHeader">
+<a class="brand" href="./index.html#top" aria-label="Malttrix home"><img src="./assets/malttrix-header.webp" width="1563" height="805" alt="Malttrix｜梦萃"></a>
+<nav class="menu" id="primaryMenu" aria-label="Primary navigation">
+<a class="active" href="./about.html" aria-current="page" data-i18n="nav.about">About</a>
+<div class="nav-dropdown">
+<a class="nav-trigger" href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem ▼</a>
+<div class="nav-panel">
+<a href="./index.html#ecosystem"><span data-i18n="nav.overview">Ecosystem overview</span><small>01—03</small></a>
+<a href="https://www.vanmoira.com" target="_blank" rel="noopener"><span>VANMOIRA｜梵·暮汐</span><small>↗</small></a>
+<span><span>Lumvisio｜粼·视</span><small data-i18n="nav.soon">SOON</small></span>
+<a href="https://www.immersation.com" target="_blank" rel="noopener"><span>Immersation｜智枢阁</span><small>↗</small></a>
+</div>
+</div>
+<a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+<a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a>
+<a href="./index.html#founder" data-i18n="nav.founder">Founder</a>
+</nav>
+<div class="header-actions">
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryMenu" aria-label="Open navigation"><span></span><span></span></button>
+<div class="lang-switch" role="group" aria-label="Choose language"><button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button><button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">中文</button></div>
+<a class="enter" href="./index.html#ecosystem"><span data-i18n="nav.enter">Explore</span><b>↘</b></a>
+</div>
+</header>
+<main id="main">
+<section class="about-hero">
+<i class="hero-prism a"></i><i class="hero-prism b"></i><span class="scroll-note" data-i18n="hero.scroll">Scroll to discover the matrix</span>
+<div class="container hero-layout">
+<div>
+<div class="kicker" data-i18n="hero.kicker">About Malttrix｜梦萃</div>
+<h1 data-i18n-html="hero.title">Imagination,<br><span class="prism-text">distilled</span> into<br>enduring form.</h1>
+<p class="hero-lede" data-i18n="hero.lede">Malttrix｜梦萃 is an independent creative intelligence ecosystem built across sound, vision and cognition. We create, incubate and operate original brands and intellectual property — together with the systems that allow them to grow over time.</p>
+<div class="hero-signature" data-i18n="hero.signature">DISTILL IMAGINATION · BUILD WHAT ENDURES</div>
+</div>
+<div class="hero-visual" aria-hidden="true">
+<div class="matrix-orb"><div class="orb-core"><div><strong>梦萃</strong><span>MALTTRIX MATRIX</span></div></div></div>
+<span class="orb-word sound">SOUND</span><span class="orb-word vision">VISION</span><span class="orb-word cognition">COGNITION</span>
+</div>
+</div>
+</section>
+<section id="why">
+<div class="container section-head reveal">
+<div><div class="kicker" data-i18n="why.kicker">Why we exist</div><h2 data-i18n-html="why.title">Give imagination<br>room to grow.</h2></div>
+<div class="section-copy"><p data-i18n="why.p1">Some ideas begin as a melody. Others begin as an image, a question, a feeling, a piece of knowledge or a new way of seeing the world. But an idea alone does not become something enduring.</p><p data-i18n="why.p2">Malttrix connects original thinking with disciplined creation, intelligent systems and long-term stewardship — helping ideas evolve from possibility into creative work, intellectual property, brands and assets that can continue developing over time.</p><div class="quote-line" data-i18n="why.quote">Born from imagination. Refined into form.</div></div>
+</div>
+</section>
+<section id="meaning">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="meaning.kicker">The meaning behind Malttrix</div><h2 data-i18n-html="meaning.title">A name built<br>as a process.</h2></div><p class="section-copy" data-i18n="meaning.intro">The identity combines imagination, disciplined distillation and a multidimensional matrix for creation.</p></div>
+<div class="meaning-grid">
+<article class="meaning-card reveal" style="--accent:#7656C8"><div class="meaning-symbol">梦</div><h3 data-i18n="meaning.dream.h">Imagination</h3><p data-i18n="meaning.dream.p">Possibility before it has taken form: the intuition before the concept, the feeling before the language, and the world that first exists only in imagination.</p></article>
+<article class="meaning-card reveal" style="--accent:#35B7C4"><div class="meaning-symbol">萃</div><h3 data-i18n="meaning.distill.h">Distillation</h3><p data-i18n="meaning.distill.p">To gather, refine, concentrate and bring into form — selecting what matters and transforming complexity into something coherent.</p></article>
+<article class="meaning-card reveal" style="--accent:#D5A447"><div class="meaning-symbol">M</div><h3 data-i18n="meaning.matrix.h">The Creative Matrix</h3><p data-i18n="meaning.matrix.p">A multidimensional environment where artistic expression, knowledge, technology and systems interact — moving imagination toward enduring value.</p></article>
+</div>
+</div>
+</section>
+<section class="ecosystem" id="ecosystem">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="eco.kicker">One ecosystem · Three dimensions</div><h2 data-i18n-html="eco.title">Hear.<br>See.<br>Think.</h2></div><p class="section-copy" data-i18n="eco.intro">Each brand maintains its own identity, visual language, content universe and audience. What connects them is the intelligence and infrastructure beneath them.</p></div>
+<div class="ecosystem-grid">
+<a class="world reveal" href="https://www.vanmoira.com" target="_blank" rel="noopener" style="--accent:#7656C8"><div class="world-number">01 / AUDITORY ART</div><div class="world-verb" data-i18n="eco.hear">Hear.</div><h3>VANMOIRA｜梵·暮汐</h3><p data-i18n="eco.van">Original music, cinematic sound and immersive auditory experiences shaped by memory, intimacy, distance and human feeling.</p><span class="world-link" data-i18n="eco.visit">VISIT BRAND ↗</span></a>
+<article class="world reveal" style="--accent:#35B7C4"><div class="world-number">02 / VISUAL ART</div><div class="world-verb" data-i18n="eco.see">See.</div><h3>Lumvisio｜粼·视</h3><p data-i18n="eco.lum">Minimalism, restorative visual language and controlled contrast — working with light, space, material, movement and composition.</p><span class="world-link muted" data-i18n="eco.soon">COMING SOON</span></article>
+<a class="world reveal" href="https://www.immersation.com" target="_blank" rel="noopener" style="--accent:#D5A447"><div class="world-number">03 / COGNITIVE INTELLIGENCE</div><div class="world-verb" data-i18n="eco.think">Think.</div><h3>Immersation｜智枢阁</h3><p data-i18n="eco.imm">Articles, frameworks, guides and knowledge products across Body, Tool and Capital — designed to strengthen personal intelligence.</p><span class="world-link" data-i18n="eco.visit">VISIT BRAND ↗</span></a>
+</div>
+</div>
+</section>
+<section id="capabilities">
+<div class="container">
+<div class="layer-statement reveal"><div class="kicker" data-i18n="layer.kicker">The shared intelligence layer</div><h2 data-i18n-html="layer.title">Three distinct identities.<br><span class="prism-text">One shared intelligence.</span></h2><p data-i18n="layer.copy">Malttrix operates as the strategic and systemic layer behind the ecosystem. The parent provides direction, infrastructure and stewardship; each brand remains free to develop its own world.</p></div>
+<div class="capability-list">
+<article class="capability reveal"><div class="capability-number">01</div><h3 data-i18n="cap.one.h">Creative IP Incubation & Digital Brand Portfolio Operations</h3><p data-i18n="cap.one.p">Brand concepts, naming, world-building, IP positioning, creative direction, content systems, digital channels, audience development and long-term brand operations.</p></article>
+<article class="capability reveal"><div class="capability-number">02</div><h3 data-i18n="cap.two.h">AI Systems & Creative Infrastructure</h3><p data-i18n="cap.two.p">Research, editorial workflows, creative development, automation, knowledge management, data systems and internal software — always governed by human intent.</p></article>
+<article class="capability reveal"><div class="capability-number">03</div><h3 data-i18n="cap.three.h">Asset Operations & Stewardship</h3><p data-i18n="cap.three.p">Long-term stewardship of intellectual property, brand assets, digital infrastructure, operating systems and strategic resources so value can compound.</p></article>
+</div>
+</div>
+</section>
+<section id="model">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="model.kicker">Our model</div><h2 data-i18n-html="model.title">Three dimensions<br>× three capabilities.</h2></div><p class="section-copy" data-i18n="model.copy">The dimensions determine what worlds we build. The capabilities determine how those worlds continue to grow.</p></div>
+<div class="model-panel reveal">
+<div class="model-equation">
+<div class="model-side"><div class="model-chip"><small>01 / DIMENSION</small><strong data-i18n="model.sound">SOUND · Auditory Art</strong></div><div class="model-chip"><small>02 / DIMENSION</small><strong data-i18n="model.vision">VISION · Visual Art</strong></div><div class="model-chip"><small>03 / DIMENSION</small><strong data-i18n="model.cognition">COGNITION · Knowledge Systems</strong></div></div>
+<div class="multiply">×</div>
+<div class="model-side"><div class="model-chip"><small>01 / CAPABILITY</small><strong data-i18n="model.incubation">INCUBATION · Create identity</strong></div><div class="model-chip"><small>02 / CAPABILITY</small><strong data-i18n="model.infrastructure">INFRASTRUCTURE · Build systems</strong></div><div class="model-chip"><small>03 / CAPABILITY</small><strong data-i18n="model.stewardship">STEWARDSHIP · Develop value</strong></div></div>
+</div>
+<div class="model-result"><strong>MALTTRIX｜梦萃</strong><span data-i18n="model.result">One creative intelligence ecosystem connecting artistic identity, intelligent infrastructure and long-term stewardship.</span></div>
+</div>
+</div>
+</section>
+<section id="journey">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="journey.kicker">How ideas move</div><h2 data-i18n-html="journey.title">Creation is<br>a cycle.</h2></div><p class="section-copy" data-i18n="journey.copy">Ideas move through Malttrix from possibility to form, from form to growth, and from growth to something capable of enduring.</p></div>
+<div class="journey-track">
+<article class="journey-step reveal" style="--accent:#7656C8"><div class="journey-glyph">梦</div><div><h3 data-i18n="journey.imagine.h">Imagine</h3><p data-i18n="journey.imagine.p">Explore. Observe. Feel. Question. Ideas begin without requiring an immediate answer.</p></div></article>
+<article class="journey-step reveal" style="--accent:#3559C7"><div class="journey-glyph">萃</div><div><h3 data-i18n="journey.distill.h">Distill</h3><p data-i18n="journey.distill.p">Research. Connect. Select. Define. Possibility is refined into direction.</p></div></article>
+<article class="journey-step reveal" style="--accent:#35B7C4"><div class="journey-glyph">成</div><div><h3 data-i18n="journey.form.h">Form</h3><p data-i18n="journey.form.p">Design. Create. Systemise. Publish. The idea becomes something people can experience.</p></div></article>
+<article class="journey-step reveal" style="--accent:#D75E9A"><div class="journey-glyph">长</div><div><h3 data-i18n="journey.grow.h">Grow</h3><p data-i18n="journey.grow.p">Operate. Distribute. Improve. Commercialise. Creation enters the world and learns from it.</p></div></article>
+<article class="journey-step reveal" style="--accent:#D5A447"><div class="journey-glyph">藏</div><div><h3 data-i18n="journey.endure.h">Endure</h3><p data-i18n="journey.endure.p">Copyright. Identity. Systems. Knowledge. Assets. An idea becomes capable of remaining.</p></div></article>
+</div>
+</div>
+</section>
+<section id="purpose">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="pmv.kicker">Purpose · Mission · Vision</div><h2 data-i18n-html="pmv.title">Built for more<br>than a moment.</h2></div><p class="section-copy" data-i18n="pmv.intro">Original ideas deserve the systems, patience and stewardship required to become meaningful work and enduring value.</p></div>
+<div class="pmv-grid">
+<article class="pmv reveal"><small data-i18n="pmv.purpose.label">OUR PURPOSE</small><h3 data-i18n="pmv.purpose.h">Make worthwhile imagination real.</h3><p data-i18n="pmv.purpose.p">Give meaningful ideas the opportunity to become real work — and give that work the ability to continue growing.</p></article>
+<article class="pmv reveal"><small data-i18n="pmv.mission.label">OUR MISSION</small><h3 data-i18n="pmv.mission.h">Create, systemise and steward.</h3><p data-i18n="pmv.mission.p">Incubate and operate original artistic, knowledge and digital intellectual property while developing the capabilities needed by the ecosystem.</p></article>
+<article class="pmv reveal"><small data-i18n="pmv.vision.label">OUR VISION</small><h3 data-i18n="pmv.vision.h">Build a global independent ecosystem.</h3><p data-i18n="pmv.vision.p">A system where art, knowledge, technology and intellectual property grow together into culturally relevant and resilient brands and assets.</p></article>
+</div>
+</div>
+</section>
+<section id="principles">
+<div class="container">
+<div class="section-head reveal"><div><div class="kicker" data-i18n="principles.kicker">Our principles</div><h2 data-i18n-html="principles.title">Creative freedom.<br>Deliberate structure.</h2></div><p class="section-copy" data-i18n="principles.intro">The principles that guide how Malttrix creates, builds systems and makes long-term decisions.</p></div>
+<div class="principles-grid">
+<article class="principle reveal" style="--accent:#7656C8"><div class="kicker">01</div><h3 data-i18n="principles.one.h">Imagination with Discipline</h3><p data-i18n="principles.one.p">Protect imagination from unnecessary limitation, then apply structure where it makes ideas clearer, stronger and more enduring.</p></article>
+<article class="principle reveal" style="--accent:#35B7C4"><div class="kicker">02</div><h3 data-i18n="principles.two.h">Technology Serves Creation</h3><p data-i18n="principles.two.p">AI, automation and emerging systems are instruments. Identity remains rooted in imagination, judgment and original thought.</p></article>
+<article class="principle reveal" style="--accent:#D5A447"><div class="kicker">03</div><h3 data-i18n="principles.three.h">Build What Endures</h3><p data-i18n="principles.three.p">A song may become a catalogue. A visual may become a language. An article may become a knowledge system. A concept may become a brand.</p></article>
+</div>
+</div>
+</section>
+<section id="internal">
+<div class="container internal-panel reveal">
+<div class="internal-copy"><div class="kicker" data-i18n="internal.kicker">Internal first · Ecosystem first</div><h2 data-i18n-html="internal.title">Systems built<br>because creation<br>needs them.</h2><p data-i18n="internal.copy">Malttrix develops infrastructure, knowledge and resources primarily around the needs of its own brands. This keeps creativity and infrastructure close: the systems improve because the creative work needs them, and the creative work becomes stronger because the systems continue evolving.</p></div>
+<aside class="founder-bridge"><small data-i18n="founder.kicker">FOUNDED BY MAXON 麦森</small><h3 data-i18n-html="founder.title">Feel deeply.<br>Think structurally.<br>Build independently.</h3><p data-i18n="founder.copy">Maxon leads the ecosystem’s overall vision, brand architecture, creative direction and systems design.</p><a class="founder-link" href="./index.html#founder" data-i18n="founder.link">DISCOVER THE FOUNDER ↘</a></aside>
+</div>
+</section>
+<section class="closing">
+<div class="container reveal"><div class="kicker" data-i18n="closing.kicker">An evolving matrix</div><h2 data-i18n-html="closing.title">Hear. See. Think.<br><span class="prism-text">Create what can endure.</span></h2><p data-i18n="closing.copy">A sound can inspire an image. An image can become a world. A question can become a body of knowledge. An idea, given enough care and time, can become something enduring.</p><div class="closing-actions"><a class="button dark" href="./index.html#ecosystem" data-i18n="closing.ecosystem">Explore the ecosystem ↗</a><a class="button" href="./index.html#top" data-i18n="closing.home">Return home ↑</a></div></div>
+</section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="https://cms.malttrix.com/wp-content/uploads/2026/08/Malttrix-_-梦萃_Dark.png" width="1563" height="805" alt="Malttrix 梦萃"><p data-i18n="footer.copy">An independent creative intelligence ecosystem built around sound, vision and cognition.</p></div><div class="footer-col"><h4 data-i18n="footer.portfolio">PORTFOLIO</h4><ul><li><a href="https://www.vanmoira.com" target="_blank" rel="noopener">VANMOIRA｜梵·暮汐</a></li><li>Lumvisio｜粼·视 <span class="soon" data-i18n="nav.soon">SOON</span></li><li><a href="https://www.immersation.com" target="_blank" rel="noopener">Immersation｜智枢阁</a></li></ul></div><div class="footer-col"><h4 data-i18n="footer.explore">EXPLORE</h4><ul><li><a href="./about.html" data-i18n="nav.about">About</a></li><li><a href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem ▼</a></li><li><a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li><li><a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a></li><li><a href="./index.html#founder" data-i18n="nav.founder">Founder</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 Malttrix｜梦萃.</span><span data-i18n="footer.rights">All rights reserved.</span></div></div></footer>
+<script>
+const copy={
+ en:{
+  "nav.about":"About","nav.ecosystem":"Ecosystem ▼","nav.overview":"Ecosystem overview","nav.soon":"SOON","nav.capabilities":"Capabilities","nav.philosophy":"Philosophy","nav.founder":"Founder","nav.enter":"Explore",
+  "hero.scroll":"Scroll to discover the matrix","hero.kicker":"About Malttrix｜梦萃","hero.title":"Imagination,<br><span class=\"prism-text\">distilled</span> into<br>enduring form.","hero.lede":"Malttrix｜梦萃 is an independent creative intelligence ecosystem built across sound, vision and cognition. We create, incubate and operate original brands and intellectual property — together with the systems that allow them to grow over time.","hero.signature":"DISTILL IMAGINATION · BUILD WHAT ENDURES",
+  "why.kicker":"Why we exist","why.title":"Give imagination<br>room to grow.","why.p1":"Some ideas begin as a melody. Others begin as an image, a question, a feeling, a piece of knowledge or a new way of seeing the world. But an idea alone does not become something enduring.","why.p2":"Malttrix connects original thinking with disciplined creation, intelligent systems and long-term stewardship — helping ideas evolve from possibility into creative work, intellectual property, brands and assets that can continue developing over time.","why.quote":"Born from imagination. Refined into form.",
+  "meaning.kicker":"The meaning behind Malttrix","meaning.title":"A name built<br>as a process.","meaning.intro":"The identity combines imagination, disciplined distillation and a multidimensional matrix for creation.","meaning.dream.h":"Imagination","meaning.dream.p":"Possibility before it has taken form: the intuition before the concept, the feeling before the language, and the world that first exists only in imagination.","meaning.distill.h":"Distillation","meaning.distill.p":"To gather, refine, concentrate and bring into form — selecting what matters and transforming complexity into something coherent.","meaning.matrix.h":"The Creative Matrix","meaning.matrix.p":"A multidimensional environment where artistic expression, knowledge, technology and systems interact — moving imagination toward enduring value.",
+  "eco.kicker":"One ecosystem · Three dimensions","eco.title":"Hear.<br>See.<br>Think.","eco.intro":"Each brand maintains its own identity, visual language, content universe and audience. What connects them is the intelligence and infrastructure beneath them.","eco.hear":"Hear.","eco.see":"See.","eco.think":"Think.","eco.van":"Original music, cinematic sound and immersive auditory experiences shaped by memory, intimacy, distance and human feeling.","eco.lum":"Minimalism, restorative visual language and controlled contrast — working with light, space, material, movement and composition.","eco.imm":"Articles, frameworks, guides and knowledge products across Body, Tool and Capital — designed to strengthen personal intelligence.","eco.visit":"VISIT BRAND ↗","eco.soon":"COMING SOON",
+  "layer.kicker":"The shared intelligence layer","layer.title":"Three distinct identities.<br><span class=\"prism-text\">One shared intelligence.</span>","layer.copy":"Malttrix operates as the strategic and systemic layer behind the ecosystem. The parent provides direction, infrastructure and stewardship; each brand remains free to develop its own world.",
+  "cap.one.h":"Creative IP Incubation & Digital Brand Portfolio Operations","cap.one.p":"Brand concepts, naming, world-building, IP positioning, creative direction, content systems, digital channels, audience development and long-term brand operations.","cap.two.h":"AI Systems & Creative Infrastructure","cap.two.p":"Research, editorial workflows, creative development, automation, knowledge management, data systems and internal software — always governed by human intent.","cap.three.h":"Asset Operations & Stewardship","cap.three.p":"Long-term stewardship of intellectual property, brand assets, digital infrastructure, operating systems and strategic resources so value can compound.",
+  "model.kicker":"Our model","model.title":"Three dimensions<br>× three capabilities.","model.copy":"The dimensions determine what worlds we build. The capabilities determine how those worlds continue to grow.","model.sound":"SOUND · Auditory Art","model.vision":"VISION · Visual Art","model.cognition":"COGNITION · Knowledge Systems","model.incubation":"INCUBATION · Create identity","model.infrastructure":"INFRASTRUCTURE · Build systems","model.stewardship":"STEWARDSHIP · Develop value","model.result":"One creative intelligence ecosystem connecting artistic identity, intelligent infrastructure and long-term stewardship.",
+  "journey.kicker":"How ideas move","journey.title":"Creation is<br>a cycle.","journey.copy":"Ideas move through Malttrix from possibility to form, from form to growth, and from growth to something capable of enduring.","journey.imagine.h":"Imagine","journey.imagine.p":"Explore. Observe. Feel. Question. Ideas begin without requiring an immediate answer.","journey.distill.h":"Distill","journey.distill.p":"Research. Connect. Select. Define. Possibility is refined into direction.","journey.form.h":"Form","journey.form.p":"Design. Create. Systemise. Publish. The idea becomes something people can experience.","journey.grow.h":"Grow","journey.grow.p":"Operate. Distribute. Improve. Commercialise. Creation enters the world and learns from it.","journey.endure.h":"Endure","journey.endure.p":"Copyright. Identity. Systems. Knowledge. Assets. An idea becomes capable of remaining.",
+  "pmv.kicker":"Purpose · Mission · Vision","pmv.title":"Built for more<br>than a moment.","pmv.intro":"Original ideas deserve the systems, patience and stewardship required to become meaningful work and enduring value.","pmv.purpose.label":"OUR PURPOSE","pmv.purpose.h":"Make worthwhile imagination real.","pmv.purpose.p":"Give meaningful ideas the opportunity to become real work — and give that work the ability to continue growing.","pmv.mission.label":"OUR MISSION","pmv.mission.h":"Create, systemise and steward.","pmv.mission.p":"Incubate and operate original artistic, knowledge and digital intellectual property while developing the capabilities needed by the ecosystem.","pmv.vision.label":"OUR VISION","pmv.vision.h":"Build a global independent ecosystem.","pmv.vision.p":"A system where art, knowledge, technology and intellectual property grow together into culturally relevant and resilient brands and assets.",
+  "principles.kicker":"Our principles","principles.title":"Creative freedom.<br>Deliberate structure.","principles.intro":"The principles that guide how Malttrix creates, builds systems and makes long-term decisions.","principles.one.h":"Imagination with Discipline","principles.one.p":"Protect imagination from unnecessary limitation, then apply structure where it makes ideas clearer, stronger and more enduring.","principles.two.h":"Technology Serves Creation","principles.two.p":"AI, automation and emerging systems are instruments. Identity remains rooted in imagination, judgment and original thought.","principles.three.h":"Build What Endures","principles.three.p":"A song may become a catalogue. A visual may become a language. An article may become a knowledge system. A concept may become a brand.",
+  "internal.kicker":"Internal first · Ecosystem first","internal.title":"Systems built<br>because creation<br>needs them.","internal.copy":"Malttrix develops infrastructure, knowledge and resources primarily around the needs of its own brands. This keeps creativity and infrastructure close: the systems improve because the creative work needs them, and the creative work becomes stronger because the systems continue evolving.",
+  "founder.kicker":"FOUNDED BY MAXON 麦森","founder.title":"Feel deeply.<br>Think structurally.<br>Build independently.","founder.copy":"Maxon leads the ecosystem’s overall vision, brand architecture, creative direction and systems design.","founder.link":"DISCOVER THE FOUNDER ↘",
+  "closing.kicker":"An evolving matrix","closing.title":"Hear. See. Think.<br><span class=\"prism-text\">Create what can endure.</span>","closing.copy":"A sound can inspire an image. An image can become a world. A question can become a body of knowledge. An idea, given enough care and time, can become something enduring.","closing.ecosystem":"Explore the ecosystem ↗","closing.home":"Return home ↑",
+  "footer.copy":"An independent creative intelligence ecosystem built around sound, vision and cognition.","footer.portfolio":"PORTFOLIO","footer.explore":"EXPLORE","footer.rights":"All rights reserved."
+ },
+ zh:{
+  "nav.about":"关于梦萃","nav.ecosystem":"生态系统 ▼","nav.overview":"生态系统总览","nav.soon":"即将上线","nav.capabilities":"核心能力","nav.philosophy":"品牌哲学","nav.founder":"创始人","nav.enter":"探索",
+  "hero.scroll":"向下探索梦萃矩阵","hero.kicker":"关于 Malttrix｜梦萃","hero.title":"萃取<span class=\"prism-text\">想象</span>，<br>构筑长久。","hero.lede":"Malttrix｜梦萃是一个横跨听觉、视觉与认知的独立创意智能品牌生态。我们创造、孵化并运营原创品牌与知识产权，同时构建让它们持续成长的创意、技术与运营系统。","hero.signature":"为梦而生 · 以萃成形",
+  "why.kicker":"我们为何存在","why.title":"让想象拥有<br>持续成长的能力。","why.p1":"有些想法始于旋律，有些始于图像、问题、感受、知识，或一种观看世界的新方式。但想法本身，并不会自然成为恒久之物。","why.p2":"梦萃将原创思考与有纪律的创造、智能系统和长期管理连接起来，让想法从可能性发展为作品、知识产权、品牌与能够持续成长的资产。","why.quote":"为梦而生，以萃成形。",
+  "meaning.kicker":"梦萃之名","meaning.title":"一个名字，<br>也是一套过程。","meaning.intro":"梦萃结合了想象、严谨的萃取过程，以及承载多维创造的矩阵。","meaning.dream.h":"想象","meaning.dream.p":"尚未成形的可能性：概念之前的直觉、语言之前的感受，以及最初只存在于想象中的世界。","meaning.distill.h":"萃取","meaning.distill.p":"聚合、提炼、浓缩并使其成形——选择真正重要的部分，将复杂转化为连贯清晰的表达。","meaning.matrix.h":"创意矩阵","meaning.matrix.p":"艺术表达、知识、技术与系统在此交汇，让想象持续转化为创造、知识产权与恒久价值。",
+  "eco.kicker":"一个生态 · 三个维度","eco.title":"聆听。<br>观看。<br>思考。","eco.intro":"每个品牌拥有独立身份、视觉语言、内容世界与受众；连接它们的，是共同的智能与基础设施。","eco.hear":"聆听。","eco.see":"观看。","eco.think":"思考。","eco.van":"以原创音乐、电影感声音与沉浸式听觉体验，表达记忆、亲密、距离、流动与人的情感。","eco.lum":"通过极简、疗愈视觉与克制的视觉冲突，运用光、空间、材质、动态与构图创造情绪体验。","eco.imm":"围绕身、器、财构建文章、框架、指南与知识产品，持续增强个人智能。","eco.visit":"访问品牌 ↗","eco.soon":"即将上线",
+  "layer.kicker":"共享智能层","layer.title":"三个独立身份。<br><span class=\"prism-text\">一个共享智能层。</span>","layer.copy":"梦萃是生态背后的战略与系统层。母生态提供方向、基础设施与长期管理；每个品牌仍可自由发展自己的世界。",
+  "cap.one.h":"创意IP孵化与线上矩阵运营","cap.one.p":"从品牌概念、命名、世界观、IP定位与创意方向，到内容系统、数字渠道、受众发展及长期品牌运营。","cap.two.h":"AI智能系统与创意基础设施","cap.two.p":"研究、编辑流程、创意开发、自动化、知识管理、数据系统与内部软件——始终由人的意图与审美判断主导。","cap.three.h":"资产运维管理","cap.three.p":"长期管理知识产权、品牌资产、数字基础设施、运营系统与战略资源，让价值得以持续积累。",
+  "model.kicker":"我们的模式","model.title":"三个维度<br>× 三项能力。","model.copy":"创意维度决定我们构筑怎样的世界；底层能力决定这些世界如何持续成长。","model.sound":"听觉 · 听觉艺术","model.vision":"视觉 · 视觉艺术","model.cognition":"认知 · 知识系统","model.incubation":"孵化 · 创造身份","model.infrastructure":"基础设施 · 构建系统","model.stewardship":"管理 · 发展价值","model.result":"一个连接艺术身份、智能基础设施与长期资产管理的创意智能品牌生态。",
+  "journey.kicker":"想法如何移动","journey.title":"创造不是瞬间，<br>而是循环。","journey.copy":"想法在梦萃中从可能性走向形态，从形态走向成长，再从成长走向能够长久存在的价值。","journey.imagine.h":"想象","journey.imagine.p":"探索、观察、感受、提问。想法开始时，不需要立即得到答案。","journey.distill.h":"萃取","journey.distill.p":"研究、连接、选择、定义。可能性被提炼为明确方向。","journey.form.h":"成形","journey.form.p":"设计、创造、系统化、发布。想法成为人们能够体验的作品。","journey.grow.h":"成长","journey.grow.p":"运营、传播、改善、商业化。创造进入世界，并从现实中学习。","journey.endure.h":"长存","journey.endure.p":"版权、身份、系统、知识与资产。最初的想法，最终拥有留下来的能力。",
+  "pmv.kicker":"宗旨 · 使命 · 愿景","pmv.title":"不只为一刻，<br>而是为了长久。","pmv.intro":"原创想法值得拥有成为作品的机会；有意义的作品，也值得获得能够持续成长的系统、耐心与管理。","pmv.purpose.label":"我们的宗旨","pmv.purpose.h":"让值得实现的想象成为现实。","pmv.purpose.p":"让有意义的想法成为真实作品，并赋予这些作品持续成长的能力。","pmv.mission.label":"我们的使命","pmv.mission.h":"创造、系统化并长期管理。","pmv.mission.p":"持续孵化和运营原创艺术、知识与数字知识产权，同时建立生态所需的综合能力。","pmv.vision.label":"我们的愿景","pmv.vision.h":"建立全球独立创意智能生态。","pmv.vision.p":"让艺术、知识、技术与知识产权共同成长，逐步形成具有文化相关性、商业韧性与恒久价值的品牌和资产。",
+  "principles.kicker":"我们的原则","principles.title":"创意自由。<br>有意识的结构。","principles.intro":"这些原则指导梦萃如何创造、构建系统，以及作出长期决策。","principles.one.h":"有纪律的想象力","principles.one.p":"保护想象不受不必要的限制，再通过结构让想法变得更清晰、更强大、更恒久。","principles.two.h":"技术服务于创造","principles.two.p":"AI、自动化和新兴系统只是工具；梦萃的身份始终根植于想象、判断与原创思考。","principles.three.h":"构筑长久","principles.three.p":"一首歌可以成为曲库，一种视觉可以成为语言，一篇文章可以成为知识系统，一个概念可以成为品牌。",
+  "internal.kicker":"内部优先 · 生态优先","internal.title":"系统因创造<br>的需要而生。","internal.copy":"梦萃首先围绕旗下品牌的真实需要建立基础设施、知识与资源，让创意与系统始终保持紧密连接：系统因作品的需要而改善，作品也因系统的演化而变得更强。",
+  "founder.kicker":"由 MAXON 麦森创立","founder.title":"深度感受。<br>系统思考。<br>独立构建。","founder.copy":"麦森负责整个生态的愿景、品牌架构、创意方向与系统设计。","founder.link":"探索创始人 ↘",
+  "closing.kicker":"一个持续演化的矩阵","closing.title":"聆听。观看。思考。<br><span class=\"prism-text\">创造能够长久的一切。</span>","closing.copy":"声音可以启发图像，图像可以成为世界，问题可以成为知识体系。一个想法，只要获得足够的时间与照料，便可能成为能够长久存在的价值。","closing.ecosystem":"探索品牌生态 ↗","closing.home":"返回首页 ↑",
+  "footer.copy":"一个围绕听觉、视觉与认知构建的独立创意智能品牌生态。","footer.portfolio":"品牌组合","footer.explore":"探索","footer.rights":"版权所有。"
+ }
+};
+(()=>{
+ const buttons=[...document.querySelectorAll('.lang-btn')],menu=document.getElementById('primaryMenu'),toggle=document.getElementById('menuToggle');
+ function apply(lang,persist=false){lang=copy[lang]?lang:'en';document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=copy[lang][el.dataset.i18n];if(value!==undefined)el.textContent=value});document.querySelectorAll('[data-i18n-html]').forEach(el=>{const value=copy[lang][el.dataset.i18nHtml];if(value!==undefined)el.innerHTML=value});buttons.forEach(b=>{const active=b.dataset.lang===lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});toggle.setAttribute('aria-label',lang==='zh'?'打开或关闭导航':'Open or close navigation');if(persist)try{localStorage.setItem('malttrix_lang_pref',lang)}catch(_){}}
+ buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang,true)));
+ toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));menu.classList.toggle('open',open)});
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+ document.addEventListener('pointerdown',e=>{if(!document.getElementById('siteHeader').contains(e.target)){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
+ let lang='en';try{lang=localStorage.getItem('malttrix_lang_pref')||'en'}catch(_){}apply(lang);
+ const header=document.getElementById('siteHeader'),headerState=()=>header.classList.toggle('scrolled',scrollY>30);addEventListener('scroll',headerState,{passive:true});headerState();
+ if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -7%'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+})();
+</script>
+</body>
+</html>
