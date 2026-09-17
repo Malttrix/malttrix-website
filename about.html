@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-about-v6-1">
+<html lang="en" data-release="malttrix-about-v6-2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -637,6 +637,55 @@ html[lang="zh-CN"] .closing-main p{max-width:760px;font-size:1rem;line-height:1.
  .operating-loop-section.js-loop .operating-loop:before{transform:scaleY(1)!important}
 }
 
+
+/* V14.7 navigation pill collision fix */
+@media(min-width:1101px){
+ .header .menu{align-items:stretch}
+ .header .menu>a,.header .nav-dropdown>.nav-trigger{
+   display:flex;align-items:center;padding:13px 10px!important;line-height:1.25!important;
+ }
+ .header .nav-dropdown{display:flex;align-items:stretch}
+ .header .nav-glider{top:1px!important;bottom:1px!important;border-radius:15px}
+ .header .menu.has-glider>a::after,.header .menu.has-glider>.nav-dropdown>.nav-trigger::after{display:none!important}
+}
+
+/* ABOUT V6.2 — hero spacing and Matrix Core refinement */
+@media(min-width:1051px){
+ .matrix-hero{padding-top:212px!important}
+ .matrix-hero-layout{min-height:calc(100svh - 266px)}
+}
+.matrix-copy .manifesto-meta{margin-top:14px}
+.core-axis span{font-size:.52rem;letter-spacing:.16em;color:#B8A9D9}
+.core-axis b{max-width:180px;margin:9px auto 8px;font:600 clamp(1.55rem,2.2vw,2.25rem)/.92 var(--font-display);letter-spacing:.015em;color:#F5F2EC}
+.core-axis small{max-width:180px;margin:auto;font-size:.45rem;line-height:1.45;letter-spacing:.13em;color:#9295A0}
+
+/* One-time entrance; scroll motion remains controlled by the existing Matrix script */
+.matrix-core,.matrix-ring,.matrix-coordinate,.matrix-particles i{transition-property:opacity,filter,transform;transition-duration:.85s;transition-timing-function:cubic-bezier(.2,.75,.2,1)}
+.matrix-core{opacity:0;filter:blur(7px) drop-shadow(0 38px 70px rgba(0,0,0,.45));transform:scale(.92)}
+.matrix-ring{opacity:0}
+.matrix-coordinate{opacity:0;transform:translateY(8px)}
+.matrix-particles i{opacity:0}
+.matrix-hero.matrix-ready .matrix-core{opacity:1;filter:blur(0) drop-shadow(0 38px 70px rgba(0,0,0,.45));transform:scale(1)}
+.matrix-hero.matrix-ready .matrix-ring{opacity:1}
+.matrix-hero.matrix-ready .matrix-coordinate{opacity:1;transform:none}
+.matrix-hero.matrix-ready .matrix-particles i{opacity:1}
+.matrix-hero.matrix-ready .matrix-ring.r1{transition-delay:.12s}.matrix-hero.matrix-ready .matrix-ring.r2{transition-delay:.22s}
+.matrix-hero.matrix-ready .c-sound{transition-delay:.28s}.matrix-hero.matrix-ready .c-vision{transition-delay:.38s}.matrix-hero.matrix-ready .c-cognition{transition-delay:.48s}
+.matrix-hero.matrix-ready .matrix-particles i{transition-delay:calc(.18s + var(--d)*.035s)}
+
+@media(max-width:1050px){
+ .matrix-hero{padding-top:165px!important}
+ .matrix-copy .manifesto-meta{margin-top:18px}
+}
+@media(max-width:700px){
+ .matrix-hero{padding-top:145px!important}
+ .matrix-copy .manifesto-meta{margin-top:10px}
+ .core-axis b{font-size:1.55rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .matrix-core,.matrix-ring,.matrix-coordinate,.matrix-particles i{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -700,7 +749,7 @@ html[lang="zh-CN"] .closing-main p{max-width:760px;font-size:1rem;line-height:1.
 <div class="matrix-ring r1"></div><div class="matrix-ring r2"></div>
 <div class="matrix-core">
 <i class="core-facet f1"></i><i class="core-facet f2"></i><i class="core-facet f3"></i><i class="core-facet f4"></i><i class="core-facet f5"></i><i class="core-facet f6"></i>
-<div class="core-axis"><span>MAT</span><b>TRIX</b><small>CORE / 00</small></div>
+<div class="core-axis"><span>MALTTRIX｜梦萃</span><b>MATRIX CORE</b><small>SOUND · VISION · COGNITION</small></div>
 </div>
 </div>
 <div class="matrix-system-label">COORDINATE FIELD / TRANSFORMATION CORE / v1.0</div>
@@ -964,6 +1013,9 @@ Object.assign(copy.zh,{
 </script>
 <script data-about-loop>
 (()=>{const section=document.querySelector('.operating-loop-section'),reduce=matchMedia('(prefers-reduced-motion: reduce)');if(!section||reduce.matches)return;section.classList.add('js-loop');const io=new IntersectionObserver(([entry])=>{if(entry.isIntersecting){section.classList.add('loop-in-view');io.disconnect()}},{threshold:.18,rootMargin:'0px 0px -10%'});io.observe(section)})();
+</script>
+<script data-about-hero-intro>
+(()=>{const hero=document.querySelector('.matrix-hero');if(!hero)return;const reveal=()=>requestAnimationFrame(()=>hero.classList.add('matrix-ready'));if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal()})();
 </script>
 </body>
 </html>
