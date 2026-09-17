@@ -21,4 +21,20 @@ html[lang="zh-CN"] .matrix-hero h1{font-size:clamp(3.1rem,5.5vw,5.8rem)!importan
 html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .cap-editorial h2,html[lang="zh-CN"] .loop-editorial h2{font-size:clamp(2.55rem,4.7vw,4.8rem)!important;line-height:1.25!important}
 @media(max-width:850px){.symbol-grid{grid-template-columns:1fr}.symbol-visual{min-height:350px;order:2}.symbol-copy{order:1}}
 @media(max-width:560px){.hummingbird-symbolism{padding:86px 0}.symbol-copy h2{font-size:clamp(3rem,14vw,4.5rem)}.symbol-visual{min-height:290px}.symbol-principles{grid-template-columns:1fr}.symbol-principle{min-height:0}.symbol-coordinate{font-size:8px}html[lang="zh-CN"] .symbol-copy h2{font-size:clamp(2.35rem,10.5vw,3.55rem)}}
-@media(prefers-reduced-motion:no-preference){.symbol-flight{animation:flightDash 16s linear infinite}.symbol-bird{animation:symbolHover 5s ease-in-out infinite;transform-origin:center}@keyframes flightDash{to{stroke-dashoffset:-160}}@keyframes symbolHover{50%{transform:translateY(-5px) rotate(.5deg)}}}
+/* The symbol forms once on entry: path → points → faceted bird. No decorative looping. */
+@media(prefers-reduced-motion:no-preference){
+  .symbol-visual .symbol-flight{stroke-dasharray:740;stroke-dashoffset:740;opacity:0;transition:stroke-dashoffset 1.65s cubic-bezier(.22,.75,.2,1),opacity .35s ease}
+  .symbol-visual .symbol-bird{opacity:0;filter:blur(2px);transition:opacity .5s ease 1.02s,filter .75s ease 1.02s}
+  .symbol-visual .symbol-bird path{stroke-dasharray:640;stroke-dashoffset:640;transition:stroke-dashoffset 1.15s cubic-bezier(.2,.8,.2,1) 1.02s}
+  .symbol-visual .symbol-bird circle{opacity:0;transition:opacity .25s ease 2s}
+  .symbol-visual .symbol-node{opacity:0;transform:scale(.25);transform-box:fill-box;transform-origin:center;transition:opacity .3s ease,transform .45s cubic-bezier(.2,.9,.25,1.35)}
+  .symbol-visual .n1{transition-delay:.42s}.symbol-visual .n2{transition-delay:.72s}.symbol-visual .n3{transition-delay:1.02s}
+  .symbol-visual.visible .symbol-flight{stroke-dashoffset:0;opacity:.55}
+  .symbol-visual.visible .symbol-bird{opacity:1;filter:none}
+  .symbol-visual.visible .symbol-bird path{stroke-dashoffset:0}
+  .symbol-visual.visible .symbol-bird circle{opacity:1}
+  .symbol-visual.visible .symbol-node{opacity:1;transform:scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .symbol-flight,.symbol-bird,.symbol-bird path,.symbol-bird circle,.symbol-node{animation:none!important;transition:none!important}
+}
