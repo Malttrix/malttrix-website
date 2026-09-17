@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-v14-6">
+<html lang="en" data-release="malttrix-v14-7">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -776,6 +776,18 @@ html.motion-paused .hero-atmosphere i{animation-play-state:paused}
 .header .nav-dropdown{position:relative;z-index:1}
 @supports(backdrop-filter:blur(1px)){
  .header{backdrop-filter:blur(25px) saturate(1.1);-webkit-backdrop-filter:blur(25px) saturate(1.1)}
+}
+
+
+/* V14.7 navigation pill collision fix */
+@media(min-width:1101px){
+ .header .menu{align-items:stretch}
+ .header .menu>a,.header .nav-dropdown>.nav-trigger{
+   display:flex;align-items:center;padding:13px 10px!important;line-height:1.25!important;
+ }
+ .header .nav-dropdown{display:flex;align-items:stretch}
+ .header .nav-glider{top:1px!important;bottom:1px!important;border-radius:15px}
+ .header .menu.has-glider>a::after,.header .menu.has-glider>.nav-dropdown>.nav-trigger::after{display:none!important}
 }
 
 </style>
