@@ -1,0 +1,22 @@
+.hummingbird-symbolism{position:relative;padding:112px 0;background:#F8F5EF;overflow:hidden}
+.hummingbird-symbolism:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 44%,rgba(118,86,200,.08),transparent 28%);pointer-events:none}
+.symbol-grid{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:8vw;align-items:center}
+.symbol-visual{position:relative;min-height:480px;display:grid;place-items:center}
+.symbol-visual svg{width:min(100%,520px);height:auto;overflow:visible}
+.symbol-flight{fill:none;stroke:url(#flightGradient);stroke-width:1.2;stroke-dasharray:7 9;opacity:.55}
+.symbol-bird{fill:none;stroke:#343740;stroke-width:1.35;stroke-linejoin:round;stroke-linecap:round}
+.symbol-node{fill:#F8F5EF;stroke-width:1.4}.symbol-node.n1{stroke:#7656C8}.symbol-node.n2{stroke:#35B7C4}.symbol-node.n3{stroke:#D5A447}
+.symbol-coordinate{font:500 9px var(--font-mono);letter-spacing:.1em;fill:#777A81}
+.symbol-copy .kicker{font:600 .68rem var(--font-mono);letter-spacing:.16em;color:var(--violet);text-transform:uppercase}
+.symbol-copy h2{max-width:660px;margin:18px 0 28px;font:600 clamp(3.4rem,6vw,6.4rem)/.9 var(--font-display);letter-spacing:-.045em}
+.symbol-copy>p{max-width:650px;color:#595C63;line-height:1.86}
+.symbol-principles{margin-top:42px;border-top:1px solid var(--line)}
+.symbol-principle{display:grid;grid-template-columns:52px 150px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.symbol-principle small{font:600 .63rem var(--font-mono);color:var(--violet)}.symbol-principle h3{margin:0;font:600 1.65rem/1.05 var(--font-display)}.symbol-principle p{margin:0;color:#60636A;font-size:.9rem;line-height:1.75}
+html[lang="zh-CN"] .symbol-copy h2{font-family:var(--font-cn-editorial);font-size:clamp(2.6rem,4.8vw,4.8rem);line-height:1.24;letter-spacing:0}
+html[lang="zh-CN"] .symbol-principle h3{font-family:var(--font-cn-editorial);font-size:1.35rem;line-height:1.35}
+html[lang="zh-CN"] .matrix-hero h1{font-size:clamp(3.1rem,5.5vw,5.8rem)!important;line-height:1.18!important}
+html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .cap-editorial h2,html[lang="zh-CN"] .loop-editorial h2{font-size:clamp(2.55rem,4.7vw,4.8rem)!important;line-height:1.25!important}
+@media(max-width:850px){.symbol-grid{grid-template-columns:1fr}.symbol-visual{min-height:350px;order:2}.symbol-copy{order:1}.symbol-principle{grid-template-columns:44px 130px 1fr}}
+@media(max-width:560px){.hummingbird-symbolism{padding:86px 0}.symbol-copy h2{font-size:clamp(3rem,14vw,4.5rem)}.symbol-visual{min-height:290px}.symbol-principle{grid-template-columns:36px 1fr;gap:12px}.symbol-principle p{grid-column:2}.symbol-coordinate{font-size:8px}html[lang="zh-CN"] .symbol-copy h2{font-size:clamp(2.35rem,10.5vw,3.55rem)}}
+@media(prefers-reduced-motion:no-preference){.symbol-flight{animation:flightDash 16s linear infinite}.symbol-bird{animation:symbolHover 5s ease-in-out infinite;transform-origin:center}@keyframes flightDash{to{stroke-dashoffset:-160}}@keyframes symbolHover{50%{transform:translateY(-5px) rotate(.5deg)}}}
