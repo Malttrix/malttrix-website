@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-release="malttrix-v14-5">
+<html lang="en" data-release="malttrix-v14-6">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -756,6 +756,26 @@ html.motion-paused .hero-atmosphere i{animation-play-state:paused}
 .header.scrolled{background:rgba(245,242,236,.84)!important}
 @supports(backdrop-filter:blur(1px)){
  .header{backdrop-filter:blur(24px) saturate(1.12);-webkit-backdrop-filter:blur(24px) saturate(1.12)}
+}
+
+
+/* V14.6 shared header refinement */
+.header{
+ background:rgba(250,249,246,.54)!important;
+ border-color:rgba(255,255,255,.58)!important;
+ box-shadow:0 12px 38px rgba(23,25,29,.055)!important;
+}
+.header.scrolled{
+ background:rgba(250,249,246,.75)!important;
+ box-shadow:0 14px 44px rgba(23,25,29,.085)!important;
+}
+.header .nav-glider{top:4px!important;bottom:4px!important;z-index:0!important}
+.header .menu>a,.header .nav-dropdown>.nav-trigger{
+ position:relative;z-index:1;padding-top:10px;padding-bottom:10px;line-height:1.2;
+}
+.header .nav-dropdown{position:relative;z-index:1}
+@supports(backdrop-filter:blur(1px)){
+ .header{backdrop-filter:blur(25px) saturate(1.1);-webkit-backdrop-filter:blur(25px) saturate(1.1)}
 }
 
 </style>
