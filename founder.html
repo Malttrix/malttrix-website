@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-release="malttrix-founder-v1-0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17191D">
+<title>Maxon Tan｜麦森 — Founder & Creative Systems Architect of Malttrix</title>
+<meta name="description" content="Meet Maxon Tan, founder and Creative Systems Architect of Malttrix｜梦萃—where artistic sensitivity, structural thinking and long-term stewardship meet.">
+<link rel="canonical" href="https://www.malttrix.com/founder">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Sans+SC:wght@400;500;600;700&amp;family=Noto+Serif+SC:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+ --ink:#17191D;--ivory:#F5F2EC;--paper:#FCFBF7;--graphite:#454850;--line:rgba(23,25,29,.12);
+ --blue:#3559C7;--cyan:#35B7C4;--jade:#69A982;--violet:#7656C8;--rose:#D75E9A;--coral:#E86D60;--gold:#D5A447;
+ --font-ui:Manrope,"Noto Sans SC",sans-serif;--font-display:"Cormorant Garamond","Noto Serif SC",serif;--font-mono:"IBM Plex Mono","Noto Sans SC",monospace;
+ --shadow:0 28px 90px rgba(23,25,29,.11);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;color:var(--ink);background:var(--ivory);font-family:var(--font-ui);overflow-x:clip}
+body:before{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background:radial-gradient(circle at 12% 7%,rgba(53,89,199,.11),transparent 27%),radial-gradient(circle at 88% 14%,rgba(215,94,154,.085),transparent 25%),radial-gradient(circle at 62% 82%,rgba(53,183,196,.06),transparent 30%),linear-gradient(180deg,#FCFBF7,#F5F2EC 48%,#EEE9E0)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background-image:linear-gradient(rgba(23,25,29,.027) 1px,transparent 1px),linear-gradient(90deg,rgba(23,25,29,.027) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(#000,transparent 92%)}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{max-width:100%}
+.container{width:min(1220px,calc(100% - 40px));margin:auto}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:white;padding:10px 16px}.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:6px}
+.header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(1220px,calc(100% - 28px));z-index:100;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;padding:6px 12px 6px 16px;border:1px solid var(--line);border-radius:18px;background:rgba(245,242,236,.74);backdrop-filter:blur(22px) saturate(1.15);box-shadow:0 14px 50px rgba(23,25,29,.08);transition:.3s}
+.header.scrolled{background:rgba(245,242,236,.94);box-shadow:0 18px 60px rgba(23,25,29,.14)}
+.brand{display:flex;align-items:center}.brand img{display:block;width:190px;height:68px;object-fit:contain}
+.menu{position:relative;display:flex;justify-content:center;align-items:center;gap:23px;font-size:.76rem;font-weight:600;color:#4d4f55}
+.menu>a,.nav-dropdown>.nav-trigger{position:relative;padding:9px 0;white-space:nowrap}
+.menu>a:after,.nav-trigger:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,var(--blue),var(--rose),var(--gold));transition:right .3s}
+.menu>a:hover:after,.menu>a:focus-visible:after,.menu>a.active:after,.nav-trigger:hover:after,.nav-trigger:focus-visible:after{right:0}
+.menu .active{color:var(--ink);font-weight:700}
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-panel{position:absolute;top:calc(100% + 10px);left:50%;width:250px;padding:10px;display:grid;gap:3px;opacity:0;visibility:hidden;transform:translate(-50%,-7px);border:1px solid var(--line);border-radius:15px;background:rgba(252,251,247,.97);box-shadow:0 22px 60px rgba(23,25,29,.13);backdrop-filter:blur(18px);transition:.22s;pointer-events:none}
+.nav-dropdown:hover .nav-panel,.nav-dropdown:focus-within .nav-panel{opacity:1;visibility:visible;transform:translate(-50%,0);pointer-events:auto}
+.nav-panel a,.nav-panel span{display:flex;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;font-size:.72rem}
+.nav-panel a:hover,.nav-panel a:focus-visible{background:rgba(118,86,200,.075)}
+.nav-panel small{font:500 .61rem var(--font-mono);color:#777981}
+.header-actions{display:flex;align-items:center;gap:8px}.lang-switch{display:flex;padding:3px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.56)}
+.lang-btn{border:0;cursor:pointer;padding:7px 9px;border-radius:8px;background:transparent;color:#696b70;font:700 .7rem var(--font-mono)}.lang-btn.active{color:white;background:var(--ink)}
+.enter{display:inline-flex;align-items:center;gap:7px;padding:10px 13px;border-radius:11px;background:linear-gradient(112deg,#3559C7,#7656C8);color:white;font-size:.72rem;font-weight:700}
+.menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.65);padding:10px}.menu-toggle span{display:block;height:2px;margin:5px 0;background:var(--ink)}
+.about-hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:150px 0 90px;overflow:hidden}
+.hero-layout{position:relative;z-index:3;display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center}
+.kicker{font:600 .69rem var(--font-mono);letter-spacing:.17em;text-transform:uppercase;color:var(--violet)}
+.about-hero h1{max-width:850px;margin:20px 0 25px;font-family:var(--font-display);font-size:clamp(4.5rem,8.5vw,8.5rem);font-weight:600;line-height:.87;letter-spacing:-.052em}
+.prism-text{color:transparent;background:linear-gradient(92deg,var(--blue),var(--violet) 30%,var(--rose) 58%,var(--gold));background-clip:text;-webkit-background-clip:text}
+.hero-lede{max-width:710px;margin:0;color:#55585f;font-size:1.06rem;line-height:1.85}
+.hero-signature{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font:500 .72rem var(--font-mono);letter-spacing:.07em;color:#696b72}
+.hero-visual{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.matrix-orb{position:relative;width:min(37vw,480px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(118,86,200,.18);background:radial-gradient(circle at 38% 31%,rgba(255,255,255,.86),rgba(53,183,196,.10) 23%,rgba(118,86,200,.12) 49%,rgba(215,94,154,.09) 65%,transparent 72%);box-shadow:inset 0 0 80px rgba(255,255,255,.55),0 34px 100px rgba(53,89,199,.10);animation:orbFloat 7s ease-in-out infinite}
+.matrix-orb:before,.matrix-orb:after{content:"";position:absolute;border-radius:50%;inset:11%;border:1px solid rgba(53,183,196,.22);transform:rotate(58deg) scaleY(.55)}
+.matrix-orb:after{inset:22%;border-color:rgba(215,94,154,.20);transform:rotate(-38deg) scaleX(.62)}
+.orb-core{position:absolute;inset:0;display:grid;place-items:center;text-align:center}.orb-core strong{display:block;font:600 5rem/1 var(--font-display)}.orb-core span{font:500 .65rem var(--font-mono);letter-spacing:.16em;color:#656870}
+.orb-word{position:absolute;padding:8px 11px;border:1px solid rgba(23,25,29,.1);border-radius:999px;background:rgba(255,255,255,.67);font:600 .63rem var(--font-mono);letter-spacing:.1em;box-shadow:0 10px 30px rgba(23,25,29,.06)}
+.orb-word.sound{left:-8%;top:21%;color:var(--violet)}.orb-word.vision{right:-7%;top:43%;color:var(--cyan)}.orb-word.cognition{left:15%;bottom:3%;color:#9d7227}
+.hero-prism{position:absolute;pointer-events:none;filter:blur(1px);opacity:.65}.hero-prism.a{width:420px;height:420px;right:-90px;top:4%;border-radius:50%;background:radial-gradient(circle,rgba(118,86,200,.11),transparent 66%)}.hero-prism.b{width:54vw;height:1px;right:-5%;top:64%;background:linear-gradient(90deg,transparent,rgba(53,183,196,.32),rgba(215,94,154,.20),transparent);transform:rotate(-17deg)}
+.scroll-note{position:absolute;left:24px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);font:500 .63rem var(--font-mono);letter-spacing:.12em;color:#74767d}
+section{position:relative;padding:118px 0}.section-head{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px;align-items:start;margin-bottom:55px}.section-head h2,.display-title{margin:16px 0 0;font-family:var(--font-display);font-size:clamp(3.2rem,5.8vw,6.1rem);line-height:.94;letter-spacing:-.04em;font-weight:600}.section-copy{color:#575a61;line-height:1.9;font-size:1rem}.section-copy p:first-child{margin-top:0}.quote-line{margin-top:28px;padding-left:18px;border-left:2px solid var(--violet);font-family:var(--font-display);font-size:1.65rem;line-height:1.2}
+.meaning-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.meaning-card{position:relative;min-height:420px;padding:29px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.55);overflow:hidden;transition:.35s}.meaning-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.meaning-card:before{content:"";position:absolute;width:250px;height:250px;right:-120px;top:-110px;border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 68%);opacity:.16}
+.meaning-symbol{font:600 6rem/1 var(--font-display);color:var(--accent)}.meaning-card h3{margin:55px 0 16px;font-family:var(--font-display);font-size:2.25rem}.meaning-card p{color:#5b5d64;line-height:1.8}
+.ecosystem{background:#17191D;color:#F5F2EC;overflow:hidden}.ecosystem:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 20%,rgba(118,86,200,.26),transparent 26%),radial-gradient(circle at 86% 70%,rgba(53,183,196,.16),transparent 28%);opacity:.7}
+.ecosystem .container{position:relative}.ecosystem .section-copy{color:#b8bac1}.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:25px;overflow:hidden}
+.world{position:relative;min-height:510px;padding:31px;display:flex;flex-direction:column;background:rgba(23,25,29,.82);overflow:hidden;transition:.35s}.world:hover{background:rgba(36,38,45,.92)}
+.world:before{content:"";position:absolute;inset:auto -25% -35% -25%;height:70%;background:radial-gradient(circle,var(--accent),transparent 67%);opacity:.18;transition:.35s}.world:hover:before{opacity:.28;transform:scale(1.08)}
+.world-number{font:500 .66rem var(--font-mono);letter-spacing:.14em;color:var(--accent)}.world-verb{margin:auto 0 25px;font:600 clamp(4.5rem,6vw,7rem)/.9 var(--font-display)}.world h3{margin:0 0 10px;font-size:1rem}.world p{min-height:100px;margin:0;color:#b8bac1;font-size:.9rem;line-height:1.75}.world-link{margin-top:24px;font:600 .68rem var(--font-mono);letter-spacing:.08em}.world-link.muted{color:#8d8f96}
+.layer-statement{padding:50px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.7),rgba(255,255,255,.3));box-shadow:var(--shadow)}.layer-statement h2{margin:0;font-family:var(--font-display);font-size:clamp(3.3rem,6vw,6.8rem);line-height:.92;letter-spacing:-.045em}.layer-statement p{max-width:760px;margin:30px 0 0;color:#565960;line-height:1.9}
+.capability-list{margin-top:70px;border-top:1px solid var(--line)}.capability{display:grid;grid-template-columns:80px 1.05fr .95fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line);align-items:start}.capability-number{font:600 .7rem var(--font-mono);color:var(--violet)}.capability h3{margin:0;font-family:var(--font-display);font-size:2.1rem;line-height:1.05}.capability p{margin:0;color:#5d6066;line-height:1.8}
+.model-panel{padding:55px;border-radius:30px;background:#ECE8E0;border:1px solid rgba(23,25,29,.08)}.model-equation{display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center}.model-side{display:grid;gap:12px}.model-chip{padding:19px;border:1px solid rgba(23,25,29,.1);border-radius:15px;background:rgba(255,255,255,.63)}.model-chip small{display:block;margin-bottom:6px;font:500 .6rem var(--font-mono);letter-spacing:.12em;color:#7b7d83}.model-chip strong{font-size:.9rem}.multiply{font:600 4rem var(--font-display);color:var(--violet)}
+.model-result{margin-top:30px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;align-items:end}.model-result strong{font-family:var(--font-display);font-size:2.3rem}.model-result span{max-width:520px;color:#5c5e65;line-height:1.7}
+.journey-track{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.journey-step{position:relative;min-height:320px;padding:28px 20px;border-right:1px solid var(--line)}.journey-step:last-child{border-right:0}.journey-glyph{font:600 4.5rem/1 var(--font-display);color:var(--accent)}.journey-step h3{margin:72px 0 12px;font-family:var(--font-display);font-size:1.9rem}.journey-step p{color:#65676d;line-height:1.7;font-size:.88rem}
+.pmv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.pmv{min-height:390px;padding:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.52)}.pmv small{font:600 .66rem var(--font-mono);letter-spacing:.13em;color:var(--violet)}.pmv h3{margin:65px 0 20px;font-family:var(--font-display);font-size:2.5rem}.pmv p{color:#5d6066;line-height:1.85}
+.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.principle{padding:28px;border-top:2px solid var(--accent);background:rgba(255,255,255,.38)}.principle h3{font-family:var(--font-display);font-size:2rem;margin:12px 0}.principle p{color:#5d6066;line-height:1.75}
+.internal-panel{display:grid;grid-template-columns:1.1fr .9fr;border-radius:30px;overflow:hidden;background:#17191D;color:white}.internal-copy{padding:clamp(38px,6vw,75px)}.internal-copy h2{margin:0;font-family:var(--font-display);font-size:clamp(3.4rem,6vw,6.8rem);line-height:.9}.internal-copy p{margin:28px 0 0;color:#bbbcc3;line-height:1.85}.founder-bridge{padding:clamp(35px,5vw,62px);background:linear-gradient(145deg,rgba(53,89,199,.35),rgba(118,86,200,.28),rgba(215,94,154,.2));display:flex;flex-direction:column;justify-content:flex-end}.founder-bridge small{font:600 .65rem var(--font-mono);letter-spacing:.13em}.founder-bridge h3{margin:18px 0;font-family:var(--font-display);font-size:2.7rem;line-height:1}.founder-bridge p{color:#e0dde8;line-height:1.75}.founder-link{margin-top:24px;font:600 .7rem var(--font-mono);letter-spacing:.08em}
+.closing{padding:150px 0;text-align:center}.closing h2{margin:0 auto;font-family:var(--font-display);font-size:clamp(4.2rem,8.5vw,9rem);line-height:.86;letter-spacing:-.05em}.closing p{max-width:690px;margin:32px auto 0;color:#5a5c63;line-height:1.85}.closing-actions{display:flex;justify-content:center;gap:12px;margin-top:32px}.button{display:inline-flex;padding:14px 18px;border-radius:13px;border:1px solid var(--line);font-size:.8rem;font-weight:700;background:rgba(255,255,255,.55)}.button.dark{background:var(--ink);color:white}
+.site-footer{padding:70px 0 28px;background:#17191D;color:white}.footer-grid{display:grid;grid-template-columns:1.4fr .6fr .6fr;gap:60px}.footer-brand img{width:240px;padding:13px;border-radius:15px;background:#F5F2EC}.footer-brand p{max-width:380px;color:#adafb6;line-height:1.7}.footer-col h4{font:600 .67rem var(--font-mono);letter-spacing:.13em;color:#92949b}.footer-col ul{list-style:none;padding:0;margin:20px 0}.footer-col li{margin:12px 0;color:#d5d5d8;font-size:.88rem}.soon{color:#797b82}.footer-bottom{margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;color:#8f9198;font:500 .67rem var(--font-mono)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.75,.2,1)}.reveal.visible{opacity:1;transform:none}
+@keyframes orbFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-13px) rotate(2deg)}}
+html[lang="zh-CN"] .about-hero h1,html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .display-title,html[lang="zh-CN"] .layer-statement h2,html[lang="zh-CN"] .closing h2,html[lang="zh-CN"] .internal-copy h2{font-family:"Noto Serif SC",serif;letter-spacing:0;line-height:1.2}
+html[lang="zh-CN"] .about-hero h1{font-size:clamp(3.8rem,7.2vw,7.2rem)}
+@media(max-width:1050px){.header{grid-template-columns:auto 1fr auto;gap:12px}.brand img{width:155px}.menu{gap:13px;font-size:.7rem}.hero-layout{gap:30px}.meaning-card{min-height:390px}.capability{grid-template-columns:60px 1fr 1fr}}
+@media(max-width:900px){
+ .header{grid-template-columns:auto 1fr}.header-actions{justify-self:end}.menu-toggle{display:block}.enter{display:none}
+ .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:none;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;border:1px solid var(--line);border-radius:16px;background:rgba(252,251,247,.98);box-shadow:var(--shadow)}
+ .menu.open{display:flex}.menu>a,.nav-dropdown>.nav-trigger{padding:12px}.nav-dropdown{display:block}.nav-panel{position:static;width:auto;padding:3px 8px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;border-radius:0;background:transparent;box-shadow:none;pointer-events:auto}.nav-panel a,.nav-panel span{padding:8px 12px}
+ .about-hero{padding-top:135px}.hero-layout,.section-head{grid-template-columns:1fr}.hero-visual{max-width:560px;width:100%;margin:auto}.matrix-orb{width:min(78vw,470px)}
+ .meaning-grid,.ecosystem-grid,.pmv-grid,.principles-grid{grid-template-columns:1fr}.world{min-height:390px}.capability{grid-template-columns:50px 1fr}.capability p{grid-column:2}.journey-track{grid-template-columns:1fr}.journey-step{min-height:0;border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:80px 1fr;gap:20px}.journey-step:last-child{border-bottom:0}.journey-step h3{margin:0}.journey-step p{grid-column:2}.internal-panel{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.scroll-note{display:none}
+}
+@media(max-width:600px){.container{width:min(100% - 26px,1220px)}.header{width:calc(100% - 18px);padding-left:9px}.brand img{width:128px;height:60px}.lang-btn{padding:7px}.about-hero{padding:120px 0 70px}.about-hero h1{font-size:clamp(3.6rem,17vw,5.2rem)}section{padding:85px 0}.section-head{gap:25px}.meaning-card{min-height:330px}.model-panel{padding:25px}.model-equation{grid-template-columns:1fr}.multiply{text-align:center}.model-result{display:block}.model-result span{display:block;margin-top:14px}.capability{grid-template-columns:38px 1fr;gap:15px}.capability h3{font-size:1.7rem}.journey-step{grid-template-columns:65px 1fr}.pmv{min-height:310px}.closing{padding:100px 0}.closing-actions{flex-direction:column}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{display:block;line-height:1.8}.orb-word{font-size:.55rem}.orb-word.sound{left:-2%}.orb-word.vision{right:-2%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.matrix-orb{animation:none}.reveal{opacity:1;transform:none;transition:none}}
+/* About V2 */
+.header{top:10px;width:min(1400px,calc(100% - 28px));grid-template-columns:240px 1fr auto;gap:18px;padding:8px 12px;border-radius:22px;background:rgba(245,242,236,.68)}.header.scrolled{padding:6px 12px;background:rgba(245,242,236,.92)}.header .brand-mark{display:flex;align-items:center;width:240px;line-height:0}.header .brand img.logo-light{display:block;width:240px;height:auto;max-width:none;object-fit:contain}.brand-symbol{display:none}.header .menu{justify-self:center;display:flex;align-items:center;justify-content:center;gap:4px;padding:6px;border:1px solid rgba(118,86,200,.10);border-radius:999px;background:rgba(240,239,245,.58);font-size:.86rem}.header .menu>a,.header .nav-dropdown>.nav-trigger{display:flex;align-items:center;justify-content:center;padding:13px 14px;border-radius:999px;min-height:44px;white-space:nowrap;color:#50545F;font-weight:500}.header .menu>a::after,.header .nav-dropdown>.nav-trigger::after{display:none}.header .menu>a.active{color:#3559C7;font-weight:600;background:rgba(255,255,255,.76)}.header .menu>a:hover,.header .menu>a:focus-visible,.header .nav-dropdown>.nav-trigger:hover,.header .nav-dropdown>.nav-trigger:focus-visible{color:#3559C7;background:rgba(255,255,255,.58)}
+.about-manifesto{min-height:100svh;padding:165px 0 58px;background:#17191D;color:#F5F2EC;isolation:isolate}.about-manifesto:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 82% 18%,rgba(118,86,200,.34),transparent 29%),radial-gradient(circle at 14% 78%,rgba(53,183,196,.16),transparent 27%),linear-gradient(145deg,#17191D,#1b1d24 56%,#20212a)}.about-manifesto:after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(#000,transparent 93%)}.manifesto-layout{position:relative;min-height:calc(100svh - 223px);display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto 1fr auto auto;column-gap:40px}.manifesto-meta{grid-column:1/-1;display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.14);font:500 .64rem var(--font-mono);letter-spacing:.15em;color:#AEB0B8}.manifesto-copy{grid-column:2;align-self:center;max-width:990px;padding:50px 0}.manifesto-copy .kicker{color:#BCA9F0}.manifesto-copy h1{margin:18px 0 27px;max-width:none;font-size:clamp(5rem,9.3vw,10.3rem);line-height:.82;color:#F5F2EC}.manifesto-copy .hero-lede{max-width:760px;color:#BFC1C8}.manifesto-glyphs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}.manifesto-glyphs span{position:absolute;font:600 min(38vw,620px)/1 "Noto Serif SC",serif;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.075)}.manifesto-glyphs span:first-child{left:-5%;top:12%;transform:rotate(-8deg)}.manifesto-glyphs span:last-child{right:-2%;bottom:-10%;transform:rotate(8deg)}.manifesto-ray{position:absolute;width:75vw;height:1px;right:-8%;top:58%;background:linear-gradient(90deg,transparent,rgba(53,183,196,.45),rgba(215,94,154,.32),transparent);transform:rotate(-13deg);box-shadow:0 0 30px rgba(118,86,200,.28)}.manifesto-axis{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}.manifesto-axis>div{display:grid;grid-template-columns:35px 1fr;padding:18px 16px;border-right:1px solid rgba(255,255,255,.14)}.manifesto-axis>div:last-child{border-right:0}.manifesto-axis small{grid-row:1/3;font:500 .62rem var(--font-mono);color:#777A84}.manifesto-axis strong{font:.72rem var(--font-mono);letter-spacing:.13em}.manifesto-axis span{margin-top:5px;color:#90939C;font-size:.73rem}.manifesto-signature{grid-column:2;padding-top:18px;font:500 .64rem var(--font-mono);letter-spacing:.13em;color:#8E9099}
+.capabilities-detail{padding-top:138px}.capability-chapters{border-top:1px solid var(--line)}.capability-chapter{display:grid;grid-template-columns:120px minmax(0,1.3fr) minmax(280px,.7fr);gap:45px;padding:62px 0;border-bottom:1px solid var(--line);align-items:start}.chapter-index span{display:block;font:600 4.8rem/1 var(--font-display);color:var(--accent)}.chapter-index small{display:block;margin-top:15px;font:600 .6rem/1.5 var(--font-mono);letter-spacing:.11em;color:#707279}.chapter-main h3{margin:0;font-family:var(--font-display);font-size:clamp(2.6rem,4.1vw,4.7rem);line-height:.98;letter-spacing:-.035em}.chapter-main>p{color:#5A5D63;line-height:1.86}.chapter-lede{margin-top:28px;font-size:1.04rem}.chapter-principle{margin-top:27px;padding:20px 22px;border-left:2px solid var(--accent);background:rgba(255,255,255,.46);font-family:var(--font-display);font-size:1.45rem;line-height:1.3}.chapter-scope{padding:24px;border:1px solid var(--line);border-radius:19px;background:rgba(255,255,255,.48)}.chapter-scope>small{font:600 .61rem var(--font-mono);letter-spacing:.13em;color:var(--accent)}.chapter-scope ul{list-style:none;padding:0;margin:20px 0 0}.chapter-scope li{position:relative;padding:11px 0 11px 18px;border-top:1px solid var(--line);color:#55585F;font-size:.82rem;line-height:1.55}.chapter-scope li:before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.site-footer{padding:82px 0 28px}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:50px;padding-bottom:46px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:34px}.footer-brand{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:16px;max-width:360px}.footer-logo-plate{padding:14px;border-radius:18px;background:#F5F2EC;line-height:0}.footer-brand img{display:block;width:240px;height:auto;padding:0;background:none;border-radius:0}.footer-signature{font-family:var(--font-display);font-size:1.3rem;line-height:1.3}.footer-brand p{margin:0;color:#AEB0B7;font-size:.9rem;line-height:1.7}.footer-col h4{margin:0 0 16px;font:600 .7rem var(--font-mono);letter-spacing:.12em;color:#A6A8AF}.footer-col ul{list-style:none;padding:0;margin:0}.footer-col li{margin:12px 0;color:#D5D5D8;font-size:.9rem}.footer-motion-inline{display:flex;gap:12px}.footer-motion-inline span{font-size:.62rem}.footer-motion-inline span:before{content:"";display:inline-block;width:5px;height:5px;margin-right:6px;border-radius:50%;background:var(--violet)}
+@media(max-width:1100px){.header{grid-template-columns:82px 1fr;padding:8px 12px}.header .brand-mark{width:82px}.header .brand img.logo-light{display:none}.brand-symbol{position:relative;display:block;width:82px;height:68px;overflow:hidden}.brand-symbol img{position:absolute;left:0;top:0;width:132px!important;max-width:none;height:68px!important;object-fit:contain;clip-path:polygon(0 0,64% 0,64% 29%,50% 37%,44% 53%,39% 75%,34% 100%,0 100%)}.header-actions{justify-self:end}.menu-toggle{display:block}.enter{display:flex;width:44px;height:44px;padding:10px}.enter span{display:none}.header .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:none;flex-direction:column;align-items:stretch;gap:0;padding:12px 18px;border-radius:16px;background:rgba(252,251,247,.98)}.header .menu.open{display:flex}.header .menu>a,.header .nav-dropdown>.nav-trigger{justify-content:flex-start;padding:12px 14px;border-radius:10px}.header .nav-dropdown{display:block}.header .nav-panel{position:static;width:auto;padding:3px 8px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;background:transparent;box-shadow:none;pointer-events:auto}.manifesto-layout{grid-template-columns:80px minmax(0,1fr)}.capability-chapter{grid-template-columns:90px 1fr}.chapter-scope{grid-column:2}}
+@media(max-width:700px){.about-manifesto{padding:125px 0 45px}.manifesto-layout{display:block;min-height:auto}.manifesto-meta{font-size:.56rem}.manifesto-meta span:last-child{display:none}.manifesto-copy{padding:70px 0 50px}.manifesto-copy h1{font-size:clamp(4rem,18vw,6.5rem);line-height:.88}.manifesto-axis{grid-template-columns:1fr}.manifesto-axis>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.manifesto-axis>div:last-child{border-bottom:0}.manifesto-signature{padding-top:16px}.capability-chapter{grid-template-columns:1fr;gap:25px;padding:48px 0}.chapter-index{display:flex;align-items:end;gap:18px}.chapter-index span{font-size:3.8rem}.chapter-index small{margin:0 0 5px}.chapter-scope{grid-column:auto}.chapter-main h3{font-size:2.55rem}.footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-motion-inline{margin-top:14px;flex-wrap:wrap}}
+
+
+/* Homepage shell: exact header and footer styling */
+html[lang="zh-CN"] h1,
+html[lang="zh-CN"] h2,
+html[lang="zh-CN"] .manifesto,
+html[lang="zh-CN"] .stack-core strong,
+html[lang="zh-CN"] .founder-card h3,
+html[lang="zh-CN"] .founder-copy h3,
+html[lang="zh-CN"] .footer-signature{
+  font-family:var(--font-cn-editorial);
+  letter-spacing:0;
+}
+/* =========================================================
+   HEADER — logo enlarged further (58px -> 68px)
+========================================================= */
+.header{
+  position:fixed; top:15px; left:50%; transform:translateX(-50%);
+  width:min(1200px, calc(100% - 28px)); z-index:100;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:28px;
+  padding:6px 12px 6px 16px;
+  border:1px solid var(--line); border-radius:18px;
+  background:rgba(245,242,236,.73);
+  backdrop-filter:blur(22px) saturate(1.15);
+  -webkit-backdrop-filter:blur(22px) saturate(1.15);
+  box-shadow:0 14px 50px rgba(23,25,29,.07);
+  transition:box-shadow .3s ease, background .3s ease;
+}
+.header.scrolled{ background:rgba(245,242,236,.92); box-shadow:0 18px 60px rgba(23,25,29,.13); }
+.brand{ display:flex; align-items:center; }
+.brand-mark{ position:relative; display:flex; align-items:center; }
+.brand img.logo-light{ display:block; width:auto; height:68px; }
+.brand-pulse{
+  position:absolute; right:-8px; top:-2px; width:8px; height:8px; border-radius:50%;
+  background:conic-gradient(var(--blue),var(--violet),var(--rose),var(--gold),var(--cyan),var(--blue));
+  animation:pulseSpin 4s linear infinite, pulseScale 2.4s ease-in-out infinite;
+  transition:background .4s ease;
+}
+.menu{ display:flex; justify-content:center; align-items:center; gap:27px; font-size:.76rem; font-weight:600; }
+.menu a{ position:relative; padding:8px 0; color:#4D4F55; transition:color .25s ease; }
+.menu a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:3px; height:1px;
+  background:linear-gradient(90deg, var(--blue), var(--rose), var(--gold));
+  transition:right .3s ease;
+}
+.menu a:hover::after, .menu a:focus-visible::after, .menu a.active::after{ right:0; }
+.menu a.active{ color:var(--ink); font-weight:700; }
+.header-actions{ display:flex; align-items:center; gap:9px; }
+.lang-switch{ display:flex; padding:3px; border:1px solid var(--line); border-radius:11px; background:rgba(255,255,255,.56); }
+.lang-btn{ border:0; cursor:pointer; padding:7px 9px; border-radius:8px; background:transparent; color:#696B70; font-size:.7rem; font-weight:700; font-family:var(--font-mono); }
+.lang-btn.active{ color:white; background:var(--ink); }
+.enter{ padding:10px 13px; border-radius:11px; background:var(--ink); color:white; font-size:.72rem; font-weight:700; }
+.brand-name{ font-size:.78rem; font-weight:700; letter-spacing:.07em; }
+/* =========================================================
+   FOOTER — logo enlarged further (64px -> 76px), portfolio links live
+========================================================= */
+footer.site-footer{ position:relative; overflow:hidden; background:var(--ink); color:rgba(255,255,255,.72); padding:80px 0 0; }
+footer.site-footer::before{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(53,89,199,.30), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(215,94,154,.22), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(53,183,196,.14), transparent 40%);
+}
+.footer-newsletter-strip{
+  position:relative; display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+  padding:34px 38px; margin-bottom:52px; border-radius:26px;
+  border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.05);
+}
+.footer-newsletter-strip h4{ margin:0 0 6px; font-family:var(--font-editorial); font-size:1.7rem; color:white; }
+.footer-newsletter-strip p{ margin:0; font-size:.83rem; color:rgba(255,255,255,.55); }
+.footer-newsletter-strip form{ display:flex; gap:10px; }
+.footer-newsletter-strip input{
+  flex:1; padding:13px 15px; border-radius:11px; border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.07); color:white; font-size:.83rem;
+}
+.footer-newsletter-strip input::placeholder{ color:rgba(255,255,255,.4); }
+.footer-newsletter-strip button{
+  padding:13px 18px; border-radius:11px; border:0; background:linear-gradient(90deg,var(--blue),var(--violet));
+  color:white; font-weight:700; font-size:.8rem; cursor:pointer; white-space:nowrap;
+}
+.footer-top{ position:relative; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; padding-bottom:46px; border-bottom:1px solid rgba(255,255,255,.1); margin-bottom:34px; }
+.footer-brand{ display:flex; flex-direction:column; align-items:flex-start; text-align:left; gap:16px; max-width:360px; }
+.footer-brand img{ height:76px; width:auto; display:block; object-fit:contain; margin:0; align-self:flex-start; }
+.footer-signature{ font-family:var(--font-editorial); font-size:1.3rem; color:white; line-height:1.3; }
+.footer-brand p{ color:rgba(255,255,255,.55); font-size:.82rem; line-height:1.7; margin:0; max-width:320px; }
+.footer-col h4{ margin:0 0 16px; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); font-family:var(--font-mono); }
+.footer-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.footer-col li{ display:flex; align-items:center; gap:8px; }
+.footer-col a{ color:rgba(255,255,255,.72); font-size:.85rem; transition:color .2s ease; }
+.footer-col a.portfolio-link:hover, .footer-col a.portfolio-link:focus-visible{ color:var(--gold); }
+.footer-col .soon-item{ color:rgba(255,255,255,.55); font-size:.85rem; }
+.footer-col .soon{ font-size:.62rem; font-family:var(--font-mono); color:rgba(255,255,255,.32); letter-spacing:.05em; padding:2px 7px; border:1px solid rgba(255,255,255,.15); border-radius:999px; }
+.footer-bottom{
+  position:relative; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;
+  padding:26px 0; border-top:1px solid rgba(255,255,255,.1);
+  font-family:var(--font-mono); font-size:.72rem; color:rgba(255,255,255,.4);
+}
+.footer-bottom-right{ display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+.footer-social{ display:flex; gap:16px; }
+.footer-social a{ color:rgba(255,255,255,.55); }
+.footer-social a:hover, .footer-social a:focus-visible{ color:var(--cyan); }
+.footer-motion-inline{ display:flex; gap:16px; flex-wrap:wrap; }
+.footer-motion-inline span{ position:relative; padding-left:12px; }
+.footer-motion-inline span::before{ content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:5px; height:5px; border-radius:50%; background:var(--violet); }
+.footer-motion-inline span:nth-child(1)::before{ background:var(--blue); }
+.footer-motion-inline span:nth-child(2)::before{ background:var(--cyan); }
+.footer-motion-inline span:nth-child(3)::before{ background:var(--violet); }
+.footer-motion-inline span:nth-child(4)::before{ background:var(--rose); }
+.footer-motion-inline span:nth-child(5)::before{ background:var(--gold); }
+@media(max-width:930px){.footer-top{ grid-template-columns:1fr 1fr; }
+.footer-newsletter-strip{ grid-template-columns:1fr; }
+}
+@media(max-width:640px){.footer-top{ grid-template-columns:1fr; }
+.footer-bottom{ flex-direction:column; align-items:flex-start; gap:14px; }
+.footer-motion-inline{ order:2; }
+}
+@media(max-width:930px){.menu{ display:none; }
+}
+@media(max-width:640px){.header{ grid-template-columns:auto 1fr; }
+.header-actions{ justify-self:end; }
+.enter{ display:none; }
+.brand img.logo-light{ height:50px; }
+.footer-brand img{ height:56px; }
+}
+.header{grid-template-columns:auto 1fr auto;gap:16px;top:12px;padding:5px 12px 5px 15px}
+.brand img.logo-light{width:180px;height:84px;object-fit:contain;mix-blend-mode:multiply}
+.brand-pulse{display:none}
+.header .menu{font-size:.78rem;gap:19px}
+.enter{display:none}
+.menu-toggle{display:none;width:44px;height:42px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.56);cursor:pointer;padding:10px}
+.menu-toggle span{display:block;height:2px;margin:5px 0;background:var(--ink);transition:transform .2s}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.footer-cta-strip{grid-template-columns:1fr auto}
+.footer-cta{display:inline-flex;align-items:center;justify-content:center;background:#3559c7;color:white;padding:15px 20px;border-radius:12px;font-size:.85rem;font-weight:600}
+footer.site-footer .footer-brand img{width:240px;height:auto;max-height:125px;object-fit:contain;object-position:left center}
+.footer-col a{font-size:.95rem}
+.footer-col h4{font-size:.75rem;color:#a6a8af}
+.footer-brand p{font-size:.93rem;color:#aeb0b7}
+.footer-bottom{font-size:.76rem;color:#a8abb3}
+@media(max-width:1100px) and (min-width:931px){.header .menu{gap:11px;font-size:.72rem}
+.brand img.logo-light{width:154px}
+}
+@media(max-width:930px){.header{grid-template-columns:auto 1fr;gap:8px}
+.header-actions{justify-self:end}
+.brand img.logo-light{width:160px;height:70px}
+.menu-toggle{display:block}
+.header .menu{position:absolute;left:0;right:0;top:calc(100% + 8px);display:flex;flex-direction:column;align-items:stretch;gap:0;padding:12px 20px;border:1px solid var(--line);border-radius:16px;background:#f5f2ec;box-shadow:0 18px 60px #17191d20;visibility:hidden;opacity:0;transform:translateY(-5px);transition:opacity .2s,transform .2s,visibility .2s}
+.header .menu.open{visibility:visible;opacity:1;transform:none}
+.header .menu a{padding:14px 4px;font-size:1rem}
+.footer-cta-strip{grid-template-columns:1fr;gap:20px}
+.footer-cta{justify-self:start}
+}
+@media(max-width:480px){.header{width:calc(100% - 20px);padding-left:8px;padding-right:8px}
+.brand img.logo-light{width:124px;height:64px}
+.header-actions{gap:6px}
+.lang-btn{font-size:.73rem;padding:9px 7px}
+.menu-toggle{width:40px}
+}
+h1,h2,.manifesto,.dimension h3,.portfolio-subject,.founder-copy h3,.stack-core strong,.footer-signature,.footer-newsletter-strip h4{font-family:var(--font-display);font-weight:600}
+.capability h3,.value-chip h3,.brand-name,.menu,.btn,.text-link,.card-action,.footer-cta,.footer-col a,.founder-meta strong,.founder-monogram small,.motion-toggle{font-family:var(--font-ui)}
+.kicker,.micro,.dimension-number,.cap-number,.principle-index,.facet-tag,.stack-core small,.footer-col h4,.footer-bottom,.motion-sequence,.scroll-cue,.lang-btn,.founder-monogram>span{font-family:var(--font-mono);font-weight:500}
+html[lang="zh-CN"] .footer-newsletter-strip h4{line-height:1.45}
+.footer-newsletter-strip p,.footer-col a{font-family:var(--font-ui)}
+.brand-name{font-size:.87rem}
+.footer-col h4{font-size:.79rem}
+/* The complete lockup retains its original ratio and 240px desktop minimum. */
+.header{width:min(1280px,calc(100% - 32px));top:12px;grid-template-columns:240px minmax(0,1fr) auto;gap:20px;padding:10px 20px 10px 16px;border-radius:26px;border:1px solid rgba(118,86,200,.16);background:linear-gradient(118deg,rgba(255,255,255,.94),rgba(245,242,236,.90));box-shadow:0 16px 55px rgba(47,39,91,.07),inset 0 1px 0 rgba(255,255,255,.94);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.header::before{content:"";position:absolute;top:-1px;left:25%;right:12%;height:2px;border-radius:4px;background:linear-gradient(90deg,transparent,rgba(53,89,199,.58),rgba(118,86,200,.6),transparent);pointer-events:none}
+.header.scrolled{padding-top:6px;padding-bottom:6px;background:rgba(250,249,246,.96);box-shadow:0 15px 40px rgba(47,39,91,.1)}
+.header .brand{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;line-height:0;isolation:auto}
+.header .brand-mark{display:block;width:240px;line-height:0}
+.header .brand img.logo-light{display:block;width:240px;height:auto;max-width:none;aspect-ratio:1563/805;object-fit:contain;mix-blend-mode:normal;filter:none;transform:none}
+.brand-symbol{display:none}
+.header .menu{justify-self:center;position:relative;display:flex;align-items:center;justify-content:center;gap:4px;padding:6px;border:1px solid rgba(118,86,200,.10);border-radius:999px;background:rgba(240,239,245,.58);font-family:var(--font-ui);font-size:.86rem;line-height:1.2;isolation:isolate}
+.header .menu a{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;padding:13px 14px;border-radius:999px;min-height:44px;white-space:nowrap;color:#50545F;font-weight:500;transition:color .24s,transform .24s,background .24s}
+.header .menu a::after{display:none}
+.header .menu a.active{color:#3559C7;font-weight:600;background:rgba(255,255,255,.76)}
+.header .menu a:hover,.header .menu a:focus-visible{color:#5740A0;transform:translateY(-1px);background:rgba(255,255,255,.76)}
+.header .menu.has-glider a.active,.header .menu.has-glider a:hover,.header .menu.has-glider a:focus-visible{background:transparent}
+.nav-glider{position:absolute;left:0;top:6px;bottom:6px;width:0;z-index:0;pointer-events:none;border:1px solid rgba(118,86,200,.2);border-radius:999px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(53,89,199,.045),rgba(118,86,200,.09));box-shadow:0 3px 12px rgba(66,50,139,.09),inset 0 1px 0 white;opacity:0;transition:transform .34s cubic-bezier(.2,.8,.2,1),width .34s cubic-bezier(.2,.8,.2,1),opacity .18s}
+.header-actions{gap:10px}
+.lang-switch{padding:4px;border-color:rgba(118,86,200,.18);background:rgba(255,255,255,.7);border-radius:999px}
+.lang-btn{padding:10px 11px;font-size:.75rem;min-height:38px;border-radius:999px;font-weight:500;color:#65606F;transition:color .2s,background .2s,box-shadow .2s}
+.lang-btn.active{background:var(--prism-action);color:white;box-shadow:0 3px 10px rgba(75,61,161,.18)}
+.menu-toggle{border-color:rgba(118,86,200,.2);border-radius:14px;background:linear-gradient(135deg,white,rgba(118,86,200,.06))}
+.menu-toggle span{background:#5544A1}
+/* Gather light on hover/focus, then move forward. No unattended looping shine. */
+.btn.dark,.footer-cta{position:relative;isolation:isolate;overflow:hidden;background:var(--prism-action);border:1px solid rgba(118,86,200,.28);border-radius:16px;color:white;min-height:50px;padding:15px 22px;font-family:var(--font-ui);font-size:.88rem;font-weight:600;line-height:1.35;box-shadow:0 9px 24px rgba(64,65,159,.17),inset 0 1px 0 rgba(255,255,255,.22);transition:transform .28s,box-shadow .28s,border-color .28s}
+.btn.dark::before,.footer-cta::before{content:"";position:absolute;inset:-70% -30%;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.28) 47%,transparent 62%);transform:translateX(-100%);transition:none}
+.btn.dark:hover,.btn.dark:focus-visible,.footer-cta:hover,.footer-cta:focus-visible{transform:translateY(-3px);border-color:rgba(118,86,200,.5);box-shadow:0 15px 30px rgba(64,65,159,.23),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn.dark:hover::before,.btn.dark:focus-visible::before,.footer-cta:hover::before,.footer-cta:focus-visible::before{transform:translateX(100%);transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.btn.dark:active,.footer-cta:active{transform:translateY(0);box-shadow:0 4px 12px rgba(64,65,159,.16)}
+.footer-brand{padding:0}
+.footer-brand .footer-logo-plate{padding:14px;border-radius:18px;background:#f5f2ec;line-height:0}
+footer.site-footer .footer-brand img{width:240px;height:auto;max-height:none;object-fit:contain;filter:none;mix-blend-mode:normal}
+@media(min-width:1101px) and (max-width:1250px){.header{gap:12px;padding-left:14px;padding-right:14px}
+.header .menu a{padding-left:11px;padding-right:11px;font-size:.80rem}
+}
+@media(max-width:1100px){.header{grid-template-columns:240px 1fr;gap:16px}
+.header-actions{justify-self:end}
+.menu-toggle{display:block}
+.header .menu{position:absolute;left:0;right:0;top:calc(100% + 10px);display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:12px;gap:4px;border:1px solid rgba(118,86,200,.16);border-radius:23px;background:rgba(250,249,246,.98);box-shadow:0 18px 50px rgba(47,39,91,.12);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .24s,transform .24s,visibility .24s}
+.header .menu.open{visibility:visible;opacity:1;transform:none}
+.header .menu a{justify-content:flex-start;padding:15px 18px;font-size:1rem;border-radius:14px;min-height:48px}
+.header .menu a.active,.header .menu.has-glider a.active{background:linear-gradient(110deg,rgba(53,89,199,.07),rgba(118,86,200,.09));color:#5544A1}
+.nav-glider{display:none}
+.header .menu a:hover{background:rgba(118,86,200,.06);transform:none}
+}
+@media(max-width:640px){.header{grid-template-columns:82px 1fr;width:calc(100% - 24px);gap:12px;border-radius:22px;padding:8px 12px;top:10px}
+.header.scrolled{padding:6px 12px}
+.header .brand-mark{width:82px;display:flex;align-items:center;justify-content:center}
+.header .brand img.logo-light{display:none}
+.brand-symbol{position:relative;display:block;width:82px;height:68px;overflow:hidden}
+.brand-symbol img{position:absolute;left:0;top:0;display:block;width:132px!important;max-width:none;height:68px!important;object-fit:contain;clip-path:polygon(0 0,64% 0,64% 29%,50% 37%,44% 53%,39% 75%,34% 100%,0 100%)}
+.header-actions{gap:9px}
+.lang-btn{font-size:.76rem;padding:10px 12px;min-height:40px}
+.menu-toggle{width:44px;height:44px;flex:0 0 auto}
+.btn.dark,.footer-cta{font-size:.87rem;padding:14px 18px;min-height:49px}
+.footer-brand .footer-logo-plate{padding:12px}
+}
+@media(prefers-reduced-motion:reduce){.nav-glider,.header,.header .menu a,.btn.dark,.footer-cta,.lang-btn{transition:none!important}
+.btn.dark::before,.footer-cta::before,.founder-light{display:none!important}
+.btn.dark:hover,.footer-cta:hover,.header .menu a:hover{transform:none!important}
+}
+html.motion-paused .nav-glider,html.motion-paused .header,html.motion-paused .header .menu a,html.motion-paused .btn.dark,html.motion-paused .footer-cta{transition:none!important}
+html.motion-paused .btn.dark::before,html.motion-paused .footer-cta::before,html.motion-paused .founder-light{display:none!important}
+html.motion-paused .btn.dark:hover,html.motion-paused .btn.dark:focus-visible,html.motion-paused .footer-cta:hover,html.motion-paused .footer-cta:focus-visible,html.motion-paused .header .menu a:hover{transform:none!important}
+/* V11 — warm glass, depth and an editorial founder portrait. */
+.header{background:linear-gradient(120deg,rgba(255,255,255,.62),rgba(245,242,236,.52));backdrop-filter:blur(26px) saturate(125%);-webkit-backdrop-filter:blur(26px) saturate(125%);border-color:rgba(255,255,255,.75);box-shadow:0 10px 32px rgba(47,39,91,.06),inset 0 1px 0 rgba(255,255,255,.85)}
+.header.scrolled{background:rgba(249,247,242,.77);box-shadow:0 8px 30px rgba(47,39,91,.09)}
+.header .menu{background:transparent;border-color:transparent}
+.nav-glider{background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 white,0 3px 12px rgba(53,89,199,.05)}
+.footer-brand .footer-logo-plate{padding:0;background:transparent;border-radius:0}
+footer.site-footer .footer-brand img{width:270px;max-width:100%}
+.footer-col h4{color:#b5b6c0}
+.footer-col a{color:#d0d1d5}
+.footer-brand p{color:#b9bbc3}
+.footer-motion-inline{display:none}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.header,.header.scrolled{background:#f5f2ec}
+}
+@media(max-width:1100px){.header .menu{background:rgba(250,249,246,.97);border-color:rgba(118,86,200,.12)}
+}
+/* V13.2 — navigation clarity, layered hero interaction and restrained parallax. */
+.enter{display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+.enter b{display:none;font:600 1rem/1 var(--font-mono)}
+.header .menu a[data-section="ecosystem"]{--section-color:#7656C8}
+.header .menu a[data-section="capabilities"]{--section-color:#35B7C4}
+.header .menu a[data-section="philosophy"]{--section-color:#D5A447}
+.header .menu a[data-section="founder"]{--section-color:#D75E9A}
+.header .menu a.active{color:var(--section-color)}
+.nav-glider{
+  --section-color:#7656C8;
+  border-color:color-mix(in srgb,var(--section-color) 28%,transparent);
+  background:linear-gradient(135deg,rgba(255,255,255,.96),color-mix(in srgb,var(--section-color) 10%,transparent));
+  box-shadow:0 3px 14px color-mix(in srgb,var(--section-color) 13%,transparent),inset 0 1px 0 white;
+}
+@media(min-width:1101px) and (max-width:1250px){.header{gap:18px}
+.header .brand img.logo-light{width:clamp(180px,16vw,200px);height:auto}
+.header .menu a{padding-left:13px;padding-right:13px;font-size:.82rem}
+}
+@media(max-width:930px){.enter{display:flex!important;width:44px;height:44px;padding:10px;flex:0 0 44px;border-radius:14px}
+.enter span{display:none}
+.enter b{display:inline}
+}
+/* V14.2 — About entry and accessible ecosystem navigation group. */
+.header .nav-dropdown{position:relative;display:flex;align-items:center}
+.header .nav-dropdown>.nav-trigger{position:relative;padding:8px 0;color:#4D4F55;white-space:nowrap;transition:color .25s ease}
+.header .nav-dropdown>.nav-trigger::after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:linear-gradient(90deg,var(--blue),var(--rose),var(--gold));transition:right .3s ease}
+.header .nav-dropdown>.nav-trigger:hover::after,.header .nav-dropdown>.nav-trigger:focus-visible::after,.header .nav-dropdown>.nav-trigger.active::after{right:0}
+.header .nav-panel{position:absolute;top:calc(100% + 11px);left:50%;width:252px;padding:10px;display:grid;gap:3px;opacity:0;visibility:hidden;transform:translate(-50%,-7px);border:1px solid var(--line);border-radius:15px;background:rgba(252,251,247,.97);box-shadow:0 22px 60px rgba(23,25,29,.13);backdrop-filter:blur(18px);transition:opacity .22s ease,transform .22s ease,visibility .22s;pointer-events:none}
+.header .nav-dropdown:hover .nav-panel,.header .nav-dropdown:focus-within .nav-panel{opacity:1;visibility:visible;transform:translate(-50%,0);pointer-events:auto}
+.header .nav-panel>a,.header .nav-panel>.nav-soon-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;color:#4D4F55;font-size:.72rem;font-weight:600}
+.header .nav-panel>a::after{display:none}
+.header .nav-panel>a:hover,.header .nav-panel>a:focus-visible{background:rgba(118,86,200,.075)}
+.header .nav-panel small{font:500 .61rem var(--font-mono);color:#777981}
+@media(max-width:1100px){.header .nav-dropdown{display:block}
+.header .nav-dropdown>.nav-trigger{display:block;padding:13px 18px}
+.header .nav-panel{position:static;width:auto;padding:2px 11px 10px;display:grid;opacity:1;visibility:visible;transform:none;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;pointer-events:auto}
+.header .nav-panel>a,.header .nav-panel>.nav-soon-item{padding:9px 12px;font-size:.7rem}
+}
+
+
+
+/* ABOUT V4 — seven-moment narrative */
+.about-progress{position:fixed;top:0;left:0;z-index:180;width:100%;height:2px;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--blue),var(--violet),var(--rose),var(--gold));box-shadow:0 0 18px rgba(118,86,200,.48);pointer-events:none}
+section{position:relative}
+.about-manifesto{min-height:100svh;padding:165px 0 58px;background:#17191D;color:#F5F2EC;isolation:isolate;overflow:hidden}
+.about-manifesto:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 82% 18%,rgba(118,86,200,.34),transparent 29%),radial-gradient(circle at 14% 78%,rgba(53,183,196,.16),transparent 27%),linear-gradient(145deg,#17191D,#1B1D24 56%,#20212A)}
+.about-manifesto:after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(#000,transparent 93%)}
+.manifesto-layout{position:relative;min-height:calc(100svh - 223px);display:grid;grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto 1fr auto auto;column-gap:40px}
+.manifesto-meta{grid-column:1/-1;display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.14);font:500 .64rem var(--font-mono);letter-spacing:.15em;color:#AEB0B8}
+.manifesto-copy{grid-column:2;align-self:center;max-width:990px;padding:50px 0;position:relative;z-index:2}.manifesto-copy .kicker{color:#BCA9F0}
+.manifesto-copy h1{margin:18px 0 27px;max-width:none;font:600 clamp(5rem,9.3vw,10.3rem)/.82 var(--font-display);letter-spacing:-.055em;color:#F5F2EC}
+.manifesto-copy .hero-lede{max-width:760px;color:#BFC1C8;line-height:1.85}
+.manifesto-glyphs{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}.manifesto-glyphs span{position:absolute;font:600 min(38vw,620px)/1 "Noto Serif SC",serif;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.075)}.manifesto-glyphs span:first-child{left:-5%;top:12%;transform:rotate(-8deg)}.manifesto-glyphs span:last-child{right:-2%;bottom:-10%;transform:rotate(8deg)}
+.manifesto-ray{position:absolute;width:75vw;height:1px;right:-8%;top:58%;background:linear-gradient(90deg,transparent,rgba(53,183,196,.45),rgba(215,94,154,.32),transparent);transform:rotate(-13deg);box-shadow:0 0 30px rgba(118,86,200,.28)}
+.hero-flight-mark{position:absolute;right:4vw;top:23%;width:min(31vw,450px);aspect-ratio:1;display:grid;place-items:center;opacity:.28;transform:rotate(-8deg);pointer-events:none}.hero-flight-mark img{width:54%;filter:brightness(0) invert(1) drop-shadow(0 0 35px rgba(118,86,200,.9))}.flight-orbit{position:absolute;border:1px solid rgba(255,255,255,.2);border-radius:50%}.flight-orbit.one{inset:8%;animation:orbit 18s linear infinite}.flight-orbit.two{inset:22%;border-style:dashed;animation:orbit 12s linear infinite reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.manifesto-axis{grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}.manifesto-axis>div{display:grid;grid-template-columns:35px 1fr;padding:18px 16px;border-right:1px solid rgba(255,255,255,.14)}.manifesto-axis>div:last-child{border-right:0}.manifesto-axis small{grid-row:1/3;font:500 .62rem var(--font-mono);color:#777A84}.manifesto-axis strong{font:.72rem var(--font-mono);letter-spacing:.13em}.manifesto-axis span{margin-top:5px;color:#90939C;font-size:.73rem}.manifesto-signature{grid-column:2;padding-top:18px;font:500 .64rem var(--font-mono);letter-spacing:.13em;color:#8E9099}
+
+.purpose-meaning{padding:clamp(110px,12vw,180px) 0;background:#F5F2EC}
+.purpose-grid{display:grid;grid-template-columns:1.05fr 1.1fr .72fr;gap:clamp(28px,5vw,70px);align-items:start;padding-bottom:clamp(100px,12vw,170px);border-bottom:1px solid var(--line)}
+.purpose-lead h2,.name-intro h2,.capabilities-detail .section-head h2,.founder-narrative>h2{margin:15px 0 28px;font:600 clamp(3.2rem,5.4vw,5.7rem)/.95 var(--font-display);letter-spacing:-.04em}.purpose-lead p,.name-intro p{color:#5B5E64;line-height:1.86}
+.purpose-statement{padding-top:44px}.purpose-statement small,.purpose-rail small{font:600 .63rem var(--font-mono);letter-spacing:.14em;color:var(--violet)}.purpose-statement strong{display:block;margin-top:22px;font:600 clamp(2.9rem,4.7vw,5.2rem)/.94 var(--font-display);letter-spacing:-.04em}.purpose-statement p{margin-top:26px;color:#5B5E64;line-height:1.8}
+.purpose-rail{border-left:1px solid var(--line)}.purpose-rail>div{padding:27px 0 34px 25px;border-bottom:1px solid var(--line)}.purpose-rail h3{margin:16px 0 12px;font-size:1.05rem;line-height:1.35}.purpose-rail p{margin:0;color:#666970;font-size:.82rem;line-height:1.7}
+.name-system{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(50px,8vw,115px);padding-top:clamp(90px,10vw,145px)}
+.name-intro{position:sticky;top:145px;align-self:start}.name-steps{display:grid}
+.name-steps article{display:grid;grid-template-columns:125px 1fr;gap:35px;padding:38px 0;border-top:1px solid var(--line)}.name-steps article:last-child{border-bottom:1px solid var(--line)}.name-steps b{font:600 6rem/1 var(--font-display);color:var(--accent)}.name-steps small{font:600 .6rem var(--font-mono);letter-spacing:.14em;color:var(--accent)}.name-steps h3{margin:10px 0;font:600 2.05rem var(--font-display)}.name-steps p{margin:0;color:#5B5E64;line-height:1.78}
+
+.portfolio-ecosystem{padding:clamp(120px,12vw,180px) 0;background:#17191D;color:#F5F2EC;overflow:hidden}.portfolio-ecosystem:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 8% 18%,rgba(118,86,200,.25),transparent 28%),radial-gradient(circle at 90% 74%,rgba(53,183,196,.14),transparent 30%)}
+.portfolio-ecosystem .container{position:relative}.section-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(45px,8vw,110px);align-items:end;margin-bottom:70px}.section-head h2{margin:15px 0 0;font:600 clamp(5.2rem,9vw,10rem)/.82 var(--font-display);letter-spacing:-.055em}.section-copy{color:#B8BAC1;line-height:1.85}
+.portfolio-previews{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14)}
+.portfolio-preview{position:relative;min-width:0;padding:25px;display:flex;flex-direction:column;background:#1B1D22;color:#F5F2EC;overflow:hidden;transition:background .35s}.portfolio-preview:hover{background:#22242A}.preview-head{display:flex;justify-content:space-between;gap:18px;font:500 .58rem var(--font-mono);letter-spacing:.1em;color:#9A9CA5}.preview-head span:last-child{color:var(--accent);text-align:right}
+.portfolio-preview h3{margin:26px 0 10px;font:600 2rem/1.05 var(--font-display)}.portfolio-preview>p{margin:0;color:#AEB0B7;font-size:.83rem;line-height:1.7}
+.sonic-stage,.visual-study-art,.knowledge-fragment{position:relative;height:300px;margin:24px -6px 0;border:1px solid rgba(255,255,255,.1);background:#15171B;overflow:hidden}
+.sonic-stage{display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,rgba(118,86,200,.27),transparent 45%),#15171B}.wave{width:82%;height:120px;display:flex;align-items:center;gap:4px}.wave i{flex:1;height:calc(13% + (var(--n) % 9)*8%);max-height:100%;border-radius:4px;background:linear-gradient(180deg,#BCA9F0,#7656C8);animation:wave 2.8s ease-in-out infinite;animation-delay:calc(var(--n)*-.07s)}.play-core{position:absolute;width:58px;height:58px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(23,25,29,.62);backdrop-filter:blur(10px);font-size:.8rem}
+@keyframes wave{50%{transform:scaleY(.38);opacity:.58}}
+.visual-study-art{background:linear-gradient(145deg,#E9E3D9,#BACFCE 48%,#627F92)}.visual-study-art:before{content:"";position:absolute;width:64%;aspect-ratio:1;left:18%;top:8%;border-radius:50%;background:radial-gradient(circle at 34% 28%,#FFF,#DCEBE6 25%,#9FBABA 52%,rgba(32,53,68,.76) 75%,transparent 76%);box-shadow:0 35px 70px rgba(12,31,42,.38)}.visual-study-art i{position:absolute;width:120%;height:1px;left:-10%;top:var(--y,34%);background:rgba(255,255,255,.62);transform:rotate(-15deg)}.visual-study-art i:nth-child(2){--y:50%;transform:rotate(13deg)}.visual-study-art i:nth-child(3){--y:67%;transform:rotate(-6deg)}.visual-study-art b{position:absolute;inset:auto 24px 22px auto;width:48px;height:48px;border:1px solid rgba(255,255,255,.7);border-radius:50%}
+.knowledge-fragment{padding:28px;display:flex;flex-direction:column;justify-content:space-between;background:#F1ECE2;color:#17191D}.knowledge-fragment small,.knowledge-fragment span{font:600 .57rem var(--font-mono);letter-spacing:.12em;color:#87765A}.knowledge-fragment strong{font:600 1.35rem/1.28 var(--font-display)}
+.dimension-bridge{margin-top:55px;padding:30px 0;display:grid;grid-template-columns:1fr auto 1fr;gap:35px;align-items:center;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}.dimension-bridge div{display:flex;flex-direction:column;gap:8px}.dimension-bridge small{font:500 .58rem var(--font-mono);letter-spacing:.14em;color:#8F9199}.dimension-bridge strong{font-size:1rem}.dimension-bridge>b{font:400 2.5rem var(--font-display);color:#BCA9F0}.dimension-bridge>span{grid-column:1/-1;color:#A8AAB2;font:500 .65rem var(--font-mono);letter-spacing:.12em;text-align:center}
+
+.capabilities-detail{padding:clamp(115px,12vw,180px) 0;background:#F7F4EE}.capabilities-detail .section-head{align-items:start}.capabilities-detail .section-head h2{font-size:clamp(3.2rem,5.2vw,5.4rem)}.capabilities-detail .section-copy{color:#575A61}.quote-line{margin-top:28px;padding-left:18px;border-left:2px solid var(--violet);font:600 1.45rem/1.25 var(--font-display)}
+.capability-chapters{display:grid;gap:22px}.capability-chapter{position:relative;display:grid;grid-template-columns:135px minmax(0,1.25fr) minmax(280px,.7fr);gap:clamp(28px,5vw,68px);padding:clamp(38px,5vw,66px);border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.78);overflow:hidden;transition:transform .4s,box-shadow .4s}.capability-chapter:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--accent)}.capability-chapter:hover{transform:translateY(-7px);box-shadow:0 35px 90px rgba(23,25,29,.1)}
+.chapter-index span{display:block;font:600 clamp(4.6rem,7vw,7.8rem)/1 var(--font-display);letter-spacing:-.07em;color:var(--accent)}.chapter-index small{display:block;margin-top:14px;font:600 .58rem/1.5 var(--font-mono);letter-spacing:.11em;color:#707279}.chapter-main h3{margin:0;font:600 clamp(2.35rem,3.6vw,4rem)/1 var(--font-display);letter-spacing:-.03em}.chapter-main>p{color:#5A5D63;line-height:1.84}.chapter-lede{margin-top:27px;font-size:1.02rem}.chapter-principle{margin-top:27px;padding:21px 0 0;border-top:1px solid var(--accent);font:600 1.35rem/1.3 var(--font-display)}.chapter-scope{padding:24px;border:1px solid var(--line);border-radius:19px;background:color-mix(in srgb,var(--accent) 6%,white)}.chapter-scope>small{font:600 .61rem var(--font-mono);letter-spacing:.13em;color:var(--accent)}.chapter-scope ul{list-style:none;padding:0;margin:20px 0 0}.chapter-scope li{position:relative;padding:11px 0 11px 18px;border-top:1px solid var(--line);color:#55585F;font-size:.82rem;line-height:1.55}.chapter-scope li:before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+.creation-cycle{height:430vh;background:#17191D;color:#F5F2EC}.cycle-sticky{position:sticky;top:0;min-height:100svh;padding:115px 0 35px;overflow:hidden;background:radial-gradient(circle at 82% 20%,rgba(118,86,200,.2),transparent 27%),#17191D}.cycle-heading{display:grid;grid-template-columns:.35fr 1fr 1fr;gap:35px;align-items:end;margin-bottom:35px}.cycle-heading h2{margin:0;font:600 clamp(5rem,8vw,9rem)/.82 var(--font-display);letter-spacing:-.055em}.cycle-heading>p{margin:0 0 6px;color:#B8BAC1;line-height:1.8;max-width:520px}.cycle-progress{grid-column:1/-1;height:1px;background:rgba(255,255,255,.15)}.cycle-progress i{display:block;width:100%;height:2px;transform:scaleX(var(--cycle-progress,0));transform-origin:left;background:linear-gradient(90deg,var(--violet),var(--cyan),var(--gold));transition:transform .08s linear}
+.cycle-viewport{width:min(1220px,calc(100% - 40px));margin:auto;overflow:visible}.cycle-track{display:flex;gap:16px;width:max-content;will-change:transform}.cycle-moment{position:relative;width:min(68vw,760px);height:48vh;min-height:390px;padding:30px;border:1px solid rgba(255,255,255,.13);border-radius:24px;background:rgba(255,255,255,.045);overflow:hidden}.cycle-copy{position:absolute;left:30px;right:30px;bottom:28px;display:grid;grid-template-columns:110px 1fr;gap:15px;align-items:end}.cycle-copy small{font:600 .59rem var(--font-mono);letter-spacing:.13em;color:#9698A0}.cycle-copy h3{grid-column:2;margin:0;font:600 clamp(3.8rem,6vw,6.8rem)/.85 var(--font-display)}.cycle-copy p{grid-column:2;margin:0;color:#AFB1B8;line-height:1.7;max-width:500px}
+.cycle-fragments{position:absolute;inset:0}.cycle-fragments i{position:absolute;width:11px;height:11px;border:1px solid rgba(255,255,255,.55);background:rgba(118,86,200,.33);transform:rotate(45deg);transition:1s}.cycle-fragments i:nth-child(1){left:11%;top:13%}.cycle-fragments i:nth-child(2){left:21%;top:32%}.cycle-fragments i:nth-child(3){left:34%;top:18%}.cycle-fragments i:nth-child(4){left:48%;top:37%}.cycle-fragments i:nth-child(5){left:63%;top:14%}.cycle-fragments i:nth-child(6){left:77%;top:30%}.cycle-fragments i:nth-child(7){left:88%;top:12%}.cycle-fragments i:nth-child(8){left:15%;top:52%}.cycle-fragments i:nth-child(9){left:40%;top:55%}.cycle-fragments i:nth-child(10){left:58%;top:49%}.cycle-fragments i:nth-child(11){left:74%;top:58%}.cycle-fragments i:nth-child(12){left:91%;top:47%}
+.distill .cycle-fragments i{left:calc(50% + (var(--x,0)*1px));top:30%}.distill .cycle-fragments i:nth-child(odd){transform:rotate(45deg) translate(-55px,-20px)}.distill .cycle-fragments i:nth-child(even){transform:rotate(45deg) translate(50px,24px)}
+.form .cycle-fragments i{left:calc(38% + (var(--x,0)*1px));top:22%;width:44px;height:44px;border-color:rgba(53,183,196,.7);background:rgba(53,183,196,.13)}.form .cycle-fragments i:nth-child(3n+1){transform:translate(58px,0) rotate(45deg)}.form .cycle-fragments i:nth-child(3n+2){transform:translate(0,58px) rotate(45deg)}.form .cycle-fragments i:nth-child(3n){transform:translate(58px,58px) rotate(45deg)}
+.grow .cycle-fragments:before,.grow .cycle-fragments:after{content:"";position:absolute;left:13%;right:10%;top:27%;height:1px;background:linear-gradient(90deg,var(--violet),var(--cyan),transparent)}.grow .cycle-fragments:after{top:40%;left:28%;transform:rotate(-9deg)}.grow .cycle-fragments i{border-radius:50%;background:var(--cyan);border:0;box-shadow:0 0 22px rgba(53,183,196,.7)}
+.endure .cycle-fragments{inset:20px 20px auto auto;width:44%;height:55%;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:18px;border:1px solid rgba(213,164,71,.36)}.endure .cycle-fragments i{position:static;width:auto;height:auto;background:rgba(213,164,71,.12);border-color:rgba(213,164,71,.55);transform:none}
+
+.founder-internal{padding:clamp(110px,12vw,180px) 0;background:#EEE9E0}.founder-stage{min-height:720px;display:grid;grid-template-columns:.82fr 1.18fr;border-radius:34px;overflow:hidden;background:linear-gradient(135deg,#222843,#3A3470 52%,#17191D);color:#F5F2EC;box-shadow:0 45px 120px rgba(23,25,29,.18)}
+.founder-figure{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:radial-gradient(circle at 50% 38%,rgba(118,86,200,.42),transparent 38%)}.founder-figure:after{content:"MAXON";position:absolute;left:22px;bottom:18px;font:600 5.8rem/1 var(--font-display);letter-spacing:-.06em;color:rgba(255,255,255,.07)}.founder-figure img{position:relative;z-index:2;width:min(92%,560px);max-height:690px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 28px 55px rgba(0,0,0,.36))}.founder-aura{position:absolute;width:500px;aspect-ratio:1;border:1px solid rgba(255,255,255,.13);border-radius:50%;animation:orbit 30s linear infinite}.founder-aura:after{content:"";position:absolute;inset:13%;border:1px dashed rgba(53,183,196,.35);border-radius:50%}
+.founder-narrative{padding:clamp(45px,7vw,90px);display:flex;flex-direction:column;justify-content:center}.founder-narrative .kicker{color:#BCA9F0}.founder-narrative>h2{font-size:clamp(3.4rem,5.3vw,6rem);color:white}.founder-narrative>p{max-width:630px;color:#C2C4CC;line-height:1.82}.founder-line{margin-top:46px;padding-top:30px;border-top:1px solid rgba(255,255,255,.16)}.founder-line small{font:600 .6rem var(--font-mono);letter-spacing:.14em;color:#D5A447}.founder-line h3{margin:16px 0;font:600 clamp(2rem,3vw,3rem)/1 var(--font-display)}.founder-line p{color:#B8BAC2;line-height:1.75}.founder-line a{display:inline-block;margin-top:16px;font:600 .64rem var(--font-mono);letter-spacing:.1em;color:#F5F2EC}
+
+.closing{padding:clamp(130px,15vw,220px) 0;text-align:center;background:#F5F2EC;overflow:hidden}.closing:before{content:"";position:absolute;width:70vw;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(118,86,200,.11),rgba(53,183,196,.04) 38%,transparent 68%)}.closing .container{position:relative}.closing h2{max-width:1100px;margin:16px auto 0;font:600 clamp(5rem,9vw,10rem)/.84 var(--font-display);letter-spacing:-.055em}.closing p{max-width:680px;margin:28px auto 0;color:#5B5E63;line-height:1.82}.closing-actions{display:flex;justify-content:center;gap:12px;margin-top:32px}.button{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.7);font-size:.78rem;font-weight:700}.button.dark{background:#17191D;color:white}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .82s ease,transform .82s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:none}
+
+html[lang="zh-CN"] .manifesto-copy h1,html[lang="zh-CN"] .purpose-lead h2,html[lang="zh-CN"] .name-intro h2,html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .chapter-main h3,html[lang="zh-CN"] .cycle-heading h2,html[lang="zh-CN"] .cycle-copy h3,html[lang="zh-CN"] .founder-narrative h2,html[lang="zh-CN"] .founder-line h3,html[lang="zh-CN"] .closing h2{font-family:"Noto Serif SC",serif;letter-spacing:0;line-height:1.15}
+
+@media(max-width:1100px){
+ .manifesto-layout{grid-template-columns:80px minmax(0,1fr)}.purpose-grid{grid-template-columns:1fr 1fr}.purpose-rail{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;border-left:0;border-top:1px solid var(--line)}.purpose-rail>div{border-right:1px solid var(--line)}
+ .portfolio-previews{grid-template-columns:1fr 1fr}.portfolio-preview.knowledge{grid-column:1/-1}.capability-chapter{grid-template-columns:90px 1fr}.chapter-scope{grid-column:2}.cycle-heading{grid-template-columns:1fr 1.2fr}.cycle-heading .kicker{grid-column:1/-1}.cycle-heading>p{grid-column:2}
+}
+@media(max-width:900px){
+ .hero-flight-mark{display:none}.manifesto-layout{grid-template-columns:1fr}.manifesto-copy,.manifesto-axis,.manifesto-signature{grid-column:1}.purpose-grid,.name-system,.section-head{grid-template-columns:1fr}.name-intro{position:static}.portfolio-previews{grid-template-columns:1fr}.portfolio-preview.knowledge{grid-column:auto}.dimension-bridge{grid-template-columns:1fr}.dimension-bridge>b{text-align:center}.section-head h2{font-size:clamp(4.8rem,16vw,7rem)}
+ .capability-chapter{grid-template-columns:1fr}.chapter-scope{grid-column:auto}.creation-cycle{height:auto}.cycle-sticky{position:relative;min-height:0;padding:100px 0}.cycle-heading{grid-template-columns:1fr}.cycle-heading .kicker,.cycle-heading>p{grid-column:auto}.cycle-viewport{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:15px}.cycle-track{transform:none!important}.cycle-moment{width:85vw;height:520px;scroll-snap-align:start}.cycle-progress{display:none}
+ .founder-stage{grid-template-columns:1fr}.founder-figure{min-height:600px}.founder-narrative{padding:50px 30px}
+}
+@media(max-width:600px){
+ .about-manifesto{padding:125px 0 45px}.manifesto-layout{display:block;min-height:auto}.manifesto-meta span:last-child{display:none}.manifesto-copy{padding:65px 0 45px}.manifesto-copy h1{font-size:clamp(4rem,18vw,6.4rem);line-height:.88}.manifesto-axis{grid-template-columns:1fr}.manifesto-axis>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+ .purpose-meaning,.portfolio-ecosystem,.capabilities-detail,.founder-internal{padding:90px 0}.purpose-grid{grid-template-columns:1fr}.purpose-rail{grid-template-columns:1fr}.purpose-rail>div{border-right:0}.purpose-statement strong{font-size:2.8rem}.name-steps article{grid-template-columns:76px 1fr;gap:20px}.name-steps b{font-size:4.3rem}
+ .sonic-stage,.visual-study-art,.knowledge-fragment{height:250px}.portfolio-preview{padding:20px}.dimension-bridge{gap:18px}.capability-chapter{padding:30px 22px;border-radius:22px}.chapter-main h3{font-size:2.5rem}.cycle-heading h2{font-size:4.7rem}.cycle-moment{height:500px;padding:22px}.cycle-copy{left:22px;right:22px;grid-template-columns:1fr}.cycle-copy h3,.cycle-copy p{grid-column:1}.cycle-copy h3{font-size:4.2rem}
+ .founder-figure{min-height:500px}.founder-figure img{max-height:510px}.closing h2{font-size:clamp(4rem,17vw,6.4rem)}.closing-actions{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.flight-orbit,.founder-aura,.wave i{animation:none}.reveal{opacity:1;transform:none;transition:none}.cycle-track{transform:none!important}}
+
+
+/* V14.4 shell fixes — dropdown clearance and language contrast */
+.header .lang-btn.active{
+  color:#fff!important;
+  background:#17191D!important;
+  box-shadow:0 4px 14px rgba(23,25,29,.22)!important;
+}
+@media(min-width:1101px){
+  .header .nav-panel{top:calc(100% + 20px)}
+  .header .nav-dropdown::after{
+    content:"";position:absolute;z-index:0;left:-22px;right:-22px;top:100%;height:22px;
+  }
+  .header .nav-panel{z-index:2}
+  .header .nav-trigger{z-index:3}
+}
+
+
+/* ABOUT V5 — Matrix Core and six-moment narrative */
+.matrix-hero{min-height:100svh;padding:150px 0 54px;background:#17191D;color:#F5F2EC;overflow:hidden;isolation:isolate}
+.matrix-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 78% 42%,rgba(118,86,200,.2),transparent 34%),radial-gradient(circle at 8% 82%,rgba(53,183,196,.08),transparent 28%),linear-gradient(145deg,#14161A,#1A1C23 58%,#20212A)}
+.matrix-hero:after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.033) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.033) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(#000,transparent 94%)}
+.matrix-hero-layout{min-height:calc(100svh - 204px);display:grid;grid-template-columns:minmax(0,1.02fr) minmax(430px,.98fr);gap:clamp(40px,6vw,90px);align-items:center}
+.matrix-copy{position:relative;z-index:3;max-width:620px}.matrix-copy .manifesto-meta{display:flex;justify-content:space-between;gap:25px;padding-bottom:17px;margin-bottom:42px;border-bottom:1px solid rgba(255,255,255,.14);font:500 .6rem var(--font-mono);letter-spacing:.13em;color:#999CA5}.matrix-copy .kicker{color:#BCA9F0}
+.matrix-copy h1{max-width:620px;margin:16px 0 24px;font:600 clamp(4.2rem,6.7vw,7.2rem)/.86 var(--font-display);letter-spacing:-.05em;color:#F5F2EC}.matrix-copy .hero-lede{max-width:600px;margin:0;color:#BFC1C8;font-size:.97rem;line-height:1.8}
+.matrix-dimensions{display:grid;grid-template-columns:repeat(3,1fr);margin-top:35px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}.matrix-dimensions>div{display:grid;grid-template-columns:29px 1fr;padding:15px 12px;border-right:1px solid rgba(255,255,255,.12)}.matrix-dimensions>div:last-child{border-right:0}.matrix-dimensions small{grid-row:1/3;font:500 .54rem var(--font-mono);color:#777A84}.matrix-dimensions strong{font:600 .64rem var(--font-mono);letter-spacing:.11em}.matrix-dimensions span{margin-top:4px;color:#90939C;font-size:.63rem}
+.matrix-visual{position:relative;min-height:620px;display:grid;place-items:center;perspective:1100px}.matrix-visual:before{content:"";position:absolute;inset:8%;border:1px solid rgba(255,255,255,.07);clip-path:polygon(8% 0,100% 12%,92% 100%,0 88%)}
+.matrix-glyphs{position:absolute;inset:0;overflow:hidden;pointer-events:none}.matrix-glyphs span{position:absolute;font:600 clamp(12rem,20vw,22rem)/1 "Noto Serif SC",serif;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07)}.matrix-glyphs span:first-child{right:29%;top:0}.matrix-glyphs span:last-child{right:-3%;bottom:-4%}
+.matrix-core-shell{position:relative;width:min(34vw,470px);aspect-ratio:1;transform:rotate(-2deg);will-change:transform}.matrix-core{position:absolute;inset:14%;filter:drop-shadow(0 38px 70px rgba(0,0,0,.45));transform-style:preserve-3d}.core-facet{position:absolute;inset:0;clip-path:polygon(50% 0,98% 28%,83% 88%,42% 100%,3% 68%,10% 18%);border:1px solid rgba(255,255,255,.2);background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(118,86,200,.15) 36%,rgba(53,183,196,.11) 62%,rgba(215,94,154,.12));backdrop-filter:blur(11px)}.core-facet.f1{transform:rotate(0deg) scale(.98)}.core-facet.f2{transform:rotate(37deg) scale(.76);background:linear-gradient(145deg,rgba(213,164,71,.16),rgba(255,255,255,.05),rgba(53,89,199,.19))}.core-facet.f3{transform:rotate(79deg) scale(.56);background:linear-gradient(145deg,rgba(53,183,196,.19),rgba(255,255,255,.07),rgba(215,94,154,.15))}.core-facet.f4{transform:rotate(122deg) scale(.38);background:rgba(255,255,255,.08)}.core-facet.f5{inset:17%;transform:rotate(-28deg);background:linear-gradient(145deg,rgba(255,255,255,.28),rgba(118,86,200,.08))}.core-facet.f6{inset:31%;transform:rotate(18deg);background:rgba(255,255,255,.13);box-shadow:0 0 55px rgba(118,86,200,.22)}
+.core-axis{position:absolute;inset:0;z-index:8;display:grid;place-content:center;text-align:center}.core-axis span,.core-axis small{font:500 .55rem var(--font-mono);letter-spacing:.2em;color:#A6A8B0}.core-axis b{font:600 2.8rem/1 var(--font-display);color:#F5F2EC}
+.matrix-ring{position:absolute;border:1px solid rgba(255,255,255,.11);border-radius:50%}.matrix-ring.r1{inset:2%;transform:rotateX(67deg) rotateZ(22deg)}.matrix-ring.r2{inset:13%;border-style:dashed;transform:rotateY(65deg) rotateZ(-17deg)}
+.matrix-coordinate{position:absolute;z-index:4;padding:7px 9px;border-left:1px solid rgba(255,255,255,.2);font:500 .53rem var(--font-mono);letter-spacing:.11em;color:#8D9099}.matrix-coordinate b{display:block;margin-top:4px;color:#B9BBC2;font-weight:500}.c-sound{left:2%;top:20%}.c-vision{right:1%;top:42%}.c-cognition{left:11%;bottom:17%}
+.matrix-particles{position:absolute;left:50%;top:50%;width:1px;height:1px}.matrix-particles i{position:absolute;left:0;top:0;width:5px;height:5px;transform:translate(var(--x),var(--y)) rotate(45deg);background:rgba(188,169,240,.62);border:1px solid rgba(255,255,255,.28);box-shadow:0 0 12px rgba(118,86,200,.28);will-change:transform}.matrix-particles i:nth-child(3n){background:rgba(53,183,196,.58)}.matrix-particles i:nth-child(4n){background:rgba(213,164,71,.58)}
+.matrix-system-label{position:absolute;right:0;bottom:1%;font:500 .5rem var(--font-mono);letter-spacing:.13em;color:#686B74}
+
+.why-meaning{padding:clamp(115px,12vw,180px) 0;background:#F5F2EC}.why-editorial{display:grid;grid-template-columns:120px minmax(0,1.1fr) minmax(320px,.9fr);gap:clamp(35px,6vw,90px);align-items:start;padding-bottom:clamp(90px,11vw,155px);border-bottom:1px solid var(--line)}.why-index span{display:block;font:600 5rem/1 var(--font-display);color:var(--violet)}.why-index small{display:block;margin-top:13px;font:600 .58rem var(--font-mono);letter-spacing:.13em;color:#696C73}.why-statement h2{margin:0;font:600 clamp(3.4rem,5.2vw,5.7rem)/.94 var(--font-display);letter-spacing:-.04em}.why-rule{margin-top:35px;padding-top:19px;border-top:1px solid var(--ink);font:600 .7rem var(--font-mono);letter-spacing:.1em}.why-copy{padding-top:7px}.why-copy p{margin:0 0 24px;color:#575A61;line-height:1.9}.name-system{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(50px,8vw,115px);padding-top:clamp(90px,10vw,145px)}.name-intro{position:sticky;top:145px;align-self:start}.name-intro h2{margin:15px 0 24px;font:600 clamp(2.8rem,4.5vw,4.8rem)/.98 var(--font-display);letter-spacing:-.04em}.name-intro p{color:#5B5E64;line-height:1.82}.name-steps{display:grid}.name-steps article{display:grid;grid-template-columns:115px 1fr;gap:32px;padding:37px 0;border-top:1px solid var(--line)}.name-steps article:last-child{border-bottom:1px solid var(--line)}.name-steps b{font:600 5.3rem/1 var(--font-display);color:var(--accent)}.name-steps small{font:600 .59rem var(--font-mono);letter-spacing:.13em;color:var(--accent)}.name-steps h3{margin:10px 0;font:600 1.2rem var(--font-ui)}.name-steps p{margin:0;color:#5B5E64;line-height:1.78}
+
+.portfolio-ecosystem .wave i{animation:none!important}
+.capabilities-detail .section-head h2{font-size:clamp(3rem,4.8vw,5rem)}
+.chapter-main h3{font-family:var(--font-ui);font-size:clamp(1.75rem,2.5vw,2.75rem);line-height:1.12;letter-spacing:-.025em}
+.chapter-principle{font-family:var(--font-ui);font-size:1rem;line-height:1.55}
+.creation-cycle .cycle-fragments i{transition:none}
+
+.closing{padding:0;background:#F5F2EC;text-align:left}.closing:before{display:none}.founder-transition{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(45px,8vw,110px);align-items:end;padding:clamp(80px,10vw,140px);margin-inline:auto;max-width:1440px;background:linear-gradient(135deg,#1D2338,#393363 55%,#17191D);color:#F5F2EC}.founder-transition small{font:600 .58rem var(--font-mono);letter-spacing:.14em;color:#D5A447}.founder-transition h2{margin:18px 0 0;font:600 clamp(3.2rem,5.3vw,6rem)/.92 var(--font-display);letter-spacing:-.04em}.founder-transition p{color:#C3C5CC;line-height:1.85}.founder-transition a{display:inline-block;margin-top:20px;font:600 .65rem var(--font-mono);letter-spacing:.1em;color:#F5F2EC}
+.closing-main{position:relative;padding:clamp(130px,15vw,220px) 0;text-align:center;overflow:hidden}.closing-main:before{content:"";position:absolute;width:70vw;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(118,86,200,.1),rgba(53,183,196,.035) 38%,transparent 68%)}.closing-main>*{position:relative}.closing-main h2{max-width:1100px;margin:16px auto 0;font:600 clamp(5rem,9vw,10rem)/.84 var(--font-display);letter-spacing:-.055em}.closing-main p{max-width:680px;margin:28px auto 0;color:#5B5E63;line-height:1.82}.closing-actions{display:flex;justify-content:center;gap:12px;margin-top:32px}
+
+@media(max-width:1050px){
+ .matrix-hero-layout{grid-template-columns:1fr;min-height:auto}.matrix-copy{max-width:720px}.matrix-visual{min-height:530px}.matrix-core-shell{width:min(60vw,470px)}.why-editorial{grid-template-columns:90px 1fr}.why-copy{grid-column:2}.founder-transition{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+ .matrix-hero{padding-top:125px}.matrix-copy{max-width:none}.matrix-copy h1{font-size:clamp(4rem,13vw,6.5rem)}.matrix-visual{min-height:490px}.matrix-core-shell{width:min(78vw,450px)}.name-system{grid-template-columns:1fr}.name-intro{position:static}.why-editorial{grid-template-columns:1fr}.why-copy{grid-column:auto}.why-index{display:flex;align-items:end;gap:18px}.why-index span{font-size:3.8rem}
+ .founder-transition{padding:70px 32px}.closing-main h2{font-size:clamp(4.4rem,14vw,7rem)}
+}
+@media(max-width:600px){
+ .matrix-hero{padding:116px 0 45px}.matrix-copy .manifesto-meta span:last-child{display:none}.matrix-copy .manifesto-meta{margin-bottom:32px}.matrix-copy h1{font-size:clamp(3.7rem,16vw,5.3rem)}.matrix-dimensions{grid-template-columns:1fr}.matrix-dimensions>div{border-right:0;border-bottom:1px solid rgba(255,255,255,.11)}.matrix-visual{min-height:400px}.matrix-core-shell{width:min(92vw,380px)}.matrix-coordinate{font-size:.46rem}.matrix-system-label{display:none}
+ .why-meaning{padding:90px 0}.name-steps article{grid-template-columns:68px 1fr;gap:18px}.name-steps b{font-size:4rem}.founder-transition{padding:60px 22px}.founder-transition h2{font-size:3.2rem}.closing-main{padding:110px 0}.closing-main h2{font-size:clamp(3.8rem,16vw,5.7rem)}.closing-actions{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.matrix-core-shell,.matrix-particles i{transform:none!important}.portfolio-ecosystem .wave i{animation:none!important}}
+
+
+/* V14.5 global glass opacity refinement */
+.header{background:rgba(245,242,236,.62)!important}
+.header.scrolled{background:rgba(245,242,236,.84)!important}
+@supports(backdrop-filter:blur(1px)){
+ .header{backdrop-filter:blur(24px) saturate(1.12);-webkit-backdrop-filter:blur(24px) saturate(1.12)}
+}
+
+/* ABOUT V6 — operating intelligence map and stewardship loop */
+.header{background:rgba(245,242,236,.62)!important}.header.scrolled{background:rgba(245,242,236,.84)!important}
+.ecosystem-map-section{padding:clamp(120px,12vw,180px) 0;background:#17191D;color:#F5F2EC;overflow:hidden}
+.ecosystem-map-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(118,86,200,.15),transparent 34%),radial-gradient(circle at 90% 78%,rgba(53,183,196,.08),transparent 26%)}
+.ecosystem-map-section .container{position:relative}.ecosystem-map-section .section-head h2{font-size:clamp(4.8rem,8vw,8.8rem)}.ecosystem-map-section .section-copy{color:#B8BAC1}
+.ecosystem-map{position:relative;min-height:720px;border-top:1px solid rgba(255,255,255,.13);border-bottom:1px solid rgba(255,255,255,.13)}
+.ecosystem-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.ecosystem-lines path,.ecosystem-lines circle{fill:none;stroke:rgba(255,255,255,.12);stroke-width:1}.ecosystem-lines path{stroke-dasharray:4 8}
+.ecosystem-core{position:absolute;left:50%;top:50%;width:280px;aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-content:center;text-align:center;border:1px solid rgba(255,255,255,.28);border-radius:50%;background:radial-gradient(circle at 38% 30%,rgba(255,255,255,.14),rgba(118,86,200,.11) 38%,rgba(23,25,29,.92) 72%);box-shadow:0 0 0 38px rgba(255,255,255,.018),0 35px 90px rgba(0,0,0,.3)}
+.ecosystem-core:before,.ecosystem-core:after{content:"";position:absolute;border:1px solid rgba(53,183,196,.18);border-radius:50%;inset:13%;transform:rotateX(68deg)}.ecosystem-core:after{inset:22%;border-color:rgba(213,164,71,.18);transform:rotateY(65deg)}
+.ecosystem-core small{font:600 .58rem var(--font-mono);letter-spacing:.16em;color:#D5A447}.ecosystem-core strong{margin:14px 0;font:600 1.65rem/1.05 var(--font-ui);letter-spacing:.04em}.ecosystem-core span{font:500 .58rem/1.65 var(--font-mono);letter-spacing:.08em;color:#999BA4}
+.orbit-world{position:absolute;width:290px;padding:0 0 18px 19px;border-left:2px solid var(--accent);color:#F5F2EC}.world-sound{left:0;top:10%}.world-vision{right:0;top:10%}.world-cognition{right:1%;bottom:8%}.world-coordinate{font:500 .57rem var(--font-mono);letter-spacing:.13em;color:var(--accent)}.orbit-world h3{margin:13px 0 10px;font:600 1.25rem var(--font-ui)}.orbit-world p{margin:0;color:#AEB0B7;font-size:.81rem;line-height:1.72}.world-evidence{margin-top:16px;font:500 .52rem var(--font-mono);letter-spacing:.09em;color:#777A84}.orbit-world a,.world-soon{display:inline-block;margin-top:17px;font:600 .59rem var(--font-mono);letter-spacing:.1em;color:#F5F2EC}.world-soon{color:#777A84}
+.map-caption{position:absolute;left:0;bottom:8%;display:flex;flex-direction:column;gap:6px;font:500 .6rem var(--font-mono);letter-spacing:.11em;color:#898B94}.map-caption b{color:#D0D1D6;font-weight:500}
+
+.operating-loop-section{padding:clamp(120px,12vw,180px) 0;background:linear-gradient(145deg,#191B21,#232039 58%,#17191D);color:#F5F2EC;overflow:hidden}.operating-loop-section:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 42%,rgba(118,86,200,.09) 54%,rgba(53,183,196,.055) 65%,transparent 78%)}
+.operating-loop-section .container{position:relative}.loop-header{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(45px,8vw,110px);align-items:end;margin-bottom:75px}.loop-header h2{margin:15px 0 0;font:600 clamp(4.8rem,8vw,8.7rem)/.84 var(--font-display);letter-spacing:-.055em}.loop-header>p{color:#B8BAC1;line-height:1.85}
+.operating-loop{position:relative;max-width:940px;margin:auto}.operating-loop:before{content:"";position:absolute;left:119px;top:0;bottom:0;width:1px;background:linear-gradient(var(--violet),var(--blue),var(--cyan),var(--rose),var(--gold))}
+.loop-stage{position:relative;display:grid;grid-template-columns:80px 80px 1fr;gap:0;padding:35px 0;border-top:1px solid rgba(255,255,255,.13);align-items:center}.loop-stage:last-child{border-bottom:1px solid rgba(255,255,255,.13)}.loop-index{font:500 .69rem var(--font-mono);letter-spacing:.14em;color:#777A84}.loop-node{position:relative;height:70px;display:grid;place-items:center}.loop-node i{position:relative;z-index:2;width:16px;height:16px;border:1px solid var(--accent);background:#1C1D26;transform:rotate(45deg);box-shadow:0 0 18px color-mix(in srgb,var(--accent) 45%,transparent)}.loop-stage small{font:500 .55rem var(--font-mono);letter-spacing:.13em;color:var(--accent)}.loop-stage h3{margin:7px 0 8px;font:600 clamp(2.8rem,4.5vw,5rem)/.9 var(--font-display)}.loop-stage p{margin:0;color:#B8BAC1;line-height:1.7}
+.loop-return{max-width:940px;margin:42px auto 0;padding:24px 0 0 160px;display:grid;grid-template-columns:160px 1fr;gap:28px;border-top:1px solid rgba(255,255,255,.13)}.loop-return span{font:500 .55rem var(--font-mono);letter-spacing:.13em;color:#D5A447}.loop-return strong{font:500 .9rem/1.7 var(--font-ui);color:#C8CAD0}
+
+.closing .founder-editorial{max-width:1220px;margin:auto;padding:clamp(90px,10vw,140px) 0;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(45px,8vw,110px);align-items:end;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--ink)}
+.founder-editorial-statement small{font:600 .58rem var(--font-mono);letter-spacing:.14em;color:var(--gold)}.founder-editorial-statement h2{max-width:760px;margin:18px 0 20px;font:600 clamp(2.3rem,3.8vw,4.3rem)/1.02 var(--font-ui);letter-spacing:-.035em}.founder-editorial-statement p{max-width:680px;color:#5B5E64;line-height:1.85}.founder-editorial-statement a{display:inline-block;margin-top:18px;font:600 .63rem var(--font-mono);letter-spacing:.1em}
+.resource-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.resource-list li{position:relative;padding:15px 10px 15px 24px;border-bottom:1px solid var(--line);font:600 .76rem var(--font-ui);letter-spacing:.02em}.resource-list li:before{content:"";position:absolute;left:2px;top:20px;width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--gold))}
+@media(max-width:1000px){.ecosystem-map{min-height:auto;display:grid;grid-template-columns:1fr 1fr;gap:42px;padding:50px 0}.ecosystem-lines{display:none}.ecosystem-core,.orbit-world,.map-caption{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto}.ecosystem-core{grid-column:1/-1;width:260px;margin:auto}.map-caption{grid-column:1/-1}.world-cognition{grid-column:1/-1}.loop-header,.closing .founder-editorial{grid-template-columns:1fr}.closing .founder-editorial{width:min(1220px,calc(100% - 40px))}}
+@media(max-width:650px){.ecosystem-map-section .section-head h2{font-size:clamp(4rem,16vw,6.2rem)}.ecosystem-map{grid-template-columns:1fr}.ecosystem-core,.world-cognition,.map-caption{grid-column:auto}.orbit-world{width:auto}.loop-header{margin-bottom:50px}.loop-header h2{font-size:clamp(4rem,15vw,6rem)}.operating-loop:before{left:63px}.loop-stage{grid-template-columns:42px 44px 1fr;padding:29px 0}.loop-node{height:60px}.loop-stage h3{font-size:2.8rem}.loop-return{padding-left:86px;grid-template-columns:1fr;gap:12px}.closing .founder-editorial{padding:80px 0}.founder-editorial-statement h2{font-size:2.35rem}}
+
+
+/* V14.6 shared header refinement */
+.header{
+ background:rgba(250,249,246,.54)!important;
+ border-color:rgba(255,255,255,.58)!important;
+ box-shadow:0 12px 38px rgba(23,25,29,.055)!important;
+}
+.header.scrolled{
+ background:rgba(250,249,246,.75)!important;
+ box-shadow:0 14px 44px rgba(23,25,29,.085)!important;
+}
+.header .nav-glider{top:4px!important;bottom:4px!important;z-index:0!important}
+.header .menu>a,.header .nav-dropdown>.nav-trigger{
+ position:relative;z-index:1;padding-top:10px;padding-bottom:10px;line-height:1.2;
+}
+.header .nav-dropdown{position:relative;z-index:1}
+@supports(backdrop-filter:blur(1px)){
+ .header{backdrop-filter:blur(25px) saturate(1.1);-webkit-backdrop-filter:blur(25px) saturate(1.1)}
+}
+
+/* ABOUT V6.1 — hierarchy, interaction and motion corrections */
+.ecosystem-core strong{display:block;margin:14px 0;font:600 1.65rem/1.02 var(--font-ui);letter-spacing:.04em}
+.ecosystem-core strong>span{display:block}
+.ecosystem-core .core-support{display:block;max-width:230px;margin:auto;font:500 .56rem/1.55 var(--font-mono);letter-spacing:.045em;color:#999BA4;white-space:normal}
+.orbit-world{transition:transform .28s ease,border-color .28s ease,filter .28s ease;outline:none}
+.orbit-world:hover,.orbit-world:focus-visible,.orbit-world:focus-within{transform:translateY(-5px);border-left-width:3px;filter:brightness(1.14)}
+.ecosystem-lines path{transition:stroke .28s ease,stroke-width .28s ease,filter .28s ease}
+.ecosystem-map:has(.world-sound:hover) .line-sound,.ecosystem-map:has(.world-sound:focus-visible) .line-sound,.ecosystem-map:has(.world-sound:focus-within) .line-sound{stroke:#7656C8;stroke-width:2;filter:drop-shadow(0 0 5px rgba(118,86,200,.65))}
+.ecosystem-map:has(.world-vision:hover) .line-vision,.ecosystem-map:has(.world-vision:focus-visible) .line-vision,.ecosystem-map:has(.world-vision:focus-within) .line-vision{stroke:#35B7C4;stroke-width:2;filter:drop-shadow(0 0 5px rgba(53,183,196,.65))}
+.ecosystem-map:has(.world-cognition:hover) .line-cognition,.ecosystem-map:has(.world-cognition:focus-visible) .line-cognition,.ecosystem-map:has(.world-cognition:focus-within) .line-cognition{stroke:#D5A447;stroke-width:2;filter:drop-shadow(0 0 5px rgba(213,164,71,.65))}
+.world-soon{text-transform:none}
+
+/* Editorial emphasis: separate rule and restrained left frame */
+.chapter-principle{position:relative;margin-top:28px;padding:29px 18px 18px 18px;border:0!important;background:rgba(118,86,200,.035);color:#34363D}
+.chapter-principle:before{content:"";position:absolute;left:18px;right:18px;top:14px;height:1px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 18%,transparent),transparent)}
+.chapter-principle:after{content:"";position:absolute;left:0;top:24px;width:2px;height:calc(100% - 48px);min-height:30px;background:var(--accent);border-radius:2px}
+
+/* Operating-loop progression */
+.operating-loop:before{transform:scaleY(1);transform-origin:top}
+.operating-loop-section.js-loop .operating-loop:before{transform:scaleY(0);transition:transform 1.05s cubic-bezier(.2,.75,.2,1)}
+.operating-loop-section.js-loop.loop-in-view .operating-loop:before{transform:scaleY(1)}
+.operating-loop-section.js-loop .loop-stage{opacity:0;transform:translateY(18px)}
+.operating-loop-section.js-loop.loop-in-view .loop-stage{opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+.operating-loop-section.js-loop.loop-in-view .loop-stage:nth-child(1){transition-delay:.08s}
+.operating-loop-section.js-loop.loop-in-view .loop-stage:nth-child(2){transition-delay:.17s}
+.operating-loop-section.js-loop.loop-in-view .loop-stage:nth-child(3){transition-delay:.26s}
+.operating-loop-section.js-loop.loop-in-view .loop-stage:nth-child(4){transition-delay:.35s}
+.operating-loop-section.js-loop.loop-in-view .loop-stage:nth-child(5){transition-delay:.44s}
+.loop-node:before,.loop-node:after{content:"";position:absolute;width:6px;height:6px;border:1px solid var(--accent);opacity:.45;transform:translateX(-18px) rotate(45deg);transition:transform .32s ease,opacity .32s ease}
+.loop-node:after{transform:translateX(18px) rotate(45deg)}
+.loop-stage:hover .loop-node:before,.loop-stage:focus-visible .loop-node:before{transform:translateX(-11px) rotate(45deg);opacity:.9}
+.loop-stage:hover .loop-node:after,.loop-stage:focus-visible .loop-node:after{transform:translateX(11px) rotate(45deg);opacity:.9}
+.loop-stage:hover .loop-node i,.loop-stage:focus-visible .loop-node i{transform:rotate(45deg) scale(1.18);box-shadow:0 0 25px color-mix(in srgb,var(--accent) 65%,transparent)}
+.loop-stage:focus-visible{outline:1px solid color-mix(in srgb,var(--accent) 70%,white);outline-offset:8px}
+@keyframes stageIgnite{0%,100%{transform:rotate(45deg) scale(1);filter:brightness(1)}55%{transform:rotate(45deg) scale(1.28);filter:brightness(1.55)}}
+.loop-in-view .loop-stage .loop-node i{animation:stageIgnite .62s ease both}
+.loop-in-view .loop-stage:nth-child(1) .loop-node i{animation-delay:.2s}.loop-in-view .loop-stage:nth-child(2) .loop-node i{animation-delay:.34s}.loop-in-view .loop-stage:nth-child(3) .loop-node i{animation-delay:.48s}.loop-in-view .loop-stage:nth-child(4) .loop-node i{animation-delay:.62s}.loop-in-view .loop-stage:nth-child(5) .loop-node i{animation-delay:.76s}
+
+/* Closing: language-safe editorial scale */
+.closing-main{max-width:820px;margin:auto;padding:clamp(120px,14vw,190px) 20px}
+.closing-main h2{max-width:820px;margin:18px auto 0;font:600 clamp(3.6rem,6.5vw,6.8rem)/1 var(--font-display);letter-spacing:-.045em}
+.closing-main p{max-width:720px}
+html[lang="zh-CN"] .closing-main h2{max-width:780px;font-family:"Noto Serif SC",serif;font-size:clamp(2.75rem,5.2vw,4.8rem);line-height:1.28;letter-spacing:0}
+html[lang="zh-CN"] .closing-main p{max-width:760px;font-size:1rem;line-height:1.9}
+
+@media(max-width:1000px){
+ .ecosystem-map{grid-template-columns:1fr!important}
+ .ecosystem-core{grid-column:auto!important;width:220px!important}
+ .world-cognition,.map-caption{grid-column:auto!important}
+ .orbit-world{width:auto}
+}
+@media(max-width:650px){
+ .ecosystem-core{width:190px!important}
+ .ecosystem-core strong{font-size:1.35rem}.ecosystem-core .core-support{max-width:160px;font-size:.51rem}
+ .closing-main{padding:100px 13px}.closing-main h2{font-size:clamp(3.15rem,14vw,4.9rem)}
+ html[lang="zh-CN"] .closing-main h2{font-size:clamp(2.35rem,10.5vw,3.65rem);line-height:1.3}
+}
+@media(prefers-reduced-motion:reduce){
+ .orbit-world,.ecosystem-lines path,.loop-stage,.loop-node:before,.loop-node:after,.loop-node i,.operating-loop:before{animation:none!important;transition:none!important;transform:none!important}
+ .operating-loop-section.js-loop .loop-stage{opacity:1!important}
+ .operating-loop-section.js-loop .operating-loop:before{transform:scaleY(1)!important}
+}
+
+
+/* V14.7 navigation pill collision fix */
+@media(min-width:1101px){
+ .header .menu{align-items:stretch}
+ .header .menu>a,.header .nav-dropdown>.nav-trigger{
+   display:flex;align-items:center;padding:13px 10px!important;line-height:1.25!important;
+ }
+ .header .nav-dropdown{display:flex;align-items:stretch}
+ .header .nav-glider{top:1px!important;bottom:1px!important;border-radius:15px}
+ .header .menu.has-glider>a::after,.header .menu.has-glider>.nav-dropdown>.nav-trigger::after{display:none!important}
+}
+
+/* ABOUT V6.2 — hero spacing and Matrix Core refinement */
+@media(min-width:1051px){
+ .matrix-hero{padding-top:212px!important}
+ .matrix-hero-layout{min-height:calc(100svh - 266px)}
+}
+.matrix-copy .manifesto-meta{margin-top:14px}
+.core-axis span{font-size:.52rem;letter-spacing:.16em;color:#B8A9D9}
+.core-axis b{max-width:180px;margin:9px auto 8px;font:600 clamp(1.55rem,2.2vw,2.25rem)/.92 var(--font-display);letter-spacing:.015em;color:#F5F2EC}
+.core-axis small{max-width:180px;margin:auto;font-size:.45rem;line-height:1.45;letter-spacing:.13em;color:#9295A0}
+
+/* One-time entrance; scroll motion remains controlled by the existing Matrix script */
+.matrix-core,.matrix-ring,.matrix-coordinate,.matrix-particles i{transition-property:opacity,filter,transform;transition-duration:.85s;transition-timing-function:cubic-bezier(.2,.75,.2,1)}
+.matrix-core{opacity:0;filter:blur(7px) drop-shadow(0 38px 70px rgba(0,0,0,.45));transform:scale(.92)}
+.matrix-ring{opacity:0}
+.matrix-coordinate{opacity:0;transform:translateY(8px)}
+.matrix-particles i{opacity:0}
+.matrix-hero.matrix-ready .matrix-core{opacity:1;filter:blur(0) drop-shadow(0 38px 70px rgba(0,0,0,.45));transform:scale(1)}
+.matrix-hero.matrix-ready .matrix-ring{opacity:1}
+.matrix-hero.matrix-ready .matrix-coordinate{opacity:1;transform:none}
+.matrix-hero.matrix-ready .matrix-particles i{opacity:1}
+.matrix-hero.matrix-ready .matrix-ring.r1{transition-delay:.12s}.matrix-hero.matrix-ready .matrix-ring.r2{transition-delay:.22s}
+.matrix-hero.matrix-ready .c-sound{transition-delay:.28s}.matrix-hero.matrix-ready .c-vision{transition-delay:.38s}.matrix-hero.matrix-ready .c-cognition{transition-delay:.48s}
+.matrix-hero.matrix-ready .matrix-particles i{transition-delay:calc(.18s + var(--d)*.035s)}
+
+@media(max-width:1050px){
+ .matrix-hero{padding-top:165px!important}
+ .matrix-copy .manifesto-meta{margin-top:18px}
+}
+@media(max-width:700px){
+ .matrix-hero{padding-top:145px!important}
+ .matrix-copy .manifesto-meta{margin-top:10px}
+ .core-axis b{font-size:1.55rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .matrix-core,.matrix-ring,.matrix-coordinate,.matrix-particles i{opacity:1!important;filter:none!important;transform:none!important;transition:none!important}
+}
+
+
+/* Founder page · v1 */
+:root{--founder-dark:#12151A;--founder-silver:#C9CBD1}
+.about-progress{background:linear-gradient(90deg,var(--blue),var(--violet),var(--rose),var(--gold))}
+.founder-main{background:var(--ivory)}
+.founder-hero{position:relative;min-height:100svh;padding:188px 0 76px;display:flex;align-items:center;overflow:hidden;color:#F5F2EC;background:radial-gradient(circle at 79% 37%,rgba(118,86,200,.26),transparent 25%),radial-gradient(circle at 92% 63%,rgba(53,183,196,.13),transparent 25%),linear-gradient(115deg,#111419 0%,#171A21 55%,#201C2D 100%)}
+.founder-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:62px 62px;mask-image:linear-gradient(to right,#000,transparent 85%);pointer-events:none}
+.founder-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,21,26,.2),transparent 58%,rgba(18,21,26,.18));pointer-events:none}
+.founder-hero-grid{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(380px,.98fr);gap:44px;align-items:center}
+.founder-hero-copy{position:relative;z-index:3;max-width:690px}
+.founder-id{display:flex;align-items:center;gap:16px;color:#BFC1C8;font:500 .68rem/1.5 var(--font-mono);letter-spacing:.14em;text-transform:uppercase}
+.founder-id:before{content:"";width:42px;height:1px;background:linear-gradient(90deg,var(--violet),var(--gold))}
+.founder-name{margin:23px 0 0;font:600 clamp(1rem,1.35vw,1.25rem)/1.2 var(--font-ui);letter-spacing:.12em}
+.founder-role{margin-top:8px;color:#AEB0B7;font:500 .76rem/1.5 var(--font-mono);letter-spacing:.08em}
+.founder-hero h1{max-width:660px;margin:32px 0 24px;font:600 clamp(4.1rem,7.5vw,8rem)/.86 var(--font-display);letter-spacing:-.052em}
+.founder-hero h1 .prism-text{display:block}
+.founder-lede{max-width:650px;margin:0;color:#C7C8CD;font-size:1rem;line-height:1.86}
+.founder-lede strong{color:#F5F2EC;font-weight:600}
+.founder-portrait-stage{position:relative;align-self:end;height:min(74vh,760px);min-height:590px}
+.founder-portrait-stage:before{content:"";position:absolute;width:76%;aspect-ratio:1;left:50%;top:46%;transform:translate(-50%,-50%);border:1px solid rgba(255,255,255,.11);border-radius:50%;box-shadow:0 0 0 58px rgba(255,255,255,.025),0 0 0 118px rgba(255,255,255,.018)}
+.founder-portrait-stage:after{content:"";position:absolute;left:12%;right:2%;bottom:1%;height:18%;background:radial-gradient(ellipse,rgba(0,0,0,.66),transparent 68%);filter:blur(15px)}
+.founder-portrait{position:absolute;z-index:2;left:50%;bottom:-2%;height:96%;width:auto;max-width:none;transform:translateX(-48%);filter:drop-shadow(0 26px 42px rgba(0,0,0,.38));opacity:0;clip-path:inset(0 0 100% 0);transition:opacity 1s ease .15s,clip-path 1.25s cubic-bezier(.2,.7,.2,1) .15s}
+.founder-hero.is-ready .founder-portrait{opacity:1;clip-path:inset(0)}
+.portrait-caption{position:absolute;z-index:4;right:0;bottom:8%;padding:11px 14px;border-left:1px solid var(--cyan);background:rgba(17,20,25,.5);backdrop-filter:blur(12px);color:#C9CBD1;font:500 .61rem/1.6 var(--font-mono);letter-spacing:.1em}
+.founder-orbit{position:absolute;z-index:1;border:1px solid rgba(117,92,203,.32);border-radius:50%;opacity:0;transition:opacity 1s ease .55s,transform 1.2s ease .55s}
+.founder-hero.is-ready .founder-orbit{opacity:1;transform:rotate(var(--r)) scale(1)}
+.founder-orbit.o1{width:96%;height:48%;left:0;top:23%;--r:-17deg;transform:rotate(-17deg) scale(.88)}.founder-orbit.o2{width:76%;height:62%;left:12%;top:15%;--r:31deg;transform:rotate(31deg) scale(.88)}
+.hero-particles{position:absolute;inset:0;z-index:2;pointer-events:none}.hero-particles i{position:absolute;width:5px;height:5px;border:1px solid var(--c,var(--violet));transform:rotate(45deg);opacity:0;transition:opacity .7s ease var(--d),transform .9s ease var(--d)}.founder-hero.is-ready .hero-particles i{opacity:.68;transform:rotate(135deg) translateY(-8px)}
+.hero-particles i:nth-child(1){left:9%;top:26%;--c:var(--cyan);--d:.35s}.hero-particles i:nth-child(2){left:46%;top:19%;--c:var(--gold);--d:.5s}.hero-particles i:nth-child(3){left:55%;top:53%;--c:var(--rose);--d:.7s}.hero-particles i:nth-child(4){left:90%;top:28%;--c:var(--cyan);--d:.85s}.hero-particles i:nth-child(5){left:84%;top:76%;--c:var(--gold);--d:1s}.hero-particles i:nth-child(6){left:61%;top:84%;--c:var(--violet);--d:1.1s}
+.hero-scroll{position:absolute;z-index:4;left:50%;bottom:28px;transform:translateX(-50%);font:500 .61rem var(--font-mono);letter-spacing:.13em;color:#8F9198}
+.founder-section{position:relative;padding:132px 0}
+.editorial-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:9vw;align-items:start}
+.section-index{position:sticky;top:150px}.section-index .kicker{display:block}.section-index .index-title{margin:17px 0 0;font:600 clamp(2.8rem,5vw,5.8rem)/.92 var(--font-display);letter-spacing:-.04em}.section-index .index-line{width:76px;height:1px;margin-top:27px;background:linear-gradient(90deg,var(--violet),var(--rose))}
+.founder-prose{max-width:760px}.founder-prose p{margin:0 0 1.35em;color:#53565D;font-size:1.03rem;line-height:1.9}.founder-prose p:first-child{font:600 clamp(2rem,3.4vw,3.65rem)/1.13 var(--font-display);letter-spacing:-.025em;color:var(--ink)}
+.credential{margin-top:34px;padding:25px 0 4px;border-top:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:30px}.credential strong{font:600 .66rem var(--font-mono);letter-spacing:.12em;color:var(--violet)}.credential span{color:#62656B;line-height:1.75}
+.origin-section{overflow:hidden;background:#17191D;color:#F5F2EC}.origin-section:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 80%,rgba(53,183,196,.11),transparent 30%),radial-gradient(circle at 84% 20%,rgba(118,86,200,.2),transparent 28%)}
+.origin-section .container{position:relative}.origin-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}.origin-intro h2{margin:18px 0 0;font:600 clamp(3.6rem,6.7vw,7.4rem)/.9 var(--font-display);letter-spacing:-.05em}.origin-intro p{margin:0;color:#BFC1C8;line-height:1.9}
+.triad{display:grid;grid-template-columns:repeat(3,1fr);margin-top:85px;border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+.triad-item{min-height:245px;padding:27px;border-right:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;justify-content:space-between}.triad-item:last-child{border-right:0}.triad-item small{font:500 .61rem var(--font-mono);letter-spacing:.13em;color:#8F9198}.triad-item strong{font:600 clamp(2.5rem,4.5vw,5.2rem)/.92 var(--font-display)}.triad-item:nth-child(1) strong{color:#D9D0F0}.triad-item:nth-child(2) strong{color:#BFE2E3}.triad-item:nth-child(3) strong{color:#E5D0A9}
+.capabilities-intro{max-width:840px}.capabilities-intro h2{margin:17px 0 25px;font:600 clamp(3.8rem,7vw,7.6rem)/.89 var(--font-display);letter-spacing:-.05em}.capabilities-intro p{max-width:650px;color:#595C63;line-height:1.9}
+.capability-field{margin-top:72px;border-top:1px solid var(--line)}.founder-capability{display:grid;grid-template-columns:80px .72fr 1.28fr;gap:32px;align-items:start;padding:31px 0;border-bottom:1px solid var(--line);transition:padding .3s ease,background .3s ease}.founder-capability:hover{padding-left:14px;background:linear-gradient(90deg,rgba(118,86,200,.06),transparent 72%)}.founder-capability .num{font:600 .66rem var(--font-mono);color:var(--violet)}.founder-capability h3{margin:0;font:600 2rem/1.08 var(--font-display)}.founder-capability p{max-width:690px;margin:0;color:#5C5F66;line-height:1.8}
+.philosophy-scene{position:relative;padding:150px 0;overflow:hidden;background:linear-gradient(135deg,#2F3E76 0%,#624C91 43%,#A2557C 70%,#C5895F 100%);color:white}.philosophy-scene:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,12,20,.55),rgba(8,12,20,.1)),linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:auto,70px 70px,70px 70px}.philosophy-scene .container{position:relative}.philosophy-scene h2{max-width:960px;margin:20px 0 70px;font:600 clamp(4rem,8vw,8.8rem)/.84 var(--font-display);letter-spacing:-.052em}.philosophy-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.24)}.philosophy-part{min-height:275px;padding:28px;background:rgba(20,22,29,.55);backdrop-filter:blur(10px)}.philosophy-part small{font:500 .62rem var(--font-mono);letter-spacing:.12em;color:#D0CBD9}.philosophy-part h3{margin:60px 0 15px;font:600 2.3rem/1 var(--font-display)}.philosophy-part p{margin:0;color:#D9D8DE;line-height:1.75;font-size:.9rem}
+.personal-note{padding:145px 0;background:#F8F5EF}.note-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:9vw}.note-mark{font:600 clamp(7rem,15vw,16rem)/.65 var(--font-display);color:transparent;-webkit-text-stroke:1px rgba(118,86,200,.22)}.note-content h2{margin:16px 0 30px;font:600 clamp(3.4rem,6vw,6.8rem)/.92 var(--font-display);letter-spacing:-.045em}.note-content p{color:#565960;line-height:1.9}.signature-lockup{margin-top:38px;padding-top:25px;border-top:1px solid var(--line)}.signature-lockup em{display:block;font:600 1.9rem var(--font-display);color:var(--violet)}.signature-lockup strong{display:block;margin-top:18px;font:600 .76rem var(--font-mono);letter-spacing:.09em}
+html[lang="zh-CN"] .founder-hero h1,html[lang="zh-CN"] .index-title,html[lang="zh-CN"] .origin-intro h2,html[lang="zh-CN"] .triad-item strong,html[lang="zh-CN"] .capabilities-intro h2,html[lang="zh-CN"] .founder-capability h3,html[lang="zh-CN"] .philosophy-scene h2,html[lang="zh-CN"] .philosophy-part h3,html[lang="zh-CN"] .note-content h2{font-family:"Noto Serif SC",serif;letter-spacing:0;line-height:1.18}html[lang="zh-CN"] .founder-hero h1{font-size:clamp(3.8rem,6.8vw,7rem);line-height:1.1}
+@media(max-width:1000px){.founder-hero{padding-top:160px}.founder-hero-grid{grid-template-columns:1fr .8fr}.founder-portrait-stage{min-height:520px}.editorial-grid,.note-grid{gap:6vw}.origin-intro{gap:45px}.founder-capability{grid-template-columns:60px .8fr 1.2fr}}
+@media(max-width:800px){.founder-hero{padding:145px 0 65px;align-items:flex-start}.founder-hero-grid{grid-template-columns:1fr}.founder-portrait-stage{height:620px;min-height:0;margin-top:15px}.founder-portrait{height:100%}.portrait-caption{right:5%}.editorial-grid,.origin-intro,.note-grid{grid-template-columns:1fr}.section-index{position:static}.origin-intro{gap:30px}.triad{grid-template-columns:1fr}.triad-item{min-height:190px;border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}.triad-item:last-child{border-bottom:0}.founder-capability{grid-template-columns:52px 1fr}.founder-capability p{grid-column:2}.philosophy-columns{grid-template-columns:1fr}.philosophy-part{min-height:220px}.hero-scroll{display:none}}
+@media(max-width:560px){.founder-hero{padding-top:132px}.founder-hero h1{font-size:clamp(3.5rem,17vw,5.1rem)}.founder-lede{font-size:.92rem}.founder-portrait-stage{height:520px}.founder-section,.personal-note{padding:92px 0}.credential{grid-template-columns:1fr;gap:9px}.origin-section,.philosophy-scene{padding:100px 0}.triad{margin-top:55px}.founder-capability{grid-template-columns:38px 1fr;gap:14px}.founder-capability h3{font-size:1.65rem}.philosophy-scene h2{margin-bottom:50px}.note-mark{font-size:7rem}}
+@media(prefers-reduced-motion:reduce){.founder-portrait,.founder-orbit,.hero-particles i{opacity:1;clip-path:none;transform:none!important;transition:none!important}.founder-capability{transition:none}}
+
+</style>
+</head>
+<body>
+<div class="about-progress" id="aboutProgress" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header" id="siteHeader">
+<a class="brand" href="./index.html#top" aria-label="Malttrix home" data-i18n-aria="scene.brandhome">
+<span class="brand-mark">
+<img class="logo-light" src="./assets/malttrix-header.webp" alt="Malttrix｜梦萃 logo" width="1563" height="805" decoding="async">
+
+<span class="brand-symbol" aria-hidden="true"><img src="./assets/malttrix-header.webp" alt="" width="1563" height="805" decoding="async"></span></span>
+</a>
+
+<nav class="menu" id="primaryMenu" aria-label="Primary navigation" data-i18n-aria="scene.navigation">
+<span class="nav-glider" aria-hidden="true"></span>
+<a href="./about.html" data-i18n="nav.about">About</a>
+<div class="nav-dropdown">
+<a class="nav-trigger" href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
+<div class="nav-panel">
+<a href="./index.html#ecosystem"><span data-i18n="nav.overview">Ecosystem overview</span><small>01—03</small></a>
+<a href="https://www.vanmoira.com" target="_blank" rel="noopener"><span>VANMOIRA｜梵·暮汐</span><small>↗</small></a>
+<span class="nav-soon-item"><span>Lumvisio｜粼·视</span><small data-i18n="nav.soon">SOON</small></span>
+<a href="https://www.immersation.com" target="_blank" rel="noopener"><span>Immersation｜智枢阁</span><small>↗</small></a>
+</div>
+</div>
+<a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a>
+<a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a>
+<a class="active" href="./founder.html" aria-current="page" data-i18n="nav.founder">Founder</a>
+</nav>
+
+<div class="header-actions">
+<button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryMenu" aria-label="Open navigation"><span></span><span></span></button>
+<div class="lang-switch" role="group" aria-label="Choose language" data-i18n-aria="scene.languages">
+<button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">EN</button>
+<button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">中文</button>
+</div>
+<a class="enter" href="./index.html#ecosystem" data-i18n-aria="nav.enter" aria-label="Explore"><span data-i18n="nav.enter">Explore</span><b aria-hidden="true">↘</b></a>
+</div>
+</header>
+
+<main id="main" class="founder-main">
+<section class="founder-hero" id="top" aria-labelledby="founderTitle">
+<div class="hero-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="container founder-hero-grid">
+<div class="founder-hero-copy">
+<div class="founder-id" data-i18n="founder.hero.eyebrow">FOUNDER / CREATIVE SYSTEMS ARCHITECT</div>
+<div class="founder-name" data-i18n="founder.hero.name">MAXON TAN</div>
+<div class="founder-role" data-i18n="founder.hero.role">Founder · Creative Systems Architect</div>
+<h1 id="founderTitle" data-i18n-html="founder.hero.title">To build freely,<br><span class="prism-text">one must first build a world.</span></h1>
+<p class="founder-lede" data-i18n-html="founder.hero.lede"><strong>Malttrix began with a personal conviction:</strong> imagination deserves more than a moment of expression. It deserves form, protection, and time.</p>
+</div>
+<div class="founder-portrait-stage" aria-label="Portrait of Maxon Tan">
+<div class="founder-orbit o1" aria-hidden="true"></div><div class="founder-orbit o2" aria-hidden="true"></div>
+<img class="founder-portrait" src="https://cms.malttrix.com/wp-content/uploads/2026/09/Maxon_FULL-BODY-2.png" alt="Maxon Tan, founder of Malttrix" width="1200" height="1800" decoding="async" fetchpriority="high">
+<div class="portrait-caption" data-i18n-html="founder.hero.caption">MAXON TAN / 麦森<br>SG · MY / 01</div>
+</div>
+</div>
+<div class="hero-scroll" data-i18n="founder.hero.scroll">SCROLL / FOLLOW THE AUTHORSHIP</div>
+</section>
+
+<section class="founder-section" id="why">
+<div class="container editorial-grid">
+<div class="section-index reveal"><span class="kicker" data-i18n="founder.why.kicker">01 / WHY MALTTRIX</span><h2 class="index-title" data-i18n-html="founder.why.title">A place where<br>two instincts meet.</h2><div class="index-line"></div></div>
+<div class="founder-prose reveal">
+<p data-i18n="founder.why.lead">I did not create Malttrix to build another company around output, noise, or short-term attention.</p>
+<p data-i18n="founder.why.p1">I created it because art needs room to breathe. Because meaningful ideas need the freedom to become more than a project. Because a melody, an image, a system, or a quiet question can carry a life of its own—if it is given the right conditions to grow.</p>
+<p data-i18n="founder.why.p2">My background trained me to think in structure, accountability, and long-term value. But the part of me that kept calling was artistic: the desire for freedom, expression, atmosphere, beauty, and the unknown.</p>
+<p data-i18n="founder.why.p3">Malttrix is where these two instincts meet. It is a place to give imagination form—without taking away its soul.</p>
+<div class="credential"><strong data-i18n="founder.why.credential.label">STRUCTURAL FOUNDATION</strong><span data-i18n="founder.why.credential.copy">ACCA Master’s Degree-level qualification — a foundation in discipline, stewardship, accountability and the architecture behind continuity.</span></div>
+</div>
+</div>
+</section>
+
+<section class="founder-section origin-section" id="background">
+<div class="container">
+<div class="origin-intro reveal"><div><span class="kicker" data-i18n="founder.background.kicker">02 / FROM STRUCTURE TO AUTHORSHIP</span><h2 data-i18n-html="founder.background.title">My path has never<br>been only one thing.</h2></div><p data-i18n="founder.background.copy">I learned to see patterns, weigh consequences, organise complexity, and build for durability. At the same time, I have always been drawn to the emotional language of art—the way sound holds memory, light changes a room, and a single image opens an inner world. Rather than treating these instincts as opposites, I began to see them as collaborators.</p></div>
+<div class="triad reveal">
+<div class="triad-item"><small>01 / DIRECTION</small><strong data-i18n="founder.background.art">Art gives direction.</strong></div>
+<div class="triad-item"><small>02 / DURATION</small><strong data-i18n="founder.background.structure">Structure gives it duration.</strong></div>
+<div class="triad-item"><small>03 / INTEGRITY</small><strong data-i18n="founder.background.independence">Independence gives it integrity.</strong></div>
+</div>
+</div>
+</section>
+
+<section class="founder-section" id="method">
+<div class="container">
+<div class="capabilities-intro reveal"><span class="kicker" data-i18n="founder.cap.kicker">03 / HOW MAXON WORKS</span><h2 data-i18n-html="founder.cap.title">Sensitivity,<br><span class="prism-text">given structure.</span></h2><p data-i18n="founder.cap.intro">Six connected capabilities shape how ideas are understood, directed, built and protected across Malttrix.</p></div>
+<div class="capability-field">
+<article class="founder-capability reveal"><span class="num">01</span><h3 data-i18n="founder.cap.c1.h">Introspection</h3><p data-i18n="founder.cap.c1.p">The ability to remain with a question long enough to find what is beneath the obvious. This creates emotional depth and a clearer point of view.</p></article>
+<article class="founder-capability reveal"><span class="num">02</span><h3 data-i18n="founder.cap.c2.h">Spatial Thinking</h3><p data-i18n="founder.cap.c2.p">A sensitivity to atmosphere, composition, distance, rhythm, and the relationship between elements. This shapes worlds, not just isolated outputs.</p></article>
+<article class="founder-capability reveal"><span class="num">03</span><h3 data-i18n="founder.cap.c3.h">Artistic Direction</h3><p data-i18n="founder.cap.c3.p">An instinct for tone, symbolism, emotional texture, and visual or sonic coherence. The goal is not decoration; it is meaning made perceptible.</p></article>
+<article class="founder-capability reveal"><span class="num">04</span><h3 data-i18n="founder.cap.c4.h">Systems Design</h3><p data-i18n="founder.cap.c4.p">The ability to turn complexity into a coherent structure: an operating model, a creative process, a digital system, or an ecosystem of connected parts.</p></article>
+<article class="founder-capability reveal"><span class="num">05</span><h3 data-i18n="founder.cap.c5.h">Independent Judgment</h3><p data-i18n="founder.cap.c5.p">A preference for building from a clear internal standard rather than following noise, fashion, or external pressure.</p></article>
+<article class="founder-capability reveal"><span class="num">06</span><h3 data-i18n="founder.cap.c6.h">Long-Term Stewardship</h3><p data-i18n="founder.cap.c6.p">A commitment to protect creative work through ownership, infrastructure, resource discipline, and the patience required for value to compound.</p></article>
+</div>
+</div>
+</section>
+
+<section class="philosophy-scene" id="philosophy">
+<div class="container">
+<span class="kicker reveal" data-i18n="founder.philosophy.kicker">04 / WORKING PHILOSOPHY</span>
+<h2 class="reveal" data-i18n-html="founder.philosophy.title">Feel deeply.<br>Think structurally.<br>Build independently.</h2>
+<div class="philosophy-columns reveal">
+<article class="philosophy-part"><small>01 / FEEL</small><h3 data-i18n="founder.philosophy.feel.h">Feeling deeply</h3><p data-i18n="founder.philosophy.feel.p">Pay attention to emotion, memory, atmosphere, and the things that cannot always be measured.</p></article>
+<article class="philosophy-part"><small>02 / THINK</small><h3 data-i18n="founder.philosophy.think.h">Thinking structurally</h3><p data-i18n="founder.philosophy.think.p">Give those insights a way to live through craft, systems, rights, technology, and deliberate choices.</p></article>
+<article class="philosophy-part"><small>03 / BUILD</small><h3 data-i18n="founder.philosophy.build.h">Building independently</h3><p data-i18n="founder.philosophy.build.p">Keep enough authorship to protect the original point of view and let meaningful work endure.</p></article>
+</div>
+</div>
+</section>
+
+<section class="personal-note" id="note">
+<div class="container note-grid">
+<div class="note-mark reveal" aria-hidden="true">M.</div>
+<div class="note-content reveal">
+<span class="kicker" data-i18n="founder.note.kicker">05 / A PERSONAL NOTE</span>
+<h2 data-i18n-html="founder.note.title">A living matrix<br>for what comes next.</h2>
+<p data-i18n="founder.note.p1">Malttrix is still evolving. It is not a finished answer; it is a living matrix for the work, worlds, and ideas still waiting to take form.</p>
+<p data-i18n="founder.note.p2">The ambition is quiet but serious: to create original work with emotional truth, build systems that preserve creative freedom, and leave space for imagination to keep becoming.</p>
+<div class="signature-lockup"><em data-i18n="founder.note.signature">Born from imagination. Refined into form.</em><strong data-i18n="founder.note.name">— MAXON TAN / 麦森</strong></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+
+<div class="footer-top">
+
+<div class="footer-brand">
+<div class="footer-logo-plate"><img src="https://cms.malttrix.com/wp-content/uploads/2026/08/Malttrix-_-梦萃_Dark.png" width="1563" height="805" loading="lazy" alt="Malttrix 梦萃 — gold signature"></div>
+<div class="footer-signature" data-i18n-html="footer.signature">Born from imagination.<br>Refined into form.</div>
+<p data-i18n="footer.copy">An independent creative intelligence ecosystem built around sound, vision and cognition.</p>
+</div>
+
+<div class="footer-col">
+<h4 data-i18n="footer.portfolio">Portfolio</h4>
+<ul>
+<li><a class="portfolio-link" href="https://www.vanmoira.com" target="_blank" rel="noopener">VANMOIRA｜梵·暮汐</a></li>
+<li><span class="soon-item">Lumvisio｜粼·视</span> <span class="soon" data-i18n="nav.soon">soon</span></li>
+<li><a class="portfolio-link" href="https://www.immersation.com" target="_blank" rel="noopener">Immersation｜智枢阁</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4 data-i18n="footer.explore">Explore</h4>
+<ul>
+<li><a href="./about.html" data-i18n="nav.about">About</a></li>
+<li><a href="./index.html#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a></li>
+<li><a href="./index.html#capabilities" data-i18n="nav.capabilities">Capabilities</a></li>
+<li><a href="./index.html#philosophy" data-i18n="nav.philosophy">Philosophy</a></li>
+<li><a href="./index.html#archetypes" data-i18n="nav.archetypes">Principles</a></li>
+<li><a href="./founder.html" data-i18n="nav.founder">Founder</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<div>© 2026 Malttrix｜梦萃. <span data-i18n="footer.rights">All rights reserved.</span></div>
+<div class="footer-bottom-right">
+<div class="footer-motion-inline">
+<span data-i18n="motion.hover">Hover</span><span data-i18n="motion.gather">Gather</span><span data-i18n="motion.distill">Distill</span><span data-i18n="motion.form">Form</span><span data-i18n="motion.fly">Fly</span>
+</div>
+</div>
+</div>
+
+</div>
+</footer>
+<script>
+const copy={
+ en:{
+  "nav.about":"About","nav.ecosystem":"Ecosystem","nav.overview":"Ecosystem overview","nav.soon":"SOON","nav.capabilities":"Capabilities","nav.philosophy":"Philosophy","nav.founder":"Founder","nav.enter":"Explore",
+  "hero.scroll":"Scroll to discover the matrix","hero.kicker":"About Malttrix｜梦萃","hero.title":"Imagination,<br><span class=\"prism-text\">distilled</span> into<br>enduring form.","hero.lede":"Malttrix｜梦萃 is an independent creative intelligence ecosystem built across sound, vision and cognition. We create, incubate and operate original brands and intellectual property — together with the systems that allow them to grow over time.","hero.signature":"DISTILL IMAGINATION · BUILD WHAT ENDURES",
+  "why.kicker":"Why we exist","why.title":"Give imagination<br>room to grow.","why.p1":"Some ideas begin as a melody. Others begin as an image, a question, a feeling, a piece of knowledge or a new way of seeing the world. But an idea alone does not become something enduring.","why.p2":"Malttrix connects original thinking with disciplined creation, intelligent systems and long-term stewardship — helping ideas evolve from possibility into creative work, intellectual property, brands and assets that can continue developing over time.","why.quote":"Born from imagination. Refined into form.",
+  "meaning.kicker":"The meaning behind Malttrix","meaning.title":"A name built<br>as a process.","meaning.intro":"The identity combines imagination, disciplined distillation and a multidimensional matrix for creation.","meaning.dream.h":"Imagination","meaning.dream.p":"Possibility before it has taken form: the intuition before the concept, the feeling before the language, and the world that first exists only in imagination.","meaning.distill.h":"Distillation","meaning.distill.p":"To gather, refine, concentrate and bring into form — selecting what matters and transforming complexity into something coherent.","meaning.matrix.h":"The Creative Matrix","meaning.matrix.p":"A multidimensional environment where artistic expression, knowledge, technology and systems interact — moving imagination toward enduring value.",
+  "eco.kicker":"One ecosystem · Three dimensions","eco.title":"Hear.<br>See.<br>Think.","eco.intro":"Each brand maintains its own identity, visual language, content universe and audience. What connects them is the intelligence and infrastructure beneath them.","eco.hear":"Hear.","eco.see":"See.","eco.think":"Think.","eco.van":"Original music, cinematic sound and immersive auditory experiences shaped by memory, intimacy, distance and human feeling.","eco.lum":"Minimalism, restorative visual language and controlled contrast — working with light, space, material, movement and composition.","eco.imm":"Articles, frameworks, guides and knowledge products across Body, Tool and Capital — designed to strengthen personal intelligence.","eco.visit":"VISIT BRAND ↗","eco.soon":"COMING SOON",
+  "layer.kicker":"The shared intelligence layer","layer.title":"Three distinct identities.<br><span class=\"prism-text\">One shared intelligence.</span>","layer.copy":"Malttrix operates as the strategic and systemic layer behind the ecosystem. The parent provides direction, infrastructure and stewardship; each brand remains free to develop its own world.",
+  "cap.one.h":"Creative IP Incubation & Digital Brand Portfolio Operations","cap.one.p":"Brand concepts, naming, world-building, IP positioning, creative direction, content systems, digital channels, audience development and long-term brand operations.","cap.two.h":"AI Systems & Creative Infrastructure","cap.two.p":"Research, editorial workflows, creative development, automation, knowledge management, data systems and internal software — always governed by human intent.","cap.three.h":"Asset Operations & Stewardship","cap.three.p":"Long-term stewardship of intellectual property, brand assets, digital infrastructure, operating systems and strategic resources so value can compound.",
+  "model.kicker":"Our model","model.title":"Three dimensions<br>× three capabilities.","model.copy":"The dimensions determine what worlds we build. The capabilities determine how those worlds continue to grow.","model.sound":"SOUND · Auditory Art","model.vision":"VISION · Visual Art","model.cognition":"COGNITION · Knowledge Systems","model.incubation":"INCUBATION · Create identity","model.infrastructure":"INFRASTRUCTURE · Build systems","model.stewardship":"STEWARDSHIP · Develop value","model.result":"One creative intelligence ecosystem connecting artistic identity, intelligent infrastructure and long-term stewardship.",
+  "journey.kicker":"How ideas move","journey.title":"Creation is<br>a cycle.","journey.copy":"Ideas move through Malttrix from possibility to form, from form to growth, and from growth to something capable of enduring.","journey.imagine.h":"Imagine","journey.imagine.p":"Explore. Observe. Feel. Question. Ideas begin without requiring an immediate answer.","journey.distill.h":"Distill","journey.distill.p":"Research. Connect. Select. Define. Possibility is refined into direction.","journey.form.h":"Form","journey.form.p":"Design. Create. Systemise. Publish. The idea becomes something people can experience.","journey.grow.h":"Grow","journey.grow.p":"Operate. Distribute. Improve. Commercialise. Creation enters the world and learns from it.","journey.endure.h":"Endure","journey.endure.p":"Copyright. Identity. Systems. Knowledge. Assets. An idea becomes capable of remaining.",
+  "pmv.kicker":"Purpose · Mission · Vision","pmv.title":"Built for more<br>than a moment.","pmv.intro":"Original ideas deserve the systems, patience and stewardship required to become meaningful work and enduring value.","pmv.purpose.label":"OUR PURPOSE","pmv.purpose.h":"Make worthwhile imagination real.","pmv.purpose.p":"Give meaningful ideas the opportunity to become real work — and give that work the ability to continue growing.","pmv.mission.label":"OUR MISSION","pmv.mission.h":"Create, systemise and steward.","pmv.mission.p":"Incubate and operate original artistic, knowledge and digital intellectual property while developing the capabilities needed by the ecosystem.","pmv.vision.label":"OUR VISION","pmv.vision.h":"Build a global independent ecosystem.","pmv.vision.p":"A system where art, knowledge, technology and intellectual property grow together into culturally relevant and resilient brands and assets.",
+  "principles.kicker":"Our principles","principles.title":"Creative freedom.<br>Deliberate structure.","principles.intro":"The principles that guide how Malttrix creates, builds systems and makes long-term decisions.","principles.one.h":"Imagination with Discipline","principles.one.p":"Protect imagination from unnecessary limitation, then apply structure where it makes ideas clearer, stronger and more enduring.","principles.two.h":"Technology Serves Creation","principles.two.p":"AI, automation and emerging systems are instruments. Identity remains rooted in imagination, judgment and original thought.","principles.three.h":"Build What Endures","principles.three.p":"A song may become a catalogue. A visual may become a language. An article may become a knowledge system. A concept may become a brand.",
+  "internal.kicker":"Internal first · Ecosystem first","internal.title":"Systems built<br>because creation<br>needs them.","internal.copy":"Malttrix develops infrastructure, knowledge and resources primarily around the needs of its own brands. This keeps creativity and infrastructure close: the systems improve because the creative work needs them, and the creative work becomes stronger because the systems continue evolving.",
+  "founder.kicker":"FOUNDED BY MAXON 麦森","founder.title":"Feel deeply.<br>Think structurally.<br>Build independently.","founder.copy":"Maxon leads the ecosystem’s overall vision, brand architecture, creative direction and systems design.","founder.link":"DISCOVER THE FOUNDER ↘",
+  "closing.kicker":"An evolving matrix","closing.title":"Hear. See. Think.<br><span class=\"prism-text\">Create what can endure.</span>","closing.copy":"A sound can inspire an image. An image can become a world. A question can become a body of knowledge. An idea, given enough care and time, can become something enduring.","closing.ecosystem":"Explore the ecosystem ↗","closing.home":"Return home ↑",
+  "footer.copy":"An independent creative intelligence ecosystem built around sound, vision and cognition.","footer.portfolio":"PORTFOLIO","footer.explore":"EXPLORE","footer.rights":"All rights reserved."
+ },
+ zh:{
+  "nav.about":"关于梦萃","nav.ecosystem":"生态系统","nav.overview":"生态系统总览","nav.soon":"即将上线","nav.capabilities":"核心能力","nav.philosophy":"品牌哲学","nav.founder":"创始人","nav.enter":"探索",
+  "hero.scroll":"向下探索梦萃矩阵","hero.kicker":"关于 Malttrix｜梦萃","hero.title":"萃取<span class=\"prism-text\">想象</span>，<br>构筑长久。","hero.lede":"Malttrix｜梦萃是一个横跨听觉、视觉与认知的独立创意智能品牌生态。我们创造、孵化并运营原创品牌与知识产权，同时构建让它们持续成长的创意、技术与运营系统。","hero.signature":"为梦而生 · 以萃成形",
+  "why.kicker":"我们为何存在","why.title":"让想象拥有<br>持续成长的能力。","why.p1":"有些想法始于旋律，有些始于图像、问题、感受、知识，或一种观看世界的新方式。但想法本身，并不会自然成为恒久之物。","why.p2":"梦萃将原创思考与有纪律的创造、智能系统和长期管理连接起来，让想法从可能性发展为作品、知识产权、品牌与能够持续成长的资产。","why.quote":"为梦而生，以萃成形。",
+  "meaning.kicker":"梦萃之名","meaning.title":"一个名字，<br>也是一套过程。","meaning.intro":"梦萃结合了想象、严谨的萃取过程，以及承载多维创造的矩阵。","meaning.dream.h":"想象","meaning.dream.p":"尚未成形的可能性：概念之前的直觉、语言之前的感受，以及最初只存在于想象中的世界。","meaning.distill.h":"萃取","meaning.distill.p":"聚合、提炼、浓缩并使其成形——选择真正重要的部分，将复杂转化为连贯清晰的表达。","meaning.matrix.h":"创意矩阵","meaning.matrix.p":"艺术表达、知识、技术与系统在此交汇，让想象持续转化为创造、知识产权与恒久价值。",
+  "eco.kicker":"一个生态 · 三个维度","eco.title":"聆听。<br>观看。<br>思考。","eco.intro":"每个品牌拥有独立身份、视觉语言、内容世界与受众；连接它们的，是共同的智能与基础设施。","eco.hear":"聆听。","eco.see":"观看。","eco.think":"思考。","eco.van":"以原创音乐、电影感声音与沉浸式听觉体验，表达记忆、亲密、距离、流动与人的情感。","eco.lum":"通过极简、疗愈视觉与克制的视觉冲突，运用光、空间、材质、动态与构图创造情绪体验。","eco.imm":"围绕身、器、财构建文章、框架、指南与知识产品，持续增强个人智能。","eco.visit":"访问品牌 ↗","eco.soon":"即将上线",
+  "layer.kicker":"共享智能层","layer.title":"三个独立身份。<br><span class=\"prism-text\">一个共享智能层。</span>","layer.copy":"梦萃是生态背后的战略与系统层。母生态提供方向、基础设施与长期管理；每个品牌仍可自由发展自己的世界。",
+  "cap.one.h":"创意IP孵化与线上矩阵运营","cap.one.p":"从品牌概念、命名、世界观、IP定位与创意方向，到内容系统、数字渠道、受众发展及长期品牌运营。","cap.two.h":"AI智能系统与创意基础设施","cap.two.p":"研究、编辑流程、创意开发、自动化、知识管理、数据系统与内部软件——始终由人的意图与审美判断主导。","cap.three.h":"资产运维管理","cap.three.p":"长期管理知识产权、品牌资产、数字基础设施、运营系统与战略资源，让价值得以持续积累。",
+  "model.kicker":"我们的模式","model.title":"三个维度<br>× 三项能力。","model.copy":"创意维度决定我们构筑怎样的世界；底层能力决定这些世界如何持续成长。","model.sound":"听觉 · 听觉艺术","model.vision":"视觉 · 视觉艺术","model.cognition":"认知 · 知识系统","model.incubation":"孵化 · 创造身份","model.infrastructure":"基础设施 · 构建系统","model.stewardship":"管理 · 发展价值","model.result":"一个连接艺术身份、智能基础设施与长期资产管理的创意智能品牌生态。",
+  "journey.kicker":"想法如何移动","journey.title":"创造不是瞬间，<br>而是循环。","journey.copy":"想法在梦萃中从可能性走向形态，从形态走向成长，再从成长走向能够长久存在的价值。","journey.imagine.h":"想象","journey.imagine.p":"探索、观察、感受、提问。想法开始时，不需要立即得到答案。","journey.distill.h":"萃取","journey.distill.p":"研究、连接、选择、定义。可能性被提炼为明确方向。","journey.form.h":"成形","journey.form.p":"设计、创造、系统化、发布。想法成为人们能够体验的作品。","journey.grow.h":"成长","journey.grow.p":"运营、传播、改善、商业化。创造进入世界，并从现实中学习。","journey.endure.h":"长存","journey.endure.p":"版权、身份、系统、知识与资产。最初的想法，最终拥有留下来的能力。",
+  "pmv.kicker":"宗旨 · 使命 · 愿景","pmv.title":"不只为一刻，<br>而是为了长久。","pmv.intro":"原创想法值得拥有成为作品的机会；有意义的作品，也值得获得能够持续成长的系统、耐心与管理。","pmv.purpose.label":"我们的宗旨","pmv.purpose.h":"让值得实现的想象成为现实。","pmv.purpose.p":"让有意义的想法成为真实作品，并赋予这些作品持续成长的能力。","pmv.mission.label":"我们的使命","pmv.mission.h":"创造、系统化并长期管理。","pmv.mission.p":"持续孵化和运营原创艺术、知识与数字知识产权，同时建立生态所需的综合能力。","pmv.vision.label":"我们的愿景","pmv.vision.h":"建立全球独立创意智能生态。","pmv.vision.p":"让艺术、知识、技术与知识产权共同成长，逐步形成具有文化相关性、商业韧性与恒久价值的品牌和资产。",
+  "principles.kicker":"我们的原则","principles.title":"创意自由。<br>有意识的结构。","principles.intro":"这些原则指导梦萃如何创造、构建系统，以及作出长期决策。","principles.one.h":"有纪律的想象力","principles.one.p":"保护想象不受不必要的限制，再通过结构让想法变得更清晰、更强大、更恒久。","principles.two.h":"技术服务于创造","principles.two.p":"AI、自动化和新兴系统只是工具；梦萃的身份始终根植于想象、判断与原创思考。","principles.three.h":"构筑长久","principles.three.p":"一首歌可以成为曲库，一种视觉可以成为语言，一篇文章可以成为知识系统，一个概念可以成为品牌。",
+  "internal.kicker":"内部优先 · 生态优先","internal.title":"系统因创造<br>的需要而生。","internal.copy":"梦萃首先围绕旗下品牌的真实需要建立基础设施、知识与资源，让创意与系统始终保持紧密连接：系统因作品的需要而改善，作品也因系统的演化而变得更强。",
+  "founder.kicker":"由 MAXON 麦森创立","founder.title":"深度感受。<br>系统思考。<br>独立构建。","founder.copy":"麦森负责整个生态的愿景、品牌架构、创意方向与系统设计。","founder.link":"探索创始人 ↘",
+  "closing.kicker":"一个持续演化的矩阵","closing.title":"聆听。观看。思考。<br><span class=\"prism-text\">创造能够长久的一切。</span>","closing.copy":"声音可以启发图像，图像可以成为世界，问题可以成为知识体系。一个想法，只要获得足够的时间与照料，便可能成为能够长久存在的价值。","closing.ecosystem":"探索品牌生态 ↗","closing.home":"返回首页 ↑",
+  "footer.copy":"一个围绕听觉、视觉与认知构建的独立创意智能品牌生态。","footer.portfolio":"品牌组合","footer.explore":"探索","footer.rights":"版权所有。"
+ }
+};
+Object.assign(copy.en,{"hero.meta":"INDEPENDENT CREATIVE INTELLIGENCE ECOSYSTEM","hero.axis.sound":"SOUND","hero.axis.soundsub":"Auditory expression","hero.axis.vision":"VISION","hero.axis.visionsub":"Visual experience","hero.axis.cognition":"COGNITION","hero.axis.cognitionsub":"Structured knowledge","cap.section.title":"What we build<br>behind the brands.","cap.section.p1":"Each Malttrix brand maintains its own identity, visual language, content universe and audience. What connects them is the infrastructure beneath them.","cap.section.p2":"Malttrix provides the strategic, creative, technological and operational capabilities required to incubate, operate, connect and strengthen the ecosystem over the long term.","cap.section.quote":"The parent ecosystem provides direction, infrastructure and stewardship. The brands remain free to develop their own worlds.","cap.scope":"CAPABILITY SCOPE","cap.one.label":"INCUBATION & OPERATIONS","cap.one.intro":"We develop original brands and intellectual property from their earliest concepts through long-term operation. The work begins before a brand has a name and continues long after its first release.","cap.one.detail":"Our role is to translate an idea into a distinctive identity, a coherent creative world, a repeatable content and product system, and an operating model capable of learning and growing over time.","cap.one.note":"Our focus is not the volume of projects we can produce. It is the creation of distinctive brands with their own aesthetic identity, creative value and long-term potential.","cap.one.s1":"Brand concepts, naming and positioning","cap.one.s2":"World-building and visual identity direction","cap.one.s3":"Creative IP architecture and portfolio strategy","cap.one.s4":"Content, product and publishing systems","cap.one.s5":"Digital channels, audience and distribution","cap.one.s6":"Brand lifecycle and long-term operations","cap.two.label":"SYSTEMS & INFRASTRUCTURE","cap.two.intro":"Artificial intelligence is part of Malttrix’s infrastructure — not its identity. We build systems that expand creative capacity, reduce repetitive work and improve the quality and speed of decision-making.","cap.two.detail":"These systems support the complete operating chain: discovery, research, creation, publishing, knowledge management, performance monitoring and internal coordination.","cap.two.note":"Technology allows the ecosystem to work with greater speed, scale and analytical depth. Creative direction, aesthetic judgment and final quality remain governed by human intent.","cap.two.s1":"Research and editorial intelligence workflows","cap.two.s2":"Creative development and production systems","cap.two.s3":"Automation and intelligent agents","cap.two.s4":"Publishing and distribution pipelines","cap.two.s5":"Knowledge, data and decision systems","cap.two.s6":"Internal software and operational monitoring","cap.three.label":"ASSETS & STEWARDSHIP","cap.three.intro":"Creating something is only the beginning. Malttrix takes a long-term approach to the intellectual property, brand assets, infrastructure and operating knowledge produced across the ecosystem.","cap.three.detail":"We organise, protect, maintain and improve these assets so creative work can mature beyond a single release and continue accumulating identity, knowledge, commercial resilience and strategic value.","cap.three.note":"Give creation time. Give brands resilience. Let value compound.","cap.three.s1":"Intellectual property, rights and catalogues","cap.three.s2":"Brand assets and identity governance","cap.three.s3":"Digital infrastructure, data and archives","cap.three.s4":"Operating systems and documentation","cap.three.s5":"Strategic resources and commercial resilience","cap.three.s6":"Long-term portfolio stewardship","footer.signature":"Born from imagination.<br>Refined into form."});
+Object.assign(copy.zh,{"hero.meta":"独立创意智能品牌生态","hero.axis.sound":"听觉","hero.axis.soundsub":"听觉表达","hero.axis.vision":"视觉","hero.axis.visionsub":"视觉体验","hero.axis.cognition":"认知","hero.axis.cognitionsub":"结构化知识","cap.section.title":"我们在品牌背后<br>构建什么。","cap.section.p1":"梦萃旗下每个品牌都拥有自己的身份、视觉语言、内容世界与受众。连接它们的，是共同的底层基础设施。","cap.section.p2":"梦萃提供孵化、运营、连接并长期强化整个生态所需的战略、创意、技术与运营能力。","cap.section.quote":"母生态提供方向、基础设施与长期管理；各品牌则保有发展自身世界的自由。","cap.scope":"能力范围","cap.one.label":"孵化与运营","cap.one.intro":"我们从最早期概念开始发展原创品牌与知识产权，并持续参与其长期运营。工作早在品牌命名之前开始，也远在第一次发布之后继续。","cap.one.detail":"我们的角色，是将想法转化为独特身份、连贯的创意世界、可持续运行的内容与产品系统，以及能够从市场中学习并不断成长的运营模式。","cap.one.note":"我们追求的不是项目数量，而是建立拥有独立审美身份、创意价值与长期潜力的品牌。","cap.one.s1":"品牌概念、命名与定位","cap.one.s2":"世界观构建与视觉身份方向","cap.one.s3":"创意IP架构与品牌组合策略","cap.one.s4":"内容、产品与出版系统","cap.one.s5":"数字渠道、受众与发行","cap.one.s6":"品牌生命周期与长期运营","cap.two.label":"系统与基础设施","cap.two.intro":"人工智能是梦萃的基础设施，而不是品牌身份。我们建立能够扩展创作能力、减少重复工作并提高决策质量与速度的智能系统。","cap.two.detail":"这些系统覆盖完整运营链：发现、研究、创作、发布、知识管理、表现监测与内部协作。","cap.two.note":"技术让生态拥有更高的速度、规模与分析深度；创意方向、审美判断与最终品质，始终由人的意图主导。","cap.two.s1":"研究与编辑智能工作流","cap.two.s2":"创意开发与制作系统","cap.two.s3":"自动化与智能代理","cap.two.s4":"发布与分发管道","cap.two.s5":"知识、数据与决策系统","cap.two.s6":"内部软件与运营监测","cap.three.label":"资产与长期管理","cap.three.intro":"创造只是开始。梦萃以长期视角管理生态所产生的知识产权、品牌资产、基础设施与运营知识。","cap.three.detail":"我们组织、保护、维护并持续改善这些资产，让创意作品能够超越单次发布，逐步积累身份、知识、商业韧性与战略价值。","cap.three.note":"给创作时间。给品牌韧性。让价值复利。","cap.three.s1":"知识产权、权利与作品目录","cap.three.s2":"品牌资产与身份治理","cap.three.s3":"数字基础设施、数据与档案","cap.three.s4":"运营系统与文档","cap.three.s5":"战略资源与商业韧性","cap.three.s6":"品牌组合的长期管理","footer.signature":"为梦而生，<br>以萃成形。"});
+
+Object.assign(copy.en,{
+ "portfolio.sonic.type":"SONIC MOMENT ↗","portfolio.sonic.title":"Still Here, Night Shore","portfolio.sonic.meta":"An intimate nocturnal study in presence, distance and quiet companionship.",
+ "portfolio.visual.type":"VISUAL STUDY","portfolio.visual.title":"Light Study No. 01","portfolio.visual.meta":"A restrained study of light, space and restorative visual rhythm.",
+ "portfolio.knowledge.type":"KNOWLEDGE EXCERPT ↗","portfolio.knowledge.excerpt":"Reliable automation is not a single workflow. It is a system that knows how to notice, recover and learn.","portfolio.knowledge.title":"A Reliability Framework for Solo-Business Automation","portfolio.knowledge.meta":"Editorial intelligence translated into a practical operating framework.",
+ "bridge.dimensions":"THREE CREATIVE DIMENSIONS","bridge.dimension.names":"Sound · Vision · Cognition","bridge.capabilities":"THREE SHARED CAPABILITIES","bridge.capability.names":"Incubation · Infrastructure · Stewardship","bridge.result":"Distinct worlds. One shared intelligence layer."
+});
+Object.assign(copy.zh,{
+ "portfolio.sonic.type":"声音片段 ↗","portfolio.sonic.title":"《Still Here, Night Shore》","portfolio.sonic.meta":"一段关于陪伴、距离与深夜静谧的听觉研究。",
+ "portfolio.visual.type":"视觉研究","portfolio.visual.title":"光影研究 01","portfolio.visual.meta":"以光、空间与舒缓视觉节奏构成的克制研究。",
+ "portfolio.knowledge.type":"知识节选 ↗","portfolio.knowledge.excerpt":"可靠的自动化并非单一流程，而是一个懂得发现、恢复并持续学习的系统。","portfolio.knowledge.title":"独立事业自动化的可靠性框架","portfolio.knowledge.meta":"将编辑洞察转化为可执行的运营框架。",
+ "bridge.dimensions":"三个创意维度","bridge.dimension.names":"听觉 · 视觉 · 认知","bridge.capabilities":"三项共享能力","bridge.capability.names":"孵化 · 基础设施 · 长期管理","bridge.result":"独立的世界，共享的智能底层。"
+});
+
+Object.assign(copy.en,{
+ "founder.transition.label":"INDEPENDENT DIRECTION / LONG-TERM STEWARDSHIP",
+ "founder.transition.title":"Author-led.<br>System-built.<br>Long-term by design.",
+ "founder.transition.copy":"Malttrix is independently directed by Maxon through creative direction, systems design, and long-term stewardship.",
+ "founder.transition.link":"Meet the founder ↘"
+});
+Object.assign(copy.zh,{
+ "founder.transition.label":"独立主导 / 长期管理",
+ "founder.transition.title":"由人主导。<br>以系统构建。<br>为长期而设计。",
+ "founder.transition.copy":"梦萃由麦森独立主导，通过创意方向、系统设计与长期管理推动整个生态持续发展。",
+ "founder.transition.link":"认识创始人 ↘"
+});
+
+Object.assign(copy.en,{
+ "eco.map.title":"Three distinct worlds.<br><span class=\"prism-text\">One operating intelligence.</span>",
+ "eco.map.intro":"Each brand develops its own identity, audience and creative world. Malttrix connects them through shared incubation, intelligent systems, capital discipline and long-term stewardship.",
+ "eco.map.core":"OPERATING<br>INTELLIGENCE","eco.map.coreline":"Incubation · Systems<br>Capital · Stewardship",
+ "eco.map.sound":"Original music and cinematic auditory worlds shaped around emotion, memory and presence.",
+ "eco.map.vision":"Visual art using light, space and restrained contrast for restoration and emotional companionship.",
+ "eco.map.cognition":"Editorial intelligence and practical systems across Body, Tool and Capital.",
+ "eco.map.visit":"Enter world ↗","eco.map.caption":"Independent identities on the surface.","eco.map.caption2":"Shared operating intelligence underneath.",
+ "loop.title":"Creation becomes<br><span class=\"prism-text\">an operating loop.</span>",
+ "loop.intro":"Malttrix moves ideas from creative possibility to durable operation — then reinvests what the ecosystem learns and earns into the next cycle.",
+ "loop.imagine.title":"Imagine","loop.imagine.copy":"Discover a meaningful creative possibility.",
+ "loop.distill.title":"Distill","loop.distill.copy":"Research, select, and define its direction.",
+ "loop.build.title":"Build","loop.build.copy":"Turn it into a brand, product, system, or IP asset.",
+ "loop.operate.title":"Operate","loop.operate.copy":"Publish, distribute, learn, and generate sustainable cash flow.",
+ "loop.steward.title":"Steward","loop.steward.copy":"Protect rights, maintain reserves, reinvest capital, and strengthen long-term resilience.",
+ "loop.return.label":"REINVESTMENT PATH","loop.return.copy":"Learning, cash flow and retained capability return to the ecosystem — strengthening the next idea before it begins.",
+ "founder.resource.label":"INDEPENDENT DIRECTION / INDEPENDENT RESOURCES","founder.resource.title":"Independent direction requires independent resources.",
+ "founder.resource.copy":"Malttrix is independently directed by Maxon through creative direction, systems design and long-term stewardship. Independence is sustained by the resources and operating discipline that allow the ecosystem to choose its own horizon.",
+ "founder.resource.r1":"Creative direction","founder.resource.r2":"Systems design","founder.resource.r3":"Corporate reserves","founder.resource.r4":"Long-term capital","founder.resource.r5":"Operating assets","founder.resource.r6":"Disciplined reinvestment",
+ "cap.three.intro":"Malttrix takes a long-term approach to the intellectual property, brand assets, operating assets, infrastructure and knowledge produced across the ecosystem.",
+ "cap.three.detail":"We organise, protect and develop these assets alongside corporate reserves, long-term capital and cash-flow infrastructure — creating the financial and operational resilience that allows creative work to mature beyond a single release.",
+ "cap.three.note":"The aim is not short-term extraction, but a portfolio able to preserve independence, reinvest with intention and compound strategic value over time.",
+ "cap.three.s1":"Intellectual property, rights and catalogues","cap.three.s2":"Brand assets and identity governance","cap.three.s3":"Corporate reserves and disciplined capital allocation","cap.three.s4":"Long-term capital and reinvestment capacity","cap.three.s5":"Operating assets and shared infrastructure","cap.three.s6":"Cash-flow systems and commercial resilience","cap.three.s7":"Digital infrastructure, data and archives","cap.three.s8":"Operating systems and documentation"
+});
+Object.assign(copy.zh,{
+ "eco.map.title":"三个独立世界。<br><span class=\"prism-text\">一个运营智能核心。</span>",
+ "eco.map.intro":"每个品牌都发展自己的身份、受众与创意世界；梦萃通过共享孵化、智能系统、资本纪律与长期管理将它们连接起来。",
+ "eco.map.core":"运营<br>智能核心","eco.map.coreline":"孵化 · 系统<br>资本 · 管理",
+ "eco.map.sound":"围绕情感、记忆与陪伴构建原创音乐和电影感听觉世界。",
+ "eco.map.vision":"以光、空间与克制对比创造视觉艺术，提供舒缓与情绪陪伴。",
+ "eco.map.cognition":"围绕身、器、财建立编辑智识与可执行的个人系统。",
+ "eco.map.visit":"进入品牌世界 ↗","eco.map.caption":"表层是独立身份。","eco.map.caption2":"底层共享运营智能。",
+ "loop.title":"让创造成为<br><span class=\"prism-text\">持续运转的循环。</span>",
+ "loop.intro":"梦萃让想法从创意可能走向可持续运营，并将生态所学与所得重新投入下一轮创造。",
+ "loop.imagine.title":"想象","loop.imagine.copy":"发现一个值得实现的创意可能。",
+ "loop.distill.title":"萃取","loop.distill.copy":"研究、选择并定义清晰方向。",
+ "loop.build.title":"构建","loop.build.copy":"将想法转化为品牌、产品、系统或IP资产。",
+ "loop.operate.title":"运营","loop.operate.copy":"发布、分发、学习，并产生可持续现金流。",
+ "loop.steward.title":"管理","loop.steward.copy":"保护权利、维持储备、重新配置资本并增强长期韧性。",
+ "loop.return.label":"再投资路径","loop.return.copy":"知识、现金流与保留能力回到生态之中，在下一个想法出现之前增强其基础。",
+ "founder.resource.label":"独立方向 / 独立资源","founder.resource.title":"独立的方向，需要独立的资源。",
+ "founder.resource.copy":"梦萃由麦森通过创意方向、系统设计与长期管理独立主导。真正的独立，也依赖让生态能够自主选择时间尺度的资源与运营纪律。",
+ "founder.resource.r1":"创意方向","founder.resource.r2":"系统设计","founder.resource.r3":"企业储备","founder.resource.r4":"长期资本","founder.resource.r5":"运营资产","founder.resource.r6":"有纪律的再投资",
+ "cap.three.intro":"梦萃以长期视角管理生态所产生的知识产权、品牌资产、运营资产、基础设施与知识。",
+ "cap.three.detail":"我们组织、保护并发展这些资产，同时管理企业储备、长期资本与现金流基础设施，从而建立让创意作品超越单次发布并持续成熟的财务与运营韧性。",
+ "cap.three.note":"目标并非短期提取价值，而是建立能够维持独立、审慎再投资并让战略价值长期复利的品牌组合。",
+ "cap.three.s1":"知识产权、权利与作品目录","cap.three.s2":"品牌资产与身份治理","cap.three.s3":"企业储备与有纪律的资本配置","cap.three.s4":"长期资本与再投资能力","cap.three.s5":"运营资产与共享基础设施","cap.three.s6":"现金流系统与商业韧性","cap.three.s7":"数字基础设施、数据与档案","cap.three.s8":"运营系统与文档"
+});
+
+Object.assign(copy.en,{
+ "eco.map.core.top":"OPERATING","eco.map.core.bottom":"INTELLIGENCE",
+ "eco.map.core.support":"Incubation · Systems · Capital · Stewardship","eco.map.soon":"Coming soon",
+ "closing.matrix.label":"An evolving matrix",
+ "closing.matrix.title":"Turn creativity into value that can endure.",
+ "closing.matrix.copy":"Beginning with sound, vision and cognition, we continue to create, systemise and steward original worlds capable of growth."
+});
+Object.assign(copy.zh,{
+ "eco.map.core.top":"运营","eco.map.core.bottom":"智能核心",
+ "eco.map.core.support":"孵化 · 系统 · 资本 · 管理","eco.map.soon":"即将上线",
+ "closing.matrix.label":"一个持续演化的矩阵",
+ "closing.matrix.title":"让创意成为能够长久存在的价值。",
+ "closing.matrix.copy":"从声音、视觉与认知出发，持续创造、系统化并守护能够成长的原创世界。"
+});
+
+Object.assign(copy.en,{
+"founder.hero.eyebrow":"FOUNDER / CREATIVE SYSTEMS ARCHITECT","founder.hero.name":"MAXON TAN","founder.hero.role":"Founder · Creative Systems Architect","founder.hero.title":"To build freely,<br><span class=\"prism-text\">one must first build a world.</span>","founder.hero.lede":"<strong>Malttrix began with a personal conviction:</strong> imagination deserves more than a moment of expression. It deserves form, protection, and time.","founder.hero.caption":"MAXON TAN / 麦森<br>SG · MY / 01","founder.hero.scroll":"SCROLL / FOLLOW THE AUTHORSHIP",
+"founder.why.kicker":"01 / WHY MALTTRIX","founder.why.title":"A place where<br>two instincts meet.","founder.why.lead":"I did not create Malttrix to build another company around output, noise, or short-term attention.","founder.why.p1":"I created it because art needs room to breathe. Because meaningful ideas need the freedom to become more than a project. Because a melody, an image, a system, or a quiet question can carry a life of its own—if it is given the right conditions to grow.","founder.why.p2":"My background trained me to think in structure, accountability, and long-term value. But the part of me that kept calling was artistic: the desire for freedom, expression, atmosphere, beauty, and the unknown.","founder.why.p3":"Malttrix is where these two instincts meet. It is a place to give imagination form—without taking away its soul.","founder.why.credential.label":"STRUCTURAL FOUNDATION","founder.why.credential.copy":"ACCA Master’s Degree-level qualification — a foundation in discipline, stewardship, accountability and the architecture behind continuity.",
+"founder.background.kicker":"02 / FROM STRUCTURE TO AUTHORSHIP","founder.background.title":"My path has never<br>been only one thing.","founder.background.copy":"I learned to see patterns, weigh consequences, organise complexity, and build for durability. At the same time, I have always been drawn to the emotional language of art—the way sound holds memory, light changes a room, and a single image opens an inner world. Rather than treating these instincts as opposites, I began to see them as collaborators.","founder.background.art":"Art gives direction.","founder.background.structure":"Structure gives it duration.","founder.background.independence":"Independence gives it integrity.",
+"founder.cap.kicker":"03 / HOW MAXON WORKS","founder.cap.title":"Sensitivity,<br><span class=\"prism-text\">given structure.</span>","founder.cap.intro":"Six connected capabilities shape how ideas are understood, directed, built and protected across Malttrix.","founder.cap.c1.h":"Introspection","founder.cap.c1.p":"The ability to remain with a question long enough to find what is beneath the obvious. This creates emotional depth and a clearer point of view.","founder.cap.c2.h":"Spatial Thinking","founder.cap.c2.p":"A sensitivity to atmosphere, composition, distance, rhythm, and the relationship between elements. This shapes worlds, not just isolated outputs.","founder.cap.c3.h":"Artistic Direction","founder.cap.c3.p":"An instinct for tone, symbolism, emotional texture, and visual or sonic coherence. The goal is not decoration; it is meaning made perceptible.","founder.cap.c4.h":"Systems Design","founder.cap.c4.p":"The ability to turn complexity into a coherent structure: an operating model, a creative process, a digital system, or an ecosystem of connected parts.","founder.cap.c5.h":"Independent Judgment","founder.cap.c5.p":"A preference for building from a clear internal standard rather than following noise, fashion, or external pressure.","founder.cap.c6.h":"Long-Term Stewardship","founder.cap.c6.p":"A commitment to protect creative work through ownership, infrastructure, resource discipline, and the patience required for value to compound.",
+"founder.philosophy.kicker":"04 / WORKING PHILOSOPHY","founder.philosophy.title":"Feel deeply.<br>Think structurally.<br>Build independently.","founder.philosophy.feel.h":"Feeling deeply","founder.philosophy.feel.p":"Pay attention to emotion, memory, atmosphere, and the things that cannot always be measured.","founder.philosophy.think.h":"Thinking structurally","founder.philosophy.think.p":"Give those insights a way to live through craft, systems, rights, technology, and deliberate choices.","founder.philosophy.build.h":"Building independently","founder.philosophy.build.p":"Keep enough authorship to protect the original point of view and let meaningful work endure.",
+"founder.note.kicker":"05 / A PERSONAL NOTE","founder.note.title":"A living matrix<br>for what comes next.","founder.note.p1":"Malttrix is still evolving. It is not a finished answer; it is a living matrix for the work, worlds, and ideas still waiting to take form.","founder.note.p2":"The ambition is quiet but serious: to create original work with emotional truth, build systems that preserve creative freedom, and leave space for imagination to keep becoming.","founder.note.signature":"Born from imagination. Refined into form.","founder.note.name":"— MAXON TAN / 麦森"
+});
+Object.assign(copy.zh,{
+"founder.hero.eyebrow":"创始人 / 创意系统架构师","founder.hero.name":"MAXON TAN｜麦森","founder.hero.role":"创始人 · 创意系统架构师","founder.hero.title":"为了自由地创造，<br><span class=\"prism-text\">必须先建立属于自己的世界。</span>","founder.hero.lede":"<strong>梦萃的开始，源于一个很个人的信念：</strong>想象力不应只停留在短暂的表达之中。它值得被赋形、被保护，也值得拥有成长的时间。","founder.hero.caption":"麦森 / MAXON TAN<br>SG · MY / 01","founder.hero.scroll":"向下 / 走进创作主权",
+"founder.why.kicker":"01 / 为什么是梦萃","founder.why.title":"两种本能，<br>在此相遇。","founder.why.lead":"我创立梦萃，并不是为了再建立一家追逐产出、噪音或短期注意力的公司。","founder.why.p1":"我创立它，是因为艺术需要呼吸的空间。因为真正有意义的想法，不应只是一次性的项目。因为一段旋律、一幅画面、一个系统，或一个安静的问题，只要拥有合适的土壤，都可以发展出属于自己的生命。","founder.why.p2":"我的背景训练我理解结构、责任与长期价值。但始终召唤着我的，是艺术的一面：对自由、表达、氛围、美感与未知的渴望。","founder.why.p3":"梦萃就是这两种本能相遇的地方。它让想象力成为具体的形式，同时不失去它原本的灵魂。","founder.why.credential.label":"结构基础","founder.why.credential.copy":"ACCA Master Degree level qualification——建立了对纪律、资源管理、责任，以及事物得以持续之底层架构的理解。",
+"founder.background.kicker":"02 / 从结构走向创作主权","founder.background.title":"我的路径，<br>从来不只属于一种身份。","founder.background.copy":"我学习观察模式、衡量后果、整理复杂性，并为长久而建立结构。同时，我也一直被艺术的情感语言所吸引——声音如何承载记忆，光如何改变空间，一幅画面又如何开启一整个内在世界。后来，我不再把这两种倾向视为对立，而是视为协作者。","founder.background.art":"艺术，赋予方向。","founder.background.structure":"结构，赋予时间。","founder.background.independence":"独立，赋予完整性。",
+"founder.cap.kicker":"03 / 麦森如何工作","founder.cap.title":"让感知，<br><span class=\"prism-text\">拥有结构。</span>","founder.cap.intro":"六种彼此连接的能力，塑造梦萃理解、引导、构建与保护想法的方式。","founder.cap.c1.h":"内省","founder.cap.c1.p":"愿意与一个问题停留得更久，穿过表面的答案，寻找真正值得被表达的东西。这使创作拥有更深的情感与观点。","founder.cap.c2.h":"空间感知","founder.cap.c2.p":"对氛围、构图、距离、节奏，以及元素之间关系的敏感。它所构建的不是单一内容，而是可以进入的世界。","founder.cap.c3.h":"艺术方向","founder.cap.c3.p":"对语气、象征、情绪质地，以及视觉与声音一致性的判断。重点并非装饰，而是让意义能够被感知。","founder.cap.c4.h":"系统设计","founder.cap.c4.p":"将复杂事物转化为清晰而连贯的结构：可以是运营模型、创作流程、数字系统，或彼此连接的生态。","founder.cap.c5.h":"独立判断","founder.cap.c5.p":"更重视从内在标准出发，而非被潮流、噪音或外部压力定义。","founder.cap.c6.h":"长期守护","founder.cap.c6.p":"通过知识产权、基础设施、资源纪律与耐心，保护创作成果，让价值有时间持续积累。",
+"founder.philosophy.kicker":"04 / 创作哲学","founder.philosophy.title":"深刻感受。<br>结构思考。<br>独立建造。","founder.philosophy.feel.h":"深刻感受","founder.philosophy.feel.p":"对情绪、记忆、氛围，以及那些无法完全量化之事保持敏锐。","founder.philosophy.think.h":"结构思考","founder.philosophy.think.p":"让这些感受通过工艺、系统、权利、技术与慎重的选择，拥有持续存在的方式。","founder.philosophy.build.h":"独立建造","founder.philosophy.build.p":"保留足够的创作主权，守护最初的观点与表达，让有意义的作品长久存在。",
+"founder.note.kicker":"05 / 一段个人的话","founder.note.title":"一个承载未来的<br>生命矩阵。","founder.note.p1":"梦萃仍在演化。它不是一个已经完成的答案，而是一个不断生长的矩阵，承载未来仍在等待被赋形的作品、世界与想法。","founder.note.p2":"这份愿望安静，却很坚定：创作具有情感真实的原创作品，建立能够保护创作自由的系统，并始终为想象力留下继续生长的空间。","founder.note.signature":"源于想象，淬炼成形。","founder.note.name":"— 麦森 · MAXON TAN"
+});
+
+(()=>{
+ const buttons=[...document.querySelectorAll('.lang-btn')],menu=document.getElementById('primaryMenu'),toggle=document.getElementById('menuToggle');
+ function apply(lang,persist=false){lang=copy[lang]?lang:'en';document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.querySelectorAll('[data-i18n]').forEach(el=>{const value=copy[lang][el.dataset.i18n];if(value!==undefined)el.textContent=value});document.querySelectorAll('[data-i18n-html]').forEach(el=>{const value=copy[lang][el.dataset.i18nHtml];if(value!==undefined)el.innerHTML=value});buttons.forEach(b=>{const active=b.dataset.lang===lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});toggle.setAttribute('aria-label',lang==='zh'?'打开或关闭导航':'Open or close navigation');if(persist)try{localStorage.setItem('malttrix_lang_pref',lang)}catch(_){}}
+ buttons.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang,true)));
+ toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));menu.classList.toggle('open',open)});
+ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+ document.addEventListener('pointerdown',e=>{if(!document.getElementById('siteHeader').contains(e.target)){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}});
+ let lang='en';try{lang=localStorage.getItem('malttrix_lang_pref')||'en'}catch(_){}apply(lang);
+ const header=document.getElementById('siteHeader'),headerState=()=>header.classList.toggle('scrolled',scrollY>30);addEventListener('scroll',headerState,{passive:true});headerState();
+ if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -7%'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+})();
+</script>
+<script>
+(()=>{const bar=document.getElementById('aboutProgress');if(!bar)return;const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')'};addEventListener('scroll',update,{passive:true});addEventListener('resize',update,{passive:true});update()})();
+</script>
+<script data-about-matrix>
+(()=>{const hero=document.querySelector('.matrix-hero'),core=document.querySelector('.matrix-core-shell'),points=[...document.querySelectorAll('.matrix-particles i')],reduce=matchMedia('(prefers-reduced-motion: reduce)');if(!hero||!core)return;let queued=false;const update=()=>{queued=false;if(reduce.matches){core.style.transform='none';points.forEach(p=>p.style.transform='none');return}const rect=hero.getBoundingClientRect(),progress=Math.max(0,Math.min(1,-rect.top/Math.max(1,rect.height*.8)));core.style.transform='translate3d(0,'+(progress*16)+'px,0) rotate('+(-2+progress*6)+'deg)';points.forEach((point,i)=>{const x=Number(point.dataset.x),y=Number(point.dataset.y),gather=1-progress*.34;point.style.transform='translate('+(x*gather)+'px,'+(y*gather)+'px) rotate('+(45+progress*(i%2?28:-28))+'deg)'})};const request=()=>{if(!queued){queued=true;requestAnimationFrame(update)}};addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});reduce.addEventListener?.('change',request);update()})();
+</script>
+<script data-about-loop>
+(()=>{const section=document.querySelector('.operating-loop-section'),reduce=matchMedia('(prefers-reduced-motion: reduce)');if(!section||reduce.matches)return;section.classList.add('js-loop');const io=new IntersectionObserver(([entry])=>{if(entry.isIntersecting){section.classList.add('loop-in-view');io.disconnect()}},{threshold:.18,rootMargin:'0px 0px -10%'});io.observe(section)})();
+</script>
+<script data-about-hero-intro>
+(()=>{const hero=document.querySelector('.matrix-hero');if(!hero)return;const reveal=()=>requestAnimationFrame(()=>hero.classList.add('matrix-ready'));if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal()})();
+</script>
+<script data-founder-motion>
+(()=>{const hero=document.querySelector('.founder-hero'),portrait=document.querySelector('.founder-portrait-stage'),reduce=matchMedia('(prefers-reduced-motion: reduce)');if(!hero)return;requestAnimationFrame(()=>hero.classList.add('is-ready'));if(!portrait||reduce.matches)return;let frame=0;hero.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;portrait.style.transform='translate3d('+(x*8)+'px,'+(y*6)+'px,0)'})});hero.addEventListener('pointerleave',()=>portrait.style.transform='')})();
+</script>
+</body>
+</html>
