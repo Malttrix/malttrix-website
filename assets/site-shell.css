@@ -59,7 +59,7 @@ button{font:inherit}
 .footer-col ul{list-style:none;padding:0;margin:20px 0}.footer-col li{margin:12px 0;color:#d5d5d8;font-size:.88rem}.soon{color:#797b82}
 .footer-bottom{margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:20px;color:#8f9198;font:500 .67rem var(--font-mono)}
 .footer-motion-inline{display:flex;gap:12px}
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.75,.2,1)}.reveal.visible{opacity:1;transform:none}
+/* Content reveal behavior belongs to each page; the shared shell only styles header and footer. */
 @media(max-width:1050px) and (min-width:901px){.header{grid-template-columns:185px 1fr auto!important}.header .brand-mark,.header .brand img.logo-light{width:180px!important}.menu{gap:2px!important;font-size:.71rem!important}.menu>a,.nav-dropdown>.nav-trigger{padding-inline:7px!important}}
 @media(max-width:900px){
   html{scroll-padding-top:86px}
