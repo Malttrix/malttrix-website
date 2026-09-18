@@ -924,3 +924,39 @@ html[lang="zh-CN"] .brand-expression-head h2{
   .ratio-track b{font-size:clamp(1.9rem,8vw,3rem)}
   .ratio-track em{font-size:.48rem;letter-spacing:.04em}
 }
+
+
+/* About v7.7 — matched matrix cards and clean signature lockup */
+.living-dimensions .living-node{
+  position:relative;
+  min-width:0;
+  padding:17px clamp(12px,2vw,22px);
+  border:1px solid rgba(23,25,31,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.48);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(23,25,31,.04);
+  text-align:left;
+}
+.living-dimensions .living-node::after{
+  content:none;
+  display:none;
+}
+.living-dimensions .living-node:hover,
+.living-dimensions .living-node:focus-visible{
+  transform:translateY(-5px);
+  border-color:color-mix(in srgb,var(--dimension-tone) 38%,rgba(23,25,31,.10));
+  background:rgba(255,255,255,.70);
+  box-shadow:0 16px 42px color-mix(in srgb,var(--dimension-tone) 10%,rgba(23,25,31,.07));
+}
+.signature-flightline{
+  display:none!important;
+}
+@media(max-width:720px){
+  .living-dimensions .living-node{
+    padding:13px 8px;
+    border-radius:14px;
+    text-align:center;
+  }
+}
