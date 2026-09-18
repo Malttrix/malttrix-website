@@ -825,3 +825,102 @@ html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .cap-editorial h2,html[la
   .living-dimensions .living-node{padding-inline:4px;text-align:left}
   .ecosystem-map-section .section-head::after{display:none}
 }
+
+
+/* About v7.6 — hierarchy cleanup */
+html[lang="zh-CN"] .brand-expression-head h2{
+  max-width:860px;
+  font-size:clamp(3rem,4.65vw,5.5rem)!important;
+  line-height:1.18!important;
+  letter-spacing:0!important;
+}
+.closing .founder-editorial{
+  border-bottom:0!important;
+}
+.living-matrix{
+  overflow:visible;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.living-matrix::before{
+  inset:-18%;
+  border-radius:50%;
+}
+.matrix-closing::after{
+  content:"MATRIX / 08";
+}
+.ratio-track{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  min-height:0;
+  overflow:visible;
+  padding-top:34px;
+  border:0;
+}
+.ratio-track::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:12px;
+  background:
+    linear-gradient(90deg,
+      #17191D 0%,
+      #454850 50%,
+      #D7D2C9 70%,
+      #3559C7 70%,
+      #35B7C4 82%,
+      #7656C8 95%,
+      #D75E9A 95%,
+      #E86D60 97.5%,
+      #D5A447 100%);
+  box-shadow:0 1px 0 rgba(23,25,29,.08);
+}
+.ratio-track>span{
+  min-height:150px;
+  padding:24px 22px 18px 0;
+  border:0;
+  border-right:1px solid rgba(23,25,29,.11);
+  color:var(--ink);
+  background:transparent!important;
+}
+.ratio-track>span+span{padding-left:22px}
+.ratio-track>span:last-child{border-right:0}
+.ratio-track b{
+  font:600 clamp(2.2rem,4vw,4.4rem)/.9 var(--font-display);
+  color:var(--ink);
+}
+.ratio-track em{
+  max-width:150px;
+  font:600 .58rem/1.45 var(--font-mono);
+  letter-spacing:.09em;
+  color:#62666f;
+  opacity:1;
+}
+.ratio-prism b{color:#3559C7}
+.ratio-spectrum b{color:#D75E9A}
+.ratio-spectrum b,.ratio-spectrum em{opacity:1}
+.prism-key{display:none}
+.ratio-note{
+  margin-top:0;
+  padding-top:22px;
+  border-top:1px solid rgba(23,25,29,.11);
+}
+@media(max-width:720px){
+  html[lang="zh-CN"] .brand-expression-head h2{
+    font-size:clamp(2.7rem,10.5vw,4.5rem)!important;
+    line-height:1.22!important;
+  }
+  .ratio-track>span{
+    min-height:132px;
+    padding:20px 10px 14px 0;
+  }
+  .ratio-track>span+span{padding-left:12px}
+  .ratio-track b{font-size:clamp(1.9rem,8vw,3rem)}
+  .ratio-track em{font-size:.48rem;letter-spacing:.04em}
+}
