@@ -315,3 +315,197 @@ html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .cap-editorial h2,html[la
   .living-connectors path{stroke-dashoffset:0}
   .living-node{transition:none}
 }
+
+
+/* About v7.3 — clarity and atmosphere */
+.operating-loop-section .loop-header{
+  margin-bottom:34px;
+}
+.operating-loop-section .loop-header>p{
+  max-width:510px;
+  font-size:clamp(.94rem,1.25vw,1.08rem);
+  color:#c7c9cf;
+}
+.loop-context{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:clamp(26px,5vw,70px);
+  max-width:940px;
+  margin:0 auto 46px;
+  padding:20px 0 26px 160px;
+  border-top:1px solid rgba(255,255,255,.13);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.loop-context span{
+  font:500 .58rem/1.5 var(--font-mono);
+  letter-spacing:.14em;
+  color:#8e91a0;
+}
+.loop-context p{
+  max-width:650px;
+  margin:0;
+  font:400 clamp(.88rem,1.15vw,.98rem)/1.8 var(--font-ui);
+  color:#b8bac1;
+}
+.operating-loop-section .loop-stage{
+  padding-block:clamp(38px,5vw,54px);
+}
+.operating-loop-section .loop-stage p{
+  max-width:690px;
+  font-size:clamp(.88rem,1.1vw,.98rem);
+  line-height:1.82;
+}
+.closing .matrix-closing{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:clamp(92px,10vw,138px) clamp(18px,4.5vw,62px) clamp(58px,7vw,88px);
+  border:1px solid rgba(23,25,31,.08);
+  border-radius:clamp(30px,5vw,58px);
+  background:
+    radial-gradient(circle at 15% 22%,rgba(53,183,196,.09),transparent 26%),
+    radial-gradient(circle at 88% 18%,rgba(118,86,200,.10),transparent 29%),
+    radial-gradient(circle at 52% 72%,rgba(53,89,199,.055),transparent 34%),
+    linear-gradient(rgba(23,25,31,.026) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(23,25,31,.026) 1px,transparent 1px),
+    linear-gradient(145deg,rgba(255,255,255,.52),rgba(245,242,236,.72));
+  background-size:auto,auto,auto,72px 72px,72px 72px,auto;
+  box-shadow:0 34px 110px rgba(23,25,31,.075),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.closing .matrix-closing::before{
+  content:"";
+  position:absolute;
+  inset:10% -10% auto;
+  z-index:-1;
+  height:54%;
+  pointer-events:none;
+  background:linear-gradient(100deg,transparent 6%,rgba(53,183,196,.065) 34%,rgba(53,89,199,.08) 53%,rgba(118,86,200,.065) 70%,transparent 94%);
+  filter:blur(35px);
+  transform:skewY(-4deg);
+}
+.closing .matrix-closing::after{
+  content:"MATRIX / 05";
+  position:absolute;
+  right:clamp(24px,4vw,58px);
+  top:28px;
+  font:500 .57rem/1 var(--font-mono);
+  letter-spacing:.18em;
+  color:rgba(69,72,80,.42);
+}
+.matrix-closing-copy{
+  position:relative;
+  z-index:2;
+}
+.matrix-closing-copy::after{
+  content:"";
+  display:block;
+  width:min(310px,48vw);
+  height:1px;
+  margin:28px auto 0;
+  background:linear-gradient(90deg,transparent,#35B7C4 32%,#3559C7 58%,#7656C8 78%,transparent);
+  opacity:.72;
+}
+.living-matrix{
+  min-height:660px;
+  border-color:rgba(53,89,199,.13);
+  background:
+    radial-gradient(circle at 50% 48%,rgba(53,89,199,.14),transparent 22%),
+    radial-gradient(circle at 43% 47%,rgba(53,183,196,.10),transparent 31%),
+    radial-gradient(circle at 72% 24%,rgba(118,86,200,.07),transparent 26%),
+    linear-gradient(rgba(23,25,31,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(23,25,31,.04) 1px,transparent 1px),
+    rgba(252,250,246,.84);
+  background-size:auto,auto,auto,56px 56px,56px 56px,auto;
+}
+.living-matrix::after{
+  content:"";
+  position:absolute;
+  inset:15% 20%;
+  z-index:0;
+  border-radius:50%;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at center,transparent 0 29%,rgba(53,183,196,.12) 29.3% 29.7%,transparent 30% 48%,rgba(53,89,199,.10) 48.3% 48.7%,transparent 49% 67%,rgba(118,86,200,.085) 67.3% 67.7%,transparent 68%);
+  transform:rotate(-8deg);
+  animation:matrixField 15s ease-in-out infinite alternate;
+}
+.living-matrix-label{
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(250,248,242,.78);
+  box-shadow:0 0 0 1px rgba(23,25,31,.045);
+}
+.living-matrix-label--top{top:20px}
+.living-matrix-label--bottom{
+  bottom:150px;
+  z-index:5;
+}
+.living-dimensions{top:64px}
+.living-capabilities{bottom:28px}
+.matrix-system-rail{
+  position:absolute;
+  top:22px;
+  left:24px;
+  right:24px;
+  z-index:4;
+  display:flex;
+  justify-content:space-between;
+  pointer-events:none;
+  font:500 .5rem/1 var(--font-mono);
+  letter-spacing:.13em;
+  color:rgba(69,72,80,.40);
+}
+.matrix-coordinate{
+  position:absolute;
+  z-index:2;
+  pointer-events:none;
+  font:500 .49rem/1 var(--font-mono);
+  letter-spacing:.14em;
+  color:rgba(53,89,199,.42);
+}
+.matrix-coordinate::before{
+  content:"";
+  position:absolute;
+  width:22px;
+  height:1px;
+  top:50%;
+  background:currentColor;
+  opacity:.45;
+}
+.matrix-coordinate--a{left:5%;top:42%;padding-left:30px}
+.matrix-coordinate--a::before{left:0}
+.matrix-coordinate--b{right:5%;top:35%;padding-right:30px}
+.matrix-coordinate--b::before{right:0}
+.matrix-coordinate--c{right:7%;top:67%;padding-right:30px}
+.matrix-coordinate--c::before{right:0}
+@keyframes matrixField{
+  to{transform:rotate(4deg) scale(1.04);opacity:.72}
+}
+@media(max-width:820px){
+  .loop-context{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding-left:0;
+  }
+  .closing .matrix-closing{
+    padding:82px 14px 48px;
+    border-radius:30px;
+  }
+  .living-matrix{min-height:570px}
+  .living-matrix-label--bottom{bottom:118px}
+  .matrix-coordinate{display:none}
+}
+@media(max-width:560px){
+  .operating-loop-section .loop-header{margin-bottom:26px}
+  .loop-context{margin-bottom:30px}
+  .living-matrix{min-height:550px}
+  .living-matrix-label{
+    font-size:.53rem;
+    letter-spacing:.12em;
+  }
+  .living-matrix-label--bottom{bottom:110px}
+  .matrix-system-rail{left:14px;right:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .living-matrix::after{animation:none!important}
+}
