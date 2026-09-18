@@ -30,13 +30,48 @@
   if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -7%'});reveal.forEach(el=>io.observe(el));}else reveal.forEach(el=>el.classList.add('is-visible'));
 
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse=matchMedia('(pointer: coarse)').matches;
+  const saveData=navigator.connection?.saveData===true;
   const canvas=document.getElementById('vanmoiraField');
-  if(canvas&&!reduced){
-    const ctx=canvas.getContext('2d');let w=0,h=0,dpr=1,raf=0;
-    const points=Array.from({length:54},(_,i)=>({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.4,s:.00008+Math.random()*.00018,p:i%3}));
-    const resize=()=>{const b=canvas.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);w=b.width;h=b.height;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)};
-    const draw=(t)=>{ctx.clearRect(0,0,w,h);points.forEach(p=>{p.y-=p.s*16;if(p.y<-.03)p.y=1.03;const x=p.x*w+Math.sin(t*.00025+p.y*9)*12,y=p.y*h;ctx.beginPath();ctx.fillStyle=['rgba(99,191,208,.46)','rgba(118,86,200,.42)','rgba(213,164,71,.34)'][p.p];ctx.arc(x,y,p.r,0,Math.PI*2);ctx.fill();});for(let n=0;n<3;n++){ctx.beginPath();for(let x=0;x<=w;x+=18){const y=h*(.33+n*.18)+Math.sin(x*.008+t*.00035+n)*14;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}ctx.strokeStyle=`rgba(${n===1?'99,191,208':'174,159,218'},${.045+n*.014})`;ctx.stroke();}raf=requestAnimationFrame(draw)};
-    resize();addEventListener('resize',resize,{passive:true});raf=requestAnimationFrame(draw);
-    document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else raf=requestAnimationFrame(draw)});
+  if(canvas&&!reduced&&!saveData){
+    const ctx=canvas.getContext('2d',{alpha:true});
+    const hero=canvas.closest('.vm-hero');
+    let w=0,h=0,dpr=1,raf=0,running=false,heroVisible=true,lastFrame=0,resizeTimer=0;
+    const frameInterval=coarse?50:33;
+    const pointCount=coarse?20:36;
+    const waveCount=coarse?1:2;
+    const colors=['rgba(99,191,208,.42)','rgba(118,86,200,.38)','rgba(213,164,71,.3)'];
+    const points=Array.from({length:pointCount},(_,i)=>({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.15,s:.00007+Math.random()*.00013,p:i%3}));
+    const resize=()=>{
+      const b=hero.getBoundingClientRect();
+      dpr=Math.min(devicePixelRatio||1,coarse?1:1.25);
+      w=Math.max(1,Math.round(b.width));h=Math.max(1,Math.round(b.height));
+      canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    };
+    const draw=(t)=>{
+      if(!running)return;
+      raf=requestAnimationFrame(draw);
+      if(t-lastFrame<frameInterval)return;
+      lastFrame=t;
+      ctx.clearRect(0,0,w,h);
+      for(const p of points){
+        p.y-=p.s*frameInterval;if(p.y<-.03)p.y=1.03;
+        const x=p.x*w+Math.sin(t*.00022+p.y*9)*10,y=p.y*h;
+        ctx.beginPath();ctx.fillStyle=colors[p.p];ctx.arc(x,y,p.r,0,Math.PI*2);ctx.fill();
+      }
+      for(let n=0;n<waveCount;n++){
+        ctx.beginPath();
+        for(let x=0;x<=w;x+=32){const y=h*(.4+n*.2)+Math.sin(x*.007+t*.0003+n)*12;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}
+        ctx.strokeStyle=n?'rgba(99,191,208,.05)':'rgba(174,159,218,.045)';ctx.stroke();
+      }
+    };
+    const start=()=>{if(running||document.hidden)return;running=true;lastFrame=0;raf=requestAnimationFrame(draw)};
+    const stop=()=>{running=false;cancelAnimationFrame(raf)};
+    resize();
+    const heroObserver=new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;heroVisible?start():stop()},{rootMargin:'120px 0px'});
+    heroObserver.observe(hero);
+    addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,160)},{passive:true});
+    document.addEventListener('visibilitychange',()=>document.hidden?stop():(heroVisible&&start()));
   }
 })();
