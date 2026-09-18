@@ -36,7 +36,7 @@
   if(canvas&&!reduced&&!saveData){
     const ctx=canvas.getContext('2d',{alpha:true});
     const hero=canvas.closest('.vm-hero');
-    let w=0,h=0,dpr=1,raf=0,running=false,lastFrame=0,resizeTimer=0;
+    let w=0,h=0,dpr=1,raf=0,running=false,heroVisible=true,lastFrame=0,resizeTimer=0;
     const frameInterval=coarse?50:33;
     const pointCount=coarse?20:36;
     const waveCount=coarse?1:2;
@@ -69,9 +69,9 @@
     const start=()=>{if(running||document.hidden)return;running=true;lastFrame=0;raf=requestAnimationFrame(draw)};
     const stop=()=>{running=false;cancelAnimationFrame(raf)};
     resize();
-    const heroObserver=new IntersectionObserver(([entry])=>entry.isIntersecting?start():stop(),{rootMargin:'120px 0px'});
+    const heroObserver=new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;heroVisible?start():stop()},{rootMargin:'120px 0px'});
     heroObserver.observe(hero);
     addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,160)},{passive:true});
-    document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+    document.addEventListener('visibilitychange',()=>document.hidden?stop():(heroVisible&&start()));
   }
 })();
