@@ -75,3 +75,243 @@ html[lang="zh-CN"] .section-head h2,html[lang="zh-CN"] .cap-editorial h2,html[la
 @media(max-width:760px){.hummingbird-symbolism{padding:96px 0}.symbol-intro{grid-template-columns:1fr;gap:28px;margin-bottom:42px}.symbol-intro h2{font-size:clamp(3.5rem,14vw,5.5rem)}.symbol-intro-copy{padding-left:20px}.symbol-stage{min-height:480px;border-radius:24px}.symbol-flight-map{inset:68px 1% 82px;width:98%;height:calc(100% - 150px)}.symbol-stage-meta{left:22px;right:22px}.symbol-phase-rail{left:22px;right:22px;gap:5px}.symbol-phase-rail span{font-size:.48rem}.symbol-meanings{grid-template-columns:1fr}.symbol-principle{min-height:0;padding:26px 0!important;border-right:0!important}.symbol-principle small{margin-bottom:22px}.symbol-geometry{margin-top:20px;padding:24px 22px}}
 @media(max-width:480px){.symbol-stage{min-height:420px}.symbol-stage-meta{font-size:.52rem}.symbol-stage-meta span:last-child{display:none}.symbol-orbit{width:76%}.symbol-phase-rail span{letter-spacing:0}}
 @media(prefers-reduced-motion:reduce){.symbol-stage:after,.symbol-stage *{animation:none!important;transition:none!important}.symbol-trail,.symbol-bird-core path{stroke-dashoffset:0!important}.symbol-bird-core circle,.symbol-particles i{opacity:.55}}
+
+
+/* About v7.2 — official cycle language and living matrix */
+.operating-loop-section .loop-stage small{
+  letter-spacing:.14em;
+  color:color-mix(in srgb,var(--accent) 72%,var(--graphite));
+}
+.closing .matrix-closing{
+  display:grid;
+  gap:clamp(34px,5vw,70px);
+  padding-top:clamp(76px,10vw,132px);
+  text-align:left;
+}
+.matrix-closing-copy{
+  width:min(840px,100%);
+  margin-inline:auto;
+  text-align:center;
+}
+.matrix-closing-copy h2{
+  max-width:780px;
+  margin:14px auto 22px;
+}
+.matrix-closing-copy>p{
+  max-width:760px;
+  margin-inline:auto;
+}
+.matrix-closing-lede{
+  margin-top:16px!important;
+  color:var(--graphite);
+}
+.living-matrix{
+  --matrix-ink:#17191f;
+  position:relative;
+  width:min(1120px,100%);
+  min-height:600px;
+  margin-inline:auto;
+  overflow:hidden;
+  border:1px solid rgba(23,25,31,.10);
+  border-radius:clamp(24px,4vw,44px);
+  background:
+    radial-gradient(circle at 50% 48%,rgba(53,89,199,.10),transparent 23%),
+    radial-gradient(circle at 44% 54%,rgba(53,183,196,.07),transparent 31%),
+    linear-gradient(rgba(23,25,31,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(23,25,31,.035) 1px,transparent 1px),
+    rgba(250,248,242,.82);
+  background-size:auto,auto,56px 56px,56px 56px,auto;
+  box-shadow:0 28px 80px rgba(23,25,31,.07),inset 0 1px 0 rgba(255,255,255,.8);
+  isolation:isolate;
+}
+.living-matrix::before{
+  content:"";
+  position:absolute;
+  inset:-30%;
+  z-index:-1;
+  background:conic-gradient(from 210deg at 50% 50%,transparent 0 34%,rgba(53,183,196,.10) 40%,rgba(53,89,199,.12) 47%,rgba(118,86,200,.09) 53%,transparent 61%);
+  animation:matrixBreath 11s ease-in-out infinite alternate;
+}
+.living-matrix-label{
+  position:absolute;
+  left:50%;
+  z-index:3;
+  transform:translateX(-50%);
+  font:600 .66rem/1.2 var(--mono);
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:rgba(70,72,80,.66);
+  white-space:nowrap;
+}
+.living-matrix-label--top{top:24px}
+.living-matrix-label--bottom{bottom:104px}
+.living-dimensions,.living-capabilities{
+  position:absolute;
+  left:clamp(22px,5vw,66px);
+  right:clamp(22px,5vw,66px);
+  z-index:3;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(10px,2.4vw,26px);
+}
+.living-dimensions{top:56px}
+.living-capabilities{bottom:28px}
+.living-node{
+  min-width:0;
+  padding:17px clamp(12px,2vw,22px);
+  border:1px solid rgba(23,25,31,.10);
+  border-radius:18px;
+  background:rgba(255,255,255,.48);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(23,25,31,.04);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s,background .35s;
+}
+.living-node span{
+  display:block;
+  margin-bottom:8px;
+  font:500 .62rem/1 var(--mono);
+  letter-spacing:.15em;
+  color:rgba(70,72,80,.58);
+}
+.living-node strong{
+  display:block;
+  overflow-wrap:anywhere;
+  font:600 clamp(.78rem,1.25vw,1rem)/1.2 var(--sans);
+  color:var(--matrix-ink);
+}
+.living-node:hover,.living-node:focus-visible{
+  transform:translateY(-5px);
+  border-color:rgba(53,89,199,.38);
+  background:rgba(255,255,255,.70);
+  box-shadow:0 16px 42px rgba(53,89,199,.12);
+  outline:none;
+}
+.living-node--sound:hover,.living-node--sound:focus-visible{border-color:rgba(118,86,200,.48)}
+.living-node--vision:hover,.living-node--vision:focus-visible{border-color:rgba(53,183,196,.48)}
+.living-node--cognition:hover,.living-node--cognition:focus-visible{border-color:rgba(213,164,71,.48)}
+.living-mark{
+  position:absolute;
+  left:50%;
+  top:50%;
+  z-index:4;
+  display:grid;
+  width:clamp(142px,18vw,208px);
+  aspect-ratio:1;
+  place-content:center;
+  transform:translate(-50%,-50%) rotate(45deg);
+  border:1px solid rgba(53,89,199,.30);
+  border-radius:34%;
+  background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(239,245,247,.68));
+  box-shadow:0 0 0 14px rgba(53,183,196,.025),0 30px 80px rgba(53,89,199,.16),inset 0 1px 0 rgba(255,255,255,.9);
+}
+.living-mark::before,.living-mark::after{
+  content:"";
+  position:absolute;
+  inset:12%;
+  border:1px solid rgba(118,86,200,.18);
+  border-radius:30%;
+}
+.living-mark::after{inset:25%;border-color:rgba(53,183,196,.24)}
+.living-mark small,.living-mark strong{
+  position:relative;
+  z-index:2;
+  display:block;
+  transform:rotate(-45deg);
+  text-align:center;
+}
+.living-mark small{
+  font:600 clamp(.47rem,.75vw,.62rem)/1.3 var(--mono);
+  letter-spacing:.12em;
+  color:rgba(70,72,80,.68);
+}
+.living-mark strong{
+  margin-top:8px;
+  font:500 clamp(1.4rem,3vw,2.35rem)/.9 var(--serif);
+  letter-spacing:.04em;
+  background:linear-gradient(100deg,#3559C7,#35B7C4 48%,#7656C8);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.living-mark i{
+  position:absolute;
+  inset:-9%;
+  border:1px solid rgba(53,183,196,.11);
+  border-radius:38%;
+  animation:matrixOrbit 12s linear infinite;
+}
+.living-connectors{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+.living-connectors path{
+  fill:none;
+  stroke:url(#matrixLine);
+  stroke-width:1.35;
+  vector-effect:non-scaling-stroke;
+  opacity:.40;
+  stroke-dasharray:7 9;
+  stroke-dashoffset:160;
+}
+.living-matrix.visible .living-connectors path{
+  animation:matrixDraw 2.2s cubic-bezier(.22,.7,.2,1) forwards,matrixFlow 14s linear 2.2s infinite;
+}
+.living-fragments i{
+  position:absolute;
+  z-index:2;
+  width:7px;
+  height:7px;
+  border:1px solid rgba(53,89,199,.38);
+  background:rgba(255,255,255,.55);
+  transform:rotate(45deg);
+  animation:matrixFragment 5.4s ease-in-out infinite alternate;
+}
+.living-fragments i:nth-child(1){left:24%;top:42%;animation-delay:-1s}
+.living-fragments i:nth-child(2){left:35%;top:62%;animation-delay:-3s;border-color:rgba(53,183,196,.52)}
+.living-fragments i:nth-child(3){left:46%;top:27%;animation-delay:-2s}
+.living-fragments i:nth-child(4){right:36%;top:32%;animation-delay:-4s;border-color:rgba(118,86,200,.52)}
+.living-fragments i:nth-child(5){right:24%;top:58%;animation-delay:-.5s}
+.living-fragments i:nth-child(6){right:42%;top:70%;animation-delay:-2.5s;border-color:rgba(53,183,196,.46)}
+.matrix-closing .closing-actions{
+  justify-content:center;
+  margin-top:-8px;
+}
+@keyframes matrixDraw{to{stroke-dashoffset:0}}
+@keyframes matrixFlow{to{stroke-dashoffset:-160}}
+@keyframes matrixBreath{to{transform:translate3d(3%,1%,0) rotate(8deg);opacity:.72}}
+@keyframes matrixOrbit{to{transform:rotate(360deg)}}
+@keyframes matrixFragment{to{transform:translate3d(0,-9px,0) rotate(135deg);opacity:.45}}
+
+@media(max-width:720px){
+  .closing .matrix-closing{padding-top:72px;gap:34px}
+  .living-matrix{min-height:540px;border-radius:24px}
+  .living-matrix-label--top{top:19px}
+  .living-matrix-label--bottom{bottom:94px}
+  .living-dimensions,.living-capabilities{left:12px;right:12px;gap:7px}
+  .living-dimensions{top:48px}
+  .living-capabilities{bottom:20px}
+  .living-node{padding:13px 8px;border-radius:14px;text-align:center}
+  .living-node span{font-size:.54rem;margin-bottom:6px}
+  .living-node strong{font-size:clamp(.62rem,2.8vw,.78rem)}
+  .living-mark{width:132px}
+  .living-connectors{opacity:.78}
+}
+@media(max-width:420px){
+  .living-matrix{min-height:520px}
+  .living-node strong{font-size:.61rem}
+  .living-mark{width:118px}
+  .living-mark small{font-size:.41rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .living-matrix::before,.living-mark i,.living-fragments i,.living-matrix.visible .living-connectors path{
+    animation:none!important;
+  }
+  .living-connectors path{stroke-dashoffset:0}
+  .living-node{transition:none}
+}
