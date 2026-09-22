@@ -82,11 +82,16 @@ html[lang="zh-CN"] .vm-hero h1{font-family:"Noto Serif SC",serif;font-size:clamp
 .vm-definition-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.7fr);gap:clamp(56px,10vw,148px);align-items:start}
 .vm-definition-detail{margin-top:clamp(50px,7vw,88px)}
 .vm-definition .vm-copy{color:#656973}
-.vm-manifesto{display:grid;gap:0;border-top:1px solid rgba(23,25,29,.14)}
-.vm-manifesto>span{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:baseline;gap:12px;padding:20px 0;border-bottom:1px solid rgba(23,25,29,.14);font:600 clamp(1rem,1.45vw,1.22rem)/1.45 var(--vm-ui)}
-.vm-manifesto b{font-weight:600;max-width:100%;overflow-wrap:normal}
-.vm-manifesto b span{display:inline;grid-template-columns:none;padding:0;border:0;font:inherit}
-.vm-manifesto i{font:500 .62rem/1.8 var(--vm-mono);font-style:normal;color:#7656c8}
+.vm-definition .vm-copy strong{color:var(--vm-ink);font-weight:700}
+.vm-manifesto{display:grid;gap:0;border-top:1px solid rgba(23,25,29,.16);border-bottom:1px solid rgba(23,25,29,.16)}
+.vm-manifesto-line{display:grid;grid-template-columns:34px 54px minmax(0,1fr);align-items:center;column-gap:18px;min-height:112px;padding:14px 6px;border-bottom:1px solid rgba(23,25,29,.12);transition:background .3s ease}
+.vm-manifesto-line:last-child{border-bottom:0}
+.vm-manifesto-line:hover{background:rgba(118,86,200,.045)}
+.vm-manifesto-line i{font:500 .62rem/1.8 var(--vm-mono);font-style:normal;color:#7656c8}
+.vm-manifesto-line svg{width:54px;height:54px;fill:none;stroke:#7656c8;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.vm-manifesto-line:nth-child(2) svg{stroke:#248c9b}.vm-manifesto-line:nth-child(3) svg{stroke:#a57925}
+.vm-manifesto-line b{font:600 clamp(1rem,1.45vw,1.22rem)/1.45 var(--vm-ui);min-width:0}
+.vm-manifesto-line b span{display:inline}
 .vm-definition-quote{margin-top:52px;padding-left:28px;border-left:2px solid transparent;border-image:linear-gradient(#7656c8,#35b7c4,#d5a447) 1;font:500 clamp(1.7rem,3.2vw,3.1rem)/1.2 var(--vm-display);letter-spacing:-.025em}
 html[lang="zh-CN"] .vm-definition-quote{font-family:"Noto Serif SC",serif;line-height:1.45}
 
@@ -146,13 +151,18 @@ html[lang="zh-CN"] .vm-moments>span{font-family:"Noto Serif SC",serif;font-size:
 /* Beliefs and offers */
 .vm-beliefs{background:var(--vm-ivory);color:var(--vm-ink)}
 .vm-beliefs .vm-label{color:#7656c8}
-.vm-belief-grid{display:grid;grid-template-columns:1fr;margin-top:clamp(44px,6vw,72px);border-top:1px solid rgba(23,25,29,.16);border-bottom:1px solid rgba(23,25,29,.16)}
-.vm-belief{display:grid;grid-template-columns:70px minmax(240px,.8fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center;min-height:150px;padding:24px 16px;border-bottom:1px solid rgba(23,25,29,.12);transition:background .35s ease,padding-left .35s ease}
-.vm-belief:last-child{border-bottom:0}
-.vm-belief:hover{background:rgba(118,86,200,.035);padding-left:25px}
-.vm-belief i{font:500 .63rem/1.5 var(--vm-mono);font-style:normal;color:#7656c8}
+.vm-belief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(44px,6vw,72px);border-top:1px solid rgba(23,25,29,.16);border-bottom:1px solid rgba(23,25,29,.16)}
+.vm-belief{--belief-accent:#7656c8;position:relative;min-width:0;min-height:330px;padding:clamp(24px,3.5vw,48px);border-bottom:1px solid rgba(23,25,29,.12);transition:background .35s ease}
+.vm-belief:nth-child(even){border-left:1px solid rgba(23,25,29,.12)}
+.vm-belief:nth-last-child(-n+2){border-bottom:0}
+.vm-belief:nth-child(2){--belief-accent:#248c9b}.vm-belief:nth-child(3){--belief-accent:#a57925}.vm-belief:nth-child(4){--belief-accent:#b04b78}
+.vm-belief:hover{background:rgba(118,86,200,.045)}
+.vm-belief-top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:clamp(20px,3vw,42px)}
+.vm-belief-top i{font:500 .63rem/1.5 var(--vm-mono);font-style:normal;letter-spacing:.13em;color:var(--belief-accent)}
+.vm-belief-top svg{width:clamp(70px,8vw,108px);height:clamp(70px,8vw,108px);flex:none;fill:none;stroke:var(--belief-accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s ease}
+.vm-belief:hover .vm-belief-top svg{transform:translateY(-5px)}
 .vm-belief h3{margin:0;font:500 clamp(2rem,3.2vw,3.4rem)/1.04 var(--vm-display);letter-spacing:-.025em}
-.vm-belief p{margin:0;max-width:570px;color:#555b65;font-size:clamp(.88rem,1vw,.98rem);line-height:1.8}
+.vm-belief p{margin:16px 0 0;max-width:470px;color:#555b65;font-size:clamp(.88rem,1vw,.98rem);line-height:1.8}
 html[lang="zh-CN"] .vm-belief h3{font-family:"Noto Serif SC",serif;font-size:clamp(1.65rem,2.4vw,2.35rem);line-height:1.35;letter-spacing:0}
 html[lang="zh-CN"] .vm-timefield .vm-section-title{font-family:"Noto Serif SC",serif;font-size:clamp(2.7rem,4.7vw,4.8rem);line-height:1.22;letter-spacing:-.025em}
 .vm-purpose{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:88px;background:rgba(23,25,29,.13);border:1px solid rgba(23,25,29,.13)}
@@ -190,16 +200,16 @@ html[lang="zh-CN"] .vm-closing h2{font-family:"Noto Serif SC",serif;font-size:cl
   .vm-hero{padding-top:150px}.vm-hero-grid,.vm-definition-grid,.vm-timefield-grid,.vm-dual-intro,.vm-capsules-head,.vm-ecosystem-grid{grid-template-columns:1fr}
   .vm-hero-art{min-height:420px}.vm-moon-disc{width:min(54vw,310px)}.vm-orbit.o1{width:min(78vw,560px)}.vm-orbit.o2{width:min(65vw,450px)}.vm-orbit.o3{width:min(46vw,320px)}
   .vm-presences{grid-template-columns:1fr}.vm-presence+.vm-presence{border-left:0;border-top:1px solid rgba(23,25,29,.14)}
-  .vm-belief{grid-template-columns:44px minmax(200px,.85fr) 1fr;gap:24px}
+  .vm-belief{min-height:290px}
   .vm-offer-grid{grid-template-columns:1fr}.vm-offer{min-height:0;border-right:0;border-bottom:1px solid var(--vm-line)}.vm-offer:last-child{border-bottom:0}.vm-offer h3{margin-top:70px}
 }
 @media(max-width:720px){
   .vm-container{width:min(100% - 28px,1240px)}.vm-section{padding:86px 0}.vm-hero{padding:126px 0 42px;min-height:auto}.vm-wordmark{font-size:clamp(4.3rem,22vw,7rem)}.vm-hero h1{margin-top:36px}.vm-hero-art{min-height:330px}.vm-coordinate{font-size:.48rem}.vm-hero-rail{grid-template-columns:1fr 1fr}.vm-hero-rail span:nth-child(2){border-right:0}.vm-hero-rail span:nth-child(-n+2){border-bottom:1px solid var(--vm-line)}
-  .vm-moments,.vm-purpose,.vm-ecosystem-meta{grid-template-columns:1fr}.vm-moments-head{grid-column:1}.vm-moments>span{padding:15px 0}.vm-belief{grid-template-columns:32px minmax(0,1fr);gap:8px 16px;min-height:0;padding:24px 4px}.vm-belief h3{margin:0}.vm-belief p{grid-column:2}.vm-purpose article+article{border-top:1px solid rgba(23,25,29,.13)}
+  .vm-moments,.vm-purpose,.vm-ecosystem-meta,.vm-belief-grid{grid-template-columns:1fr}.vm-moments-head{grid-column:1}.vm-moments>span{padding:15px 0}.vm-manifesto-line{grid-template-columns:27px 45px minmax(0,1fr);gap:12px;min-height:96px}.vm-manifesto-line svg{width:43px;height:43px}.vm-belief{min-height:0;padding:24px 4px}.vm-belief:nth-child(even){border-left:0}.vm-belief:nth-child(3){border-bottom:1px solid rgba(23,25,29,.12)}.vm-belief-top{margin-bottom:16px}.vm-belief-top svg{width:64px;height:64px}.vm-purpose article+article{border-top:1px solid rgba(23,25,29,.13)}
   .vm-presence{min-height:0;padding:34px 20px}.vm-presence h3{margin-top:110px}.vm-presence-lists{grid-template-columns:1fr}
   .capsule{grid-template-columns:42px 1fr 24px;gap:13px;padding:22px 0}.capsule p{grid-column:2/4}.capsule h3{font-size:2.15rem}.capsule:hover,.capsule:focus-within{padding-inline:10px}
   .vm-btn{width:100%}.vm-actions{width:100%}
   .vm-section{contain-intrinsic-size:auto 760px}
   #vanmoiraField{opacity:.58}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vm-moon-disc{animation:none}.vm-reveal{opacity:1;transform:none;transition:none}.vm-btn,.capsule,.capsule::before,.vm-presence::before,.vm-moments>span,.vm-belief{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.vm-moon-disc{animation:none}.vm-reveal{opacity:1;transform:none;transition:none}.vm-btn,.capsule,.capsule::before,.vm-presence::before,.vm-moments>span,.vm-belief,.vm-belief-top svg,.vm-manifesto-line{transition:none}}
