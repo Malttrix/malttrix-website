@@ -1,4 +1,4 @@
-/* Founder v4 motion: progressive enhancement; all content is visible without JS. */
+/* Founder v5: narrative motion, event-driven and readable without JavaScript. */
 (()=>{'use strict';
 const page=document.querySelector('.bio-main');if(!page)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -12,25 +12,30 @@ const worlds=[...page.querySelectorAll('.bio-world')],rail=[...page.querySelecto
 let frame=0;
 const clamp=n=>Math.max(0,Math.min(1,n));
 function update(){frame=0;
- if(reduced.matches){hero?.style.setProperty('--portrait-y','0px');hero?.style.setProperty('--line-y','0px');freedom?.style.setProperty('--freedom','1');manifesto?.style.setProperty('--gather','0px');return;}
+ if(reduced.matches){hero?.style.setProperty('--portrait-y','0px');hero?.style.setProperty('--line-y','0px');freedom?.style.setProperty('--freedom','1');manifesto?.style.setProperty('--gather','0px');worlds.forEach(el=>el.style.setProperty('--world-progress','1'));}
  const vh=innerHeight||800;
+ if(!reduced.matches){
  if(hero&&activeScenes.has(hero)){const r=hero.getBoundingClientRect(),p=clamp(-r.top/Math.max(r.height,1));hero.style.setProperty('--portrait-y',(-p*25).toFixed(2)+'px');hero.style.setProperty('--line-y',(p*18).toFixed(2)+'px');}
  if(turn&&freedom&&activeScenes.has(turn)){const r=turn.getBoundingClientRect(),p=clamp((vh*.8-r.top)/Math.max(1,r.height-vh*.2));freedom.style.setProperty('--freedom',p.toFixed(4));}
  if(manifesto&&activeScenes.has(manifesto)){const r=manifesto.getBoundingClientRect(),p=clamp((vh*.75-r.top)/Math.max(1,r.height*.65));manifesto.style.setProperty('--gather',((1-p)*18).toFixed(2)+'px');}
+ worlds.forEach(el=>{if(!activeScenes.has(el))return;const r=el.getBoundingClientRect(),p=clamp((vh*.9-r.top)/(vh*.7));el.style.setProperty('--world-progress',p.toFixed(4));});
+ }
  if(worlds.length){const visible=worlds.map(el=>({el,r:el.getBoundingClientRect()})).filter(x=>x.r.bottom>vh*.2&&x.r.top<vh*.8);if(visible.length){const current=visible.reduce((a,b)=>Math.abs(a.r.top-vh*.25)<Math.abs(b.r.top-vh*.25)?a:b).el.dataset.dimension;rail.forEach(a=>{if(a.dataset.world===current)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});}}
 }
 function request(){if(!frame)frame=requestAnimationFrame(update);}
 if('IntersectionObserver'in window){
  const sceneObserver=new IntersectionObserver(entries=>{entries.forEach(e=>e.isIntersecting?activeScenes.add(e.target):activeScenes.delete(e.target));request();},{rootMargin:'15% 0px',threshold:0});
- [hero,turn,manifesto].filter(Boolean).forEach(el=>sceneObserver.observe(el));
- const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;revealObserver.unobserve(e.target);if(seen.has(e.target))return;seen.add(e.target);const isPrinciple=e.target.classList.contains('bio-principle'),index=isPrinciple?[...e.target.parentElement.children].indexOf(e.target):0;animate(e.target,[{opacity:0,transform:'translateY(16px)'},{opacity:1,transform:'none'}],{duration:650,delay:index*100});if(e.target.classList.contains('bio-signature-art'))animate(e.target,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],{duration:1200});}),{threshold:.08,rootMargin:'0px 0px -5%'});
- page.querySelectorAll('.bio-heading,.bio-prose,.bio-principle,.bio-world-copy,.bio-system,.bio-note-portrait,.bio-signature-art').forEach(el=>revealObserver.observe(el));
+ [hero,turn,manifesto,...worlds].filter(Boolean).forEach(el=>sceneObserver.observe(el));
+ const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(!e.isIntersecting)return;revealObserver.unobserve(e.target);if(seen.has(e.target))return;seen.add(e.target);const el=e.target,world=el.closest('.bio-world'),stagger=el.classList.contains('bio-system')?[...el.parentElement.children].indexOf(el)*100:0;
+ const lateral=world&&innerWidth>720?(world.dataset.direction==='right'?38:-38):0;
+ animate(el,[{opacity:0,transform:lateral?'translateX('+lateral+'px)':'translateY(16px)'},{opacity:1,transform:'none'}],{duration:world?850:650,delay:world&&el.classList.contains('bio-world-copy')?130:stagger});
+ if(el.classList.contains('bio-signature-art'))animate(el,[{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0 0 0)'}],{duration:1200});}),{threshold:.08,rootMargin:'0px 0px -5%'});
+ page.querySelectorAll('.bio-heading,.bio-prose,.bio-principle,.bio-world-art,.bio-world-copy,.bio-system,.bio-reflection,.bio-note-portrait,.bio-signature-art').forEach(el=>revealObserver.observe(el));
  const wave=page.querySelector('.bio-sensory-study svg path');if(wave){const io=new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;io.disconnect();animate(wave,[{strokeDasharray:1,strokeDashoffset:1},{strokeDasharray:1,strokeDashoffset:0}],{duration:1500});},{threshold:.2});io.observe(wave);}
-}else [hero,turn,manifesto].filter(Boolean).forEach(el=>activeScenes.add(el));
+}else [hero,turn,manifesto,...worlds].filter(Boolean).forEach(el=>activeScenes.add(el));
 addEventListener('scroll',request,{passive:true});addEventListener('resize',request,{passive:true});
 function reset(){if(reduced.matches){playing.forEach(a=>a.cancel());playing.clear();}request();}
 reduced.addEventListener?.('change',reset);
 if(typeof MutationObserver==='function'){new MutationObserver(request).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});}
-page.querySelectorAll('details').forEach(el=>el.addEventListener('toggle',request));
 reset();
 })();
