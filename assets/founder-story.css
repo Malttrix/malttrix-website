@@ -1,4 +1,4 @@
-/* Founder v10: editorial biography and restrained interactive light. */
+/* Founder v11: editorial biography and restrained interactive light. */
 .bio-main{--bio-paper:var(--ivory,#F5F2EC);--bio-ink:var(--ink,#17191D);--bio-muted:#555960;--bio-rule:rgba(23,25,29,.15);--bio-spectrum:linear-gradient(105deg,#3559C7 0%,#7656C8 38%,#AD3D78 70%,#9C712A 100%);--motion-ease:cubic-bezier(.22,1,.36,1);--motion-reveal:650ms;--motion-portrait:1100ms;--motion-hover:220ms;color:var(--bio-ink);background:var(--bio-paper);font-family:var(--font-body,Manrope,"Noto Sans SC",sans-serif);overflow-x:clip}
 .bio-main *{box-sizing:border-box}.bio-main a{color:inherit}.bio-main section{scroll-margin-top:115px}.bio-main figure{margin:0}
 .bio-container{width:min(1220px,calc(100% - 40px));margin-inline:auto}
@@ -170,8 +170,8 @@
 .bio-note-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,7vw,100px);align-items:start}
 .bio-note-copy{min-width:0}.bio-note-copy .bio-prose{max-width:650px}.bio-note-copy .bio-prose p{font-size:.98rem;line-height:2}
 .bio-note-portrait{position:sticky;top:135px;min-width:0;max-width:470px;width:100%;isolation:isolate}
-.bio-note-crop{position:relative;aspect-ratio:1;overflow:clip;isolation:isolate;-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,rgba(0,0,0,.8) 76%,transparent 99%);mask-image:linear-gradient(to bottom,#000 0%,#000 62%,rgba(0,0,0,.8) 76%,transparent 99%)}
-.bio-note-crop img{position:absolute;top:-1%;left:-35%;width:170%;max-width:none;height:auto;mix-blend-mode:multiply}
+.bio-note-crop{position:relative;aspect-ratio:4/5;overflow:clip;isolation:isolate;-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 68%,rgba(0,0,0,.85) 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 68%,rgba(0,0,0,.85) 80%,transparent 100%)}
+.bio-note-crop img{position:absolute;top:0;left:-8%;width:116%;max-width:none;height:auto;mix-blend-mode:multiply}
 .bio-note-wash{position:absolute;inset:6% 0 10%;z-index:-1;background:radial-gradient(ellipse at 25% 40%,rgba(53,183,196,.13),transparent 60%),radial-gradient(ellipse at 75% 35%,rgba(118,86,200,.12),transparent 65%);pointer-events:none}
 .bio-note-portrait figcaption{font:500 .58rem/1.8 var(--font-mono);letter-spacing:.13em;color:#666B75;padding:6px 0 0;border:0;text-align:center}
 .bio-note-copy .bio-heading{margin-bottom:34px}.bio-note-copy h2{font-size:clamp(2.6rem,4.3vw,4.6rem)}
@@ -250,3 +250,4 @@ html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[la
 @keyframes bio-feel-wave{0%,100%{transform:translateY(0)}35%{transform:translateY(-5px)}70%{transform:translateY(2px)}}
 @media(max-width:600px){.bio-support-indices{gap:10px}.bio-support-indices strong{font-size:.64rem;line-height:1.7}}
 @media(prefers-reduced-motion:reduce){.bio-principle:hover svg,.bio-principle:hover .bio-principle-title,.bio-principle:focus-visible svg{transform:none!important}.bio-portrait-light i,.bio-portrait-light b{animation:none!important}}
+
