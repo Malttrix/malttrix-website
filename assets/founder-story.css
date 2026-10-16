@@ -1,4 +1,4 @@
-/* Founder v9: editorial biography. The shared shell is deliberately untouched. */
+/* Founder v10: editorial biography and restrained interactive light. */
 .bio-main{--bio-paper:var(--ivory,#F5F2EC);--bio-ink:var(--ink,#17191D);--bio-muted:#555960;--bio-rule:rgba(23,25,29,.15);--bio-spectrum:linear-gradient(105deg,#3559C7 0%,#7656C8 38%,#AD3D78 70%,#9C712A 100%);--motion-ease:cubic-bezier(.22,1,.36,1);--motion-reveal:650ms;--motion-portrait:1100ms;--motion-hover:220ms;color:var(--bio-ink);background:var(--bio-paper);font-family:var(--font-body,Manrope,"Noto Sans SC",sans-serif);overflow-x:clip}
 .bio-main *{box-sizing:border-box}.bio-main a{color:inherit}.bio-main section{scroll-margin-top:115px}.bio-main figure{margin:0}
 .bio-container{width:min(1220px,calc(100% - 40px));margin-inline:auto}
@@ -137,7 +137,8 @@
 .bio-support-core-label{position:absolute;top:53%;left:50%;transform:translate(-50%,-50%);font:500 .7rem/1.5 var(--font-mono);letter-spacing:.08em;color:#E8E3F2}
 .bio-support-branch{fill:none;stroke:#AA91D8;stroke-width:1;opacity:.5;transition:opacity 220ms var(--motion-ease),stroke-width 220ms var(--motion-ease)}.bio-support-branch[data-branch="2"]{stroke:#62C6D0}.bio-support-branch[data-branch="3"]{stroke:#D5B367}.bio-support-branch circle{fill:currentColor;stroke-width:1}
 .bio-support-diagram:not([data-active="all"]) .bio-support-branch{opacity:.22}.bio-support-diagram[data-active="1"] [data-branch="1"],.bio-support-diagram[data-active="2"] [data-branch="2"],.bio-support-diagram[data-active="3"] [data-branch="3"]{opacity:1;stroke-width:1.8}
-.bio-support-indices{display:flex;justify-content:space-between;padding:0 14%;margin-top:-8px;font:500 .54rem/1.5 var(--font-mono);color:#AAB0C0}
+.bio-support-indices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:-8px;text-align:center;color:#AAB0C0}
+.bio-support-indices>div{display:grid;align-content:start;gap:8px;min-width:0}.bio-support-indices span{font:500 .54rem/1.5 var(--font-mono)}.bio-support-indices strong{font:500 .67rem/1.65 var(--font-body);color:#D4D6DF;overflow-wrap:normal;text-wrap:balance}
 .bio-support-diagram figcaption{margin-top:32px;max-width:390px}.bio-support-diagram figcaption .bio-label{font-size:.57rem;color:#BDA9DE}.bio-support-diagram figcaption p{font-size:.78rem;line-height:1.9;color:#AEB5C3;margin:13px 0 0}
 .bio-system-list{display:block;border-top:1px solid rgba(245,242,236,.18)}
 .bio-main a.bio-system{position:relative;display:block;padding:32px 40px 35px 0;border-bottom:1px solid rgba(245,242,236,.18);text-decoration:none;color:#F5F2EC}
@@ -224,3 +225,28 @@ html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[la
 
 @media(max-width:900px){.bio-support-layout{grid-template-columns:1fr;gap:38px}.bio-support-aside{position:relative;top:auto;display:grid;grid-template-columns:1fr 1fr;gap:25px}.bio-support-intro{margin:0}.bio-support-diagram{max-width:380px}.bio-support-heading{margin-bottom:38px}}
 @media(max-width:600px){.bio-support-aside{display:block}.bio-support-intro{margin-bottom:30px}.bio-support-diagram{margin-inline:auto!important}.bio-support-heading h2{font-size:2.8rem}.bio-support-closing{display:block;margin-top:35px}.bio-support-closing .bio-link{margin-top:20px}.bio-main a.bio-system{padding:28px 28px 30px 0}.bio-system h3{font-size:1.9rem}.bio-system-short{font-size:.88rem}.bio-system-scope{font-size:.6rem}.bio-row-arrow{top:28px}}
+
+
+/* Founder v10: ambient light moves; the portrait remains grounded. */
+@keyframes bio-light-wash{0%,100%{transform:translate3d(-8px,0,0) rotate(19deg);opacity:.55}50%{transform:translate3d(10px,-14px,0) rotate(27deg);opacity:.85}}
+@keyframes bio-light-refraction{0%,100%{transform:translate3d(0,9px,0) rotate(-20deg);opacity:.65}50%{transform:translate3d(-12px,-8px,0) rotate(-13deg);opacity:.95}}
+.bio-portrait-light i{animation:bio-light-wash 12s ease-in-out infinite;animation-play-state:paused}
+.bio-portrait-light b{animation:bio-light-refraction 15s ease-in-out infinite;animation-play-state:paused}
+.bio-portrait-light[data-active="true"] i,.bio-portrait-light[data-active="true"] b{animation-play-state:running}
+/* Principles stay readable and stationary; a fine accent and symbol respond. */
+.bio-principle{--principle-accent:var(--violet);outline-offset:5px}
+.bio-principle:nth-child(2){--principle-accent:var(--cyan)}.bio-principle:nth-child(3){--principle-accent:var(--gold,#D5A447)}
+.bio-principle:before{content:"";position:absolute;inset:8px -14px;z-index:-1;background:linear-gradient(100deg,color-mix(in srgb,var(--principle-accent) 8%,transparent),transparent 78%);opacity:0;border-radius:4px;transition:opacity 250ms}
+.bio-principle{isolation:isolate}.bio-principle svg,.bio-principle-title{transition:transform 300ms cubic-bezier(.22,1,.36,1)}
+.bio-principle:after{transition:width 450ms cubic-bezier(.22,1,.36,1),opacity 250ms}
+.bio-principle:focus-visible{outline:1px solid var(--principle-accent)}
+.bio-principle:focus-visible:before{opacity:1}.bio-principle:focus-visible:after{width:45%;opacity:1}.bio-principle:focus-visible svg{transform:translateY(-3px) rotate(-5deg)}
+@media(hover:hover) and (pointer:fine){
+ .bio-principle:hover:before{opacity:1}.bio-principle:hover:after{width:45%;opacity:1}.bio-principle:hover .bio-principle-title{transform:translateX(5px)}
+ .bio-principle:nth-child(1):hover svg{animation:bio-feel-wave 1100ms ease-in-out 1}
+ .bio-principle:nth-child(2):hover svg{transform:rotate(8deg) scale(1.06)}
+ .bio-principle:nth-child(3):hover svg{transform:rotate(-12deg)}
+}
+@keyframes bio-feel-wave{0%,100%{transform:translateY(0)}35%{transform:translateY(-5px)}70%{transform:translateY(2px)}}
+@media(max-width:600px){.bio-support-indices{gap:10px}.bio-support-indices strong{font-size:.64rem;line-height:1.7}}
+@media(prefers-reduced-motion:reduce){.bio-principle:hover svg,.bio-principle:hover .bio-principle-title,.bio-principle:focus-visible svg{transform:none!important}.bio-portrait-light i,.bio-portrait-light b{animation:none!important}}
