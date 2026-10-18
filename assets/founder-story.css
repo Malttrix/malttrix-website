@@ -102,6 +102,11 @@
 .bio-world[data-direction="right"]{margin-left:auto;margin-right:0;grid-template-columns:1.1fr .9fr}
 .bio-world[data-direction="right"] .bio-world-art{grid-column:2;grid-row:1}.bio-world[data-direction="right"] .bio-world-copy{grid-column:1;grid-row:1;text-align:left}
 .bio-world-art{position:relative;min-width:0;min-height:400px;overflow:clip;display:grid;place-items:center;background:#1B2434}
+.bio-brand-model{display:block;width:100%;height:400px;--poster-color:transparent;touch-action:pan-y}
+.bio-world-model .bio-art-coordinate,.bio-world-model .bio-art-caption{z-index:2;pointer-events:none}
+.bio-model-poster{position:absolute;inset:0;display:grid;place-items:center;color:inherit;font:500 .8rem var(--font-mono);letter-spacing:.14em}
+.bio-world-v .bio-world-model{color:#E9DBED}.bio-world-i .bio-world-model{color:#1A2F24}
+@media(max-width:720px){.bio-brand-model{height:320px}}
 .bio-world-art:after{content:"";position:absolute;inset:0;border:0;background:linear-gradient(90deg,rgba(245,242,236,.08),transparent);pointer-events:none}
 .bio-art-coordinate{position:absolute;top:30px;left:30px;color:rgba(245,242,236,.55);font:500 .6rem var(--font-mono);letter-spacing:.12em}
 .bio-art-caption{position:absolute;bottom:30px;left:30px;color:rgba(245,242,236,.65);font:500 .55rem var(--font-mono);letter-spacing:.12em;text-transform:uppercase}
