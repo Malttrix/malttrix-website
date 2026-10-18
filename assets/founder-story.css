@@ -257,17 +257,24 @@ html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[la
 @media(prefers-reduced-motion:reduce){.bio-principle:hover svg,.bio-principle:hover .bio-principle-title,.bio-principle:focus-visible svg{transform:none!important}.bio-portrait-light i,.bio-portrait-light b{animation:none!important}}
 
 
-/* Living brand stages: colored light, a soft halo and restrained logo float. */
-.bio-world-model{isolation:isolate;border-radius:22px;border:1px solid rgba(255,255,255,.16);box-shadow:0 22px 55px rgba(23,25,29,.09);--glow-x:50%;--glow-y:45%}
-.bio-world-v .bio-world-model{background:linear-gradient(135deg,#18283D 0%,#352044 48%,#493044 72%,#152F3B 100%);--stage-a:rgba(190,116,207,.38);--stage-b:rgba(62,185,194,.32);--stage-glow:rgba(237,193,124,.18)}
-.bio-world-i .bio-world-model{background:linear-gradient(140deg,#F4F1EB 0%,#DCE3D5 42%,#E7D8BC 76%,#F4F1EB 100%);--stage-a:rgba(124,166,133,.3);--stage-b:rgba(182,154,107,.36);--stage-glow:rgba(255,255,242,.65)}
-.bio-world-model:before{content:"";position:absolute;inset:-25%;z-index:-1;background:radial-gradient(ellipse at 25% 30%,var(--stage-a),transparent 55%),radial-gradient(ellipse at 75% 65%,var(--stage-b),transparent 50%);filter:blur(18px);animation:bio-stage-drift 14s ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none}
-.bio-world-model:after{z-index:0;background:radial-gradient(ellipse at var(--glow-x) var(--glow-y),var(--stage-glow),transparent 58%);transition:opacity .6s;opacity:.65;pointer-events:none}
-.bio-world-model:hover:after{opacity:1}
-.bio-world-model .bio-brand-model{position:relative;z-index:1;animation:bio-logo-float 7s ease-in-out infinite;animation-play-state:paused}
+/* Open sculpture stages: generous space, feathered color and orbital detail. */
+.bio-world-model{isolation:isolate;min-height:420px;height:420px;overflow:visible;border:0;border-radius:0;box-shadow:none;--glow-x:50%;--glow-y:45%}
+.bio-world-v .bio-world-model,.bio-world-i .bio-world-model{background:transparent;color:#1A2F24}
+.bio-world-v .bio-world-model{--stage-a:rgba(118,86,174,.24);--stage-b:rgba(53,160,177,.2);--stage-glow:rgba(199,157,83,.19);--orbit-color:rgba(118,86,174,.23)}
+.bio-world-i .bio-world-model{--stage-a:rgba(94,141,109,.24);--stage-b:rgba(182,154,107,.22);--stage-glow:rgba(182,154,107,.14);--orbit-color:rgba(88,124,96,.25)}
+.bio-world-model:before{content:"";position:absolute;inset:-3% -6%;z-index:-1;border-radius:46% 54% 58% 42%;background:radial-gradient(ellipse at 36% 40%,var(--stage-a),transparent 63%),radial-gradient(ellipse at 68% 62%,var(--stage-b),transparent 60%);filter:blur(22px);animation:bio-stage-drift 14s ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none}
+.bio-world-model:after{inset:12% 3%;z-index:0;border:1px solid var(--orbit-color);border-radius:50%;background:radial-gradient(ellipse at var(--glow-x) var(--glow-y),var(--stage-glow),transparent 65%);transform:rotate(21deg);opacity:.55;pointer-events:none}
+.bio-world-model .bio-model-orbit{position:absolute;inset:20% 0;z-index:0;border:1px solid var(--orbit-color);border-radius:50%;transform:rotate(-23deg);pointer-events:none}
+.bio-model-orbit i{position:absolute;left:15%;top:11%;width:6px;height:6px;border-radius:50%;background:#B69A6B;box-shadow:0 0 15px rgba(182,154,107,.5)}
+.bio-world-model .bio-brand-model{position:relative;z-index:1;width:80%;height:300px;max-width:350px;justify-self:center;align-self:center;animation:bio-logo-float 7s ease-in-out infinite;animation-play-state:paused}
+.bio-world-v .bio-world-model .bio-brand-model{width:74%;height:280px;max-width:325px}
 .bio-world-i .bio-brand-model{animation-delay:-2s}
+.bio-world-model .bio-art-coordinate,.bio-world-model .bio-art-caption{color:#687078;z-index:2}
+.bio-world-model .bio-art-coordinate{top:15px;left:12px}
+.bio-world-model .bio-art-caption{bottom:12px;left:12px}
 .bio-model-active:before,.bio-model-active .bio-brand-model{animation-play-state:running}
-.bio-world-model:focus-within{outline:2px solid #B69A6B;outline-offset:5px}
-@keyframes bio-stage-drift{from{transform:translate(-4%,-3%) rotate(-8deg) scale(1)}to{transform:translate(5%,4%) rotate(10deg) scale(1.12)}}
-@keyframes bio-logo-float{0%,100%{transform:translateY(5px)}50%{transform:translateY(-7px)}}
-@media(prefers-reduced-motion:reduce){.bio-world-model:before,.bio-world-model .bio-brand-model{animation:none!important;transform:none!important}.bio-world-model:after{transition:none}}
+.bio-world-model:focus-within{outline:1px solid #B69A6B;outline-offset:5px}
+@keyframes bio-stage-drift{from{transform:translate(-3%,-2%) rotate(-8deg) scale(.95)}to{transform:translate(3%,2%) rotate(10deg) scale(1.08)}}
+@keyframes bio-logo-float{0%,100%{transform:translateY(4px)}50%{transform:translateY(-6px)}}
+@media(max-width:720px){.bio-world-model{min-height:350px;height:350px}.bio-world-model .bio-brand-model{height:260px;width:80%;max-width:300px}.bio-world-v .bio-world-model .bio-brand-model{height:245px;width:74%;max-width:280px}}
+@media(prefers-reduced-motion:reduce){.bio-world-model:before,.bio-world-model .bio-brand-model{animation:none!important;transform:none!important}}
