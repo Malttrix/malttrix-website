@@ -1,77 +1,134 @@
-(()=>{
-  const root=document.documentElement;
-  const buttons=[...document.querySelectorAll('.lang-btn')];
+(() => {
+  'use strict';
+  const root = document.documentElement;
   const shell={
     en:{'nav.about':'About','nav.ecosystem':'Ecosystem','nav.capabilities':'Capabilities','nav.philosophy':'Philosophy','nav.founder':'Founder','nav.overview':'Ecosystem overview','nav.soon':'SOON','nav.enter':'Explore','footer.signature':'Born from imagination.<br>Refined into form.','footer.copy':'An independent creative intelligence ecosystem built around sound, vision and cognition.','footer.portfolio':'Portfolio','footer.explore':'Explore','footer.rights':'All rights reserved.','nav.archetypes':'Principles'},
     zh:{'nav.about':'关于','nav.ecosystem':'生态','nav.capabilities':'能力','nav.philosophy':'理念','nav.founder':'创始人','nav.overview':'生态概览','nav.soon':'即将推出','nav.enter':'探索','footer.signature':'为梦而生，<br>以萃成形。','footer.copy':'一个围绕声音、视觉与认知构建的独立创意智能生态。','footer.portfolio':'品牌矩阵','footer.explore':'探索','footer.rights':'版权所有。','nav.archetypes':'原则'}
   };
-  const setLang=(lang)=>{
-    const isZh=lang==='zh';
-    root.lang=isZh?'zh-CN':'en';
-    root.dataset.language=lang;
-    buttons.forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
-    document.querySelectorAll('[data-i18n]').forEach(el=>{const value=shell[lang][el.dataset.i18n];if(value)el.textContent=value;});
-    document.querySelectorAll('[data-i18n-html]').forEach(el=>{const value=shell[lang][el.dataset.i18nHtml];if(value)el.innerHTML=value;});
-    document.title=isZh?'VANMOIRA｜梵·暮汐 — 电影感情绪音乐宇宙':'VANMOIRA｜梵·暮汐 — Cinematic Emotional Music Universe';
-    const meta=document.querySelector('meta[name="description"]');
-    if(meta)meta.content=isZh?'探索梦萃旗下听觉艺术品牌 VANMOIRA｜梵·暮汐：原创音乐、电影感声景、情绪胶囊与声音授权。':'Explore VANMOIRA, Malttrix’s auditory-art brand: original music, cinematic soundscapes, Mood Capsules and licensing.';
-    try{localStorage.setItem('malttrix-language',lang);}catch(e){}
-  };
-  buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  let saved='en';try{saved=localStorage.getItem('malttrix-language')||'en';}catch(e){}setLang(saved==='zh'?'zh':'en');
-
+  const capsules = JSON.parse(document.getElementById('vm-capsule-data').textContent);
+  const tracks = JSON.parse(document.getElementById('vm-track-data').textContent);
+  const audio = document.getElementById('vm-audio');
+  const player = document.getElementById('vm-player');
+  const status = document.getElementById('vm-audio-status');
+  const seek = document.getElementById('player-seek');
+  const playToggle = document.getElementById('player-toggle');
+  const muteToggle = document.getElementById('player-mute');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let lang = 'en', currentCapsule = capsules[0], currentTrack = null, opener = null, request = 0;
+  const text = (en, zh) => lang === 'zh' ? zh : en;
+  const announce = (en, zh) => { status.textContent = text(en, zh); };
+  const trackById = id => tracks.find(track => track.id === id);
+  const signal = (action, detail = {}) => document.dispatchEvent(new CustomEvent('vanmoira:interaction', {detail:{action,...detail}}));
+  function updateCapsule() {
+    const c = currentCapsule;
+    document.getElementById('capsule-number').textContent = `${String(capsules.indexOf(c) + 1).padStart(2,'0')} / 07`;
+    document.getElementById('capsule-title').textContent = text(c.en,c.zh);
+    document.getElementById('capsule-tags').textContent = text(c.tags,c.ztags);
+    document.getElementById('capsule-description').textContent = text(c.description,c.zdescription);
+    const image = document.querySelector('.vm-capsule-image');
+    image.src = `./assets/vanmoira/${c.id}.webp`;
+    image.alt = text(`${c.en} official mood capsule artwork`,`${c.zh}官方情绪胶囊视觉`);
+    document.getElementById('capsule-listen').dataset.play = c.track;
+    document.querySelectorAll('[data-capsule]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.capsule === c.id)));
+  }
+  function renderPlayback() {
+    const playing = !!currentTrack && !audio.paused && !audio.ended && audio.readyState >= 3;
+    document.querySelectorAll('[data-play]').forEach(button => {
+      const track = trackById(button.dataset.play);
+      const active = playing && track?.id === currentTrack?.id;
+      button.setAttribute('aria-pressed', String(active));
+      if(track) button.setAttribute('aria-label',text(`${active?'Pause':'Play'} ${track.title} preview`,`${active?'暂停':'试听'} ${track.title}`));
+      const icon = button.querySelector('b'); if(icon) icon.textContent = active ? '❚❚' : '▶';
+    });
+    document.querySelectorAll('[data-track]').forEach(row => row.classList.toggle('vm-playing',playing && row.dataset.track === currentTrack?.id));
+    playToggle.textContent = playing ? '❚❚' : '▶';
+    playToggle.setAttribute('aria-label',text(playing?'Pause preview':'Play preview',playing?'暂停试听':'继续试听'));
+    muteToggle.setAttribute('aria-pressed', String(audio.muted));
+    muteToggle.textContent = text(audio.muted?'Unmute':'Mute',audio.muted?'取消静音':'静音');
+    if(currentTrack) document.getElementById('player-type').textContent = text(currentTrack.type,currentTrack.ztype);
+  }
+  function setLang(value) {
+    lang = value === 'zh' ? 'zh' : 'en';
+    root.lang = lang === 'zh' ? 'zh-CN' : 'en'; root.dataset.language = lang;
+    document.querySelectorAll('.lang-btn').forEach(button => {const active=button.dataset.lang===lang;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+    document.querySelectorAll('[data-i18n]').forEach(el => {if(shell[lang][el.dataset.i18n])el.textContent=shell[lang][el.dataset.i18n];});
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {if(shell[lang][el.dataset.i18nHtml])el.innerHTML=shell[lang][el.dataset.i18nHtml];});
+    document.title=text('VANMOIRA｜梵·暮汐 — Cinematic Emotional Music | Malttrix','VANMOIRA｜梵·暮汐 — 电影感情绪音乐 | 梦萃');
+    const description=text('Discover VANMOIRA, an emotion-led music brand by Malttrix. Explore original songs, cinematic storytelling, instrumental soundscapes, and seven mood capsules.','梵·暮汐是梦萃旗下以情绪驱动的电影感听觉艺术品牌。探索原创音乐、双角色叙事、沉浸式器乐声景与七颗情绪胶囊。');
+    document.querySelector('meta[name="description"]').content=description;
+    document.querySelector('meta[property="og:title"]').content=document.title;
+    document.querySelector('meta[property="og:description"]').content=description;
+    document.getElementById('player-close').setAttribute('aria-label',text('Close player','关闭播放器'));
+    player.setAttribute('aria-label',text('VANMOIRA audio preview player','VANMOIRA 试听播放器'));
+    updateCapsule(); renderPlayback();
+    try{localStorage.setItem('malttrix-language',lang);}catch(_){ }
+    document.dispatchEvent(new CustomEvent('malttrix:language',{detail:{lang}}));
+  }
+  document.querySelectorAll('.lang-btn').forEach(button => button.addEventListener('click',()=>setLang(button.dataset.lang)));
+  let saved='en';try{saved=localStorage.getItem('malttrix-language')||'en';}catch(_){ }
+  setLang(saved);
+  function selectGroup(group, focus=false) {
+    if(!['vocal','soundscape'].includes(group))return;
+    document.querySelectorAll('[data-group-tab]').forEach(tab => {const active=tab.dataset.groupTab===group;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus();});
+    document.getElementById('capsule-vocal').hidden=group!=='vocal';
+    document.getElementById('capsule-soundscape').hidden=group!=='soundscape';
+    currentCapsule=group==='vocal'?capsules[0]:capsules[4];updateCapsule();
+    signal('capsule-group',{group});
+  }
+  document.querySelectorAll('[data-group-tab]').forEach(tab => {
+    tab.addEventListener('click',()=>selectGroup(tab.dataset.groupTab));
+    tab.addEventListener('keydown',event=>{
+      if(['ArrowRight','ArrowLeft','Home','End'].includes(event.key)){
+        event.preventDefault();selectGroup(event.key==='Home'?'vocal':event.key==='End'?'soundscape':tab.dataset.groupTab==='vocal'?'soundscape':'vocal',true);
+      }
+    });
+  });
+  document.querySelectorAll('[data-expression]').forEach(link=>link.addEventListener('click',()=>selectGroup(link.dataset.expression)));
+  document.querySelectorAll('[data-capsule]').forEach(button=>button.addEventListener('click',()=>{currentCapsule=capsules.find(c=>c.id===button.dataset.capsule);updateCapsule();renderPlayback();signal('capsule-select',{capsule:currentCapsule.id});}));
+  async function playTrack(id, source) {
+    const track=trackById(id);if(!track)return;
+    const token=++request;
+    opener=source;
+    if(currentTrack?.id===id && !audio.paused){audio.pause();return;}
+    if(currentTrack?.id!==id){
+      audio.pause();currentTrack=track;audio.src=track.src;audio.load();seek.value='0';
+      document.getElementById('player-title').textContent=track.title;
+      document.getElementById('player-cover').src=track.cover;
+    } else if(audio.ended || audio.currentTime>=29.9) audio.currentTime=0;
+    player.hidden=false;document.body.classList.add('vm-has-player');renderPlayback();
+    announce(`Loading ${track.title} preview.`,`正在载入 ${track.title} 试听。`);
+    try{await audio.play();if(token!==request)return;signal('preview-play',{track:id});}
+    catch(error){if(token===request && error.name!=='AbortError')announce('The preview could not play. Try again, or listen at vanmoira.com.','试听暂时无法播放，请重试或前往 vanmoira.com 聆听。');}
+  }
+  document.addEventListener('click',event=>{const button=event.target.closest('[data-play]');if(button)playTrack(button.dataset.play,button);});
+  playToggle.addEventListener('click',()=>{if(currentTrack)playTrack(currentTrack.id,opener);});
+  muteToggle.addEventListener('click',()=>{audio.muted=!audio.muted;renderPlayback();});
+  document.getElementById('player-close').addEventListener('click',()=>{++request;audio.pause();audio.removeAttribute('src');audio.load();currentTrack=null;player.hidden=true;document.body.classList.remove('vm-has-player');renderPlayback();opener?.focus();announce('Player closed.','播放器已关闭。');signal('preview-close');});
+  seek.addEventListener('input',()=>{if(audio.readyState>=1){audio.currentTime=Math.min(Number(seek.value),audio.duration||30);}});
+  audio.addEventListener('timeupdate',()=>{
+    const seconds=Math.min(30,Math.max(0,audio.currentTime||0));seek.value=String(seconds);
+    document.getElementById('player-time').textContent=`0:${String(Math.floor(seconds)).padStart(2,'0')} / 0:30`;
+    if(audio.currentTime>=30 && !audio.paused)audio.pause();
+  });
+  for(const name of ['playing','pause','ended','waiting','volumechange'])audio.addEventListener(name,renderPlayback);
+  audio.addEventListener('playing',()=>{if(currentTrack)announce(`Playing ${currentTrack.title}, 30-second excerpt.`,`正在播放 ${currentTrack.title}，30 秒片段。`);});
+  audio.addEventListener('error',()=>{renderPlayback();if(currentTrack)announce('Audio unavailable. Please try the official VANMOIRA website.','音频暂不可用，请前往 VANMOIRA 官方网站聆听。');});
+  window.addEventListener('pagehide',()=>audio.pause());
+  document.querySelectorAll('a[href^="https://"]').forEach(link=>link.addEventListener('click',()=>signal('outbound',{destination:link.href})));
   const menu=document.getElementById('primaryMenu'),toggle=document.getElementById('menuToggle');
-  toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));menu?.classList.toggle('open',!open);document.body.classList.toggle('menu-open',!open);});
-  document.querySelectorAll('#primaryMenu a').forEach(a=>a.addEventListener('click',()=>{toggle?.setAttribute('aria-expanded','false');menu?.classList.remove('open');document.body.classList.remove('menu-open');}));
+  function closeMenu(){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label',text('Open navigation','打开导航'));menu.classList.remove('open');document.body.classList.remove('menu-open');}
+  toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',text(open?'Close navigation':'Open navigation',open?'关闭导航':'打开导航'));menu.classList.toggle('open',open);document.body.classList.toggle('menu-open',open);});
+  menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.classList.contains('open')){closeMenu();toggle.focus();}});
   const header=document.getElementById('siteHeader');
-  const onScroll=()=>header?.classList.toggle('scrolled',scrollY>24);onScroll();addEventListener('scroll',onScroll,{passive:true});
-
-  const reveal=[...document.querySelectorAll('.vm-reveal')];
-  if('IntersectionObserver'in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -7%'});reveal.forEach(el=>io.observe(el));}else reveal.forEach(el=>el.classList.add('is-visible'));
-
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const coarse=matchMedia('(pointer: coarse)').matches;
-  const saveData=navigator.connection?.saveData===true;
-  const canvas=document.getElementById('vanmoiraField');
-  if(canvas&&!reduced&&!saveData){
-    const ctx=canvas.getContext('2d',{alpha:true});
-    const hero=canvas.closest('.vm-hero');
-    let w=0,h=0,dpr=1,raf=0,running=false,heroVisible=true,lastFrame=0,resizeTimer=0;
-    const frameInterval=coarse?50:33;
-    const pointCount=coarse?20:36;
-    const waveCount=coarse?1:2;
-    const colors=['rgba(99,191,208,.42)','rgba(118,86,200,.38)','rgba(213,164,71,.3)'];
-    const points=Array.from({length:pointCount},(_,i)=>({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.15,s:.00007+Math.random()*.00013,p:i%3}));
-    const resize=()=>{
-      const b=hero.getBoundingClientRect();
-      dpr=Math.min(devicePixelRatio||1,coarse?1:1.25);
-      w=Math.max(1,Math.round(b.width));h=Math.max(1,Math.round(b.height));
-      canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-    };
-    const draw=(t)=>{
-      if(!running)return;
-      raf=requestAnimationFrame(draw);
-      if(t-lastFrame<frameInterval)return;
-      lastFrame=t;
-      ctx.clearRect(0,0,w,h);
-      for(const p of points){
-        p.y-=p.s*frameInterval;if(p.y<-.03)p.y=1.03;
-        const x=p.x*w+Math.sin(t*.00022+p.y*9)*10,y=p.y*h;
-        ctx.beginPath();ctx.fillStyle=colors[p.p];ctx.arc(x,y,p.r,0,Math.PI*2);ctx.fill();
-      }
-      for(let n=0;n<waveCount;n++){
-        ctx.beginPath();
-        for(let x=0;x<=w;x+=32){const y=h*(.4+n*.2)+Math.sin(x*.007+t*.0003+n)*12;if(x===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}
-        ctx.strokeStyle=n?'rgba(99,191,208,.05)':'rgba(174,159,218,.045)';ctx.stroke();
-      }
-    };
-    const start=()=>{if(running||document.hidden)return;running=true;lastFrame=0;raf=requestAnimationFrame(draw)};
-    const stop=()=>{running=false;cancelAnimationFrame(raf)};
-    resize();
-    const heroObserver=new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;heroVisible?start():stop()},{rootMargin:'120px 0px'});
-    heroObserver.observe(hero);
-    addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(resize,160)},{passive:true});
-    document.addEventListener('visibilitychange',()=>document.hidden?stop():(heroVisible&&start()));
+  const onScroll=()=>header.classList.toggle('scrolled',scrollY>24);onScroll();addEventListener('scroll',onScroll,{passive:true});
+  if('IntersectionObserver' in window){
+    root.classList.add('vm-js');
+    const reveal=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');reveal.unobserve(entry.target);}}),{threshold:.08});
+    document.querySelectorAll('.vm-reveal').forEach(el=>reveal.observe(el));
+    const hero=document.querySelector('.vm-hero-art');let heroVisible=false;
+    function motion(){hero.classList.toggle('vm-in-view',heroVisible&&!document.hidden&&!reduced.matches);}
+    new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;motion();}).observe(hero);
+    document.addEventListener('visibilitychange',motion);reduced.addEventListener('change',motion);
   }
 })();
