@@ -1,0 +1,28 @@
+/* Run with VANMOIRA_DOM_MODULE pointing to a linkedom installation. */
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const {parseHTML}=require(process.env.VANMOIRA_DOM_MODULE||'linkedom');
+const html=fs.readFileSync('vanmoira.html','utf8'),js=fs.readFileSync('assets/vanmoira-page.js','utf8');
+const {window}=parseHTML(html),{document}=window;
+const capsules=JSON.parse(document.getElementById('vm-capsule-data').textContent),tracks=JSON.parse(document.getElementById('vm-track-data').textContent);
+assert.equal(capsules.length,7);assert.equal(tracks.length,4);assert.equal(document.querySelectorAll('h1').length,1);assert.equal(document.querySelectorAll('main>section').length,9);
+const ids=[...document.querySelectorAll('[id]')].map(el=>el.id);assert.equal(ids.length,new Set(ids).size);
+for(const link of document.querySelectorAll('a[href^="#"]'))assert(document.getElementById(link.getAttribute('href').slice(1)));
+for(const el of document.querySelectorAll('[src^="./assets/"]'))assert(fs.statSync(el.getAttribute('src').split('?')[0]).size>0);
+assert.equal(document.querySelectorAll('audio[autoplay],video[autoplay]').length,0);
+const audio=document.getElementById('vm-audio');let plays=0,paused=true;
+Object.defineProperties(audio,{paused:{get:()=>paused},ended:{get:()=>false},readyState:{get:()=>4},duration:{get:()=>30},currentTime:{value:0,writable:true},muted:{value:false,writable:true}});
+audio.load=()=>{};audio.play=()=>{plays++;paused=false;audio.dispatchEvent(new window.Event('playing'));return Promise.resolve();};audio.pause=()=>{paused=true;audio.dispatchEvent(new window.Event('pause'));};
+const storage={},listeners={};
+vm.runInNewContext(js,{document,window:{addEventListener:(name,fn)=>listeners[name]=fn},CustomEvent:window.CustomEvent,matchMedia:()=>({matches:false,addEventListener(){}}),localStorage:{getItem:k=>storage[k],setItem:(k,v)=>storage[k]=v},scrollY:0,addEventListener:(name,fn)=>listeners[name]=fn});
+assert.equal(plays,0,'Must not autoplay');
+document.querySelector('[data-lang="zh"]').click();assert.equal(document.documentElement.lang,'zh-CN');assert.equal(document.getElementById('capsule-title').textContent,'暮色·海岸');
+document.querySelector('[data-group-tab="soundscape"]').click();assert(document.getElementById('capsule-vocal').hidden);assert(!document.getElementById('capsule-soundscape').hidden);assert.equal(document.getElementById('capsule-title').textContent,'镜水');
+document.querySelector('[data-capsule="moon"]').click();assert.equal(document.getElementById('capsule-title').textContent,'月岸');assert.equal(document.getElementById('capsule-listen').dataset.play,'shore');assert.equal(plays,0,'Capsule selection must not autoplay');
+document.querySelector('[data-lang="en"]').click();assert.equal(document.getElementById('capsule-title').textContent,'Moon Shore');
+const keyEvent=new window.Event('keydown',{bubbles:true,cancelable:true});keyEvent.key='Home';document.querySelector('[data-group-tab="soundscape"]').dispatchEvent(keyEvent);assert.equal(document.querySelector('[data-group-tab="vocal"]').getAttribute('aria-selected'),'true');
+document.querySelector('[data-play="rain"]').click();assert.equal(plays,1);assert(!document.getElementById('vm-player').hidden);assert(audio.src.endsWith('rain-preview.mp3'));assert.equal(document.querySelectorAll('.vm-playing').length,1);
+document.querySelector('[data-play="glass"]').click();assert.equal(plays,2);assert(audio.src.endsWith('glass-preview.mp3'));assert.equal(document.querySelectorAll('.vm-playing').length,1,'Only one track can play');
+document.getElementById('player-mute').click();assert(audio.muted);assert.equal(document.getElementById('player-mute').textContent,'Unmute');
+audio.currentTime=30;audio.dispatchEvent(new window.Event('timeupdate'));assert(paused,'Excerpt must stop at 30 seconds');
+document.getElementById('player-close').click();assert(paused);assert(document.getElementById('vm-player').hidden);assert(!document.body.classList.contains('vm-has-player'));assert.equal(document.querySelectorAll('.vm-playing').length,0);
+console.log('PASS: page structure, assets, EN/CN switching, 4+3 groups, capsule details, keyboard tabs, no autoplay, single-track playback, mute, excerpt boundary and close.');
