@@ -117,7 +117,7 @@
 .bio-world-copy p{font-size:.91rem;line-height:1.9;color:var(--bio-muted);margin:0 0 17px}.bio-world-copy .bio-world-lead{font:500 2rem/1.15 var(--font-display);color:var(--bio-ink)}
 .bio-world-l .bio-world-art{background:radial-gradient(ellipse at 10% 10%,rgba(53,183,196,.24),transparent 65%),radial-gradient(ellipse at 90% 100%,rgba(118,86,200,.22),transparent 65%),#E1DFE6}.bio-world-l .bio-art-coordinate,.bio-world-l .bio-art-caption{color:#62667A}
 .bio-light-study{position:relative;width:34%;height:200px;background:linear-gradient(105deg,rgba(53,183,196,.3),rgba(252,251,247,.95) 45%,rgba(118,86,200,.3));transform:rotate(-27deg);border:1px solid rgba(255,255,255,.7);box-shadow:32px 15px 60px rgba(23,25,29,.13)}
-.bio-world-l .bio-world-art:before{content:"";position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(calc(-65% + var(--world-progress,1)*130%)) rotate(-12deg);opacity:calc(.7 - var(--world-progress,1)*.7);pointer-events:none}
+.bio-world-l .bio-world-art:not(.bio-world-model):before{content:"";position:absolute;inset:-20%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(calc(-65% + var(--world-progress,1)*130%)) rotate(-12deg);opacity:calc(.7 - var(--world-progress,1)*.7);pointer-events:none}
 .bio-reading:after{content:"";display:block;height:1px;background:linear-gradient(90deg,#1A2F24,transparent);transform:scaleX(var(--world-progress,1));transform-origin:left}
 .bio-world-i .bio-world-art{background:radial-gradient(ellipse at 20% 90%,rgba(105,169,130,.23),transparent 65%),radial-gradient(ellipse at 100% 0,rgba(213,164,71,.2),transparent 65%),#E4DED0}.bio-world-i .bio-art-coordinate,.bio-world-i .bio-art-caption{color:#5B635E}
 .bio-reading{width:60%;min-height:230px;padding:35px 25px;display:flex;flex-direction:column;justify-content:space-between;background:#F4F1EB;color:#1A2F24;border-left:3px solid #1A2F24;box-shadow:15px 17px 30px rgba(23,25,29,.1)}
@@ -218,7 +218,7 @@ html[lang="zh-CN"] .bio-closing-anchors .bio-english-motto{font:500 .8rem/1.7 va
 }
 @media(max-width:720px){.bio-dual-mind{gap:0 20px}.bio-instinct-art{height:140px}.bio-instinct h3{font-size:1.6rem}.bio-instinct p{font-size:.65rem}.bio-practice{padding:35px 0 10px}.bio-approach .bio-story-grid .bio-prose{columns:1}.bio-world-list:before{display:none}.bio-light-plane{height:40%}}
 html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[lang="zh-CN"] .bio-practice>p{font-family:"Noto Serif SC",serif;font-size:clamp(1.3rem,2.2vw,1.85rem);line-height:1.6}html[lang="zh-CN"] .bio-map-dimensions>p{font-family:"Noto Serif SC",serif;font-size:clamp(1.4rem,2.2vw,2rem)}
-@media(prefers-reduced-motion:reduce){.bio-main *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.bio-portrait img,.bio-portrait-light,.freedom-fragment,.bio-world-v .bio-world-art svg{transform:none!important}.bio-freedom{--freedom:1!important}.bio-world{--world-progress:1!important}.freedom-path{stroke-dashoffset:0!important}.bio-world-l .bio-world-art:before{display:none}}
+@media(prefers-reduced-motion:reduce){.bio-main *{animation:none!important;transition:none!important;scroll-behavior:auto!important}.bio-portrait img,.bio-portrait-light,.freedom-fragment,.bio-world-v .bio-world-art svg{transform:none!important}.bio-freedom{--freedom:1!important}.bio-world{--world-progress:1!important}.freedom-path{stroke-dashoffset:0!important}.bio-world-l .bio-world-art:not(.bio-world-model):before{display:none}}
 
 
 
@@ -259,8 +259,10 @@ html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[la
 
 /* Open sculpture stages: generous space, feathered color and orbital detail. */
 .bio-world-model{isolation:isolate;min-height:420px;height:420px;overflow:visible;border:0;border-radius:0;box-shadow:none;--glow-x:50%;--glow-y:45%}
-.bio-world-v .bio-world-model,.bio-world-i .bio-world-model{background:transparent;color:#1A2F24}
+.bio-world-v .bio-world-model,.bio-world-l .bio-world-model,.bio-world-i .bio-world-model{background:transparent;color:#1A2F24}
 .bio-world-v .bio-world-model{--stage-a:rgba(118,86,174,.24);--stage-b:rgba(53,160,177,.2);--stage-glow:rgba(199,157,83,.19);--orbit-color:rgba(118,86,174,.23)}
+.bio-world-l .bio-world-model{--stage-a:rgba(120,118,168,.22);--stage-b:rgba(21,26,45,.10);--stage-glow:rgba(178,177,207,.16);--orbit-color:rgba(120,118,168,.24)}
+.bio-world-l .bio-brand-model{animation-delay:-1s}
 .bio-world-i .bio-world-model{--stage-a:rgba(94,141,109,.24);--stage-b:rgba(182,154,107,.22);--stage-glow:rgba(182,154,107,.14);--orbit-color:rgba(88,124,96,.25)}
 .bio-world-model:before{content:"";position:absolute;inset:-3% -6%;z-index:-1;border-radius:46% 54% 58% 42%;background:radial-gradient(ellipse at 36% 40%,var(--stage-a),transparent 63%),radial-gradient(ellipse at 68% 62%,var(--stage-b),transparent 60%);filter:blur(22px);animation:bio-stage-drift 14s ease-in-out infinite alternate;animation-play-state:paused;pointer-events:none}
 .bio-world-model:after{inset:12% 3%;z-index:0;border:1px solid var(--orbit-color);border-radius:50%;background:radial-gradient(ellipse at var(--glow-x) var(--glow-y),var(--stage-glow),transparent 65%);transform:rotate(21deg);opacity:.55;pointer-events:none}
@@ -278,3 +280,4 @@ html[lang="zh-CN"] .bio-instinct h3{font-size:clamp(1.3rem,2.2vw,1.9rem)}html[la
 @keyframes bio-logo-float{0%,100%{transform:translateY(4px)}50%{transform:translateY(-6px)}}
 @media(max-width:720px){.bio-world-model{min-height:350px;height:350px}.bio-world-model .bio-brand-model{height:260px;width:80%;max-width:300px}.bio-world-v .bio-world-model .bio-brand-model{height:245px;width:74%;max-width:280px}}
 @media(prefers-reduced-motion:reduce){.bio-world-model:before,.bio-world-model .bio-brand-model{animation:none!important;transform:none!important}}
+
